@@ -11,10 +11,10 @@ module.exports = {
   projectName: 'godwoken', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: '',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'Nervos',
+        src: 'img/cryptape.png',
       },
       items: [
 
@@ -28,17 +28,6 @@ module.exports = {
     footer: {
       style: 'dark',
       links: [
-        {
-          title: 'Docs',
-          items: [
-			{
-			  to: 'docs/godwoken',
-			  activeBasePath: 'docs',
-			  label: 'Docs',
-			  position: 'right',
-			},
-          ],
-        },
         {
           title: 'Community',
           items: [
@@ -78,6 +67,8 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
+		routeBasePath: '/',
+		//homePageId: 'docs/godwoken',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:

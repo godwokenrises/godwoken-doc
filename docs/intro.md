@@ -1,4 +1,5 @@
 ---
+slug: /
 id: godwoken
 title: Godwoken Introduction
 sidebar_label: Godwoken Introduction
@@ -835,7 +836,7 @@ We provide a solid roadmap to evolve the Godwoken network step by step from semi
 | Nervos'&nbsp;Layer&nbsp;2 EVM&nbsp;Training | https://nervos.gitbook.io/layer-2-evm/                       |
 | Nervos&nbsp;Document&nbsp;Website           | https://docs.nervos.org/                                     |
 | Godwoken&nbsp;Basics                        | <ul><li>[Introducing Godwoken - A missing piece of the cell model](https://talk.nervos.org/t/introducing-godwoken-a-missing-piece-of-the-cell-model/4464?_360safeparam=13594453)</li><li>[Towards CKB style Lego pieces: Polyjuice on Godwoken](https://medium.com/nervosnetwork/towards-ckb-style-lego-pieces-polyjuice-on-godwoken-cbc935d77abf)</li></ul> |
-| Source&nbsp;Code                            | https://github.com/nervosnetwork/lumos                       |
+| Source&nbsp;Code                            | https://github.com/nervosnetwork/godwoken                    |
 | Godwoken-Kicker                             | [Godwoken-Kicker: one line command to start godwoken-polyjuice chain](https://github.com/RetricSu/godwoken-kicker) |
 | Godwoken&nbsp;Testnet                       | Godwoken Testnet                                             |
 | Ethereum&nbsp;RPC&nbsp; (web3&nbsp;RPC)     | [Ethereum RPC (web3 RPC)](https://geth.ethereum.org/docs/rpc/server) |
