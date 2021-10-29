@@ -6,7 +6,7 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
   organizationName: 'xying21', // Usually your GitHub org/user name.
   projectName: 'godwoken', // Usually your repo name.
   themeConfig: {
@@ -16,10 +16,11 @@ module.exports = {
       respectPrefersColorScheme: false,
     },
     navbar: {
+	hideOnScroll: true,
       title: '',
       logo: {
         alt: 'Nervos',
-        src: 'img/cryptape.png',
+        src: 'img/favicon.png',
       },
       items: [
 
@@ -48,7 +49,7 @@ module.exports = {
           ],
         },
       ], */
-      copyright: `Copyright © ${new Date().getFullYear()} cryptape.com. All Rights Reserved.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Nervos Foundation. All Rights Reserved.`,
     },
   },
   presets: [

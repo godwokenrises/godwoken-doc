@@ -10,7 +10,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 [Godwoken](https://github.com/nervosnetwork/godwoken) is a layer 2 rollup framework that provides an abstracted account model and abstracted layer 2 transactions upon Nervos CKB.
 
-[Polyjuice](https://github.com/nervosnetwork/godwoken-polyjuice) is an Ethereum compatible layer designed upon the Godwoken account model. Godwoken comes together with Polyjuice giving developers the ability to seamlessly deploy & run Ethereum contracts.
+[Polyjuice](https://github.com/nervosnetwork/godwoken-polyjuice) is an Ethereum compatible layer designed upon the Godwoken account model. Godwoken comes together with Polyjuice giving developers the ability to seamlessly deploy and run Ethereum contracts.
 
 <img src={useBaseUrl("img/arch.png")}  width="40%"/>
 
@@ -20,7 +20,7 @@ Figure 1. Architecture of Godwoken
 
 Godwoken Testnet and Mainnet are provided for deploying Ethereum DApps to CKB.
 
-- Godwoken Testnet
+- [Godwoken Testnet](https://github.com/nervosnetwork/godwoken-testnet)
 
   - RPC URL: https://godwoken-testnet-web3-rpc.ckbapp.dev/
 
@@ -36,12 +36,12 @@ A Godwoken network can also be deployed locally. For more information, see the s
 
 ### Deploy a Godwoken Network by Using Godwoken-Kicker
 
-Godwoken-kicker is a one line command to start a Godwoken network on **Devnet**. This deployment method helps developers deploy Ethereum contracts and migrate Ethereum DApps to CKB Devnet quickly in testing and development environments.
+Godwoken-kicker is a one-line command to start a Godwoken network on **Devnet**. This deployment method helps developers deploy Ethereum contracts and quickly migrate Ethereum DApps to CKB Devnet in testing and development environments.
 
 - RPC URL: http://localhost:8024
 - Chain ID: 1024777
 
-Godwoken-kicker provides a quick mode and a custom mode for the deployment.
+Godwoken-kicker provides a quick mode and a custom mode for deployment.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -52,13 +52,14 @@ import TabItem from '@theme/TabItem';
     {label: 'Quick Mode', value: 'quick'},
     {label: 'Custom Mode', value: 'custom'},
   ]}>
-<TabItem value="quick"><p>The quick mode is fast and simple. It executes the builds of all components from prebuilt docker images.</p><b>Environment</b><p><ul><li>Ubuntu 20.04 LTS</li></ul></p><b>Prerequisites</b><p><ul><li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></li><li><a href="https://docs.docker.com/compose/install/">Docker Compose</a></li></ul></p>
+<TabItem value="quick"><p>The quick mode is fast and simple. It executes the builds of all components from pre-built docker images.</p><b>Environment</b><p><ul><li>Ubuntu 20.04 LTS</li></ul></p><b>Prerequisites</b><p><ul><li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></li><li><a href="https://docs.docker.com/compose/install/">Docker Compose</a></li></ul></p>
 
 <p><b>Steps</b></p>
 
 <ol> 
     <li><p>Clone the source of Godwoken-kicker.</p>
-        <p>If the source is already cloned, skip this step and go to the next step directly.</p>
+        <p>If it is already cloned, skip to the next step.</p>
+
 
 ```bash
 $ git clone https://github.com/RetricSu/godwoken-kicker.git
@@ -96,7 +97,7 @@ $ make start
 ```
 :::note
 
-  Do note that after running <code>make clean</code>, run <code>make init</code> again if a reboot is desired. 
+  Do note that after running the <code>make clean</code> command, run <code>make init</code> again if a reboot is desired. 
 
 :::
 <details><summary>Output</summary>
@@ -135,7 +136,7 @@ Great! Checkout http://localhost:6100 to deploy contract!
 
 </li>
 
-<li><p>Set up an Ethereum wallet.</p><p>In this example, a MetaMask (an Ethereum Wallet) wallet is set up for the deployment. Add the MetaMask extension in the browser (Firefox, Google Chrome, Brave or Microsoft Edge.) and create an account for the wallet.</p><p>If there is a MetaMask wallet ready to be used, skip this step and go to the next step directly.</p></li>
+<li><p>Set up an Ethereum wallet.</p><p>In this example, a MetaMask (an Ethereum Wallet) wallet is set up for the deployment. Add the MetaMask extension in the browser (Firefox, Google Chrome, Brave or Microsoft Edge) and create an account for the wallet.</p><p>If there is a MetaMask wallet ready to be used, skip to the next step directly.</p></li>
 
 <li><p>After the Godwoken network has been successfully launched, visit the website <a>http://localhost:6100</a> and connect the MetaMask wallet by clicking the <b>Connect Wallet</b> button.</p>
 
@@ -157,7 +158,8 @@ Great! Checkout http://localhost:6100 to deploy contract!
 
 <ol>  
     <li><p>Clone the source of Godwoken-kicker.</p>
-        <p>If the source is already cloned, skip this step and go to the next step directly.</p>
+        <p>If it is already cloned, skip to the next step directly.</p>
+
 
 ```bash
 $ git clone https://github.com/RetricSu/godwoken-kicker.git
@@ -206,7 +208,7 @@ $ make init
 
 The <code>make init</code> command can be used in the following situations:
 
-<ul><li>It is the first time to start the Godwoken network.</li><li>The deployment mode is changed.</li><li>The CKB chain data and all layer 1 related cache data are deleted.</li></ul>
+<ul><li>The first time to start the Godwoken network.</li><li>The deployment mode is changed.</li><li>The CKB chain data and all layer 1 related cache data are deleted.</li></ul>
 
 </li>
 
@@ -255,7 +257,7 @@ Great! Checkout http://localhost:6100 to deploy contract!
 
 </li>
 
-<li><p>Set up an Ethereum wallet.</p><p>In this example, a MetaMask (an Ethereum Wallet) wallet is set up for the deployment. Add the MetaMask extension in the browser (Firefox, Google Chrome, Brave or Microsoft Edge.) and create an account for the wallet.</p><p>If there is a MetaMask wallet ready to be used, skip this step and go to the next step directly.</p></li>  
+<li><p>Set up an Ethereum wallet.</p><p>In this example, a MetaMask (an Ethereum Wallet) wallet is set up for the deployment. Add the MetaMask extension in the browser (Firefox, Google Chrome, Brave or Microsoft Edge) and create an account for the wallet.</p><p>If there is a MetaMask wallet ready to be used, skip this and go to the next step directly.</p></li>  
 
 <li><p>After the Godwoken network has been successfully launched, visit the website <a>http://localhost:6100</a> and connect the MetaMask wallet by clicking the <b>Connect Wallet</b> button.</p>
 
@@ -314,15 +316,15 @@ The following tools need to be installed before entering the deployment process:
 
   **Docker** must be installed for building and deploying Godwoken. For more information about Docker installation, see [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/).
 
-  To manage Docker as a non-root user, see the Docker documentations of [Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/).
+  To manage Docker as a non-root user, see the Docker documentation of [Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/).
 
-  For more information about the tags of the pre-buildt docker image, see [nervos/godwoken-prebuilds](https://hub.docker.com/r/nervos/godwoken-prebuilds/tags?page=1&ordering=last_updated.) 
+  For more information about the tags of the pre-built docker image, see [nervos/godwoken-prebuilds](https://hub.docker.com/r/nervos/godwoken-prebuilds/tags?page=1&ordering=last_updated.) 
 
 * [Tippy](https://github.com/nervosnetwork/tippy/releases)
 
   Tippy is a tool to help set up and manage CKB nodes. For more information, see [Install a CKB Node by Using Tippy](https://cryptape.github.io/lumos-doc/docs/reference/ckbnode#install-a-ckb-node-by-using-tippy). The verified Tippy version in this documentation is [v0.3.2](https://github.com/nervosnetwork/tippy/releases/tag/v0.3.2).
 
-* ckb-cli: The ckb-cli tool is used for deploying smart contracts. It can be installed from a [CKB prebuilt installer package](https://github.com/nervosnetwork/ckb/releases). The verified ckb-cli version in this documentation is [v0.42.0](https://github.com/nervosnetwork/ckb/releases/tag/v0.42.0).
+* ckb-cli: The ckb-cli tool is used for deploying smart contracts. It can be installed from a [CKB pre-built installer package](https://github.com/nervosnetwork/ckb/releases). The verified ckb-cli version in this documentation is [v0.42.0](https://github.com/nervosnetwork/ckb/releases/tag/v0.42.0).
 
 :::note
 
@@ -395,7 +397,7 @@ The current user must have permissions to run ckb-cli, Capsule, Moleculec and do
    }
    ```
    
-   For more information about the tags of the pre-buildt docker image, see https://hub.docker.com/r/nervos/godwoken-prebuilds/tags?page=1&ordering=last_updated.
+   For more information about the tags of the pre-built docker image, see https://hub.docker.com/r/nervos/godwoken-prebuilds/tags?page=1&ordering=last_updated.
    
    Example:
    
@@ -476,7 +478,7 @@ The current user must have permissions to run ckb-cli, Capsule, Moleculec and do
 
    The default node mode is `readonly `. It can be modified in `config.toml` to either `fullnode` mode or `test` mode.
 
-   If the two readonly nodes need to be started within the same environment, manually modify the listening port number in the `config.toml` file for each node.
+   If the two `readonly` nodes need to be started within the same environment, manually modify the listening port number in the `config.toml` file for each node.
 
    :::
 
@@ -550,9 +552,9 @@ The current user must have permissions to run ckb-cli, Capsule, Moleculec and do
       EOF
       ```
 
-   4. Start the Web3 server.
+   4. Start the web3 server.
 
-      To start the Web3 server properly, make sure to clear the postgres database, and then run the migration SQL file to recreate the tables before running the server:
+      To start the web3 server properly, make sure to clear the postgres database, and then run the migration SQL file to recreate the tables before running the server:
 
       ```bash
       $ yarn
@@ -565,19 +567,19 @@ The current user must have permissions to run ckb-cli, Capsule, Moleculec and do
 
 ### Workflow
 
-1. Setup the environment.
+1. Set up the environment.
 
-2. Choose Godwoken testnet or mainnet network or deploy a local Godwoken network.
+2. Choose Godwoken testnet or mainnet network, or deploy a local Godwoken network.
 
-   For more information about Godwoken networks, see <Link to={useBaseUrl('/docs/godwoken#godwoken-networks')}>Godwoken Networks</Link>.
+   For more information about Godwoken networks, see [Godwoken Networks](#godwoken-networks).
 
-   For more information about deploying a Godwoken network, see the sections of Deployment.
+   For more information about deploying a Godwoken network, see the sections under Deployment.
 
 3. Deploy an Ethereum DApp to Godwoken.
 
 ### RPC Documentation for Reference
 
-Godwoken provides a Web3 RPC compatible layer.
+Godwoken provides a web3 RPC compatible layer.
 
 For more information, see [Ethereum RPC (web3 RPC)](https://github.com/nervosnetwork/godwoken-web3).
 
@@ -600,7 +602,7 @@ For more information, see [Ethereum RPC (web3 RPC)](https://github.com/nervosnet
 - MetaMask
 
 #### Steps
-1. Clone an Existing ETH DApp.
+1. Clone an existing ETH DApp.
 
    Create a relative directory, if needed, then enter the directory and clone the repository . 
 
@@ -627,9 +629,9 @@ For more information, see [Ethereum RPC (web3 RPC)](https://github.com/nervosnet
     
     Open a browser tab to http://localhost:3000 to view the DApp after the server started. 
 
-3. Setup Godwoken Test in MetaMask.
+3. Set up Godwoken Testnet in MetaMask.
 
-   Set up the Metamask extension in browser and setup custom PRC with the following information:
+   Set up the Metamask extension in browser and the custom RPC with the following information:
 
    ```
    Network Name: Godwoken Testnet
@@ -639,7 +641,7 @@ For more information, see [Ethereum RPC (web3 RPC)](https://github.com/nervosnet
    Block Explorer URL (optional): N/A
    ```
 
-4. Install Polyjuice Dependencies.
+4. Install Polyjuice dependencies.
 
    To port the Ethereum application with Nervos' Layer 2, the first step is to install the dependencies that are necessary for Godwoken and Polyjuice to work with. 
 
@@ -654,7 +656,7 @@ For more information, see [Ethereum RPC (web3 RPC)](https://github.com/nervosnet
    $ yarn add @polyjuice-provider/web3@0.0.1-rc7 nervos-godwoken-integration@0.0.6
    ```
 
-5. Add and Configure the Web3 Provider for the Polyjuice Web3 Provider.
+5. Add and configure the web3 provider for the Polyjuice web3 provider.
 
    Create a new `config.ts` file under the `src`:
 
@@ -663,7 +665,7 @@ For more information, see [Ethereum RPC (web3 RPC)](https://github.com/nervosnet
    $ touch config.ts
    ```
 
-   then fill it with the values presented:
+   Then fill it with the values presented:
 
    ```
    export const CONFIG = {
@@ -673,7 +675,7 @@ For more information, see [Ethereum RPC (web3 RPC)](https://github.com/nervosnet
    }
    ```
 
-6. Update the UI file
+6. Update the UI file.
     Update the main UI in the file `~/projects/blockchain-workshop-ethereum-simple/src/ui/app.tsx`. Add the following lines in the main dependency importation section of the file:
     
     ```
@@ -728,7 +730,7 @@ For more information, see [Ethereum RPC (web3 RPC)](https://github.com/nervosnet
     <br />
     ```
 
-7. Set Gas Limit Higher.
+7. Set gas limit higher.
 
    Godwoken Testnet requires a higher gas limit to be set for transactions.
 
@@ -802,7 +804,7 @@ For more information, see [Ethereum RPC (web3 RPC)](https://github.com/nervosnet
        }
    ```
 
-8. Run and Test DApp
+8. Run and test the DApp
 
    Input the following command to run the app once all the configs for Godwoken have been completed.
    ```
@@ -821,13 +823,13 @@ For more information, see [Ethereum RPC (web3 RPC)](https://github.com/nervosnet
 
 ## Decentralization Roadmap
 
-We provide a solid roadmap to evolve the Godwoken network step by step from semi-decentialization to fully-decentialization.
+We provide a solid roadmap to evolve the Godwoken network step by step from semi-decentralization to fully decentralization.
 
-- **Stage 1 (initial lauch)**: The whole network has one sequencer to sort transactions. Developers can run their own Godwoken nodes in the readonly mode and watch the on-chain rollup transactions to compute and verify the rollup global state.
+- **Stage 1 (initial launch)**: The whole network has one sequencer to sort transactions. Developers can run their own Godwoken nodes in the readonly mode and watch the on-chain rollup transactions to compute and verify the rollup global state.
 
-- **Stage 2**: The network will introduce permission-less challenger node, everyone can run their Godwoken nodes in challenger mode. If the sequencer commits an invalid state, then, a challenging will be automatically processed by a random Godwoken node (depending on which node sends the challenging first) . If the challenging has successed, then the sequencer will lose staked assets on layer1 and the rollup's state will be reverted.
+- **Stage 2**: The network will introduce permissionless challenger node, everyone can run their Godwoken nodes in challenger mode. If the sequencer commits an invalid state, then, a challenge will be automatically processed by a random Godwoken node. It depends on which node sends the challenge first. If the challenge has successed, the sequencer will lose the staked assets on layer1 and the rollup's state will be reverted.
 
-- **Stage 3**: The nerwork will introduce permission-less full node, multiple sequencer mechanism will be investigated and explored.
+- **Stage 3**: The network will introduce permissionless full nodes. The multiple sequencer mechanism will be investigated and explored.
 
 ## References
 
@@ -838,6 +840,5 @@ We provide a solid roadmap to evolve the Godwoken network step by step from semi
 | Godwoken&nbsp;Basics                        | <ul><li>[Introducing Godwoken - A missing piece of the cell model](https://talk.nervos.org/t/introducing-godwoken-a-missing-piece-of-the-cell-model/4464?_360safeparam=13594453)</li><li>[Towards CKB style Lego pieces: Polyjuice on Godwoken](https://medium.com/nervosnetwork/towards-ckb-style-lego-pieces-polyjuice-on-godwoken-cbc935d77abf)</li></ul> |
 | Source&nbsp;Code                            | https://github.com/nervosnetwork/godwoken                    |
 | Godwoken-Kicker                             | [Godwoken-Kicker: one line command to start godwoken-polyjuice chain](https://github.com/RetricSu/godwoken-kicker) |
-| Godwoken&nbsp;Testnet                       | Godwoken Testnet                                             |
 | Ethereum&nbsp;RPC&nbsp; (web3&nbsp;RPC)     | [Ethereum RPC (web3 RPC)](https://geth.ethereum.org/docs/rpc/server) |
 | Gitcoin&nbsp;Hackathon                      | <ul><li>[Godwoken Gitcoin Instruction](https://github.com/Kuzirashi/gw-gitcoin-instruction)</li><li>[NERVOS - BROADEN THE SPECTRUM](https://gitcoin.co/hackathon/nervos/onboard)</li></ul> |
