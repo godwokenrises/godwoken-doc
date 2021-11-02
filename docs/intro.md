@@ -18,18 +18,16 @@ Here is what you can do with Godwoken beta:
 | deploy contract | yes | trusted*  | 
 | deploy ERC20 proxy contract  | yes | no |
 | run full nodes  | yes | no |
-| run readonly nodes  | yes | no** |
-| launch challenges  | no | no |
+| run readonly nodes  | yes | yes** |
 
-*It is only accessible to the developers on the whitelist. As requested by Nervos, we will maintain a whitelist of developers during the mainnet beta phase.
- <br /> **But it is unable to query mem-pool status.
+*During the mainnet beta phase, the deploy contract feature is only open to developers allowed on the list. We need to upgrade the mainnet beta or coordinate with developers in case of emergency. Developers or teams are welcome to participate in the mainnet beta anyways.
+ <br /> **In the current version, a readonly node cannot query mem-pool status.
 
 Beta Godwoken is limited to the following design choices:
 1. An optimistic rollup-based design will be used
-2. A Proof-of-Authority mechanism controls layer 2 block issuance
+2. A single sequencer sort transactions and issue blocks
 
-Beware of Scams and Rugs: Nervos, like Ethereum, is permissionless. On both platforms, anybody can deploy any smart contract code they wish. Nervos users should only interact with the contracts which they can fully trust.
-
+Beware of Scams and Rugs: Nervos is a permissionless platform. Anybody may deploy an instant of Godwoken. Users and developers should only interact with the instant which they can trust.
 
 ## Overview
 
