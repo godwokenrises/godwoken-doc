@@ -9,7 +9,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 ## Some Words of Caution
 We would like to mention that the current version available is the Godwoken beta. We still maintain various levels of control over the mainnet. 
 
-**Why Godwoken Beta?**
+**Why Mainnet Beta?**
 We believe it is the responsible way to make Godwoken available while we keep up improving the system before the official release.
 Here is what you can do with Godwoken beta:
 
