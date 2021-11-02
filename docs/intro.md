@@ -6,31 +6,6 @@ sidebar_label: Godwoken Introduction
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-## Some Words of Caution
-We would like to mention that the current version available is the Godwoken beta. We still maintain various levels of control over the mainnet. 
-
-**Why Godwoken Beta?**
-We believe it is the responsible way to make Godwoken available while we keep up improving the system before the official release.
-Here is what you can do with Godwoken beta:
-
-| features | maintainer | developer |
-| :------ | :-------: | :-------: |
-| deploy contract | yes | trusted*  | 
-| deploy ERC20 proxy contract  | yes | no |
-| run full nodes  | yes | no |
-| run readonly nodes  | yes | no** |
-| launch challenges  | no | no |
-
-*It is only accessible to the developers on the whitelist. As requested by Nervos, we will maintain a whitelist of developers during the mainnet beta phase.
- <br /> **But it is unable to query mem-pool status.
-
-Beta Godwoken is limited to the following design choices:
-1. An optimistic rollup-based design will be used
-2. A Proof-of-Authority mechanism controls layer 2 block issuance
-
-Beware of Scams and Rugs: Nervos, like Ethereum, is permissionless. On both platforms, anybody can deploy any smart contract code they wish. Nervos users should only interact with the contracts which they can fully trust.
-
-
 ## Overview
 
 [Godwoken](https://github.com/nervosnetwork/godwoken) is a layer 2 rollup framework that provides an abstracted account model and abstracted layer 2 transactions upon Nervos CKB.
