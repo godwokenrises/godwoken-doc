@@ -840,7 +840,6 @@ For more information, see [Ethereum RPC (web3 RPC)](https://github.com/nervosnet
    ```
    Open the browser and navigate to http://localhost:3000/.
 
-   
 ## Project Examples
 
 - [Porting an Existing Ethereum DApp to Polyjuice](https://github.com/TTNguyenDev/Hackathon-Nervos/tree/main/task_12#document-porting-an-existing-ethereum-dapp-to-polyjuice)
@@ -877,7 +876,7 @@ A Polyjuice transaction is essentially a Godwoken transaction.
 
 When sending an Ethereum transaction, the transaction gets converted to a Godwoken [RawL2Transaction](https://github.com/nervosnetwork/godwoken/blob/9a3d92/crates/types/schemas/godwoken.mol#L56-L61) type, which is automatically processed by [Polyjuice-Provider](https://github.com/nervosnetwork/polyjuice-provider).
 
-### Behavioral differences of some opcodes
+### Behavioral Differences of Some Opcodes
 
 | EVM Opcode | Solidity Usage     | Behavior in Polyjuice         | Behavior in EVM                                         |
 | ---------- | ------------------ | ----------------------------- | ------------------------------------------------------- |
@@ -894,7 +893,7 @@ When sending an Ethereum transaction, the transaction gets converted to a Godwok
   - Add `transfer_to_any_sudt` for transfer value by sudt_id (Must collaborate with SudtErc20Proxy.sol contract)
   - Add `eth_to_godwoken_addr` for convert ETH address to polyjuice contract address (godwoken short address)
 
-### `recover_account` Spec
+#### `recover_account` Spec
 
 ```
   Recover an EoA account script hash by signature
@@ -914,7 +913,7 @@ When sending an Ethereum transaction, the transaction gets converted to a Godwok
 
 See: [Example](https://github.com/nervosnetwork/godwoken-polyjuice/blob/docs-evm-compatibility/polyjuice-tests/src/test_cases/evm-contracts/RecoverAccount.sol)
 
-### `balance_of_any_sudt` Spec
+#### `balance_of_any_sudt` Spec
 
 ```
   Query the balance of `account_id` of `sudt_id` token.
@@ -931,7 +930,7 @@ See: [Example](https://github.com/nervosnetwork/godwoken-polyjuice/blob/docs-evm
 
 See: [Example](https://github.com/nervosnetwork/godwoken-polyjuice/blob/docs-evm-compatibility/solidity/erc20/SudtERC20Proxy.sol)
 
-### `transfer_to_any_sudt` Spec
+#### `transfer_to_any_sudt` Spec
 
 ```
   Transfer `sudt_id` token from `from_id` to `to_id` with `amount` balance.
@@ -951,7 +950,7 @@ See: [Example](https://github.com/nervosnetwork/godwoken-polyjuice/blob/docs-evm
 
 See: [Example](https://github.com/nervosnetwork/godwoken-polyjuice/blob/docs-evm-compatibility/solidity/erc20/SudtERC20Proxy.sol)
 
-### `eth_to_godwoken_addr` Spec
+#### `eth_to_godwoken_addr` Spec
 
 ```
  Calculate godwoken short address of an contract account by it's corresponding ETH address
@@ -966,7 +965,7 @@ See: [Example](https://github.com/nervosnetwork/godwoken-polyjuice/blob/docs-evm
 
 See: [Example](https://github.com/nervosnetwork/godwoken-polyjuice/blob/docs-evm-compatibility/polyjuice-tests/src/test_cases/evm-contracts/EthToGodwokenAddr.sol)
 
-### Others
+#### Others
 
 - transaction context
   - chain_id is [creator_account_id](https://github.com/nervosnetwork/godwoken/blob/5735d8f/docs/life_of_a_polyjuice_transaction.md#root-account--deployment)
@@ -976,7 +975,6 @@ See: [Example](https://github.com/nervosnetwork/godwoken-polyjuice/blob/docs-evm
 - pre-compiled contract
   - `bn256_pairing` is not supported yet，due to too high cycle cost (WIP)
   - [addition pre-compiled contracts](https://github.com/nervosnetwork/godwoken-polyjuice/blob/docs-evm-compatibility/docs/Addition-Features.md)
-  
 
 ## Decentralization Roadmap
 
