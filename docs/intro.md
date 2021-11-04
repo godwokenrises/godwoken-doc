@@ -60,17 +60,17 @@ Beware of Scams and Rugs: Nervos is a permissionless platform. Anybody can deplo
 
 ## Comparison With EVM
 
-Polyjuice targets 100% EVM compatibility, the plan is to back every smart contract that the latest Ethereum hard fork version supports. But there are certain things that are incompatible with EVM in the current version.
+Godwoken targets 100% EVM compatibility, the plan is to back every smart contract that the latest Ethereum hard fork version supports. But there are certain things that are incompatible with EVM in the current version.
 
 ### pETH
 
-Polyjuice introduced a new concept called pETH.
+Godwoken introduced a new concept called pETH.
 
-In Ethereum, the gas for each smart contract is derived by calculation, then calculating the transaction fee by multiplying the gas with a specified gas price. In Polyjuice, however, pETH comes in as the unit for calculating transaction fees. In other words, the price of gas in Ethereum is ETH/gas ( denominated in wei, i. e. 1e-18 ether), while that of Polyjuice is measured in pETH/gas.  When executing a transaction, Polyjuice deducts the transaction fee by using tokens with the layer 2 sUDT type denoted by pETH. 
+In Ethereum, the gas for each smart contract is derived by calculation, then calculating the transaction fee by multiplying the gas with a specified gas price. In Godwoken, however, pETH comes in as the unit for calculating transaction fees. In other words, the price of gas in Ethereum is ETH/gas ( denominated in wei, i. e. 1e-18 ether), while that of Godwoken is measured in pETH/gas.  When executing a transaction, Godwoken deducts the transaction fee by using tokens with the layer 2 sUDT type denoted by pETH. 
 
 ### Account Abstraction
 
-Polyjuice only provides [contract accounts](https://ethereum.org/en/glossary/#contract-account), and the user accounts of Godwoken serve as [EoAs](https://ethereum.org/en/glossary/#eoa).
+Godwoken only provides [contract accounts](https://ethereum.org/en/glossary/#contract-account), and the user accounts of Godwoken serve as [EoAs](https://ethereum.org/en/glossary/#eoa).
 
 #### Different Address Types
 
