@@ -16,20 +16,15 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 Figure 1. Architecture of Godwoken
 
-### Godwoken Networks
+### Godwoken Public Networks
 
-Godwoken Testnet and Mainnet are provided for deploying Ethereum DApps to CKB.
+Testnet and Mainnet are provided for deploying Ethereum DApps to CKB.
 
-- [Godwoken Testnet](https://github.com/nervosnetwork/godwoken-testnet)
-
+- [Testnet](https://github.com/nervosnetwork/godwoken-testnet/tree/master/testnet)
   - RPC URL: https://godwoken-testnet-web3-rpc.ckbapp.dev/
-
   - Chain ID: 71393
-
-- Godwoken Mainnet
-
+- [Mainnet](https://github.com/nervosnetwork/godwoken-testnet/tree/master/mainnet)
   - RPC URL: https://mainnet.godwoken.io/rpc
-
   - Chain ID: 71394
 
   - Websocket RPC URL: https://mainnet.godwoken.io/ws

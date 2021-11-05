@@ -21,34 +21,24 @@ module.exports = {
       logo: {
         alt: 'Nervos',
         src: 'img/favicon.png',
+		href: 'https://www.nervos.org/',
       },
       items: [
 
         {
-          href: 'https://github.com/xying21/godwoken',
+          href: 'https://github.com/nervosnetwork/godwoken',
           label: 'GitHub',
           position: 'right',
         },
 		{
           label: 'Discord',
-          href: 'https://discord.gg/ScAcjJmG8g',
+          href: 'https://discord.gg/Rk62Qmnpfg',
 		  position: 'right',
         },
       ],
     },
     footer: {
       style: 'dark',
-/*       links: [
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Discord',
-              href: 'https://discord.gg/ScAcjJmG8g',
-            },
-          ],
-        },
-      ], */
       copyright: `Copyright © ${new Date().getFullYear()} Nervos Foundation. All Rights Reserved.`,
     },
   },
@@ -58,18 +48,7 @@ module.exports = {
       {
         docs: {
 		routeBasePath: '/',
-		//homePageId: 'docs/godwoken',
-          //sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-/*           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/', */
         },
-       /* blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
-        },*/
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
