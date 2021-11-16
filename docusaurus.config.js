@@ -25,13 +25,13 @@ module.exports = {
       items: [
 
         {
-          href: 'https://github.com/xying21/godwoken',
+          href: 'https://github.com/nervosnetwork/godwoken',
           label: 'GitHub',
           position: 'right',
         },
 		{
           label: 'Discord',
-          href: 'https://discord.gg/ScAcjJmG8g',
+          href: 'https://discord.gg/Rk62Qmnpfg',
 		  position: 'right',
         },
       ],
