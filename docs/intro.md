@@ -872,7 +872,7 @@ Godwoken only provides [contract accounts](https://ethereum.org/en/glossary/#con
 
 When passing some parameters of [address-type](https://docs.soliditylang.org/en/v0.8.9/types.html#address) to call smart-contract, the `address` conversion has to be done beforehand, and vice versa to return the `address` value. Polyjuice-Provider is designed to handle these conversion tasks. It conducts `address` type conversions based on the ABI of the contract.
 
-> Unfortunately, for now, we cannot display assets directly on the metamask or other Ethereum wallets. For now, we use a single web app to display users' assets. In future updates, we will solve this wallet display issue.
+> Unfortunately, we are not yet able to display assets directly on metamask or other Ethereum wallets. We currently use a single web app to display users' assets. This wallet display issue will be resolved in future updates.
 
 ### Transaction Structure
 
