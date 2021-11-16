@@ -23,6 +23,8 @@ Testnet and Mainnet are provided for deploying Ethereum DApps to CKB.
 - [Testnet](https://github.com/nervosnetwork/godwoken-testnet/tree/master/testnet)
   - RPC URL: https://godwoken-testnet-web3-rpc.ckbapp.dev/
   - Chain ID: 71393
+  - Websocket RPC URL: ws://godwoken-testnet-web3-rpc.ckbapp.dev/ws
+  - Explorer: https://aggron.layerview.io
 - [Mainnet](https://github.com/nervosnetwork/godwoken-testnet/tree/master/mainnet)
   - RPC URL: https://mainnet.godwoken.io/rpc
   - Chain ID: 71394
@@ -330,16 +332,16 @@ The following tools need to be installed before entering the deployment process:
   $ sudo apt install build-essential
   ```
 
-* [Capsule v0.4.6](https://github.com/nervosnetwork/capsule/releases/tag/v0.4.6)
+* [Capsule v0.7.0](https://github.com/nervosnetwork/capsule/releases/tag/v0.7.0)
 
-* Rustc nightly v1.54.0
+* Rustc v1.54.0
 
 * [Moleculec v0.7.2](https://github.com/nervosnetwork/molecule)
 
   To install Moleculec:
 
   ```bash
-  $ cargo install moleculec
+  $ cargo install moleculec --locked --version 0.7.2
   ```
 
 * Docker
