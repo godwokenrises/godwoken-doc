@@ -16,20 +16,15 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 Figure 1. Architecture of Godwoken
 
-### Godwoken Networks
+### Godwoken Public Networks
 
-Godwoken Testnet and Mainnet are provided for deploying Ethereum DApps to CKB.
+Testnet and Mainnet are provided for deploying Ethereum DApps to CKB.
 
-- [Godwoken Testnet](https://github.com/nervosnetwork/godwoken-testnet)
-
+- [Testnet](https://github.com/nervosnetwork/godwoken-testnet/tree/master/testnet)
   - RPC URL: https://godwoken-testnet-web3-rpc.ckbapp.dev/
-
   - Chain ID: 71393
-
-- Godwoken Mainnet
-
+- [Mainnet](https://github.com/nervosnetwork/godwoken-testnet/tree/master/mainnet)
   - RPC URL: https://mainnet.godwoken.io/rpc
-
   - Chain ID: 71394
 
   - Websocket RPC URL: https://mainnet.godwoken.io/ws
@@ -876,6 +871,8 @@ Godwoken only provides [contract accounts](https://ethereum.org/en/glossary/#con
 * Creating a contract account returns `short_godwoken_account_script_hash`
 
 When passing some parameters of [address-type](https://docs.soliditylang.org/en/v0.8.9/types.html#address) to call smart-contract, the `address` conversion has to be done beforehand, and vice versa to return the `address` value. Polyjuice-Provider is designed to handle these conversion tasks. It conducts `address` type conversions based on the ABI of the contract.
+
+> Unfortunately, we are not yet able to display assets directly on metamask or other Ethereum wallets. We currently use a single web app to display users' assets. This wallet display issue will be resolved in future updates.
 
 ### Transaction Structure
 
