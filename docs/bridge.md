@@ -36,11 +36,11 @@ OPTIONS:
 
 	 -o, --config-path <config-path>	The config.homl file path
 	 -e, --eth-address <eth-address>	Target eth address, calculated by private key in default
-	 -f, --fee <fee>		Transaction fee, default to 0.0001 CKB [default: 0.0001]
-	 -g, --godwoken-rpc-url <godwoken-rpc-url>		Godwoken jsonrpc rpc sever URL [default: http://127.0.0.1:8119]
+	 -f, --fee <fee>					Transaction fee, default to 0.0001 CKB [default: 0.0001]
+	 -g, --godwoken-rpc-url <godwoken-rpc-url>Godwoken jsonrpc rpc sever URL [default: http://127.0.0.1:8119]
 
-	 -k, --privkey-path <privkey-path>		The private key file path
-	 --scripts-deployment-path <scripts-deployment-path>		The scripts deployment results json file path
+	 -k, --privkey-path <privkey-path>	The private key file path
+	 	 --scripts-deployment-path <scripts-deployment-path>	The scripts deployment results json file path
 
 ```
 </details>
