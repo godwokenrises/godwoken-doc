@@ -48,6 +48,8 @@ OPTIONS:
 </details>
 
 ### <code>gw-tool deposit</code> Subcommands
+
+|command|description|
 |---|---|
 |capacity          |The amount of ckb to deposit, the unit is ckb|
 |ckb-rpc           |ckb node URL, defaults to http://127.0.0.1:8114/|
@@ -100,6 +102,8 @@ OPTIONS:
 </details>
 
 ### <code>gw-tool withdrawal</code> Subcommands
+
+|command|description|
 |---|---|
 |amount          |The amount of sUDT|
 |capacity          |The amount of ckb to withdraw, the unit is ckb|
