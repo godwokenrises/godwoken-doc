@@ -27,12 +27,12 @@ USAGE:
 	 gw-tools deposit-ckb [OPTIONS] --capacity <capaciry> --config-path <config-path>  --privkey-path <privkey-path>  --scripts-deployment-path <scripts-deployment-path>
 
 FLAGS:
-	 -h, --help		Prints help informaiton
-	 -V, --version	Prints version information
+	 -h, --help						Prints help informaiton
+	 -V, --version					Prints version information
 
 OPTIONS:
 	 -c, --capacity <capacity>		CKB capacity to deposit
-	 	 --ckb-rpc <ckb-rpc-url>	CKB jsonrpc rpc sever URL [default: http://127.0.0.1:8114]
+	     --ckb-rpc <ckb-rpc-url>	CKB jsonrpc rpc sever URL [default: http://127.0.0.1:8114]
 
 	 -o, --config-path <config-path>	The config.homl file path
 	 -e, --eth-address <eth-address>	Target eth address, calculated by private key in default
@@ -40,8 +40,8 @@ OPTIONS:
 	 -g, --godwoken-rpc-url <godwoken-rpc-url>Godwoken jsonrpc rpc sever URL [default: http://127.0.0.1:8119]
 
 	 -k, --privkey-path <privkey-path>	The private key file path
-	 	--scripts-deployment-path <scripts-deployment-path>	
-	 									The scripts deployment results json file path
+	     --scripts-deployment-path <scripts-deployment-path>	
+	 							The scripts deployment results json file path
 
 ```
 </details>
