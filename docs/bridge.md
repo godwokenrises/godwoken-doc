@@ -8,6 +8,8 @@ For deposit and withdrawal operations on Godwoken, two options are available:
 1. Using an UI deposit/withdraw provided by [yokaiswap](https://testnet.yokaiswap.com/bridge/deposit) to perform the relevant actions.
 2. Using `gw-tools` deposit/withdraw to perform the relevant actions.
 
+---
+
 ### Using GW-tools to Deposit
 
 Use `--help` to view the available commands.
@@ -60,6 +62,7 @@ OPTIONS:
 |privkey-path          |A file written with the private key (hex string) which is used to pay the deposit fee|
 |scripts-deployment-path          |json file path of the [script's deployment results](https://github.com/nervosnetwork/godwoken-public/blob/master/testnet/config/scripts-deploy-result.json)|
 
+---
 
 ### Using GW-tools to Withdraw
 
