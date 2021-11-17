@@ -105,11 +105,11 @@ OPTIONS:
 
 |command|description|
 |---|---|
-|amount          |The amount of sUDT|
-|capacity          |The amount of ckb to withdraw, the unit is ckb|
-|config-path          |The config.toml file required for godwoken to run|
+|amount             |The amount of sUDT|
+|capacity             |The amount of ckb to withdraw, the unit is ckb|
+|config-path             |The config.toml file required for godwoken to run|
 |godwoken-rpc-url             |The RPC address of Godwoken, by default http://127.0.0.1:8119/|
 |owner-ckb-address             |ckb address of the recipient|
-|privkey-path          |A file written with the private key (hex string) which is used to pay the deposit fee|
+|privkey-path             |A file written with the private key (hex string) which is used to pay the deposit fee|
 |scripts-deployment-path             |json file path of the [script's deployment results](https://github.com/nervosnetwork/godwoken-public/blob/master/testnet/config/scripts-deploy-result.json)|
 |sudt-script-hash             |The script hash of sudt on Layer 1, defaults to 0x0000000000000000000000000000000000000000000000000000, indicating only ckb is redeemed (amount left unfilled or filled with 0)|
