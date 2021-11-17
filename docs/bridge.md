@@ -8,9 +8,9 @@ For deposit and withdrawal operations on Godwoken, two options are available:
 1. Using an UI deposit/withdraw provided by [yokaiswap](https://testnet.yokaiswap.com/bridge/deposit) to perform the relevant actions.
 2. Using `gw-tools` deposit/withdraw to perform the relevant actions.
 
-### Using GW-tools to Deposit
+	### Using GW-tools to Deposit
 
-Use `--help` to view the available commands.
+		Use `--help` to view the available commands.
 
 ```shell
 cargo run --bin gw-tools -- deposit-ckb --help
@@ -61,9 +61,9 @@ OPTIONS:
 |scripts-deployment-path          |json file path of the [script's deployment results](https://github.com/nervosnetwork/godwoken-public/blob/master/testnet/config/scripts-deploy-result.json)|
 
 
-### Using GW-tools to Withdraw
+	### Using GW-tools to Withdraw
 
-Use `--help` to view the available commands.
+		Use `--help` to view the available commands.
 
 ```shell
 cargo run --bin gw-tools -- withdraw --help
