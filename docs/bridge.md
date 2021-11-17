@@ -101,7 +101,7 @@ OPTIONS:
 ```
 </details>
 
-### <code>gw-tool withdrawal</code> Subcommands
+### <code>gw-tool withdraw</code> Subcommands
 
 |command|description|
 |---|---|
