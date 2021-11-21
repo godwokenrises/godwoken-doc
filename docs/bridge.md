@@ -49,6 +49,8 @@ OPTIONS:
 ```
 </details>
 
+For more information on the CKB RPC, refer to [CKB Wiki](https://github.com/nervosnetwork/ckb/wiki/Chains)
+
 ### <code>gw-tool deposit</code> Subcommands
 
 |command|description|
@@ -103,6 +105,8 @@ OPTIONS:
 
 ```
 </details>
+
+For more information on Godwoken RPC, refer to [Godwoken Public Network](https://github.com/nervosnetwork/godwoken-public)
 
 ### <code>gw-tool withdraw</code> Subcommands
 
