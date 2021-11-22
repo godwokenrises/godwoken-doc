@@ -2,13 +2,13 @@
 module.exports = {
   title: 'Godwoken Documentation',
   tagline: 'Godwoken Documentation',
-  url: 'https://github.com/xying21/godwoken',
+  url: 'https://github.com/nervosnetwork/godwoken-doc',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
-  organizationName: 'xying21', // Usually your GitHub org/user name.
-  projectName: 'godwoken', // Usually your repo name.
+  organizationName: 'nervosnetwork', // Usually your GitHub org/user name.
+  projectName: 'godwoken-doc', // Usually your repo name.
   themeConfig: {
     colorMode: {
       defaultMode: 'light',
@@ -47,7 +47,9 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-		routeBasePath: '/',
+			path: 'docs',
+			sidebarPath: require.resolve('./sidebars.js'),
+			routeBasePath: '/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

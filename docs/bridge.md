@@ -1,12 +1,13 @@
 ---
-id: deposit & withdrawal
-content:  description of deposit / withdrawal
+id: deposit_withdrawal
+title:  How to Deposit & Withdraw CKB on Godwoken
 ---
-## How to Deposit & Wirhdraw CKB on Godwoken
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 For deposit and withdrawal operations on Godwoken, two options are available:
-1. Using an UI deposit/withdraw provided by [yokaiswap](https://testnet.yokaiswap.com/bridge/deposit) to perform the relevant actions.
-2. Using `gw-tools` deposit/withdraw to perform the relevant actions.
+
+1. Using an UI deposit or withdraw provided by [yokaiswap](https://testnet.yokaiswap.com/bridge/deposit) to perform the relevant actions.
+2. Using `gw-tools` deposit or withdraw to perform the relevant actions.
 
 ---
 
@@ -106,7 +107,7 @@ OPTIONS:
 ```
 </details>
 
-For more information on Godwoken RPC, refer to [Godwoken Public Network](https://github.com/nervosnetwork/godwoken-public)
+For more information on Godwoken RPC, refer to [Godwoken Public Network](/#godwoken-public-networks).
 
 ### <code>gw-tool withdraw</code> Subcommands
 
