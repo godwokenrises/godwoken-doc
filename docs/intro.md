@@ -321,6 +321,8 @@ This deployment method is useful in situations such as deploying a Godwoken netw
 
 The following tools need to be installed before entering the deployment process:
 
+* Node.js (>=12.0.0)
+
 * Yarn (version 1.22.5 or above)
 
 * GCC and make
@@ -334,7 +336,28 @@ The following tools need to be installed before entering the deployment process:
 
 * [Capsule v0.7.0](https://github.com/nervosnetwork/capsule/releases/tag/v0.7.0)
 
+* Docker
+
+  **Docker** must be installed for building and deploying Godwoken. For more information about Docker installation, see [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/).
+
+  To manage Docker as a non-root user, see the Docker documentation of [Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/).
+
+
+- ckb-cli: The ckb-cli tool is used for deploying smart contracts. It can be installed from a [CKB pre-built installer package](https://github.com/nervosnetwork/ckb/releases). The verified ckb-cli version in this documentation is [v0.42.0](https://github.com/nervosnetwork/ckb/releases/tag/v0.42.0).
+
 * Rustc v1.54.0
+
+*  llvm and clang
+
+  ```
+  sudo apt-get install libclang-dev
+  ```
+
+* OpenSSL library
+
+  ```
+  sudo apt-get install pkg-config libssl-dev
+  ```
 
 * [Moleculec v0.7.2](https://github.com/nervosnetwork/molecule)
 
@@ -344,19 +367,9 @@ The following tools need to be installed before entering the deployment process:
   $ cargo install moleculec --locked --version 0.7.2
   ```
 
-* Docker
-
-  **Docker** must be installed for building and deploying Godwoken. For more information about Docker installation, see [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/).
-
-  To manage Docker as a non-root user, see the Docker documentation of [Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/).
-
-  For more information about the tags of the pre-built docker image, see [nervos/godwoken-prebuilds](https://hub.docker.com/r/nervos/godwoken-prebuilds/tags?page=1&ordering=last_updated.) 
-
 * [Tippy](https://github.com/nervosnetwork/tippy/releases)
 
   Tippy is a tool to help set up and manage CKB nodes. For more information, see [Install a CKB Node by Using Tippy](https://cryptape.github.io/lumos-doc/docs/reference/ckbnode#install-a-ckb-node-by-using-tippy). The verified Tippy version in this documentation is [v0.3.2](https://github.com/nervosnetwork/tippy/releases/tag/v0.3.2).
-
-* ckb-cli: The ckb-cli tool is used for deploying smart contracts. It can be installed from a [CKB pre-built installer package](https://github.com/nervosnetwork/ckb/releases). The verified ckb-cli version in this documentation is [v0.42.0](https://github.com/nervosnetwork/ckb/releases/tag/v0.42.0).
 
 :::note
 
@@ -396,7 +409,9 @@ The current user must have permissions to run ckb-cli, Capsule, Moleculec and do
       $ ./Tippy
       ```
 
-   2. Start the CKB node and the CKB miner on the Tippy dashboard.
+   2. Launch a CKB devnet if you haven't set up any chain yet and specify the miner with the account prepared for the deployment.
+
+   3. Start the chain and the CKB miner on the Tippy dashboard.
 
 3. Clone the Godwoken source.
 
@@ -406,78 +421,145 @@ The current user must have permissions to run ckb-cli, Capsule, Moleculec and do
    $ git clone --recursive https://github.com/nervosnetwork/godwoken
    ```
 
-4. Prepare a `pk` file and a `scripts-build.json` file under the `/godwoken/deploy` folder.
+4. Deploy an SUDT script to the chain.
 
-   The `/godwoken/deploy/pk` file stores the private key that is used to deploy Godwoken.
+   For mor information, see [Nervos CKB Docs: Write an SUDT script by Capsule](https://docs.nervos.org/docs/labs/sudtbycapsule#introduction).
 
-   Example:
+   Deploy plan  output example:
 
-   ```title="/godwoken/deploy/pk"
-   0xca02cc4b8e0e447e243204dd2e16a1692026bfdd4add502b203975999d3a6909
-   ```
-
-   The `/godwoken/deploy/scripts-build.json` file specifies the pre-built docker image of Godwoken and the repositories of the other components like godwoken_scripts, godwoken_polyjuice and clerkb.
-
-   ```json title="/godwoken/deploy/scripts-build.json"
-   {
-       "prebuild_image": "nervos/godwoken-prebuilds:<tag>",
-       "repos": {
-           "godwoken_scripts": "https://github.com/nervosnetwork/godwoken-scripts#master",
-           "godwoken_polyjuice": "https://github.com/nervosnetwork/godwoken-polyjuice#main",
-           "clerkb": "https://github.com/nervosnetwork/clerkb#v0.4.0"
-       }
-   }
-   ```
+   ```shell
+   $ capsule deploy --address ckt1qyqpadsep7yruydz5eaulty4xwc2sn6smhas2cpv76 --fee 0.0002
+   Deployment plan:
+   ---
+   migrated_capacity: 0.0 (CKB)
+   new_occupied_capacity: 17390.0 (CKB)
+   txs_fee_capacity: 0.0002 (CKB)
+   total_occupied_capacity: 17390.0 (CKB)
+   recipe:
+     cells:
+       - name: my-sudt
+         index: 0
+         tx_hash: "0x07de15f8afbd4b55e5d11248f4cd9f5195c8d96f171af04e7f727042bb0643c6"
+         occupied_capacity: 17390.0 (CKB)
+         data_hash: "0xfe2a574febac93ef4da8e716403be072e4703da736676107d68a5e31b682943f"
+         type_id: "0x5318897f71a58ca55b6325736b8170d92c49096719db7646427709a890a9eea0"
+     dep_groups: []
    
-   For more information about the tags of the pre-built docker image, see https://hub.docker.com/r/nervos/godwoken-prebuilds/tags?page=1&ordering=last_updated.
-   
-   Example:
-   
-   ```json title="/godwoken/deploy/scripts-build.json"
-   {
-       "prebuild_image": "nervos/godwoken-prebuilds:v0.6.1",
-       "repos": {
-           "godwoken_scripts": "https://github.com/nervosnetwork/godwoken-scripts#master",
-           "godwoken_polyjuice": "https://github.com/nervosnetwork/godwoken-polyjuice#main",
-           "clerkb": "https://github.com/nervosnetwork/clerkb#v0.4.0"
-       }
-   } 
+   Confirm deployment? (Yes/No)
+   y
+   Password: 
+   (1/1) Sending tx 07de15f8afbd4b55e5d11248f4cd9f5195c8d96f171af04e7f727042bb0643c6
+   Deployment complete
    ```
-   
-5. Set up Godwoken nodes.
-
-   The setup command for setting up Godwoken nodes is as follows:
-
-   ```bash
-   $ RUST_LOG=info cargo +nightly run --bin gw-tools -- setup --cells-lock-address <CKB-address> -s deploy/scripts-build.json -k deploy/pk -o deploy/
-   ```
-
-   To set up Godwoken nodes with the CKB address of the deployment cells owner: 
-
-   ```bash
-   $ cd godwoken
-   $ RUST_LOG=info cargo +nightly run --bin gw-tools -- setup --cells-lock-address ckt1qyqpadsep7yruydz5eaulty4xwc2sn6smhas2cpv76 -s deploy/scripts-build.json -k deploy/pk -o deploy/
-   ```
-
-   This setup command compiles Godwoken scripts, deploys the scripts and layer 2 genesis blocks, and generates configuration files. 
-
-   After the setup command is completed, a `config.toml` file is generated under `/godwoken/deploy/node1` and `/godwoken/deploy/node2`, and a `scripts-deploy-result.json` file is generated under `/godwoken/deploy`.
 
    :::note
 
-   If an error about failing to obtain the <a href="https://raw.githubusercontent.com/nervosnetwork/godwoken/2221efdfcf06351fa1884ea0f2df1604790c3378/crates/types/schemas/godwoken.mol"> godwoken.mol</a> and <a href="https://raw.githubusercontent.com/nervosnetwork/godwoken/2221efdfcf06351fa1884ea0f2df1604790c3378/crates/types/schemas/blockchain.mol">blockchain.mol</a> file is encountered during the setup process, try the following workaround to fix the error:
-
-   <ul><li><p>Comment the lines for downloading <code>blockchain.mol</code> and <code>godwoken.mol</code> in the <code>/godwoken/tmp/scripts-build-dir/godwoken-polyjuice/Makefile</code> file.</p></li><li><p>Download the two files manually and copy the files into the <code>/godwoken/tmp/scripts-build-dir/godwoken-polyjuice/build</code> folder.</p></li><li><p>Execute the setup command again until it succeeds.</p></li></ul>
+   The `tx_hash` and `data_hash` will be used in the next step to configure the `setup-config.json` file.
 
    :::
 
-6. Configure the receiver lock.
+5. Prepare the following files under the `/godwoken/deploy` folder.
 
-   1. Generate the config.json file for the CKB chain.
+   - `pk`: The file stores the private key that is used to deploy Godwoken.
 
-      Download the config generator tool, [lumos-config-generator-linux-amd64](https://github.com/classicalliu/lumos-config-generator/releases/download/v0.1.1/lumos-config-generator-linux-amd64) for Linux platforms.
+      Example:
 
-      Run the **lumos-config-generator-linux-amd64** file to generate the config.json file in the project root directory.
+      ```title="/godwoken/deploy/pk"
+      0xca02cc4b8e0e447e243204dd2e16a1692026bfdd4add502b203975999d3a6909
+      ```
+
+   - `scripts-build.json`: The file specifies the pre-built docker image of Godwoken and the repositories of the other components like godwoken_scripts, godwoken_polyjuice and clerkb.
+
+      Example:
+
+         ```json title="/godwoken/deploy/scripts-build.json"
+         {
+             "prebuild_image": "nervos/godwoken-prebuilds:v0.6.9-rc1",
+             "repos": {
+                 "godwoken_scripts": "https://github.com/nervosnetwork/godwoken-scripts#master",
+                 "godwoken_polyjuice": "https://github.com/nervosnetwork/godwoken-polyjuice#main",
+                 "clerkb": "https://github.com/nervosnetwork/clerkb#v0.4.0"
+             }
+         } 
+         ```
+
+      For more information about the tags of the `prebuild_image`, see [nervos/godwoken-prebuilds](https://hub.docker.com/r/nervos/godwoken-prebuilds/tags?page=1&ordering=last_updated).
+
+   - `setup-config.json`: The file provides configurations for the Rollup.
+
+      - `l1_sudt_script_type_hash`: The `data_hash` of the deployed SUDT script.
+      - `tx_hash` (under `l1_sudt_cell_dep`): The `tx_hash` of the deployed SUDT script.
+      - `cells_lock`: `cells_lock` is used to unlock/upgrade Rollup scripts. 
+      - `reward_lock`: `reward_lock` is used to receive challenge rewards. 
+      - `burn_lock`: `burn_lock` is used to receive burned assets that can be unlocked.
+
+      :::note
+
+      The file must be configured with correct SUDT script to deposit SUDT successfully.
+
+      :::
+
+      Example:
+
+      ```json title="/godwoken/deploy/setup-config.json"
+      {
+        "l1_sudt_script_type_hash": "0xfe2a574febac93ef4da8e716403be072e4703da736676107d68a5e31b682943f",
+        "l1_sudt_cell_dep": {
+          "dep_type": "code",
+          "out_point": {
+            "tx_hash": "0x07de15f8afbd4b55e5d11248f4cd9f5195c8d96f171af04e7f727042bb0643c6",
+            "index": "0x0"
+          }
+        },
+        "node_initial_ckb": 1200000,
+        "cells_lock": {
+          "code_hash": "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
+          "hash_type": "type",
+          "args": "0x1eb6190f883e11a2a67bcfac9533b0a84f50ddfb"
+        },
+        "reward_lock": {
+          "code_hash": "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
+          "hash_type": "type",
+          "args": "0x1eb6190f883e11a2a67bcfac9533b0a84f50ddfb"
+        },
+        "burn_lock": {
+          "code_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "hash_type": "data",
+          "args": "0x"
+        }
+      }
+      ```
+
+
+6. Set up Godwoken nodes.
+
+   To set up Godwoken nodes:
+
+   ```shell
+   $ cd godwoken
+   $ RUST_LOG=info cargo +nightly run --bin gw-tools setup -n 2 -k deploy/pk --network devnet --scripts-build-config deploy/build-scripts.json -c deploy/setup-config.json
+   ```
+   
+   This setup command compiles Godwoken scripts, deploys the scripts and layer 2 genesis blocks, and generates configuration files for the Godwoken nodes.  
+   
+   The deployment requires approximately 10 minutes to complete depending on network connection.
+   
+   Output Example:
+   
+   ```
+   ...
+   2021-11-19T06:22:47Z INFO  gw_tools::deploy_genesis] tx_hash: 0x4ec4532a4b8c7d799ef30d36df413f1e4aa05402336a3df53b4f9afa5baf52cd
+   [2021-11-19T06:22:47Z INFO  gw_tools::utils::transaction] waiting tx 4ec4532a4b8c7d799ef30d36df413f1e4aa05402336a3df53b4f9afa5baf52cd
+   [2021-11-19T06:22:52Z INFO  gw_tools::utils::transaction] tx proposed
+   [2021-11-19T06:22:57Z INFO  gw_tools::utils::transaction] tx commited
+   [2021-11-19T06:22:57Z INFO  gw_tools::setup] Finish
+   ```
+   
+7. Configure the receiver lock.
+
+   After the setup command is completed, a `config.toml` file is generated under `/godwoken/output/node1` and `/godwoken/output/node2`, and a `scripts-deploy-result.json` file is generated under `/godwoken/output`.
+
+   1. Download the [config generator](https://github.com/classicalliu/lumos-config-generator/releases/download/v0.1.1/lumos-config-generator-linux-amd64) tool and generate the `config.json` file for the CKB chain.
 
       :::note
 
@@ -485,39 +567,41 @@ The current user must have permissions to run ckb-cli, Capsule, Moleculec and do
 
       :::
 
+      To generate the `config.json` file in the project root directory:
+   
       ```bash
       $ ./lumos-config-generator-linux-amd64 config.json http://127.0.0.1:8114
       ```
-
+      
    2. Assign a receiver lock in the node's `config.toml` file. 
 
-      The code_hash of the receiver lock is the CODE_HASH of the SECP256K1_BLAKE160 script from the config.json file.
+      The code_hash of the receiver lock is the CODE_HASH of the SECP256K1_BLAKE160 script from the `config.json` file.
 
       The args is the lock args of the deployment cells owner.
 
       Example:
-
+   
       ```toml title="config.toml"
       [block_producer.challenger_config.rewards_receiver_lock]
       code_hash = '0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8'
       hash_type = 'type'
       args = '0x1eb6190f883e11a2a67bcfac9533b0a84f50ddfb'
       ```
-
-7. Start the Godwoken nodes.
+   
+8. Start the Godwoken nodes.
 
    :::note
 
-   The default node mode is `readonly `. It can be modified in `config.toml` to either `fullnode` mode or `test` mode.
+   The default node mode is `fullnode`. It can be modified in `config.toml` to either `readonly` mode or `test` mode.
 
-   If the two `readonly` nodes need to be started within the same environment, manually modify the listening port number in the `config.toml` file for each node.
+   If the two nodes need to be started within the same environment, manually modify the listening port number in the `config.toml` file for each node.
 
    :::
 
    Run the following command to start node1:
 
    ```bash
-   $ RUST_LOG=info cargo +nightly run --bin godwoken run -c deploy/node1/config.toml
+   $ RUST_LOG=info cargo +nightly run --bin godwoken run -c output/node1/config.toml
    ```
 
    If an error about the use of unstable library feature is encountered during the process, try the following commands to fix the issue:
@@ -527,7 +611,7 @@ The current user must have permissions to run ckb-cli, Capsule, Moleculec and do
    $ cargo upgrade --workspace num-bigint
    ```
 
-8. Set up Polyjuice.
+9. Set up Polyjuice.
 
    Clone the source of godwoken-examples. For more information, see [godwoken-examples](https://github.com/nervosnetwork/godwoken-examples).
 
@@ -551,49 +635,49 @@ The current user must have permissions to run ckb-cli, Capsule, Moleculec and do
 
    For more information about generating the Lumos config file for DEV chain, see [Generate the config.json file for the DEV chain](https://cryptape.github.io/lumos-doc/docs/guides/config#step-1-generate-the-configjson-file-for-the-dev-chain).
 
-9. Start the web3 server.
+10. Start the web3 server.
 
-   1. Create a PostgreSQL instance.
+   11. Create a PostgreSQL instance.
 
-      ```bash
-      $ docker run --name postgres -e POSTGRES_USER=user -e POSTGRES_DB=godwoken -e POSTGRES_PASSWORD=mypassword -d -p 5432:5432 postgres
-      ```
+       ```bash
+       $ docker run --name postgres -e POSTGRES_USER=user -e POSTGRES_DB=godwoken -e POSTGRES_PASSWORD=mypassword -d -p 5432:5432 postgres
+       ```
 
-   2. Clone the source of [godwoken-web3](https://github.com/nervosnetwork/godwoken-web3).
+   12. Clone the source of [godwoken-web3](https://github.com/nervosnetwork/godwoken-web3).
 
-      ```bash
-      $ git clone https://github.com/nervosnetwork/godwoken-web3
-      ```
+       ```bash
+       $ git clone https://github.com/nervosnetwork/godwoken-web3
+       ```
 
-   3. Prepare the `.env` file under `/godwoken-web3/packages/api-server`.
+   13. Prepare the `.env` file under `/godwoken-web3/packages/api-server`.
 
-      ```bash
-      $ cd godwoken-web3
-      $ cat > ./packages/api-server/.env <<EOF
-      DATABASE_URL=postgres://user:password@postgres:5432/godwoken
-      GODWOKEN_JSON_RPC=http://godwoken:8119
-      ETH_ACCOUNT_LOCK_HASH=<Eth Account Lock Code Hash>
-      ROLLUP_TYPE_HASH=<Rollup Type Hash>
-      PORT=8024
-      CHAIN_ID=1024777
-      CREATOR_ACCOUNT_ID=3
-      DEFAULT_FROM_ADDRESS=0x1eb6190f883e11a2a67bcfac9533b0a84f50ddfb
-      POLYJUICE_VALIDATOR_TYPE_HASH=<Polyjuice Validator Code Hash>
-      L2_SUDT_VALIDATOR_SCRIPT_TYPE_HASH=<L2 Sudt Validator Code Hash>
-      TRON_ACCOUNT_LOCK_HASH=<Tron Account Lock Code Hash>
-      EOF
-      ```
+       ```bash
+       $ cd godwoken-web3
+       $ cat > ./packages/api-server/.env <<EOF
+       DATABASE_URL=postgres://user:password@postgres:5432/godwoken
+       GODWOKEN_JSON_RPC=http://godwoken:8119
+       ETH_ACCOUNT_LOCK_HASH=<Eth Account Lock Code Hash>
+       ROLLUP_TYPE_HASH=<Rollup Type Hash>
+       PORT=8024
+       CHAIN_ID=1024777
+       CREATOR_ACCOUNT_ID=3
+       DEFAULT_FROM_ADDRESS=0x1eb6190f883e11a2a67bcfac9533b0a84f50ddfb
+       POLYJUICE_VALIDATOR_TYPE_HASH=<Polyjuice Validator Code Hash>
+       L2_SUDT_VALIDATOR_SCRIPT_TYPE_HASH=<L2 Sudt Validator Code Hash>
+       TRON_ACCOUNT_LOCK_HASH=<Tron Account Lock Code Hash>
+       EOF
+       ```
 
-   4. Start the web3 server.
+   14. Start the web3 server.
 
-      To start the web3 server properly, make sure to clear the postgres database, and then run the migration SQL file to recreate the tables before running the server:
+       To start the web3 server properly, make sure to clear the postgres database, and then run the migration SQL file to recreate the tables before running the server:
 
-      ```bash
-      $ yarn
-      $ yarn run migrate:latest
-      $ yarn run build:godwoken
-      $ yarn run start
-      ```
+       ```bash
+       $ yarn
+       $ yarn run migrate:latest
+       $ yarn run build:godwoken
+       $ yarn run start
+       ```
 
 ## How to Use Godwoken
 
