@@ -1,6 +1,6 @@
 ---
 id: deposit_withdrawal
-title:  How to Deposit & Withdraw CKB on Godwoken
+title:  Deposit & Withdraw CKB on Godwoken
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
@@ -160,7 +160,7 @@ Options:
   -r, --rpc <rpc>			ckb rpc path (default: "http://127.0.0.1:8114")
   -d, --indexer-path <path>				indexer path (default: "./indexer-data-path/<ckb genesis hash>")
   -h, --help			display help for command
- ```
+```
  </details>
 
  ### <code>account-cli unlock</code> Subcommands
