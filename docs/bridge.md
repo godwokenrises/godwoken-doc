@@ -7,15 +7,15 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 For deposit and withdrawal operations on Godwoken, two options are available:
 
 1. Using a UI deposit or withdrawal provided by [yokaiswap](https://testnet.yokaiswap.com/bridge/deposit) to perform the relevant actions.
-2. Using `gw-tools` deposit or withdrawal to perform the relevant actions.
-
-And the unlocking operation so as to complete the withdrawal process.
+2. Using `gw-tools` deposit or withdrawal to perform the relevant actions, and the unlocking operation so as to complete the withdrawal process.
 
 ---
 
 ## Using GW-tools to Deposit
 
-Use `--help` to view the available commands.
+To `deposit` CKBs onto Layer 2, user need to execute the `gw-tools` deposit command in the command line. If the user applied the quick mode with godwoken-kicker, which already has a deposit function, the user can carry out the deposit operation directly on http://localhost:6100/ .
+
+Use `--help` to view the available commands, and replace the variables with the values matching one's own account and information. 
 
 ```shell
 cargo run --bin gw-tools -- deposit-ckb --help
@@ -71,6 +71,10 @@ For more information on the CKB RPC, refer to [CKB Wiki](https://github.com/nerv
 
 ## Using GW-tools to Withdraw
 
+There are **two steps** to withdraw assets from layer 2 to layer 1 on Godwoken, the first step is to make a withdrawal request. In comparison to deposits, withdrawals require more time. When a withdrawal is made to layer 1, the withdrawal depends on layer 2, but layer 2 has a lower level of security and for this reason, more confirmations will be required to ensure that security remains reliable.  From the time the withdrawal is made, it takes approximately 5 days until the amount of funds is actually released at layer 1.
+
+To `withdraw` funds from layer 2 to layer 1, execute the following `gw-tools` withdraw command, replace the variables with the values needed:
+
 Use `--help` to view the available commands.
 
 ```shell
@@ -109,7 +113,7 @@ OPTIONS:
 ```
 </details>
 
-For more information on Godwoken RPC, refer to [Godwoken Public Network](/#godwoken-public-networks).
+For more information on `Godwoken RPC`, refer to [Godwoken Public Network](/#godwoken-public-networks).
 
 ### <code>gw-tool withdraw</code> Subcommands
 
@@ -124,10 +128,13 @@ For more information on Godwoken RPC, refer to [Godwoken Public Network](/#godwo
 |scripts-deployment-path             |The JSON file path of the [script's deployment results](https://github.com/nervosnetwork/godwoken-public/blob/master/testnet/config/scripts-deploy-result.json)|
 |sudt-script-hash             |The script hash of sUDT on layer 1, defaults to 0x0000000000000000000000000000000000000000000000000000, indicating only CKB is redeemed (amount left unfilled or filled with 0).|
 
-## Unlocking the Funds to Complete Withdrawal Process
+## **Unlocking** the Funds to Complete Withdrawal Process
 
-Withdrawing funds from Godwoken is a two-step process. Step one initiates the withdrawal and step two releases the funds. A five-day dispute period will begin once the withdrawal process has commenced. To complete the withdrawal process, the `unlock` command must be executed. To unlock the withdrawal cells to normal ckb cells and to perform common Layer2 actions, the [`account-cli tool`](https://github.com/nervosnetwork/godwoken-examples/tree/develop/packages/tools) will be needed. 
+Withdrawing funds from Godwoken is a **two-step** process. Step one initiates the withdrawal and step two releases the funds. Godwoken uses an optimistic rollup architecture that permits only one honest node in the network. All this provides a very secure foundation for Layer 2, but comes at the cost of a **5-day** 'challenge period' when exiting from Layer 2. This is a period where the Layer 2 network operator gets time to examine and flag up any potential problems with malicious transactions and roll back if necessary. The five-day challenge period will begin once the withdrawal process has commenced. The five-day time interval is a bit long but necessary. 
 
+To `unlock` the withdrawal cells to normal ckb cells and to perform common Layer2 actions, the [`account-cli tool`](https://github.com/nervosnetwork/godwoken-examples/tree/develop/packages/tools) will be applied. 
+
+Execute the `account-cli tool` unlock command:
 
 Use `--help` to view the available commands.
 
@@ -161,6 +168,8 @@ Options:
 ```
  </details>
 
+Note: The private key you pass to `unlock` command needs to be the same as the one that corresponds with the Layer 1 address that was previously used with the `withdraw` and `deposit`.
+
  ### <code>account-cli unlock</code> Subcommands
 
 |command|description|
@@ -170,3 +179,9 @@ Options:
 |sudt-script-args		|Layer1 sudt script args, or sudt token|
 |rpc 			|The rpc address of CKB, with a default value|
 |indexer-path 		|The path of Lumos indexer, with a default value, no need to fill in generally|
+
+For more information on `Lumos`, please refer to https://github.com/nervosnetwork/lumos . 
+
+## Code Example
+
+For developers who need additional code details, refer to [gw-demos](https://github.com/classicalliu/gw-demos) for more detailed examples.
