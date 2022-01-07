@@ -2,13 +2,16 @@
 module.exports = {
   title: 'Godwoken Documentation',
   tagline: 'Godwoken Documentation',
-  url: 'https://github.com/nervosnetwork/godwoken-doc',
+  url: 'http://docs.godwoken.io/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
   organizationName: 'nervosnetwork', // Usually your GitHub org/user name.
   projectName: 'godwoken-doc', // Usually your repo name.
+  plugins: [
+    'docusaurus-plugin-matomo',
+  ],
   themeConfig: {
     colorMode: {
       defaultMode: 'light',
@@ -41,13 +44,19 @@ module.exports = {
       style: 'dark',
       copyright: `Copyright © ${new Date().getFullYear()} Nervos Foundation. All Rights Reserved.`,
     },
+    matomo: {
+      matomoUrl: 'https://cryptapeblog.matomo.cloud/',
+      siteId: '2',
+      phpLoader: 'matomo.php',
+      jsLoader: 'matomo.js',
+    },
   },
   presets: [
     [
       '@docusaurus/preset-classic',
       {
 		googleAnalytics: {
-          trackingID: 'G-L967PT7NQ0',
+          trackingID: 'G-JRZRHLS3ZB',
           anonymizeIP: true,
         },
         docs: {
