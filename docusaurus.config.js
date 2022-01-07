@@ -46,6 +46,10 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
+		googleAnalytics: {
+          trackingID: 'G-L967PT7NQ0',
+          anonymizeIP: true,
+        },
         docs: {
 			path: 'docs',
 			sidebarPath: require.resolve('./sidebars.js'),
