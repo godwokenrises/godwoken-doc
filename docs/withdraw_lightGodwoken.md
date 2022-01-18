@@ -327,7 +327,7 @@ The following prerequisites apply for withdrawing assets from Godwoken with Ligh
    </details>
 
 4. Open the [withdraw-demo](http://localhost:4001/light-godwoken) in the browser. 
-  ![image](./image/withdraw-demo-1.png)
+  ![image](https://github.com/nervosnetwork/godwoken-doc/blob/main/image/withdraw-demo-1.png)
 5. 
 6. 
 
