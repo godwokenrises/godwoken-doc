@@ -3,7 +3,7 @@ id: withdraw_lightGodwoken
 title: Withdrawal Demo
 ---
 
-This guide shows how to withdraw assets from Godwoken to CKB with [Light Godwoken](https://github.com/zhangyouxin/light-godwoken) that is a demo UI for depositing and withdrawing assets to Godwoken.
+This guide shows how to withdraw assets from Godwoken to CKB with [Light Godwoken](https://github.com/zhangyouxin/light-godwoken), a demo UI for depositing and withdrawing assets to Godwoken.
 
 ## Implementation of Assets Withdrawal
 
@@ -50,7 +50,7 @@ In the sample above:
 - `owner_lock_hash` is from the owner of layer 1
 - `account_script_hash` is from the `address` of layer 2
 
-To calculate the hashes:
+Sample code for calculating the hashes:
 
 ```ts
 import { utils, helpers } from "@ckb-lumos/lumos";
@@ -327,7 +327,8 @@ The following prerequisites apply for withdrawing assets from Godwoken with Ligh
    </details>
 
 4. Open the [withdraw-demo](http://localhost:4001/light-godwoken) in the browser. 
-5.  
+  ![image](./image/withdraw-demo-1.png)
+5. 
 6. 
 
  ## Reference
