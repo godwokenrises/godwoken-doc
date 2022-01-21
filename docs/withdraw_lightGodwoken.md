@@ -327,11 +327,11 @@ The following prerequisites apply for withdrawing assets from Godwoken with Ligh
    </details>
 
 4. Open the [withdraw-demo](http://localhost:4001/light-godwoken) in the browser, and connec to MetaMask wallet.
-  ![image](F:\Doc stack\godwoken-doc\image\withdraw-DemoUI.png)
+  ![image](https://github.com/nervosnetwork/godwoken-doc/blob/main/image/withdraw-DemoUI.pngg)
 5. Click **Withdrawal** to launch a withdrawal transaction.
-  ![image](F:\Doc stack\godwoken-doc\image\withdraw-demo-3 (2).png)
+  ![image]https://github.com/nervosnetwork/godwoken-doc/blob/main/image/withdraw-demo-3%20(2).png)
 6. Confirm the withdrawal request.
-  ![image](F:\Doc stack\godwoken-doc\image\withdraw-demo-4.png)
+  ![image](https://github.com/nervosnetwork/godwoken-doc/blob/main/image/withdraw-demo-4.png)
 7. Verify the Withdrawal Requests history. The **Eestimated time left** shows the countdown of unlocking time.
 8. Once the downdown runs up, click **withdraw**, unlock asset to complete the transaction. 
 
