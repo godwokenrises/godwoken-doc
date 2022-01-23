@@ -330,7 +330,7 @@ The following prerequisites apply for withdrawing assets from Godwoken with Ligh
 5. Click **Withdrawal** to launch a withdrawal transaction.
 6. Confirm the withdrawal request.
 7. Verify the Withdrawal Requests history. The **Eestimated time left** shows the countdown of unlocking time.!
-8. Once the downdown runs up, click **withdraw**, unlock asset to complete the transaction. ![godwokenUI-demo](https://user-images.githubusercontent.com/69146384/150694329-b80eb95d-a2e5-4c61-93a5-56644044fbb6.jpg)
+8. Once the downdown runs up, click **withdraw**, unlock asset to complete the transaction. ![godwokenUI-demo jpg 20-22-08-961](https://user-images.githubusercontent.com/69146384/150694677-a04e647b-d68c-4fca-a84b-c107839ae82b.jpg)
 
  ## Reference
 
