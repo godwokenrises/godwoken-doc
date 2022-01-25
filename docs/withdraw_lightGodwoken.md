@@ -3,6 +3,8 @@ id: withdraw_lightGodwoken
 title: Withdrawal Demo
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 This guide shows how to withdraw assets from Godwoken to CKB with [Light Godwoken](https://github.com/zhangyouxin/light-godwoken), a demo UI for depositing and withdrawing assets to Godwoken.
 
 ## Implementation of Assets Withdrawal
@@ -70,12 +72,13 @@ const account_script_hash = utils.computeScriptHash(l2AccountScript);
 
 Once the RPC request has been successfully submitted, the hash value returned can be used to query the withdrawal status by calling the [gw_get_withdrawal](https://github.com/nervosnetwork/godwoken/blob/develop/docs/RPC.md#method-gw_get_withdrawal):
 
+Note:  Replace the value of `params` in the following example with your withdrawal hash.
+
  ```json
  {
    "id": 2,
    "jsonrpc": "2.0",
    "method": "gw_get_withdrawal",
-   //REPLACE PARAMS BELOW WITH YOUR WITHDRAWAL HASH
    "params": ["0xb57c6da2f803413b5781f8c6508320a0ada61a2992bb59ab38f16da2d02099c1"]
  }
  ```
@@ -137,7 +140,7 @@ const collector = ckbIndexer.collector({ lock: searchParams.script });
 
  ### Step 2. Unlock Withdrawal Cells
 
-To unlock assets previously created, it will take a while ( approximately 5 days) to unlock the assets owing to security concerns. The **Fast Withdrawal** will be available soon. Once the pending period is expired, the receiver can make a transaction on layer 1 to unlock the asset cell. This transaction will use the withdrawal cell as input and take another CKB cell to cover the transaction fee. Within the withdrawal cell used as output, the lock of the asset cell will be replaced with the lock of the receiver.
+To unlock assets previously created, it will take a while (approximately 5 days) to unlock the assets owing to security concerns. The **Fast Withdrawal** function will be available soon. Once the pending period is expired, the receiver can make a transaction on layer 1 to unlock the asset cell. This transaction will use the withdrawal cell as input and take another CKB cell to cover the transaction fee. Within the withdrawal cell used as output, the lock of the asset cell will be replaced with the lock of the receiver.
 
 Here is an example:
 
@@ -227,9 +230,9 @@ Here is an example:
 
 #### Cell Dependencies
 
-A [CKB Cell](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0022-transaction-structure/0022-transaction-structure.md#Celll) contains [Scripts](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0022-transaction-structure/0022-transaction-structure.md#Script), execution of `Scripts` depends on deployed codes. [Cell dependencies](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0022-transaction-structure/0022-transaction-structure.md#celldep) is used to provide the codes.
+A CKB [cell](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0022-transaction-structure/0022-transaction-structure.md#Celll) contains [Scripts](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0022-transaction-structure/0022-transaction-structure.md#Script), execution of `Scripts` depends on deployed codes. [Cell dependencies](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0022-transaction-structure/0022-transaction-structure.md#celldep) are used to provide the codes.
 
-In this transaction, cell Deps contain `rollup cellDep`, `lock cellDep` and `withdraw cellDep`. If there are any sudt withdrawals, be sure to add `sudt cellDep`, as well as the other deps required by the receiver lock. `withdraw cellDep` and `sudt cellDep` can be obtained from some static config files, and `lock cellDep` relies on the type of lock to be used. The `omnilock` is used in the example, hence the `omnilock cellDep` is added. For the`rollup cellDep`, it needs to be obtained from the mem pool:
+In this transaction, `cell_deps` contains `rollup cellDep`, `lock cellDep` and `withdraw cellDep`. If there are any sUDT withdrawals, be sure to add `sudt cellDep`, as well as the other dependencies required by the receiver lock. `withdraw cellDep` and `sudt cellDep` can be obtained from some static config files, and `lock cellDep` relies on the type of lock to be used. The `omnilock` is used in the example, hence the `omnilock cellDep` is added. For the `rollup cellDep`, it needs to be obtained from the mem pool:
 
 ```ts
 async function getRollupCellDep(): Promise<CellDep> {
@@ -326,11 +329,17 @@ The following prerequisites apply for withdrawing assets from Godwoken with Ligh
 
    </details>
 
-4. Open the [withdraw-demo](http://localhost:4001/light-godwoken) in the browser, and connect to MetaMask wallet.
+4. Open the [withdraw-demo](http://localhost:4001/light-godwoken) in the browser, and connect to the MetaMask wallet.
+
 5. Click **Withdrawal** to launch a withdrawal transaction.
+
 6. Confirm the withdrawal request.
-7. Verify the Withdrawal Requests history. The **Eestimated time left** shows the countdown of unlocking time.!
-8. Once the downdown runs up, click **withdraw**, unlock asset to complete the transaction. ![godwokenUI-demo jpg 20-22-08-961](https://user-images.githubusercontent.com/69146384/150694677-a04e647b-d68c-4fca-a84b-c107839ae82b.jpg)
+
+7. Verify the Withdrawal Requests history. The **Estimated time left** shows the countdown of unlocking time.
+
+8. Once the countdown runs up, click **withdraw**, unlock asset to complete the transaction.
+
+   <img src={useBaseUrl("img/godwokenUI-demo.jpg")} />
 
  ## Reference
 
