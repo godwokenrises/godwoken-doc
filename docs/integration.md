@@ -4,91 +4,85 @@ title: Integration Guide for Ethererm Developers
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-> Godwoken is a layer 2 rollup framework that provides an abstracted account model and abstracted layer 2 transactions upon Nervos CKB.
+> Godwoken is a layer 2 rollup framework that provides an abstract account model and abstract layer 2 transactions atop the Nervos CKB. Whereas Ethereum developers can simply use Godwoken as an EVM-compatible layer 2 chain, just like Arbitrum and Optimism. 
 
-This is the introduction of Godwoken in [Overview](./overview.md).
-For Ethereum Developers, you can simply use Godwoken as an EVM-compatible layer 2 chain, just like Arbitrum and Optimism. 
+This documentation describes how to interact with Godwoken using existing Ethereum develop tools, known caveats and workarouds.
+Use this documentation as an integration guide for wallets and exchanges, or as a reference for developing dapps on Godwoken. 
 
-This documentation describes how to interact with Godwoken with existing Ethereum develop tools, known caveats and workarouds.
-You can use it as an integration guide for wallets and exchanges, or a reference to develop dapps on Godwoken. 
-
-It assumes you have prior knowledge of Ethereum.
+This article assumes the user has knowledge of Ethereum.
 
 ## Why Develop on Godwoken?
 
-- Security. Nervos Network is a PoW layer 1 chain and Godwoken is an optimistic rollup layer 2 chain built on Nervos Network. The security model is quite different with other EVM-compatible PoS/DPoS/PoA chains or sidechains. Check the references for more details if you are interested.
-- Low cost. A typical Godwoken transaction costs less than 0.0001 dollar right now. 
+- Security. Nervos Network is a PoW layer 1 chain and Godwoken is an optimistic rollup layer 2 chain built on Nervos Network. The security model is quite different from other EVM-compatible PoS/DPoS/PoA chains or sidechains. Check the references for more details for those so inclined.
+- Low cost. A typical Godwoken transaction currently costs less than $0.0001.
 - Ecosystem.
-  - With the help of Force Bridge, we already have assets from 3 chains(Nervos, Ethereum and BSC) on Godwoken. And support for more chains(Cardano, BTC) is coming.
-  - The TVL of Godwoken is nearly [100 million](https://defillama.com/chains) right now. There are already some DeFi dapps(e.g. [YokaiSwap](https://www.yokaiswap.com/), [DARUMA](https://www.daruma.money/)) and wallets(e.g. [Safepal](https://www.safepal.io/download)) integrated. 
-- [Interoperability 2.0](https://medium.com/nervosnetwork/blockchain-abstraction-and-interoperability-2-0-eea98d81b7b6). It might be the killing feature of Godwoken. With the design abstraction of Nervos Network and Godwoken, we might be able to use tools from any chain to manipulate assets from any chain with smart contracts ported from any chain.
+  - With Force Bridge, assets from 3 chains(Nervos, Ethereum and BSC) are already available on Godwoken. Support for more chains (Cardano, BTC) is on the way.
+  - The TVL of Godwoken is now nearly [100 million](https://defillama.com/chains). A number of DeFi dapps(e.g. [YokaiSwap](https://www.yokaiswap.com/), [DARUMA](https://www.daruma.money/)) and wallets(e.g. [Safepal](https://www.safepal.io/download)) have already been integrated. 
+- [Interoperability 2.0](https://medium.com/nervosnetwork/blockchain-abstraction-and-interoperability-2-0-eea98d81b7b6). This may be the trump card of Godwoken. With the design abstractions of Nervos Network and Godwoken, the ability to use any on-chain tool to port smart contracts to manipulate assets on the corresponding chain may be possible.
 
 ## Known Caveats
 
-Godwoken targets 100% EVM compatibility, but there are certain things that are incompatible with EVM in the current version.
+Godwoken targets 100% EVM compatibility, yet a few things are incompatible with EVM in the current version.
 
-- The web3 RPC is not 100% compatible with EVM, so we can't use existing web3.js libraries to interact with Godwoken. We provide [compatible providers](https://github.com/nervosnetwork/polyjuice-provider) to minimize your work to port existing work with web3.js, ethers.js, truffle and hardhat. Just replace the provider with what polyjuice-provider when you initiate.
-- Ethererm wallet are used as transaction signer instead of a fully-featured wallet. We can use Metamask or other Ethereum wallets to sign and send transactions on Godwoken, but we can not use them to check balance, track transactions, transfer assets, etc.
-- There are some incompatibilities when deploying Ethereum contracts. You can check the links below for more details.
+- The web3 RPC is not 100% compatible with EVM, so the existing web3.js libraries cannot be used to interact with Godwoken. But, [compatible providers](https://github.com/nervosnetwork/polyjuice-provider) are provided to minimize the workload of porting existing work with web3.js, ethers.js, truffle and hardhat. Simply replace the provider with polyjuice-provider when initiating.
+- Ethereum wallets are used as transaction signers instead of a full-featured wallet. Metamask or other ethereum wallets are available to sign and send transactions on Godwoken, but not for checking balances, tracking transactions, transferring assets, etc.
+- For more details on the incompatibilities when deploying Ethereum contracts, see the links below:
   - [Comparison with EVM](https://docs.godwoken.io/comparisonEVM)
   - [Godwoken Compatibility Examples](https://github.com/honestgoing/godwoken-polyjuice-compatibility-examples)
 
-We are working on Godwoken V1, which is targeting 100% EVM compatibility. If you are going to develop on current version, you should know the caveats above.
+Godwoken V1 is still under development and is intended to be 100% EVM compatible. To develop on the current version, the caveats above must be noted.
 
 ## Account Initialization
 
-Before you can send transaction on Godwoken, you need to initialize the account.
+Initialise the account in order to send transactions on Godwoken.
 
-Visit YokaiSwap([Testnet](https://testnet.yokaiswap.com/), [Mainnet](https://www.yokaiswap.com/)), connect your wallet,
-get your L1 YOKAI DEPOSIT ADDRESS.
+Visit YokaiSwap([Testnet](https://testnet.yokaiswap.com/), [Mainnet](https://www.yokaiswap.com/)), connect the wallet and obtain the L1 YOKAI DEPOSIT ADDRESS.
 
 <img src={useBaseUrl("img/integration/yokai-wallet.png")}  width="100%"/>
 
 <img src={useBaseUrl("img/integration/deposit-address.png")}  width="100%"/>
 
-Send at least **400 CKB** to this address from your CKB wallet.
+Send a minimum of **400 CKB** from the CKB wallet to this address.
 
-> **Note:** You can use [Nervos Faucet](https://faucet.nervos.org/) to fund it in Testnet.
+> **Note:** Use [Nervos Faucet](https://faucet.nervos.org/) to fund the CKB wallet in Testnet.
 
-After the deposition finish, you will see your CKB balance on Yokai Exchange page.
-It means your account is initialized.
+Once the deposit is completed, the CKB balance will be available on the Yokai Exchange page, which means the account has been initialised.
 
 <img src={useBaseUrl("img/integration/ckb-balance.png")}  width="100%"/>
 
 ## Assets Management
 
-There are two different kinds of token on Godwoken, [bridged token](https://www.gwscan.com/tokens/bridge) and [layer 2 native token](https://www.gwscan.com/tokens/native).
+There are two different types of tokens on Godwoken, the [bridged token](https://www.gwscan.com/tokens/bridge) and the [layer 2 native token](https://www.gwscan.com/tokens/native).
 
-A bridged token is a token bridged from other chains, and mapped as a ERC20 token on Godwoken.
+The bridged token is a token bridged from other chains, and mapped as a ERC20 token on Godwoken.
 
-The source chain right now can be:
+The current source chains can be:
 - Nervos Network
 - Ethereum
 - Binance Smart Chain
 
-You can manipulate the bridged token with ERC20 abi and given address.
+It is possible to manipulate the bridged token with ERC20 abi and given address.
 
 - [Bridged Token list](https://github.com/nervosnetwork/godwoken-info/blob/master/mainnet/ERC20TokenList.json)
 - [ERC20 contract and abi used in Godwoken](https://github.com/nervosnetwork/godwoken-polyjuice/tree/main/solidity/erc20)
 
-CKB is also a bridged token on Godwoken. But it is also used as the chain native token on Godwoken, like ETH on Ethereum.
-You can manipulate it with the ERC20 proxy contract or send it to payable functions of contract.
+CKB is also a bridge token on Godwoken. Meanwhile, CKB acts as an on-chain native token for Godwoken and, like ETH for Ethereum, is operable with the ERC20 proxy contract or be sent to the payment function of the contract.
 
-There are something you need to know if you want to manipulate CKB:
+A few facts to aware when manipulating the CKB:
 
-1. You can not transfer CKB with `sendTransaction` to arbitrary address with value. Use `transfer` method in CKB ERC20 Proxy contract to do that.
-2. You can use `getBalance` of Ethereum RPC to get the balance of CKB. Watch out that the decimal of return value is 8 for CKB, not 18 like ETH. You can also use `balanceOf` method in CKB ERC20 Proxy contract to get the balance of CKB.
+1. Cannot transfer CKB with `sendTransaction` to arbitrary address carrying the value. Use the `transfer` method in the CKB ERC20 Proxy contract to do that.
+2. Using the `getBalance` of Ethereum RPC to get the balance of CKB. Note that the decimal return value for CKB is 8, not 18 as in ETH. The balance of CKB can also be obtained using the `balanceOf` method in CKB ERC20 Proxy contract.
 3. The CKB ERC20 Proxy contract address is `0x6BFD7c449B3FFDaCCcac80Cf3cA6bb89e9bF309C` for Testnet, and `0x9D9599c41383D7009C2093319d576AA6F89A4449` for Mainnet.
-4. You can not use Metamask or other wallets to show or send CKB.
+4. It is **impossible** to use Metamask or other wallets to show or send CKB.
 
 Check the [demo](https://github.com/huwenchao/godwoken-demos/blob/main/gw-scripts/assets.ts) for more details.
 
 ## Dapp Development
 
-You can port your existing contracts writen in Solidity or Vyper to Godwoken or write new.
+An existing contract written in Solidity or Vyper can be ported to Godwoken, otherwise write a new contract.
 
-There is a [demo](https://github.com/huwenchao/godwoken-demos/blob/main/gw-scripts/contract.ts) to show the simple way to deploy a contract to Godwoken and interact with it.
-There is nothing different in compiling. So you can still use truffle or hardhat to wirite, compile and test your contracts.
+There is a [demo](https://github.com/huwenchao/godwoken-demos/blob/main/gw-scripts/contract.ts) showing a simple way to deploy a contract to and interact with Godwoken.
+There is no difference in compiling, so using truffle or hardhat to write, compile and test the contract is still possible.
 
 More compatibility information:
 - [Comparison with EVM](https://docs.godwoken.io/comparisonEVM)
