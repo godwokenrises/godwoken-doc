@@ -4,7 +4,7 @@ title: Integration Guide for Ethererm Developers
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-> Godwoken is a layer 2 rollup framework that provides an abstract account model and abstract layer 2 transactions atop the Nervos CKB. Whereas Ethereum developers can simply use Godwoken as an EVM-compatible layer 2 chain, just like Arbitrum and Optimism. 
+Godwoken is a layer 2 rollup framework that provides an abstract account model and abstract layer 2 transactions atop the Nervos CKB. Whereas Ethereum developers can simply use Godwoken as an EVM-compatible layer 2 chain, just like Arbitrum and Optimism.
 
 This documentation describes how to interact with Godwoken using existing Ethereum develop tools, known caveats and workarouds.
 Use this documentation as an integration guide for wallets and exchanges, or as a reference for developing dapps on Godwoken. 
@@ -66,7 +66,7 @@ It is possible to manipulate the bridged token with ERC20 abi and given address.
 - [Bridged Token list](https://github.com/nervosnetwork/godwoken-info/blob/master/mainnet/ERC20TokenList.json)
 - [ERC20 contract and abi used in Godwoken](https://github.com/nervosnetwork/godwoken-polyjuice/tree/main/solidity/erc20)
 
-CKB is also a bridge token on Godwoken. Meanwhile, CKB acts as an on-chain native token for Godwoken and, like ETH for Ethereum, is operable with the ERC20 proxy contract or be sent to the payment function of the contract.
+CKB is also a bridge token on Godwoken. Meanwhile, CKB acts as the native token for Godwoken, like ETH for Ethereum, and is operable with the ERC20 proxy contract or be sent to the payment function of the contract.
 
 A few facts to aware when manipulating the CKB:
 
