@@ -66,7 +66,7 @@ It is possible to manipulate the bridged token with ERC20 abi and given address.
 - [Bridged Token list](https://github.com/nervosnetwork/godwoken-info/blob/master/mainnet/ERC20TokenList.json)
 - [ERC20 contract and abi used in Godwoken](https://github.com/nervosnetwork/godwoken-polyjuice/tree/main/solidity/erc20)
 
-CKB is also a bridge token on Godwoken. Meanwhile, CKB acts as the native token for Godwoken, like ETH for Ethereum, and is operable with the ERC20 proxy contract or be sent to the payment function of the contract.
+CKB is also a bridge token on Godwoken. CKB is also a bridge token on Godwoken. CKB acts as a native token for Godwoken in the same way that ETH does for Ethereum, but can also operate with the ERC20 proxy contract.
 
 A few facts to aware when manipulating the CKB:
 
