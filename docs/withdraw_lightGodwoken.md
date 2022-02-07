@@ -5,7 +5,10 @@ title: Withdrawal Demo
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-This guide shows how to withdraw assets from Godwoken to CKB with [Light Godwoken](https://github.com/zhangyouxin/light-godwoken), a demo UI for depositing and withdrawing assets to Godwoken.
+This guide shows how to withdraw assets from Godwoken to CKB with [Light Godwoken](https://github.com/zhangyouxin/light-godwoken), a demo UI for depositing and withdrawing assets to Godwoken. 
+
+An online demo is available here for more visualisation of a preview running without downloading the code：https://zhangyouxin.github.io/light-godwoken/
+
 
 ## Implementation of Assets Withdrawal
 
