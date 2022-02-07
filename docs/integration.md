@@ -8,7 +8,7 @@ import Link from "@docusaurus/Link";
 
 Ethereum developers can simply use Godwoken as an EVM-compatible layer 2 chain, just like Arbitrum and Optimism.
 
-This documentation can be used as an integration guide for wallets and exchanges, or as a reference for developing DApps on Godwoken. It describes how to interact with Godwoken using existing Ethereum development tools, known caveats and workarounds.
+This documentation can be used as an integration guide for wallets and exchanges, or as a reference for developing DApps on Godwoken. It describes how to interact with Godwoken using existing Ethereum development tools, known caveats of version 1 and corresponding workarounds.
 
 The knowledge of Ethereum is a prerequisite for using this guide.
 
@@ -27,10 +27,10 @@ Godwoken V1 is still under development and targets 100% EVM compatibility.
 
 To develop on Godwoken V1, the following caveats must be noted:
 
-- The existing web3.js libraries are not used to interact with Godwoken because the web3 RPC is not fully compatible with EVM. [compatible providers](https://github.com/nervosnetwork/polyjuice-provider) are provided to minimize the workload of porting existing work with web3.js, ethers.js, Truffle and Hardhat. Simply replace the provider with polyjuice-provider when initiating an account.
+- The existing web3.js libraries are not used to interact with Godwoken because the web3 RPC is not fully compatible with EVM. [compatible providers](https://github.com/nervosnetwork/polyjuice-provider) are provided to minimize the workload of porting existing work with web3.js, ethers.js, Truffle and Hardhat. Simply replace the provider with polyjuice-provider when initiating the wallet provider.
 - Ethereum wallets are used as transaction signers instead of a full-featured wallet that support checking balances, tracking transactions, transferring assets etc. The Ethereum wallets such as MetaMask support signing and sending transactions on Godwoken.
 - For more details on the incompatibilities when deploying Ethereum contracts, see the links below:
-  - <Link to={useBaseUrl('/docs/comparisonEVM')}>Comparison with EVM</Link>
+  - <Link to={useBaseUrl('/comparisonEVM')}>Comparison with EVM</Link>
   - [Godwoken Compatibility Examples](https://github.com/honestgoing/godwoken-polyjuice-compatibility-examples)
 
 ## Account Initialization
@@ -38,22 +38,24 @@ To develop on Godwoken V1, the following caveats must be noted:
 It is necessary to initialize an account in order to send transactions on Godwoken.
 
 1. Visit YokaiSwap ([Testnet](https://testnet.yokaiswap.com/) or [Mainnet](https://www.yokaiswap.com/)). 
+
 2. Connect the wallet and obtain the L1 YOKAI DEPOSIT ADDRESS.
    <img src={useBaseUrl("img/integration/yokai-wallet.png")}  width="100%"/>
    <img src={useBaseUrl("img/integration/deposit-address.png")}  width="100%"/>
+   
 3. Send a minimum of **400** CKBs from a CKB wallet to this address.
 
-  > **Note:** Use [Nervos Faucet](https://faucet.nervos.org/) to fund the CKB wallet in Testnet.
+   **Note:** Use [Nervos Faucet](https://faucet.nervos.org/) to fund the CKB wallet in Testnet.
 
-  Once the deposit is completed, the CKB balance will be available on the Yokai Exchange page, which means the account has been initialised.
+   Once the deposit is completed, the CKB balance will be visible on the Yokai Exchange page, which means the account has been initialised.
 
-  <img src={useBaseUrl("img/integration/ckb-balance.png")}  width="100%"/>
+   <img src={useBaseUrl("img/integration/ckb-balance.png")}  width="100%"/>
 
 ## Assets Management
 
 There are two different types of tokens on Godwoken, the [bridged token](https://www.gwscan.com/tokens/bridge) and the [layer 2 native token](https://www.gwscan.com/tokens/native).
 
-The bridged token is a token bridged from other chains, and mapped as a ERC20 token on Godwoken.
+The bridged token is a token bridged from other chains, and mapped as an ERC20 token on Godwoken.
 
 The current source chains can be:
 - Nervos Network
@@ -70,7 +72,7 @@ CKB is also a bridged token on Godwoken. CKB acts as a native token for Godwoken
 A few facts to aware when manipulating the CKB:
 
 1. Do not transfer CKB with `sendTransaction` to arbitrary address carrying the value. Use the `transfer` method in the CKB ERC20 proxy contract to transfer CKB.
-2. Use the `getBalance` of the Ethereum RPC to get the balance of CKB. Note that the decimal return value for CKB is 8, not 18 as in ETH. The balance of CKB can also be obtained using the `balanceOf` method in the CKB ERC20 proxy contract.
+2. Use the `getBalance` method of the Ethereum RPC to get the balance of CKB. Note that the decimal return value for CKB is 8, not 18 as in ETH. The balance of CKB can also be obtained using the `balanceOf` method in the CKB ERC20 proxy contract.
 3. The CKB ERC20 proxy contract address is `0x6BFD7c449B3FFDaCCcac80Cf3cA6bb89e9bF309C` for Testnet, and `0x9D9599c41383D7009C2093319d576AA6F89A4449` for Mainnet.
 4. It is **impossible** to use MetaMask or other wallets to show or send CKB.
 

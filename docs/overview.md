@@ -6,7 +6,7 @@ sidebar_label: Overview
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-[Godwoken](https://github.com/nervosnetwork/godwoken) is a layer 2 rollup framework that provides an abstracted account model and abstracted layer 2 transactions upon Nervos CKB.
+[Godwoken](https://github.com/nervosnetwork/godwoken) is a layer 2 rollup framework that provides an abstract account model and abstract layer 2 transactions atop Nervos CKB.
 
 [Polyjuice](https://github.com/nervosnetwork/godwoken-polyjuice) is an Ethereum compatible layer designed upon the Godwoken account model. Godwoken comes together with Polyjuice giving developers the ability to seamlessly deploy and run Ethereum contracts.
 
