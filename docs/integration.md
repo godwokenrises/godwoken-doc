@@ -8,7 +8,7 @@ import Link from "@docusaurus/Link";
 
 Ethereum developers can simply use Godwoken as an EVM-compatible layer 2 chain, just like Arbitrum and Optimism.
 
-This documentation can be used as an integration guide for wallets and exchanges, or as a reference for developing DApps on Godwoken. It describes how to interact with Godwoken using existing Ethereum development tools, known caveats of version 1 and corresponding workarounds.
+This documentation can be used as an integration guide for wallets and exchanges, or as a reference for developing dApps on Godwoken. It describes how to interact with Godwoken using existing Ethereum development tools, known caveats of version 1 and corresponding workarounds.
 
 The knowledge of Ethereum is a prerequisite for using this guide.
 
@@ -17,8 +17,8 @@ The knowledge of Ethereum is a prerequisite for using this guide.
 - **Security** - Nervos Network is a Proof-of-Work (PoW) layer 1 chain and Godwoken is an optimistic rollup layer 2 chain built on Nervos Network. The security model is quite different from other EVM-compatible PoS/DPoS/PoA chains or sidechains. For more information, see the references section.
 - **Low cost** - A typical Godwoken transaction currently costs less than $0.0001.
 - **Ecosystem**
-  - With Force Bridge, assets from 3 chains(Nervos, Ethereum and BSC) are already available on Godwoken. Support for more chains (Cardano, BTC) is on the way.
-  - The TVL of Godwoken is now nearly [100 million](https://defillama.com/chains). A number of DeFi dapps(e.g. [YokaiSwap](https://www.yokaiswap.com/), [DARUMA](https://www.daruma.money/)) and wallets(e.g. [Safepal](https://www.safepal.io/download)) have already been integrated. 
+  - With Force Bridge, assets from 3 chains (Nervos, Ethereum and BSC) are already available on Godwoken. The support for more chains (Cardano, BTC) is on the way.
+  - The TVL of Godwoken is now nearly [100 million](https://defillama.com/chains). A number of DeFi dApps (e.g. [YokaiSwap](https://www.yokaiswap.com/), [DARUMA](https://www.daruma.money/)) and wallets(e.g. [SafePal](https://www.safepal.io/download)) have already been integrated. 
 - [**Interoperability 2.0**](https://medium.com/nervosnetwork/blockchain-abstraction-and-interoperability-2-0-eea98d81b7b6) - This may be the trump card of Godwoken. With the design abstractions of Nervos Network and Godwoken, it is possible to use any on-chain tool to port smart contracts to manipulate assets on the corresponding chain.
 
 ## Known Caveats
@@ -39,7 +39,7 @@ It is necessary to initialize an account in order to send transactions on Godwok
 
 1. Visit YokaiSwap ([Testnet](https://testnet.yokaiswap.com/) or [Mainnet](https://www.yokaiswap.com/)). 
 
-2. Connect the wallet and obtain the L1 YOKAI DEPOSIT ADDRESS.
+2. Connect the wallet and obtain the **L1 YOKAI DEPOSIT ADDRESS**.
    <img src={useBaseUrl("img/integration/yokai-wallet.png")}  width="100%"/>
    <img src={useBaseUrl("img/integration/deposit-address.png")}  width="100%"/>
    
