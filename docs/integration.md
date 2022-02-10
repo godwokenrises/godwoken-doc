@@ -1,10 +1,8 @@
-
-
-
 ---
 id: integration
 title: Integration Guide for Ethererm Developers
 ---
+
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 import Link from "@docusaurus/Link";
@@ -21,7 +19,7 @@ The knowledge of Ethereum is a prerequisite for using this guide.
 - **Low cost** - A typical Godwoken transaction currently costs less than $0.0001.
 - **Ecosystem**
   - With Force Bridge, assets from 3 chains (Nervos, Ethereum and BSC) are already available on Godwoken. The support for more chains (Cardano, BTC) is on the way.
-  - The TVL of Godwoken is now nearly [100 million](https://defillama.com/chains). A number of DeFi dApps (e.g. [YokaiSwap](https://www.yokaiswap.com/), [DARUMA](https://www.daruma.money/)) and wallets(e.g. [SafePal](https://www.safepal.io/download)) have already been integrated. 
+  - The TVL of Godwoken is now nearly [100 million](https://defillama.com/chains). A number of DeFi dApps (e.g. [YokaiSwap](https://www.yokaiswap.com/), [DARUMA](https://www.daruma.money/)) and wallets (e.g. [SafePal](https://www.safepal.io/download)) have already been integrated. 
 - [**Interoperability 2.0**](https://medium.com/nervosnetwork/blockchain-abstraction-and-interoperability-2-0-eea98d81b7b6) - This may be the trump card of Godwoken. With the design abstractions of Nervos Network and Godwoken, it is possible to use any on-chain tool to port smart contracts to manipulate assets on the corresponding chain.
 
 ## Known Caveats
@@ -43,8 +41,8 @@ It is necessary to initialize an account in order to send transactions on Godwok
 1. Visit YokaiSwap ([Testnet](https://testnet.yokaiswap.com/) or [Mainnet](https://www.yokaiswap.com/)). 
 
 2. Connect the wallet and obtain the **L1 YOKAI DEPOSIT ADDRESS**.
-   <img src={useBaseUrl("img/integration/yokai-wallet.png")}  width="100%"/>
-   <img src={useBaseUrl("img/integration/deposit-address.png")}  width="100%"/>
+   <img src={useBaseUrl("img/integration/yokai-wallet.png")}  width="60%"/>
+   <img src={useBaseUrl("img/integration/deposit-address.png")}  width="50%"/>
    
 3. Send a minimum of **400** CKBs from a CKB wallet to this address.
 
@@ -52,7 +50,7 @@ It is necessary to initialize an account in order to send transactions on Godwok
 
    Once the deposit is completed, the CKB balance will be visible on the Yokai Exchange page, which means the account has been initialized.
 
-   <img src={useBaseUrl("img/integration/ckb-balance.png")}  width="100%"/>
+   <img src={useBaseUrl("img/integration/ckb-balance.png")}  width="60%"/>
 
 ## Assets Management
 
@@ -89,11 +87,11 @@ There is a [demo](https://github.com/huwenchao/godwoken-demos/blob/main/gw-scrip
 There is no difference in compiling, so using Truffle or Hardhat to write, compile and test the contract is still possible.
 
 More compatibility information:
-- [Comparison with EVM](https://docs.godwoken.io/comparisonEVM)
+- <Link to={useBaseUrl('/comparisonEVM')}>Comparison with EVM</Link>
 - [Godwoken Compatibility Examples](https://github.com/honestgoing/godwoken-polyjuice-compatibility-examples)
 
 ## References
 
-- rollup
+- Rollup
   - [What is Rollup solution?](https://ethereum.org/en/developers/docs/scaling/layer-2-rollups/)
   - [(Almost) Everything you need to know about Optimistic Rollup | Low trust and Low Cost is important](https://research.paradigm.xyz/rollups)
