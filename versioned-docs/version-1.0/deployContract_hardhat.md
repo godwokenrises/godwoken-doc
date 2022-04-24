@@ -10,7 +10,6 @@ title: Deploy a Simple Contract with Hardhat
 ### Prerequisites
 
 - npm
-- [Godwoken v1 Local Network deployed](https://www.notion.so/Deploy-Godwoken-Local-Network-b89cbdaa42704d118393605b4870ee69)
 
 ### Steps:
 
