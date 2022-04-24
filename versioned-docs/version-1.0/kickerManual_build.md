@@ -18,13 +18,13 @@ Godwoken-Kicker supports manual-build mode [using multiple Docker Compose files
 
 1. Clone the source of Godwoken-kicker, skip if installed.
 
-```jsx
+```
 $ git clone -b compatibility-changes https://github.com/RetricSu/godwoken-kicker
 ```
 
-1. In[`docker/docker-compose.yml`](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/docker-compose.yml) , define a basic "godwoken" service that runs on a pre-built image. To locate the binary for godwoken, navigate to /usr/bin/godwoken.
+2. In[`docker/docker-compose.yml`](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/docker-compose.yml) , define a basic "godwoken" service that runs on a pre-built image. To locate the binary for godwoken, navigate to /usr/bin/godwoken.
 
-```jsx
+```
 godwoken:
   image: ghcr.io/flouse/godwoken-prebuilds:v1.0.x-202203160423
   environment:
@@ -39,9 +39,9 @@ godwoken:
   command: [ "godwoken", "run", "-c", "/var/lib/layer2/config/godwoken-config.toml" ]
 ```
 
-1. Build the godwoken binary manually and place it in `docker/manual-artifacts/godwoken`
+3. Build the godwoken binary manually and place it in `docker/manual-artifacts/godwoken`
 
-```jsx
+```
 MANUAL_BUILD_GODWOKEN=true \
 GODWOKEN_GIT_URL=ssh://git@github.com/nervosnetwork/godwoken \
 GODWOKEN_GIT_CHECKOUT=compatibility-breaking-changes \
@@ -50,9 +50,9 @@ GODWOKEN_GIT_CHECKOUT=compatibility-breaking-changes \
 
 The binary can be built using Godwoken-kicker command line `. /kicker manual-build` or users can build the binary on their own, just make sure the binary is placed in docker/manual-artifacts/.
 
-1. Replace the prebuild godwoken and gw-tools with manual-build in the file `[docker/manual-godwoken.compose.yml](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/manual-godwoken.compose.yml)`
+4. Replace the prebuild godwoken and gw-tools with manual-build in the file `[docker/manual-godwoken.compose.yml](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/manual-godwoken.compose.yml)`
 
-```jsx
+```
 services:
   godwoken:
     volumes:
@@ -61,9 +61,9 @@ services:
       - ./manual-artifacts/godwoken:/usr/bin/godwoken
 ```
 
-1. Launch the Godwoken service with manual-build artifacts
+5. Launch the Godwoken service with manual-build artifacts
 
-```jsx
+```
 MANUAL_BUILD_GODWOKEN=true ./kicker start # Starts all services
 MANUAL_BUILD_GODWOKEN=true ./kicker start godwoken # Starts only a single godwoken service
 ```
