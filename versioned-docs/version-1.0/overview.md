@@ -13,7 +13,7 @@ Godwoken emerged as a solution for dapp builders as they seek to benefit from th
 
 Powered by Godwoken, developers can choose to work with Solidity, just like on Ethereum, while enjoying extra bonuses of interoperability with other blockchains. For Ethereum developers, Godwoken is the go-to option for both universes. Developers can port their existing dapps to Nervos with ease, expanding their reach and brand awareness in a DeFi development-focused network, while benefiting from an instant transaction end result and a low fee in an Ethereum-like environment.
 
-![image](https://github.com/nervosnetwork/godwoken-doc/issues/7#issue-1213755248)
+![image](https://user-images.githubusercontent.com/69146384/164994632-f397fb49-5ce3-4b9e-95a9-091cabd32183.png)
 
 Figure 1. Godwoken Architecture
 
