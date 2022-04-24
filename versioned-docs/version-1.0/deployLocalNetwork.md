@@ -20,7 +20,7 @@ title: Deploy Godwoken Local Network
 $ git clone -b compatibility-changes https://github.com/RetricSu/godwoken-kicker
 ```
 
-1. Start Godwoken devnet_v1
+2. Start Godwoken devnet_v1
 
 ```jsx
 $ cd godwoken-kicker
@@ -56,7 +56,7 @@ This command deploys the Godwoken local network. The following docker containers
 
 More information can be viewed at [docker-compose.yml](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/docker-compose.yml).
 
-1. Deposit CKB to a Layer 2 account for testing
+3. Deposit CKB to a Layer 2 account for testing
 
 ```jsx
 $ ./kicker get-balance 0xCD1d13450cFA630728D0390C99957C6948BF7d19 # check account balance
@@ -94,7 +94,7 @@ Creating docker_godwoken_run ... done
 
 Note that the accounts are defined in [contract/hardhat.config.js](https://github.com/nervosnetwork/godwoken-tests/blob/develop/contracts/hardhat.config.js).
 
-1. Run Godwoken-tests cases using [Hardhat](https://hardhat.org/)
+4. Run Godwoken-tests cases using [Hardhat](https://hardhat.org/)
 
 ```jsx
 $ git clone https://github.com/nervosnetwork/godwoken-tests
@@ -318,7 +318,7 @@ Generally speaking, user can configurate any network in the `hardhat.config.js`.
 $ npx hardhat run --network <your-network> scripts/deploy.js
 ```
 
-1. Discontinue Godwoken devnet_v1
+5. Discontinue Godwoken devnet_v1
 
 ```jsx
 $ ./kicker stop
