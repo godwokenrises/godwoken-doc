@@ -105,9 +105,7 @@ $ npm run test
 ```
 <details>
 <summary>Click to see result<summary>
-<pre><code>
-    
-    ```jsx
+```jsx
     > contracts@1.0.0 test
     > hardhat test --network gw_devnet_v1
     
@@ -310,8 +308,7 @@ $ npm run test
           ✔ Should update balances after transfers (182ms)
     
       20 passing (53s)
-    ```
-</code></pre>
+```
 <details>
 
 Generally speaking, user can configurate any network in the `hardhat.config.js`.
