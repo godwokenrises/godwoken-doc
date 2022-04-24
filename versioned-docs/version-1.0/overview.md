@@ -13,7 +13,7 @@ Godwoken emerged as a solution for dapp builders as they seek to benefit from th
 
 Powered by Godwoken, developers can choose to work with Solidity, just like on Ethereum, while enjoying extra bonuses of interoperability with other blockchains. For Ethereum developers, Godwoken is the go-to option for both universes. Developers can port their existing dapps to Nervos with ease, expanding their reach and brand awareness in a DeFi development-focused network, while benefiting from an instant transaction end result and a low fee in an Ethereum-like environment.
 
-![image](./pictures/arch.png)
+![image](https://github.com/nervosnetwork/godwoken-doc/issues/7#issue-1213755248)
 
 Figure 1. Godwoken Architecture
 
@@ -38,6 +38,6 @@ To be specific, when a user creates a new account by making a deposit, an Ethere
     - Chain ID: 0x315DB00000006 or 868455272153094
     - ETH Address Registry ID: 4
     
-    Godwoken v1 network can be deployed locally in two ways, deploy manually and quick deploy by Godwoken-kicker. For more information, refer to Github Repository [godwoken-info](https://github.com/nervosnetwork/godwoken-info/tree/info). 
+Godwoken v1 network can be deployed locally in two ways, deploy manually and quick deploy by Godwoken-kicker. For more information, refer to Github Repository [godwoken-info](https://github.com/nervosnetwork/godwoken-info/tree/info). 
     
-    For an introduction to the Nervos ecosystem, an overview of various important concepts, and hands-on direct experience with the platform in preparation for deploying real-world dapps, check **[Nervos Layer 2 EVM training](https://nervos.gitbook.io/layer-2-evm/).**
+For an introduction to the Nervos ecosystem, an overview of various important concepts, and hands-on direct experience with the platform in preparation for deploying real-world dapps, check **[Nervos Layer 2 EVM training](https://nervos.gitbook.io/layer-2-evm/).**
