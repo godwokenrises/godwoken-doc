@@ -19,7 +19,7 @@ title: Deploy a Simple Contract with Hardhat
 $ git clone --depth=1 https://github.com/NomicFoundation/hardhat
 ```
 
-1. Prepare a simple hardhat project.
+2. Prepare a simple hardhat project.
 
 ```jsx
 $ mv hardhat/packages/hardhat-core/sample-projects/basic .
@@ -37,7 +37,7 @@ $ npx hardhat --version
 2.9.3
 ```
 
-1. Adapt `hardhat.config.js` to Godwoken local network.
+3. Adapt `hardhat.config.js` to Godwoken local network.
     
     Add the following `network` configuration to `hardhat.config.js`.
     
@@ -58,7 +58,7 @@ module.exports = {
 
 - `http://127.0.0.1:8024` is the Godwoken Web3 URL, which can be checked by the command line `./kicker info`  while deploy Godwoken local network.
 - `0x9d5bc55413c14cf4ce360a6051eacdc0e580100a0d3f7f2f48f63623f6b05361` is the private key of account, which can be replaced with user’s own testing keys.
-1. Run hardhat on Godwoken local network 
+4. Run hardhat on Godwoken local network 
 
 ```jsx
 $ npx hardhat accounts --network gw_devnet_v1
