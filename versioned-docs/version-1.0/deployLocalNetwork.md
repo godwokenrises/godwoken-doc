@@ -373,4 +373,4 @@ Name   Command   State   Ports
 ------------------------------
 ```
 
-For more information on the use of the Godwoken-Kicker command line, see [Godwoken-kicker Usage](https://www.notion.so/Godwoken-kicker-Command-Line-642b10d6d34c43a6aff8d80919e90663) .
+For more information on the use of the Godwoken-Kicker command line, see [Godwoken-kicker Usage](version-1.0/commandUsage.md) .
