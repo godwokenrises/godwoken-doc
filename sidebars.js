@@ -1,5 +1,5 @@
 module.exports = {
-  sidebar2: [{Introduction: ['overview', 'decentralizationRoadmap', 'comparisonEVM']},
-    'deployment', 'deployEthDapp', 'deposit_withdrawal', 'withdraw_lightGodwoken', 'integration', 'faq'
+  sidebar2: [{Introduction: ['overview', 'decentralizationRoadmap', 'comparisonEVM', 'keyConcepts']},
+    'deployLocalNetwork', 'deployContract_hardhat', 'commandUsage', 'integration', 'releaseNotes'
   ],
 };

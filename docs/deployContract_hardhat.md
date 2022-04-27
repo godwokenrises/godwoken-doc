@@ -2,6 +2,9 @@
 id: deployContract_hardhat
 title: Deploy a Simple Contract with Hardhat
 ---
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+
 
 ## Environment
 
@@ -56,8 +59,8 @@ module.exports = {
 }
 ```
 
-- `http://127.0.0.1:8024` is the Godwoken Web3 URL, which can be checked by the command line `./kicker info`  while deploy Godwoken local network.
-- `0x9d5bc55413c14cf4ce360a6051eacdc0e580100a0d3f7f2f48f63623f6b05361` is the private key of account, which can be replaced with user’s own testing keys.
+- `http://127.0.0.1:8024` is the Godwoken Web3 URL, which can be checked by the command line `./kicker info`  while deploy Godwoken local network.
+- `0x9d5bc55413c14cf4ce360a6051eacdc0e580100a0d3f7f2f48f63623f6b05361` is the private key of account, which can be replaced with user’s own testing keys.
 5. Run hardhat on Godwoken local network 
 
 ```

@@ -1,28 +1,42 @@
 ---
-id: deployLocalNetwork
-title: Deploy Godwoken Local Network
+id: deployment
+title: Deployment
 ---
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
-## Environment
+## Deploy a Godwoken Network with Godwoken-Kicker
 
-- Ubuntu 20.04 LTS
+Godwoken-kicker is a one-line command to start a Godwoken network on **Devnet**. This deployment method helps developers deploy Ethereum contracts and quickly migrate Ethereum dapps to CKB Devnet in testing and development environments.
 
-### Prerequisites
+Godwoken-kicker provides a quick mode and a manual-build mode for deployment.
 
-- Docker
-- Docker Compose ≥ 1.29.0
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-### Steps
+<Tabs
+  defaultValue="quick"
+  values={[
+    {label: 'Quick Mode', value: 'quick'},
+    {label: 'Manual-Build Mode', value: 'manual=build'},
+  ]}>
+<TabItem value="quick"><p>The quick mode is fast and simple. It executes the builds of all components from pre-built docker images.</p><b>Environment</b><p><ul><li>Ubuntu 20.04 LTS</li></ul></p><b>Prerequisites</b><p><ul><li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></li><li><a href="https://docs.docker.com/compose/install/">Docker Compose >= 1.29.0</a></li><li>Metamask Wallet</li></ul></p>
 
-1. Clone the source of [Godwoken-kicker](https://github.com/RetricSu/godwoken-kicker/tree/compatibility-changes) under the branch `compatibility-changes`.
+<p><b>Steps</b></p>
 
-```jsx
+<ol> 
+    <li><p>Clone the Godwoken-kicker under the branch <code>compatibility-changes</code>.</p>
+
+
+```bash
 $ git clone -b compatibility-changes https://github.com/RetricSu/godwoken-kicker
 ```
 
-2. Start Godwoken devnet_v1
+</li>
 
-```jsx
+<li><p>Start Godwoken devnet_v1.</p>
+<p>The <code>kicker start</code> command can be used to start the deployed Godwoken network.</p>
+
+```bash
 $ cd godwoken-kicker
 $ ./kicker start
 
@@ -42,28 +56,30 @@ Recreating docker_web3_1                         ... done
 Creating docker_web3-indexer_1                   ... done
 [start] Services started successfully
 ```
+</li>
 
-This command deploys the Godwoken local network. The following docker containers should start running once deployment completed: 
 
-- `docker_ckb_1`
-- `docker_ckb-miner_1`
-- `docker_ckb-indexer_1`
-- `docker_godwoken_1`
-- `docker_web3_1`
-- `docker_web3-indexer_1`
-- `docker_postgres_1`
-- `docker_redis_1`
+<p>This command deploys the Godwoken local network. The following docker containers should start running once the deployment completed:</p>
 
-More information can be viewed at [docker-compose.yml](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/docker-compose.yml).
+<ul>
+<li><code>docker_ckb_1</code></li><li><code>docker_ckb-miner_1</code></li><li><code>docker_ckb-indexer_1</code></li><li><code>docker_godwoken_1</code></li><li><code>docker_web3_1</code></li><li><code>docker_web3-indexer_1</code></li><li><code>docker_postgres_1</code></li><li><code>docker_redis_1</code></li></ul>
 
-3. Deposit CKB to a Layer 2 account for testing
+<p>>More information can be viewed at <a href="https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/docker-compose.yml">docker-compose.yml</a>.</p>
 
-```jsx
+<li><p>Deposit CKB to a Layer 2 account for testing</p></li>
+
+<p>The <code>kicker get-balance</code> command can be used to check the account balance.</p>
+
+```bash
 $ ./kicker get-balance 0xCD1d13450cFA630728D0390C99957C6948BF7d19 # check account balance
 Creating docker_godwoken_run ... done
 Creating docker_godwoken_run ... done
 [2022-04-14T18:06:14Z INFO  gw_tools::get_balance] Balance: 0
+```
 
+<p>The <code>kicker deposit</code> command can be used to deposit ckb from an ETH address. </p>
+
+```bash
 $ ./kicker deposit 0xCD1d13450cFA630728D0390C99957C6948BF7d19 999 # deposit ckb to account
 Creating docker_godwoken_run ... done
 [2022-04-14T18:07:55Z INFO  gw_tools::deposit_ckb] eth address: 0xcd1d13450cfa630728d0390c99957c6948bf7d19
@@ -85,26 +101,35 @@ Creating docker_godwoken_run ... done
 [2022-04-14T18:08:37Z INFO  gw_tools::deposit_ckb] deposit success!
 [2022-04-14T18:08:37Z INFO  gw_tools::deposit_ckb] Your account id: 7
 Deposit finished
+```
+
+<p>Use <code>get-balance</code>to verify the balance when deposit finished. </p>
 
 $ ./kicker get-balance 0xCD1d13450cFA630728D0390C99957C6948BF7d19
 Creating docker_godwoken_run ... done
 Creating docker_godwoken_run ... done
 [2022-04-14T18:13:20Z INFO  gw_tools::get_balance] Balance: 99900000000
 ```
+:::note
 
-Note that the accounts are defined in [contract/hardhat.config.js](https://github.com/nervosnetwork/godwoken-tests/blob/develop/contracts/hardhat.config.js).
+Note that the accounts are defined in <a href="https://github.com/nervosnetwork/godwoken-tests/blob/develop/contracts/hardhat.config.js/">contract/hardhat.config.js</a>. 
 
-4. Run Godwoken-tests cases using [Hardhat](https://hardhat.org/)
+:::
 
-```jsx
+<li><p>Run Godwoken-tests cases using <a href="https://hardhat.org">Hardhat</a>.</p></li>
+
+```bash
 $ git clone https://github.com/nervosnetwork/godwoken-tests
 $ cd godwoken-tests
 $ cd contracts
 $ npm install
 $ npm run test
 ```
-<details>
-<summary>Click to see result</summary>
+<details><summary>Output</summary>
+
+<p>
+
+```bash
     
     > contracts@1.0.0 test
     > hardhat test --network gw_devnet_v1
@@ -308,18 +333,20 @@ $ npm run test
           ✔ Should update balances after transfers (182ms)
     
       20 passing (53s)
-    ```
+```
+</p>
 </details>
 
-Generally speaking, user can configurate any network in the `hardhat.config.js`.
+<p>Generally speaking, user can configurate any network in the <code>hardhat.config.js</code>.</p>
 
-```jsx
+```bash
 $ npx hardhat run --network <your-network> scripts/deploy.js
 ```
+<li><p>Discontinue Godwoken devnet_v1.</p></li>
 
-5. Discontinue Godwoken devnet_v1
+<p>The <code>kicker stop</code> command can be used to stop the Godwoken services.</p>
 
-```jsx
+```bash
 $ ./kicker stop
 :> docker-compose -f docker/docker-compose.yml down --remove-orphans
 
@@ -348,7 +375,10 @@ Removing docker_postgres_1                       ... done
 Removing docker_ckb-miner_1                      ... done
 Removing docker_redis_1                          ... done
 Removing network docker_default
+```
+<p>The <code>kicker clean</code> command can be used to remove volumed data in the containers.</p>
 
+```bash
 $ sudo ./kicker clean
 :> docker-compose -f docker/docker-compose.yml ps --quiet
 rm -rf docker/layer2/data/
@@ -365,12 +395,87 @@ rm -rf docker/layer1/ckb3/data/
 rm -rf docker/postgres/data
 rm -rf docker/redis/data
 rm -rf docker/manual-artifacts
+```
 
+<p>The <code>kicker ps</code> command can be used to list out the services in use.</p>
+
+```bash
 $ ./kicker ps
 :> docker-compose -f docker/docker-compose.yml ps
 
 Name   Command   State   Ports
 ------------------------------
 ```
+For more information on the use of the Godwoken-Kicker command line, see [Godwoken-kicker Usage](version-1.0/commandUsage.md).
 
-For more information on the use of the Godwoken-Kicker command line, see [Godwoken-kicker Usage](version-1.0/commandUsage.md) .
+</TabItem>
+    <TabItem value="manual-build"><p>Godwoken-Kicker supports manual-build mode using <a href="https://runnable.com/docker/advanced-docker-compose-configuration">multiple Docker Compose files</a>. Manual build mode is meant for advanced developers who want to customize the Docker Compose service, such as replacing pre-built artifacts with custom ones, and who are already familiar with Godwoken-kicker. Review the [kicker](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/kicker) script in detail before starting to use the manual build mode.</p><b>Environment</b><p><ul><li>Ubuntu 20.04 LTS</li></ul></p><b>Prerequisites</b><p><ul><li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></li><li><a href="https://docs.docker.com/compose/install/">Docker Compose</a></li></ul></p>
+
+<p><b>Steps</b></p>
+
+<ol> 
+    <li><p>Clone the Godwoken-kicker under the branch <code>compatibility-changes</code>.</p>
+
+
+```bash
+$  git clone -b compatibility-changes https://github.com/RetricSu/godwoken-kicker
+```
+
+</li>
+
+<li><p>Define a basic Godwoken servcice that runs on a pre-built image in the <a href="https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/docker-compose.yml"><code>docker/docker-compose.yml</code></a>. Godwoken binary can be seen under <code>/usr/bin/godwoken</code>.</p>
+
+```bash
+godwoken:
+  image: ghcr.io/flouse/godwoken-prebuilds:v1.0.x-202203160423
+  environment:
+    RUST_LOG: info,gw_generator=debug
+    GODWOKEN_MODE: fullnode
+    RUST_BACKTRACE: full
+  volumes:
+    - ./layer2:/var/lib/layer2
+  ports:
+    - 8119:8119
+    - 8120:8120
+  command: [ "godwoken", "run", "-c", "/var/lib/layer2/config/godwoken-config.toml" ]
+```
+
+</li>
+
+<li><p>Build Godwoken binary manually and place it in <code>docker/manual-artifacts/godwoken</code>.</p>
+
+
+```bash
+MANUAL_BUILD_GODWOKEN=true \
+GODWOKEN_GIT_URL=ssh://git@github.com/nervosnetwork/godwoken \
+GODWOKEN_GIT_CHECKOUT=compatibility-breaking-changes \
+./kicker manual-build
+```
+
+Use Godwoken-kicker command line <code>. /kicker manual-build</code> to build the binary, or users can build the binary on their own. Just make sure that the binary is placed in docker/manual-artifacts/.
+
+</li>
+
+<li><p>SReplace the prebild godwoken and gw-tools with manual-build in the file <a href="https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/manual-godwoken.compose.yml"><code>docker/manual-godwoken.compose.yml</code></a>.</p>
+
+```bash
+services:
+  godwoken:
+    volumes:
+      # Volume our manual-build godwoken to
+      # `/usr/bin/godwoken` inside container
+      - ./manual-artifacts/godwoken:/usr/bin/godwoken
+
+```
+
+<li><p>Launch the Godwoken service with manual-build artifacts.</p></li>  
+
+```bash
+MANUAL_BUILD_GODWOKEN=true ./kicker start # Starts all services
+MANUAL_BUILD_GODWOKEN=true ./kicker start godwoken # Starts only a single godwoken service
+```
+
+</TabItem>
+</Tabs>
+
+<p>For more details on manual-build mode of Godwoken-kicker, refer to <a href="https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docs/manual-build.md">manual-build mode</a>, and <a href="https://github.com/nervosnetwork/godwoken-info/tree/info/testnet_v1">the example of a one-click launch readonly node</a>.</p>

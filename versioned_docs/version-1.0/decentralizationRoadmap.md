@@ -2,6 +2,7 @@
 id: decentralizationRoadmap
 title: Decentralization Roadmap
 ---
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 Godwoken has a solid roadmap to incrementally evolve the Godwoken network from semi-decentralization to full decentralization.
 

@@ -27,6 +27,9 @@ module.exports = {
 		href: 'https://www.nervos.org/',
       },
       items: [
+        {
+          type: 'docsVersionDropdown',
+        },
 
         {
           href: 'https://github.com/nervosnetwork/godwoken',
