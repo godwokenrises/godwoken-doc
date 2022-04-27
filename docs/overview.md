@@ -22,14 +22,14 @@ Testnet and Mainnet are provided for deploying Ethereum DApps to CKB.
   - RPC URL: https://godwoken-testnet-web3-rpc.ckbapp.dev/
   - Chain ID: 71393
   - Websocket RPC URL: ws://godwoken-testnet-web3-rpc.ckbapp.dev/ws
-  - Explorer: https://aggron.layerview.io
+  - Explorer: https://aggron.gwscan.com/
 - [Mainnet](https://github.com/nervosnetwork/godwoken-testnet/tree/master/mainnet)
   - RPC URL: https://mainnet.godwoken.io/rpc
   - Chain ID: 71394
 
   - Websocket RPC URL: https://mainnet.godwoken.io/ws
 
-  - Explorer: https://www.layerview.io/
+  - Explorer: https://www.gwscan.com/
 
 
 A Godwoken network can also be deployed locally. For more information, see the sections of Deployment.
