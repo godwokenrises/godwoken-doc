@@ -67,7 +67,7 @@ More information can be viewed at <a href="https://github.com/RetricSu/godwoken-
 
 <li><p>Deposit CKB to a Layer 2 account for testing.</p>
 
-<p>The <code>kicker get-balance [eth-address]</code> command can be used to check the layer 2 account balance.</p>
+The <code>kicker get-balance <'eth-address'></code> command can be used to check the layer 2 account balance.
 
 ```bash
 $ ./kicker get-balance 0xCD1d13450cFA630728D0390C99957C6948BF7d19 # check account balance
@@ -76,7 +76,7 @@ Creating docker_godwoken_run ... done
 [2022-04-14T18:06:14Z INFO  gw_tools::get_balance] Balance: 0
 ```
 
-<p>The <code>kicker deposit <eth-address> <amount> </code> command can be used to deposit CKB to the layer 2 account.</p>
+The <code>kicker deposit <'eth-address'> <'amount'></code> command can be used to deposit CKB to the layer 2 account.
 
 ```bash
 $ ./kicker deposit 0xCD1d13450cFA630728D0390C99957C6948BF7d19 999 # deposit ckb to account
