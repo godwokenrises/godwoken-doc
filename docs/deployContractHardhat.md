@@ -1,23 +1,21 @@
 ---
-id: deployContract_hardhat
+id: deployContractHardhat
 title: Deploy a Simple Contract with Hardhat
----
+--- 
 import useBaseUrl from "@docusaurus/useBaseUrl";
-
-
 
 ## Environment
 
 - Ubuntu 20.04 LTS
 
-### Prerequisites
+## Prerequisites
 
 - npm
 
-### Steps:
 
-1. Clone the source of Hardhat.  Skip if already have. 
+## Steps:
 
+1. Clone the source of Hardhat.  
 ```
 $ git clone --depth=1 https://github.com/NomicFoundation/hardhat
 ```
@@ -40,12 +38,9 @@ $ npx hardhat --version
 2.9.3
 ```
 
-4. Adapt `hardhat.config.js` to Godwoken local network.
+4. Adapt `hardhat.config.js` to Godwoken local network. Add the following `network` configuration to `hardhat.config.js`.
     
-    Add the following `network` configuration to `hardhat.config.js`.
-    
-
-```
+```bash
 module.exports = {
 
   networks: {
@@ -59,11 +54,12 @@ module.exports = {
 }
 ```
 
-- `http://127.0.0.1:8024` is the Godwoken Web3 URL, which can be checked by the command line `./kicker info`  while deploy Godwoken local network.
-- `0x9d5bc55413c14cf4ce360a6051eacdc0e580100a0d3f7f2f48f63623f6b05361` is the private key of account, which can be replaced with user’s own testing keys.
-5. Run hardhat on Godwoken local network 
+- `http://127.0.0.1:8024` is the Godwoken Web3 URL, which can be checked by the command line `./kicker info`  while deploy Godwoken local network.
+- `0x9d5bc55413c14cf4ce360a6051eacdc0e580100a0d3f7f2f48f63623f6b05361` is the private key of account, which can be replaced with user’s own testing keys.
+  
+5. Run hardhat on Godwoken local network.
 
-```
+```bash
 $ npx hardhat accounts --network gw_devnet_v1
 0xCD1d13450cFA630728D0390C99957C6948BF7d19
 
@@ -73,6 +69,7 @@ Compiled 2 Solidity files successfully
 $ npx hardhat test --network gw_devnet_v1
 Greeter
     ✔ Should return the new greeting once it's changed (4376ms)
+
 
   1 passing (4s)
 

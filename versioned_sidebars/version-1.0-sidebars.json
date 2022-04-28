@@ -9,9 +9,9 @@
       ]
     },
     "deployLocalNetwork",
-    "deployContract_hardhat",
+    "deployContractHardhat",
     "commandUsage",
     "integration",
-    "releaseNotes"
+    "releaseNote"
   ]
 }

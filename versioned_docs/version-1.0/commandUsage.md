@@ -1,8 +1,9 @@
 ---
-id: dcommandUsage
+id: commandUsage
 title: Godwoken-kicker Command Line
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
+
 
 Before running any Godwoken-kicker commands, it is useful to recap some conventions in all commands. Godwoken-kicker has a bunch of commands available for use, and the list of all possible commands can be viewed by running:
 
@@ -41,7 +42,7 @@ $ ./kicker -- kill godwoken
 $ ./kicker -- --help
 ```
 
-Available Commands: 
+Available Commands:
 
 ```bash
 ./kicker --help
@@ -63,5 +64,4 @@ SUBCOMMANDS:
   manual-build            Manually build services artifacts
   deposit <eth-address> <amount>  Deposit CKB to layer2
   get-balance <eth-address>       Get layer2 balance
-
 ```
