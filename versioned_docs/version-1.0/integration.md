@@ -34,23 +34,7 @@ To develop on Godwoken V1, the following caveats must be noted:
   - <Link to={useBaseUrl('/comparisonEVM')}>Comparison with EVM</Link>
   - [Godwoken Compatibility Examples](https://github.com/honestgoing/godwoken-polyjuice-compatibility-examples)
 
-## Account Initialization
 
-It is necessary to initialize an account in order to send transactions on Godwoken.
-
-1. Visit YokaiSwap ([Testnet](https://testnet.yokaiswap.com/) or [Mainnet](https://www.yokaiswap.com/)). 
-
-2. Connect the wallet and obtain the **L1 YOKAI DEPOSIT ADDRESS**.
-   <img src={useBaseUrl("img/integration/yokai-wallet.png")}  width="60%"/>
-   <img src={useBaseUrl("img/integration/deposit-address.png")}  width="50%"/>
-   
-3. Send a minimum of **400** CKBs from a CKB wallet to this address.
-
-   **Note:** Use [Nervos Faucet](https://faucet.nervos.org/) to fund the CKB wallet in Testnet.
-
-   Once the deposit is completed, the CKB balance will be visible on the Yokai Exchange page, which means the account has been initialized.
-
-   <img src={useBaseUrl("img/integration/ckb-balance.png")}  width="60%"/>
 
 ## Assets Management
 
