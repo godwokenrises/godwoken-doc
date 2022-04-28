@@ -110,6 +110,7 @@ Deposit finished
 </details>
 
 <p> Verify that the transfer executed successfully.</p>
+
 ```bash
 $ ./kicker get-balance 0xCD1d13450cFA630728D0390C99957C6948BF7d19
 Creating docker_godwoken_run ... done
@@ -437,44 +438,46 @@ rm -rf docker/manual-artifacts
 
 </li>
 
-<p>For more information on the use of the Godwoken-Kicker command line, see Godwoken-kicker Usage.</p></ol>
+</ol>
 
 </TabItem>
     <TabItem value="manual-build"><p>The manual-build mode is more flexible for custom requirements. It can build the components from local packages and executes the builds locally.</p><b>Environment</b><p><ul><li>Ubuntu 20.04 LTS</li></ul></p><b>Prerequisites</b><p><ul><li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></li><li><a href="https://docs.docker.com/compose/install/">Docker Compose >= 1.29.0</a></li></ul></p>
 
-    <p><b>Steps</b></p>
+  <p><b>Steps</b></p>
 
 <ol>  
     <li><p>Clone the source of Godwoken-kicker under the branch <code>compatibility-changes</code>.</p>
-    ```bash
-    $ git clone -b compatibility-changes https://github.com/RetricSu/godwoken-kicker
-    ```
 
-    </li>
+```bash
+$ git clone -b compatibility-changes https://github.com/RetricSu/godwoken-kicker
+```
+    
+</li>
 
-    <li><p>Define a basic Godwoken service that runs on a pre-built image in <a href="https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/docker-compose.yml"><code>docker/docker-compose.yml</code></a>.</p>
+<li><p>Define a basic Godwoken service that runs on a pre-built image in <a href="https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/docker-compose.yml"><code>docker/docker-compose.yml</code></a>.</p>
 
-    ```bash
-    godwoken:
-  image: ghcr.io/flouse/godwoken-prebuilds:v1.0.x-202203160423
-  environment:
-    RUST_LOG: info,gw_generator=debug
-    GODWOKEN_MODE: fullnode
-    RUST_BACKTRACE: full
-  volumes:
-    - ./layer2:/var/lib/layer2
-  ports:
-    - 8119:8119
-    - 8120:8120
-  command: [ "godwoken", "run", "-c", "/var/lib/layer2/config/godwoken-config.toml" ]
-  ```
-  <p>Navigate to /usr/bin/godwoken to locate the Godwoken binary. </p>
+```bash
+godwoken:
+image: ghcr.io/flouse/godwoken-prebuilds:v1.0.x-202203160423
+environment:
+RUST_LOG: info,gw_generator=debug
+GODWOKEN_MODE: fullnode
+RUST_BACKTRACE: full
+volumes:
+- ./layer2:/var/lib/layer2
+ports:
+- 8119:8119
+- 8120:8120
+command: [ "godwoken", "run", "-c", "/var/lib/layer2/config/godwoken-config.toml" ]
+```
 
-  </li>
+<p>Navigate to <code>/usr/bin/godwoken</code> to locate the Godwoken binary. </p>
 
-  <li><p>Build the godwoken binary manually and place it in <code>docker/manual-artifacts/godwoken</code>.</p>
+</li>
 
-  ```bash
+<li><p>Build the godwoken binary manually and place it in <code>docker/manual-artifacts/godwoken</code>.</p>
+
+```bash
 MANUAL_BUILD_GODWOKEN=true \
 GODWOKEN_GIT_URL=ssh://git@github.com/nervosnetwork/godwoken \
 GODWOKEN_GIT_CHECKOUT=compatibility-breaking-changes \
@@ -487,6 +490,7 @@ $ ./kicker manual-build
 </li>
 
 <li><p>Replace the prebuild godwoken and gw-tools with manual-build in the file <code>docker/manual-godwoken.compose.yml</code>.</p>
+
 ```bash
 services:
   godwoken:
@@ -499,6 +503,7 @@ services:
 </li>
 
 <li><p>Launch the Godwoken service with manual-build artifacts.</p>
+
 ```bash
 MANUAL_BUILD_GODWOKEN=true ./kicker start # Starts all services
 MANUAL_BUILD_GODWOKEN=true ./kicker start godwoken # Starts only a single godwoken service
@@ -509,6 +514,6 @@ MANUAL_BUILD_GODWOKEN=true ./kicker start godwoken # Starts only a single godwok
 </TabItem>
 </Tabs>
 
-For more details on manual-build mode of Godwoken-kicker, refer to ][manual-build mode](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docs/manual-build.md), and [the example of a one-click launch readonly node](https://github.com/nervosnetwork/godwoken-info/tree/info/testnet_v1).
+For more details on manual-build mode of Godwoken-kicker, refer to [manual-build mode](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docs/manual-build.md), and [the example of a one-click launch readonly node](https://github.com/nervosnetwork/godwoken-info/tree/info/testnet_v1).
 
 
