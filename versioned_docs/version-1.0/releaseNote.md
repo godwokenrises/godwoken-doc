@@ -1,38 +1,38 @@
 ---
 id: releaseNote
-title: Godwoken Release notes
+title: Godwoken V1 Release Note
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 This release note includes the new features and major updates in Godwoken v1.
 
-> Note that Godwoken v1 is not an upgrade on the existing chain! Instead, v1 will be deployed as a new chain with tools to help users and developers migrate to the new chain.
+> Note that Godwoken v1 is **NOT** an upgrade to the existing chain! Instead, v1 will be deployed as a new chain with tools to help users and developers migrate to the new chain.
 > 
 
-## Ethereum Compatiblility Improvements
+## Ethereum Compatibility Improvements
 
 In the new version, compatibility improvements for Godwoken include:
 
-- Provide API level compatiblility. Remove the web3-provider plugin.
-- Support native ETH address in API and EVM, remove the Godwoken address concept.
-- Support Ethereum signature format and EIP-712. User can view the transaction before signing, rather than signing a random 32-byte message.[#561](https://github.com/nervosnetwork/godwoken/pull/561)
-- Fix total provisioning interface for sUDT ERC-20 proxy contracts [#560](https://github.com/nervosnetwork/godwoken/pull/560)
-- Support interactive with Ethereum addresses that are not yet registered to Godwoken.
+- Provide API level compatibility and remove the web3-provider plugin.
+- Support native ETH addresses in API and EVM, removing the concept of Godwoken addresses.
+- Support Ethereum signature format and EIP-712. Users can view the transaction before signing, rather than signing a random 32-byte message. For more details, see [#561](https://github.com/nervosnetwork/godwoken/pull/561).
+- Fix total provisioning interface for sUDT ERC-20 proxy contracts. For more details, see [#560](https://github.com/nervosnetwork/godwoken/pull/560).
+- Support interactions with Ethereum addresses that have not yet been registered with Godwoken.
 
-Briefly, developers can use Godwoken v1 the same way they use other ethereum-compatible chains, requiring only switching the network to Godwoken. With v1, the polyjuice-provider web3 plugin was removed.
+Briefly stated, developers can use Godwoken v1 in the same way they use other Ethereum-compatible chains, by switching the network to Godwoken. The polyjuice-provider web3 plugin was removed in v1.
 
-## Other improvements
+## Other Improvements
 
-- Support p2p mem-pool syncing [#642](https://github.com/nervosnetwork/godwoken/pull/642), further PRs to enable fully decentralized syncing, but this PR is a good starting.
-- perf: optimize molecule usage [#640](https://github.com/nervosnetwork/godwoken/pull/640)
-- perf: use BTreeSet in FeeQueue [#641](https://github.com/nervosnetwork/godwoken/pull/641)
-- Change rollup cell's lock to omni-lock [#608](https://github.com/nervosnetwork/godwoken/pull/608). This PR enables optimistic rollup to submit larger size blocks to fix the inability of putting too much data in the witness field of a CKB transaction due to a secp256k1 locking error.
+- Support p2p mem-pool syncing, further PRs to enable fully decentralized syncing, but this PR is a good starting. For more details, see [#642](https://github.com/nervosnetwork/godwoken/pull/642).
+- perf: optimize molecule usage. For more details, see [#640](https://github.com/nervosnetwork/godwoken/pull/640).
+- perf: use BTreeSet in FeeQueue. For more details, see [#641](https://github.com/nervosnetwork/godwoken/pull/641).
+- Change rollup cell's lock to omni-lock. The witness field of CKB transactions cannot hold too much data due to a secp256k1 locking error. This PR allows optimistic rollup to submit larger blocks, so that the witness field can hold more data. For more details, see [#608](https://github.com/nervosnetwork/godwoken/pull/608).
 
-## Godwoken internal changes
+## Godwoken Internal Changes
 
-> Dapp developers are free to skip this part.
+> DApp developers are free to skip this part.
 > 
 
-v1 adds a new concept in having the Ethereum address registry stores Ethereum addresses in Godwoken. Once user deposits a new account, Godwoken will create a mapping between the Ethereum address and the account. In addition, some RPCs have been adapted to support Ethereum addresses as parameters, and some Godwoken data structures have been adapted to support the new address format.
+Godwoken v1 introduces a new contract, the Ethereum address registry, that stores Ethereum addresses. Once a user deposits a new account, Godwoken will create a mapping between the Ethereum address and the account. Additionally, some RPCs have been adapted to support Ethereum addresses as parameters, and some Godwoken data structures have been adapted to support the new address format.
 
-More details about Godwoken internal changes refer to: [docs/release-notes/v1-internal-CHANGES.md](https://github.com/nervosnetwork/godwoken/blob/72b6728e4315ab581282685cffe75cdbfe38670c/docs/release-notes/v1-internal-CHANGES.md).
+For more details about Godwoken internal changes, see [docs/release-notes/v1-internal-CHANGES.md](https://github.com/nervosnetwork/godwoken/blob/72b6728e4315ab581282685cffe75cdbfe38670c/docs/release-notes/v1-internal-CHANGES.md).
