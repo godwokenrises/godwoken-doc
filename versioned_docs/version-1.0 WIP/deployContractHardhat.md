@@ -1,7 +1,7 @@
 ---
 id: deployContractHardhat
 title: Deploy a Simple Contract with Hardhat
---- 
+---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## Environment
@@ -13,7 +13,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 - npm
 
 
-## Steps:
+## Steps
 
 1. Clone the source of Hardhat.  
 ```
@@ -39,7 +39,7 @@ $ npx hardhat --version
 ```
 
 4. Adapt `hardhat.config.js` to Godwoken local network. Add the following `network` configuration to `hardhat.config.js`.
-    
+   
 ```bash
 module.exports = {
 
