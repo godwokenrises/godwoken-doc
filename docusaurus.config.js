@@ -29,6 +29,7 @@ module.exports = {
       items: [
         {
           type: 'docsVersionDropdown',
+          position: 'right'
         },
 
         {
