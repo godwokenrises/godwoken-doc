@@ -11,7 +11,6 @@ Godwoken targets 100% EVM compatibility and is designed to work with every smart
 The maximum EVM revision supported is `EVMC_BERLIN`. 
 
 
-
 ## pCKB
 
 Godwoken v1 introduced a new concept, [**pCKB**](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md#pckb).
