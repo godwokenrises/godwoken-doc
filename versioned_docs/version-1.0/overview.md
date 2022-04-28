@@ -6,6 +6,8 @@ sidebar_label: Overview
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
+*Godwoken v1 documentation is being actively updated, the specific finalized content shall prevail.*
+
 With the vision to enable interoperability across the blockchain ecosystem through a multi-chain solution, Godwoken is an impactful move towards this objective for Nervos Network.
 
 [Godwoken](https://github.com/nervosnetwork/godwoken) is a layer 2 optimistic rollup solution and an EVM-compatible layer that builds on top of Nervos Layer 1, which is also known as CKB. Godwoken comprises two key component: Godwoken optimistic rollup framework and the Polyjuice EVM-compatible framework. Both Godwoken and Polyjuice together forge a scalable EVM-compatible solution for Nervos, generally known as **Godwoken**.
