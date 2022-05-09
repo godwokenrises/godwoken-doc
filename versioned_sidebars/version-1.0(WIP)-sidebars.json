@@ -7,13 +7,20 @@
         "comparisonEVM"
       ]
     },
-    "deployLocalNetwork",
-    "deployContractHardhat",
-    "commandUsage",
+
     "integration",
+    
+    {
+      "Deployment":[
+        "deployLocalNetwork",
+        "deployContractHardhat"
+      ]
+    },
+    
     {
       "Relevant Terms":[
-        "releaseNote"
+        "releaseNote",
+        "commandUsage"
       ]
     }
 
