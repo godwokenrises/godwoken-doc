@@ -4,14 +4,18 @@
       "Introduction": [
         "overview",
         "decentralizationRoadmap",
-        "comparisonEVM",
-        "keyConcepts"
+        "comparisonEVM"
       ]
     },
     "deployLocalNetwork",
     "deployContractHardhat",
     "commandUsage",
     "integration",
-    "releaseNote"
+    {
+      "Relevant Terms":[
+        "releaseNote"
+      ]
+    }
+
   ]
 }

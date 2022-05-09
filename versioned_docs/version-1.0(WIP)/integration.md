@@ -24,15 +24,13 @@ The knowledge of Ethereum is a prerequisite for using this guide.
 
 ## Known Caveats
 
-Godwoken V1 is still under development and targets 100% EVM compatibility.
+Godwoken V1 is still under development and targets 100% EVM compatibility. The highest level of compatibility has always been the goal in designing and building Godwoken: 
 
-To develop on Godwoken V1, the following caveats must be noted:
+- the EVM being used in Godwoken-Polyjuice is expected to be 100% compatible with the latest forked version of Ethereum.
+- With [Web3 layer](https://github.com/nervosnetwork/godwoken-web3), Godwoken-Polyjuice should be 100% compatible with Ethereum regarding the Web3 interface.
 
-- The existing web3.js libraries are not used to interact with Godwoken because the web3 RPC is not fully compatible with EVM. [compatible providers](https://github.com/nervosnetwork/polyjuice-provider) are provided to minimize the workload of porting existing work with web3.js, ethers.js, Truffle and Hardhat. Simply replace the provider with polyjuice-provider when initiating the wallet provider.
-- Ethereum wallets are used as transaction signers instead of a full-featured wallet that support checking balances, tracking transactions, transferring assets etc. The Ethereum wallets such as MetaMask support signing and sending transactions on Godwoken.
 - For more details on the incompatibilities when deploying Ethereum contracts, see the links below:
   - <Link to={useBaseUrl('/comparisonEVM')}>Comparison with EVM</Link>
-  - [Godwoken Compatibility Examples](https://github.com/honestgoing/godwoken-polyjuice-compatibility-examples)
 
 
 
