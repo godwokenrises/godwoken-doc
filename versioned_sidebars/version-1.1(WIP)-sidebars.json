@@ -16,7 +16,8 @@
     {
       "Deployment": [
         "deployLocalNetwork",
-        "deployContractHardhat"
+        "deployContractHardhat",
+        "withdraw_lightGodwoken"
       ]
     },
     {

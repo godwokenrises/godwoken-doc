@@ -442,43 +442,46 @@ rm -rf docker/manual-artifacts
 </TabItem>
     <TabItem value="manual-build"><p>The manual-build mode is more flexible for custom requirements. It can build the components from local packages and executes the builds locally.</p><b>Environment</b><p><ul><li>Ubuntu 20.04 LTS</li></ul></p><b>Prerequisites</b><p><ul><li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></li><li><a href="https://docs.docker.com/compose/install/">Docker Compose >= 1.29.0</a></li></ul></p>
 
-    <p><b>Steps</b></p>
+<p><b>Steps</b></p>
 
 <ol>  
-    <li><p>Clone the source of Godwoken-kicker under the branch <code>compatibility-changes</code>.</p>
-    ```bash
-    $ git clone -b compatibility-changes https://github.com/RetricSu/godwoken-kicker
-    ```
 
-    </li>
+<li>Clone the source of Godwoken-kicker under the branch <code>compatibility-changes</code>.
 
-    <li><p>Define a basic Godwoken service that runs on a pre-built image in <a href="https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/docker-compose.yml"><code>docker/docker-compose.yml</code></a>.</p>
 
-    ```bash
-    godwoken:
-  image: ghcr.io/flouse/godwoken-prebuilds:v1.0.x-202203160423
-  environment:
-    RUST_LOG: info,gw_generator=debug
-    GODWOKEN_MODE: fullnode
-    RUST_BACKTRACE: full
-  volumes:
-    - ./layer2:/var/lib/layer2
-  ports:
-    - 8119:8119
-    - 8120:8120
-  command: [ "godwoken", "run", "-c", "/var/lib/layer2/config/godwoken-config.toml" ]
-  ```
-  <p>Navigate to /usr/bin/godwoken to locate the Godwoken binary. </p>
+```bash
+$ git clone -b compatibility-changes https://github.com/RetricSu/godwoken-kicker
+```
+</li>
 
-  </li>
+<li><p>Define a basic Godwoken service that runs on a pre-built image in <a href="https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/docker-compose.yml"><code>docker/docker-compose.yml</code></a>.</p>
 
-  <li><p>Build the godwoken binary manually and place it in <code>docker/manual-artifacts/godwoken</code>.</p>
+```bash
+godwoken:
+mage: ghcr.io/flouse/godwoken-prebuilds:v1.0.x-202203160423
+environment:
+RUST_LOG: info,gw_generator=debug
+GODWOKEN_MODE: fullnode
+RUST_BACKTRACE: full
+volumes:
+  - ./layer2:/var/lib/layer2
+ports:
+  - 8119:8119
+  - 8120:8120
+command: [ "godwoken", "run", "-c", "/var/lib/layer2/config/godwoken-config.toml" ]
+```
+<p>Navigate to <code>/usr/bin/godwoken</code> to locate the Godwoken binary. </p>
 
-  ```bash
+</li>
+
+<li><p>Build the godwoken binary manually and place it in <code>docker/manual-artifacts/godwoken</code>.</p>
+
+```bash
 MANUAL_BUILD_GODWOKEN=true \
 GODWOKEN_GIT_URL=ssh://git@github.com/nervosnetwork/godwoken \
 GODWOKEN_GIT_CHECKOUT=compatibility-breaking-changes \
 ```
+  
 <p>Use <code>./kicker manual-build</code>to build the binary. Or, users can build on their own, just make sure that the binary is placed in <code>docker/manual-artifacts/</code>.</p>
 
 ```bash
@@ -487,21 +490,21 @@ $ ./kicker manual-build
 </li>
 
 <li><p>Replace the prebuild godwoken and gw-tools with manual-build in the file <code>docker/manual-godwoken.compose.yml</code>.</p>
+
 ```bash
 services:
-  godwoken:
-    volumes:
-      # Volume our manual-build godwoken to
-      # `/usr/bin/godwoken` inside container
-      - ./manual-artifacts/godwoken:/usr/bin/godwoken
+godwoken:
+  volumes:
+    # Volume our manual-build godwoken to
+    # `/usr/bin/godwoken` inside container
+    - ./manual-artifacts/godwoken:/usr/bin/godwoken
 ```
-
 </li>
 
 <li><p>Launch the Godwoken service with manual-build artifacts.</p>
+
 ```bash
-MANUAL_BUILD_GODWOKEN=true ./kicker start # Starts all services
-MANUAL_BUILD_GODWOKEN=true ./kicker start godwoken # Starts only a single godwoken service
+MANUAL_BUILD_GODWOKEN=true ./kicker start # Starts all services MANUAL_BUILD_GODWOKEN=true ./kicker start godwoken # Starts only a single godwoken service
 ```
 
 </li></ol>

@@ -22,7 +22,7 @@ Figure 1. Architecture of Godwoken
 
 ## Current Version
 
-Godwoken v1 version now is available. Godwoken v1 adds a new built-in contract: the Ethereum address registry. To wit, deploying and interacting with Solidity contracts will become simpler with Godwoken v1, thanks to the compatibility of Godwoken v1 with the existing toolchains of Ethereum.
+Godwoken v1.1 version now is available. Godwoken v1.1 adds a new built-in contract: the Ethereum address registry. To wit, deploying and interacting with Solidity contracts will become simpler with Godwoken v1, thanks to the compatibility of Godwoken v1 with the existing toolchains of Ethereum.
 
 To be specific, when a user creates a new account by making a deposit, an Ethereum address will be inserted into the contract. With the new built-in contract, the Ethereum address is directly supported in EVM so users can submit transactions to Godwoken with no need to use the web3-provider plugin. Godwoken is designed for 100% compatibility on RPC level, so users can use Ethereum dapps or toolchains with no modification when switching to the Godwoken network.
 
