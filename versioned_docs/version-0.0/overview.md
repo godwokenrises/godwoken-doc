@@ -36,9 +36,9 @@ A Godwoken network can also be deployed locally. For more information, see the s
 
 ## Current Version 
 
-The current version available is the **Godwoken beta**. We still maintain various levels of control over the mainnet. 
+The current version available is the **v0.10.4**. For more information refer to [godwoken-docker-prebuilds](https://github.com/nervosnetwork/godwoken-docker-prebuilds/releases/tag/v0.10.4). 
 
-**Why Godwoken Beta?**
+**About Godwoken Beta**
 
 It is the responsible way to make Godwoken available while we keep up improving the system before the official release.
 Here is what you can do with Godwoken beta:
@@ -51,7 +51,6 @@ Here is what you can do with Godwoken beta:
 | run readonly nodes          |    yes     |   yes**   |
 
 During the Godwoken beta phase, the deploy contract feature is only open to developers allowed on the list. We need to upgrade the Godwoken beta or coordinate with developers in case of emergency. Developers or teams are welcome to participate in the Godwoken beta anyways.
-In the current version, a readonly node cannot query mem-pool status.
 
 Godwoken beta is limited to the following design choices:
 
