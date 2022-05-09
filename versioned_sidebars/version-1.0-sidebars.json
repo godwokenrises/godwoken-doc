@@ -4,11 +4,10 @@
       "Introduction": [
         "overview",
         "decentralizationRoadmap",
-        "comparisonEVM"
+        "comparisonEVM",
+        "integration"
       ]
     },
-
-    "integration",
     
     {
       "Deployment":[

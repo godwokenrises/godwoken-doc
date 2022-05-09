@@ -3,15 +3,33 @@ module.exports = {
       {
         "Introduction": [
           "overview",
-          "decentralizationRoadmap",
+          "decentralizationRoadmap"
+        ]
+      },
+
+      {
+        "Compatibility": [
+          "integration",
           "comparisonEVM",
+          "web3Compatible"
+        ]
+      },
+
+      {
+        "Deployment": [
+          "deployLocalNetwork",
+          "deployContractHardhat"
+        ]
+      },
+
+      {
+        "Related Terms": [
+          "commandUsage",
           "keyConcepts"
         ]
       },
-      "deployLocalNetwork",
-      "deployContractHardhat",
-      "commandUsage",
-      "integration",
+
       "releaseNote"
+      
     ]
 }
