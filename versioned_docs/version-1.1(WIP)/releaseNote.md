@@ -1,6 +1,6 @@
 ---
 id: releaseNote
-title: Godwoken Release notes
+title: Godwoken Release Notes
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
