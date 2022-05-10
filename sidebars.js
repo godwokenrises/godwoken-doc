@@ -8,17 +8,17 @@ module.exports = {
       },
 
       {
-        "Compatibility": [
-          "integration",
-          "comparisonEVM",
-          "web3Compatible"
+        "Deployment": [
+          "deployLocalNetwork",
+          "deployContractHardhat"
         ]
       },
 
       {
-        "Deployment": [
-          "deployLocalNetwork",
-          "deployContractHardhat"
+        "Ethereum Compatibility": [
+          "integration",
+          "comparisonEVM",
+          "web3Compatible"
         ]
       },
 

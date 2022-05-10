@@ -6,13 +6,7 @@
         "decentralizationRoadmap"
       ]
     },
-    {
-      "Compatibility": [
-        "integration",
-        "comparisonEVM",
-        "web3Compatible"
-      ]
-    },
+    
     {
       "Deployment": [
         "deployLocalNetwork",
@@ -20,6 +14,15 @@
         "withdraw_lightGodwoken"
       ]
     },
+
+    {
+      "Ethereum Compatibility": [
+        "integration",
+        "comparisonEVM",
+        "web3Compatible"
+      ]
+    },
+
     {
       "Related Terms": [
         "commandUsage",
