@@ -33,7 +33,7 @@ This version includes a new built-in contract: the Ethereum address registry. To
 Godwoken is currently in active development. For more information on Godwoken public networks, see [godwoken](https://github.com/nervosnetwork/godwoken).
 
 
-A Godwoken v1 network can be deployed locally with Godwoken-Kicker in two ways, quick deployment and manual-build mode. For more information, refer to [godwoken-info](https://github.com/nervosnetwork/godwoken-info/tree/info). 
+A Godwoken v1 network can be deployed locally with Godwoken-Kicker in two ways, quick deployment and manual-build mode. For more information, refer to [godwoken-info](https://github.com/nervosnetwork/godwoken-info/tree/info).  
 
 For an introduction to the Nervos ecosystem, an overview of various key concepts, and hands-on practice with the platform in preparation for deploying real-world DApps, check out **[Nervos Layer 2 EVM training](https://nervos.gitbook.io/layer-2-evm/).**
 

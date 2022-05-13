@@ -20,10 +20,11 @@ module.exports = {
       {
         "Deployment": [
           "deployLocalNetwork",
-          "deployContractHardhat",
-          "withdraw_lightGodwoken"
+          "deployContractHardhat"
         ]
       },
+
+      "withdraw_lightGodwoken",
   
       {
         "Command-Lines": [

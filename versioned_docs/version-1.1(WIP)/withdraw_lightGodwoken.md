@@ -1,6 +1,6 @@
 ---
 id: withdraw_lightGodwoken
-title: Light Godwoken
+title: Deposit and Withdrawal Asset Using Light Godwoken
 ---
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
