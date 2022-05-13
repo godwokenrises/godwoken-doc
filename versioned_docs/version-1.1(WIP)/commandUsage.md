@@ -1,6 +1,6 @@
 ---
 id: commandUsage
-title: Godwoken-kicker Command Line
+title: Using Godwoken-kicker
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
@@ -18,11 +18,16 @@ $ ./kicker start
 $ ./kicker info
 ```
 
-Deposit 1000 CKBs from layer1 to layer2:
+Deposit CKBs from layer1 to layer2:
 
 ```bash
-$ ./kicker deposit 0x618cc3C660cEBFDbA8570CA739b1744AE3E2553a 1000
-$ ./kicker get-balance 0x618cc3C660cEBFDbA8570CA739b1744AE3E2553a
+$ ./kicker deposit <eth-address> <amount>
+```
+
+Verify balance of the account:
+
+```bash
+$ ./kicker get-balance <eth-address>
 ```
 
 Redeploy the local network:

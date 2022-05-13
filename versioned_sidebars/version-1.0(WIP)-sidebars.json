@@ -1,27 +1,23 @@
-module.exports = {
-    "sidebar2": [
+{
+  "sidebar2": [
       {
         "Introduction": [
           "overview",
           "decentralizationRoadmap"
         ]
       },
-
+      
       {
         "Ethereum Compatibility": [
           "integration",
-          "comparisonEVM",
-          "web3Compatible"
+          "comparisonEVM"
         ]
       },
-
-      "evmTraining",
-
+    
       {
         "Deployment": [
           "deployLocalNetwork",
-          "deployContractHardhat",
-          "withdraw_lightGodwoken"
+          "deployContractHardhat"
         ]
       },
   
@@ -39,6 +35,6 @@ module.exports = {
   
       "releaseNote",
       "faq"
-    ]
-  }
-  
+
+  ]
+}

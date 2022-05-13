@@ -6,14 +6,6 @@
         "decentralizationRoadmap"
       ]
     },
-    
-    {
-      "Deployment": [
-        "deployLocalNetwork",
-        "deployContractHardhat",
-        "withdraw_lightGodwoken"
-      ]
-    },
 
     {
       "Ethereum Compatibility": [
@@ -23,12 +15,29 @@
       ]
     },
 
+    "evmTraining",
+
     {
-      "Related Terms": [
-        "commandUsage",
+      "Deployment": [
+        "deployLocalNetwork",
+        "deployContractHardhat",
+        "withdraw_lightGodwoken"
+      ]
+    },
+
+    {
+      "Command-Lines": [
+        "commandUsage"
+      ]
+    },
+
+    {
+      "Concepts": [
         "keyConcepts"
       ]
     },
-    "releaseNote"
+
+    "releaseNote",
+    "faq"
   ]
 }
