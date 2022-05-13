@@ -1,6 +1,6 @@
 ---
 id: evmTraining
-title: EVM Training
+title: Hands-On EVM Training
 ---
 
 This section covers Nervos' Layer 2 EVM training. With each task in this section, developers can practice step-by-step on developing EVM dapps on Nervos platform so as to gain direct development experience and prepare for deploying their own applications. 
@@ -14,4 +14,4 @@ The following nine tasks will walk developers through the process. Each task wil
 6. [Use Force Bridge to Deposit Tokens on Ethereum to Polyjuice](https://nervos.gitbook.io/layer-2-evm/tasks/6.use.force.bridge.to.deposit)
 7. [Port an Existing Ethereum dApp to Polyjuice](https://nervos.gitbook.io/layer-2-evm/tasks/7.port.eth.dapp)
 8. [Modify the Ported dApp so it Supports Ethereum Assets via Force Bridge](https://nervos.gitbook.io/layer-2-evm/tasks/8.modify.dapp.support.force.bridge)
-9. Withdraw From Layer 2 Back to Layer 1(https://nervos.gitbook.io/layer-2-evm/tasks/9.withdraw)
+9. [Withdraw From Layer 2 Back to Layer 1](https://nervos.gitbook.io/layer-2-evm/tasks/9.withdraw)

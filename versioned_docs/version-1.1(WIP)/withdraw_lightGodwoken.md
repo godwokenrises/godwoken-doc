@@ -11,7 +11,7 @@ In contrast to the previous version, this UI offered:
 - A unified deposit/withdraw page
 - Quick asset withdrawal from v0 to v1
 
-<img src={useBaseUrl("img/countdownNew1.jpg")}  width="40%"/>
+
 
 
 

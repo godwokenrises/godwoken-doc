@@ -1,6 +1,6 @@
 ---
 id: keyConcepts
-title: Key Concepts
+title: Accounts
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
