@@ -11,7 +11,7 @@ Visit [MetaMask](https://metamask.io/) to download the wallet. For more informat
 
 1. Add the Godwoken Network manually to the MetaMask wallet.  
 
- <img src={useBaseUrl("img/addNw.jpg")}  width="40%"/>
+ <img src={useBaseUrl("img/addNew.png")}  width="40%"/>
 
  Godwoken v1 is currently in active development. For more information on Godwoken public networks, see [godwoken](https://github.com/nervosnetwork/godwoken-info).
 
