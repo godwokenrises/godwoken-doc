@@ -1,6 +1,6 @@
 ---
-id: withdrawgodwoken
-title: Withdrawing Assets from Godwoken
+id: liteGodwokenWithdraw
+title: Light Godwoken Tutorial
 ---
 
 # Withdrawing Assets from Godwoken

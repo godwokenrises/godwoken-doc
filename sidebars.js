@@ -24,7 +24,12 @@ module.exports = {
         ]
       },
 
-      "withdraw_lightGodwoken",
+      {
+        "Light Godwoken": [
+          "lightGodwoken",
+          "liteGodwokenWithdraw"
+        ]
+      },
   
       {
         "Command-Lines": [
