@@ -18,7 +18,7 @@ Visit [MetaMask](https://metamask.io/) to download the wallet. For more informat
 
 2. Bridge Your Own Assets
 
- - Login to the bridge with user's own MetaMask wallet, and connect to the Godwoken Network. 
+ Login to the bridge with user's own MetaMask wallet, and connect to the Godwoken Network. 
 
 <img src={useBaseUrl("img/liteGdwknCon1.jpg")}  width="40%"/>
 
