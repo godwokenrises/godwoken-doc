@@ -26,7 +26,7 @@ Current version of Godwoken is v1.1 beta.
 
 ## Godwoken Public Networks
 
-odwoken is currently in active development. For more information on Godwoken public networks, see [godwoken](https://github.com/nervosnetwork/godwoken).
+ Godwoken is currently in active development. For more information on Godwoken public networks, see [godwoken](https://github.com/nervosnetwork/godwoken-info).
 
 
 A Godwoken v1 network can be deployed locally with Godwoken-Kicker in two ways, quick deployment and manual-build mode. For more information, refer to [godwoken-info](https://github.com/nervosnetwork/godwoken-info/tree/info). 
