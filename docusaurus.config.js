@@ -20,7 +20,7 @@ module.exports = {
     },
     navbar: {
 	hideOnScroll: true,
-      title: '',
+      title: 'Godwoken Documentation',
       logo: {
         alt: 'Nervos',
         src: 'img/favicon.png',
