@@ -4,12 +4,7 @@ title: Deployment
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-## Deploy a Godwoken Network by Using Godwoken-Kicker
-
-Godwoken-kicker is a one-line command to start a Godwoken network on **Devnet**. This deployment method helps developers deploy Ethereum contracts and quickly migrate Ethereum DApps to CKB Devnet in testing and development environments.
-
-- RPC URL: http://localhost:8024
-- Chain ID: 1024777
+## Deploy a Local Godwoken Network by Using Godwoken-Kicker
 
 Godwoken-kicker provides a quick mode and a custom mode for deployment.
 

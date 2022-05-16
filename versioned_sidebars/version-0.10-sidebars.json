@@ -4,14 +4,14 @@
       "Introduction": [
         "overview",
         "decentralizationRoadmap",
-        "comparisonEVM",
-        "keyConcepts"
+        "comparisonEVM"
       ]
     },
-    "deployLocalNetwork",
-    "deployContractHardhat",
-    "commandUsage",
+    "deployment",
+    "deployEthDapp",
+    "deposit_withdrawal",
+    "withdraw_lightGodwoken",
     "integration",
-    "releaseNote"
+    "faq"
   ]
 }

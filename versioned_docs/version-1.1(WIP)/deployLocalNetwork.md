@@ -1,10 +1,8 @@
 ---
 id: deployLocalNetwork
-title: Deploy Local Network with Godwoken-kicker
+title: Deploy a Local Network with Godwoken-kicker
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
-
-Godwoken-kicker is a one-line command to start a Godwoken network on Devnet. This deployment method helps developers deploy Ethereum contracts and quickly migrate Ethereum DApps to CKB Devnet in testing and development environments.
 
 Godwoken-kicker provides a quick mode and a manual-build mode for deployment.
 
@@ -110,6 +108,8 @@ Deposit finished
 </details>
 
 <p> Verify that the transfer executed successfully.</p>
+
+
 ```bash
 $ ./kicker get-balance 0xCD1d13450cFA630728D0390C99957C6948BF7d19
 Creating docker_godwoken_run ... done
@@ -481,7 +481,7 @@ MANUAL_BUILD_GODWOKEN=true \
 GODWOKEN_GIT_URL=ssh://git@github.com/nervosnetwork/godwoken \
 GODWOKEN_GIT_CHECKOUT=compatibility-breaking-changes \
 ```
-  
+
 <p>Use <code>./kicker manual-build</code>to build the binary. Or, users can build on their own, just make sure that the binary is placed in <code>docker/manual-artifacts/</code>.</p>
 
 ```bash
@@ -512,6 +512,11 @@ MANUAL_BUILD_GODWOKEN=true ./kicker start # Starts all services MANUAL_BUILD_GOD
 </TabItem>
 </Tabs>
 
-For more details on manual-build mode of Godwoken-kicker, refer to ][manual-build mode](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docs/manual-build.md), and [the example of a one-click launch readonly node](https://github.com/nervosnetwork/godwoken-info/tree/info/testnet_v1).
+For more details on manual-build mode of Godwoken-kicker, refer to [manual-build mode](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docs/manual-build.md), and [the example of a one-click launch readonly node](https://github.com/nervosnetwork/godwoken-info/tree/info/testnet_v1).
 
+After the Godwoken network has been successfully launched, visit the website http://localhost:6100 and connect the MetaMask wallet by clicking the **Connect Wallet** button. 
 
+Add the Godwoken network by using the following settings:
+
+- RPC URL=http://localhost:8024
+- CHAIN ID=1024777
