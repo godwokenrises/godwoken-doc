@@ -6,7 +6,7 @@ title: Godwoken Web3 API Compatibility
 # Eth Compatibility
 Godwoken Web3 API is a Web3 RPC compatible layer built atop Godwoken/Polyjuice.
 
-## RPC compatibility
+## RPC Compatibility
 
 #### `transaction.to` MUST be a Contract Address
 

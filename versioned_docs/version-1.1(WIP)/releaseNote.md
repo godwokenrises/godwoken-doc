@@ -1,6 +1,6 @@
 ---
 id: releaseNote
-title: Godwoken Release Notes
+title: Godwoken V1.1 Release Note
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
@@ -17,7 +17,7 @@ In the new version, compatibility improvements for Godwoken include:
 - Change layer 2 ckb decimal from 8 to 18, improve compatibility between metamask and native ckb. [#675](https://github.com/nervosnetwork/godwoken/pull/675)
 
 Developers can use Godwoken v1 in the same way they use other Ethereum-compatible chains, by switching the network to Godwoken. The polyjuice-provider web3 plugin was removed in Godwoken v1.
- 
+
 
 ## Godwoken Internal Changes
 

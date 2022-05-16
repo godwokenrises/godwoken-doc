@@ -1,6 +1,6 @@
 ---
 id: releaseNote
-title: Godwoken V1 Release Note
+title: Godwoken V1.0 Release Note
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
@@ -9,7 +9,7 @@ This release note includes the new features and major updates in Godwoken v1.
 > Note that Godwoken v1 is **NOT** an upgrade to the existing chain! Instead, v1 will be deployed as a new chain with tools to help users and developers migrate to the new chain.
 > 
 
-## thereum Compatibility Improvements
+## Ethereum Compatibility Improvements
 
 In the new version, compatibility improvements for Godwoken include:
 

@@ -6,7 +6,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 Godwoken targets 100% EVM compatibility and is designed to work with every smart contract that the latest Ethereum hard fork version supports. But, the current version is not yet fully compatible with EVM.
 
-## EVM revision
+## EVM Revision
 
 The maximum EVM revision supported is `EVMC_BERLIN`.
 
@@ -50,8 +50,9 @@ A Polyjuice transaction is essentially a Godwoken transaction. When Ethereum tra
     - the size limit for contract's storage is `[25600B](https://github.com/nervosnetwork/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22)`
   
 - `transaction.to` MUST be a contract address
-    
+  
     Direct transfer of the value (pCKB) from EOA to EOA is not supported.
+    
     > Scenario: pCKB (CKB) is represented as an ERC20 token on layer2, which can be transferred through the sUDT_ERC20_Proxycontract transfer function.
     
 - The `transfer value` can not exceed uint128:MAX
