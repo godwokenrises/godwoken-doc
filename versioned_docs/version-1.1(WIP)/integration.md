@@ -149,7 +149,7 @@ There are two ways to create a layer 2 account:
 
 ## Hands-On EVM Training
 
-This section covers the step-by-step tasks of developing EVM dApps on the Nervos platform. Developers can gain direct experience and prepare themselves for deploying their own applications by practicing these tasks.  
+This section covers the step-by-step tasks of developing EVM dApps on the Nervos platform. Developers can gain direct experience and prepare themselves for deploying their own applications by practicing these tasks.
 
 ### Prerequisites
 
@@ -170,3 +170,4 @@ The following tasks provide instructions on what must be done, guidance on all n
 8. [Modify the Ported dApp so it Supports Ethereum Assets via Force Bridge](https://nervos.gitbook.io/layer-2-evm/tasks/8.modify.dapp.support.force.bridge)
 9. [Withdraw From Layer 2 Back to Layer 1](https://nervos.gitbook.io/layer-2-evm/tasks/9.withdraw)
 
+<!--For details on the Nervos ecosystem, key concepts, and hands-on practice with the platform in preparation for deploying real-world DApps, check out **[Nervos Layer 2 EVM training](https://nervos.gitbook.io/layer-2-evm/).**-->
