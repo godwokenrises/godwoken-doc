@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
     {label: 'Quick Mode', value: 'quick'},
     {label: 'Manual-build Mode', value: 'manual-build'},
   ]}>
-<TabItem value="quick"><p>The quick mode is fast and simple. It executes the builds of all components from pre-built docker images.</p><b>Environment</b><p><ul><li>Ubuntu 20.04 LTS</li></ul></p><b>Prerequisites</b><p><ul><li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></li><li><a href="https://docs.docker.com/compose/install/">Docker Compose >= 1.29.0</a></li><li><a href="https://aggron.gwscan.com/">Metamask Wallet</a></li></ul></p>
+<TabItem value="quick"><p>The quick mode is fast and simple. It executes the builds of all components from pre-built docker images.</p><b>Environment</b><p><ul><li>Ubuntu 20.04 LTS</li></ul></p><b>Prerequisites</b><p><ul><li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></li><li><a href="https://docs.docker.com/compose/install/">Docker Compose >= 1.29.0</a></li></ul></p>
 
 <p><b>Steps</b></p>
 
@@ -54,6 +54,12 @@ Recreating docker_web3_1                         ... done
 Creating docker_web3-indexer_1                   ... done
 [start] Services started successfully
 ```
+
+:::note
+ For developers who have configured Godwoken, in case of reported errors that cause the service to fail to start, execute `./kicker stop` to disconnect from the Godwoken network and then run `./kickcer clean` to ensure a clean running environment.
+
+:::
+
 
 <p>The command above deploys the Godwoken local network. The following docker containers should start running once deployment completed:</p>
 
@@ -364,7 +370,7 @@ $ npx hardhat run --network <your-network> scripts/deploy.js
 
 <li><p>Discontinue Godwoken devnet_v1.</p>
 
-<p>The <code>kicker stop</code> command can be used to stop the Godwoken services.</p>
+<p>Direct to the <code>godwoken-kicker</code> directory, run the <code>kicker stop</code> command to stop the Godwoken services.</p>
 
 ```bash
 $ ./kicker stop
