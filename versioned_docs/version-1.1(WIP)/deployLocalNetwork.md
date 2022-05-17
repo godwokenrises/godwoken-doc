@@ -55,6 +55,10 @@ Recreating docker_web3_1                         ... done
 Creating docker_web3-indexer_1                   ... done
 [start] Services started successfully
 ```
+:::note
+ For developers who have configured Godwoken, in case of reported errors that cause the service to fail to start, execute `./kicker stop` to disconnect from the Godwoken network and then run `./kickcer clean` to ensure a clean running environment.
+
+:::
 
 <p>The command above deploys the Godwoken local network. The following docker containers should start running once deployment completed:</p>
 
@@ -367,7 +371,7 @@ $ npx hardhat run --network <your-network> scripts/deploy.js
 
 <li><p>Discontinue Godwoken devnet_v1.</p>
 
-<p>The <code>kicker stop</code> command can be used to stop the Godwoken services.</p>
+<p>Under the godwoken-kicker directory, the <code>kicker stop</code> command can be used to stop the Godwoken services.</p>
 
 ```bash
 $ ./kicker stop
@@ -443,7 +447,7 @@ For more information on the use of the Godwoken-Kicker command line, see [Godwok
 </ol>
 
 </TabItem>
-    <TabItem value="manual-build"><p>The manual-build mode is more flexible for custom requirements. It can build the components from local packages and executes the builds locally.</p><b>Environment</b><p><ul><li>Ubuntu 20.04 LTS</li></ul></p><b>Prerequisites</b><p><ul><li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></li><li><a href="https://docs.docker.com/compose/install/">Docker Compose >= 1.29.0</a></li><li><a href="https://metamask.io/">MetaMask Wallet</a></li></ul></p>
+    <TabItem value="manual-build"><p>The manual-build mode is more flexible for custom requirements. It can build the components from local packages and executes the builds locally.</p><b>Environment</b><p><ul><li>Ubuntu 20.04 LTS</li></ul></p><b>Prerequisites</b><p><ul><li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></li><li><a href="https://docs.docker.com/compose/install/">Docker Compose >= 1.29.0</a></li></ul></p>
 
 <p><b>Steps</b></p>
 
