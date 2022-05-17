@@ -5,23 +5,23 @@ title: Godwoken Bridge
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-[Godwoken Bridge](https://testnet.bridge.godwoken.io/#/v1/) functions as a token bridge between CKB and Godwoken and allows the quick deposit and withdrawal of assets. <!--which is powered by Light Godwoken, an SDK dedicated to the development of decentralized applications on Godwoken.--> All you need to do is connect your MetaMask wallet.
+[Godwoken Bridge](https://testnet.bridge.godwoken.io/#/v1/) functions as a token bridge between CKB and Godwoken and allows the quick deposit and withdrawal of assets. <!--which is powered by Light Godwoken, an SDK dedicated to the development of decentralized applications on Godwoken.-->
 
 In contrast to the previous version, the current version offers:
 - A unified deposit/withdraw page;
-- Quick asset withdrawal from v0 to v1.
+- Quick asset withdrawal from Godwoken v0 to v1.
 
-This tutorial assumes users have already downloaded a web3 wallet, such as [MetaMask](https://metamask.io/), and users have enough CKBs or tokens in the wallet.
+In order to follow this tutorial, you must have already downloaded a web3 wallet, such as [MetaMask](https://metamask.io/), and have enough CKBs or supported sUDT tokens in the wallet.
 
 **Note:** A deposit requires at least 400 CKBs and a withdrawal requires at least 650 CKBs.
 
 For more information about the concepts of Godwoken and CKB, refer to [Nervos CKB](https://docs.nervos.org/docs/basics/introduction) and [Godwoken](https://docs.godwoken.io). 
 
-## Deposit CKB or Supported sUDT Tokens from Layer 1 to a Layer 2 Wallet
+## Deposit CKB from Layer 1 to MetaMask
 
 **Note:** The minimum amount of a deposit from layer 1 to layer 2 is 400 CKBs.
 
-To deposit CKB or supported sUDT from layer 1 to layer 2 wallet:
+To deposit CKB from layer 1 to MetaMask:
 
 1. Add the Godwoken Network manually to the MetaMask wallet. 
 
