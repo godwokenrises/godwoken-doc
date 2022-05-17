@@ -7,9 +7,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 import Link from "@docusaurus/Link";
 
-Ethereum developers can simply use Godwoken as an EVM-compatible layer 2 chain, just like Arbitrum and Optimism.
-
-This documentation can be used as an integration guide for wallets and exchanges, or as a reference for developing dApps on Godwoken. It describes the reason for developing dApps on Godwoken, the known caveats of version 1 and corresponding workarounds.
+This documentation can be used as an integration guide for wallets and exchanges, or as a reference for developing dApps on Godwoken. It explains the rationale for developing decentralized applications using Godwoken, the known caveats of version 1 and corresponding workarounds, as well as providing hands on training on integrating Ethereum dApps with CKB through Godwoken.
 
 Prior knowledge of Ethereum is required for using this guide.
 
@@ -76,18 +74,12 @@ A Polyjuice transaction is essentially a Godwoken transaction. When Ethereum tra
 - Transaction context
 
   - `chain_id` is defined in Godwoken [RollupConfig#chain_id](https://github.com/nervosnetwork/godwoken/blob/a099f2010b212355f5504a8d464b6b70d29640a5/crates/types/schemas/godwoken.mol#L64).
-  - the block difficulty is always `2500000000000000`
-  - the gas limit  is 12500000 per block, but it is not a transaction-level limit. Any transaction can reach the gas limit
-  - the size limit for contract's return data is `[25600B](https://github.com/nervosnetwork/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22)`
-  - the size limit for contract's storage is `[25600B](https://github.com/nervosnetwork/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22)`
+  - the block difficulty is always `2500000000000000`.
+  - the gas limit  is 12500000 per block, but it is not a transaction-level limit. Any transaction can reach the gas limit.
+  - the size limit for contract's return data is [25600B](https://github.com/nervosnetwork/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22).
+  - the size limit for contract's storage is [25600B](https://github.com/nervosnetwork/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22).
 
-- `transaction.to` MUST be a contract address
-
-  Direct transfer of the value (pCKB) from EOA to EOA is not supported.
-
-  > Scenario: pCKB (CKB) is represented as an ERC20 token on layer2, which can be transferred through the sUDT_ERC20_Proxycontract transfer function.
-
-- The `transfer value` can not exceed uint128:MAX
+- The `transfer value` can not exceed uint128:MAX.
 
 - Pre-compiled contract
 
@@ -102,7 +94,7 @@ For more information about the usage, see [Ethereum RPC](https://eth.wiki/json-r
 
 #### `transaction.to` MUST be a Contract Address
 
-The `to` member of a Godwoken transaction must be a contract address.
+The `to` member of a Godwoken transaction must be a contract address. Direct transfer of the value (pCKB) from EOA to EOA is **not** supported.
 
 **Result**
 
@@ -146,24 +138,27 @@ To use the zero address as a black hole to burn ethers, you can use the transfer
 
 For more information on the compatibility changes of Godwoken Web3 API, see [compatibility-breaking-changes](https://github.com/nervosnetwork/godwoken-web3/tree/compatibility-breaking-changes).
 
-## Account Creation
+### A Layer 2 Account is Mandatory
 
-It is mandatory to create an account on a Godwoken chain. Two ways to create a layer 2 account:
+It is mandatory to create an account on a Godwoken chain for using Godwoken and Polyjuice. 
+
+There are two ways to create a layer 2 account:
+
 - Make a deposit to Godwoken at layer 1;
 - Call the Godwoken built-in [meta_contract](https://github.com/nervosnetwork/godwoken-scripts/blob/86b299f/c/contracts/meta_contract.c) and create an account at layer 2.
 
 ## Hands-On EVM Training
 
-This section covers Nervos' Layer 2 EVM training. With each task in this section, developers can practice step-by-step on developing EVM dapps on Nervos platform so as to gain direct development experience and prepare for deploying their own applications. 
+This section covers the step-by-step tasks of developing EVM dApps on the Nervos platform. Developers can gain direct experience and prepare themselves for deploying their own applications by practicing these tasks.  
 
 ### Prerequisites
 
-- Connect MetaMask with Godwoken Testnet
+- Connect MetaMask with Godwoken Testnet. For more information about Godwoken testnet v1, see [Testnet V1](https://github.com/nervosnetwork/godwoken-info/tree/main/testnet_v1).
 - [Task Setup and Requirements - Layer 2 EVM (gitbook.io)](https://nervos.gitbook.io/layer-2-evm/task-setup-and-requirements)
 
 ### Tasks
 
-The following nine tasks will walk developers through the process. Each task will give instructions on what needs to be done, the guidance on all the necessary tooling and informative materials needed for completing the tasks:
+The following tasks provide instructions on what must be done, guidance on all necessary tooling, and detailed information on relevant topics:
 
 1. [Create account on the EVM Layer 2 Testnet](https://nervos.gitbook.io/layer-2-evm/tasks/1.create.godwoken.account)
 2. [Deploy a Simple Ethereum Smart Contract on Polyjuice](https://nervos.gitbook.io/layer-2-evm/tasks/2.deploy.eth.contract)

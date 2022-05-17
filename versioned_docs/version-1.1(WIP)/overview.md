@@ -22,7 +22,7 @@ Figure 1. Architecture of Godwoken
 
 ## Current Version
 
-Current version of Godwoken is v1.1 beta. 
+The current version of Godwoken is v1.1 beta. 
 
 ## Godwoken Public Networks
 
