@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
     {label: 'Quick Mode', value: 'quick'},
     {label: 'Manual-build Mode', value: 'manual-build'},
   ]}>
-<TabItem value="quick"><p>The quick mode is fast and simple. It executes the builds of all components from pre-built docker images.</p><b>Environment</b><p><ul><li>Ubuntu 20.04 LTS</li></ul></p><b>Prerequisites</b><p><ul><li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></li><li><a href="https://docs.docker.com/compose/install/">Docker Compose >= 1.29.0</a></li><li>Metamask Wallet</li></ul></p>
+<TabItem value="quick"><p>The quick mode is fast and simple. It executes the builds of all components from pre-built docker images.</p><b>Environment</b><p><ul><li>Ubuntu 20.04 LTS</li></ul></p><b>Prerequisites</b><p><ul><li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></li><li><a href="https://docs.docker.com/compose/install/">Docker Compose >= 1.29.0</a></li><li><a href="https://aggron.gwscan.com/">Metamask Wallet</a></li></ul></p>
 
 <p><b>Steps</b></p>
 
