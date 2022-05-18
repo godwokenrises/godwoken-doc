@@ -4,6 +4,8 @@ title: Deploy a Simple Contract with Hardhat
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
+In this guide you will take a very basic smart contract written in Ethereum's Solidity, compile it to EVM bytecode, and deploy it to Godwoken on Layer 2.
+
 ## Environment
 
 - Ubuntu 20.04 LTS

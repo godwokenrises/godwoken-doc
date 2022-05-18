@@ -60,7 +60,7 @@ For developers who have configured Godwoken, in case of reported errors that cau
 
 :::
 
-<p>The command above deploys the Godwoken local network. The following docker containers should start running once deployment completed:</p>
+<p>The command above deploys the Godwoken local network. After deployment, the following docker containers begin running:</p>
 
 <ul>
 <li><code>docker_ckb_1</code></li><li><code>docker_ckb-miner_1</code></li><li><code>docker_ckb-indexer_1</code></li><li><code>docker_godwoken_1</code></li><li><code>docker_web3_1</code></li><li><code>docker_web3-indexer_1</code></li><li><code>docker_postgres_1</code></li><li><code>docker_redis_1</code></li></ul>
@@ -70,7 +70,7 @@ For developers who have configured Godwoken, in case of reported errors that cau
 
 More information can be viewed at <a href="https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/docker-compose.yml"><code>docker-compose.yml</code></a>.
 
-<li><p>Deposit CKB to a Layer 2 account for testing.</p>
+<li><p>Deposit CKB to a layer 2 account for testing.</p>
 
 The `kicker get-balance <eth-address>` command can be used to check the layer 2 account balance.
 
@@ -125,7 +125,7 @@ Creating docker_godwoken_run ... done
 ```
 
 :::note
- Note that the accounts are defined in <a href="https://github.com/nervosnetwork/godwoken-tests/blob/develop/contracts/hardhat.config.js">contract/hardhat.config.js</a>.
+The accounts are defined in <a href="https://github.com/nervosnetwork/godwoken-tests/blob/develop/contracts/hardhat.config.js">contract/hardhat.config.js</a>.
 
 :::
 
@@ -520,7 +520,7 @@ For more details on the manual-build mode of Godwoken-Kicker, refer to [manual-b
 
 To use this local network in MetaMask:
 
-1. After the Godwoken network has been successfully launched, visit the website http://localhost:6100 and connect the MetaMask wallet.
-2. Add the Godwoken network by using the following settings:
+1. After the Godwoken network has been successfully launched, visit the website http://localhost:6100.
+2. Connect the MetaMask wallet and add the Godwoken network by using the following settings:
    - RPC URL=http://localhost:8024
    - CHAIN ID=1024777

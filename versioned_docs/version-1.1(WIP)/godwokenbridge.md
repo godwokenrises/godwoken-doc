@@ -5,7 +5,7 @@ title: Godwoken Bridge
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-[Godwoken Bridge](https://testnet.bridge.godwoken.io/#/v1/) functions as a token bridge between CKB and Godwoken and allows the quick deposit and withdrawal of assets. <!--which is powered by Light Godwoken, an SDK dedicated to the development of decentralized applications on Godwoken.-->
+[Godwoken Bridge](https://testnet.bridge.godwoken.io/#/v1/) functions as a token bridge between CKB and Godwoken and allows the quick deposit and withdrawal of assets. It is powered by [Light Godwoken](https://github.com/zhangyouxin/light-godwoken), an SDK dedicated to the development of decentralized applications on Godwoken.
 
 In contrast to the previous version, the current version offers:
 - A unified deposit/withdraw page;
@@ -15,7 +15,7 @@ In order to follow this tutorial, you must have already downloaded a web3 wallet
 
 **Note:** A deposit requires at least 400 CKBs and a withdrawal requires at least 650 CKBs.
 
-For more information about the concepts of Godwoken and CKB, refer to [Nervos CKB](https://docs.nervos.org/docs/basics/introduction) and [Godwoken](https://docs.godwoken.io). 
+For more information about the concepts of CKB, refer to [Nervos CKB](https://docs.nervos.org/docs/basics/introduction).
 
 ## Deposit CKB from Layer 1 to MetaMask
 

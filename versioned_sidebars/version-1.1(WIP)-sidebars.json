@@ -13,7 +13,6 @@
         "deployLocalNetwork"
       ]
     },
-	"deployContractHardhat",
 	"integration",
 	"godwokenbridge",
     "releaseNote",
