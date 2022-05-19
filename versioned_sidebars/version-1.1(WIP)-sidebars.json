@@ -8,41 +8,13 @@
     },
 
     {
-      "Ethereum Compatibility": [
-        "integration",
-        "comparisonEVM",
-        "web3Compatible"
-      ]
-    },
-
-    "evmTraining",
-
-    {
       "Deployment": [
-        "deployLocalNetwork",
-        "deployContractHardhat"
+		"godwokenkicker",
+        "deployLocalNetwork"
       ]
     },
-
-    {
-      "Light Godwoken": [
-        "lightGodwoken",
-        "liteGodwokenWithdraw"
-      ]
-    },
-
-    {
-      "Command-Lines": [
-        "commandUsage"
-      ]
-    },
-
-    {
-      "Concepts": [
-        "keyConcepts"
-      ]
-    },
-
+	"integration",
+	"godwokenbridge",
     "releaseNote",
     "faq"
   ]

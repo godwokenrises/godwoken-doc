@@ -31,7 +31,7 @@ To develop on Godwoken V1, the following caveats must be noted:
 - The existing web3.js libraries are not used to interact with Godwoken because the web3 RPC is not fully compatible with EVM. [compatible providers](https://github.com/nervosnetwork/polyjuice-provider) are provided to minimize the workload of porting existing work with web3.js, ethers.js, Truffle and Hardhat. Simply replace the provider with polyjuice-provider when initiating the wallet provider.
 - Ethereum wallets are used as transaction signers instead of a full-featured wallet that support checking balances, tracking transactions, transferring assets etc. The Ethereum wallets such as MetaMask support signing and sending transactions on Godwoken.
 - For more details on the incompatibilities when deploying Ethereum contracts, see the links below:
-  - <Link to={useBaseUrl('/comparisonEVM')}>Comparison with EVM</Link>
+  - [Comparison with EVM](comparisonEVM)
   - [Godwoken Compatibility Examples](https://github.com/honestgoing/godwoken-polyjuice-compatibility-examples)
 
 ## Account Initialization
@@ -87,7 +87,7 @@ There is a [demo](https://github.com/huwenchao/godwoken-demos/blob/main/gw-scrip
 There is no difference in compiling, so using Truffle or Hardhat to write, compile and test the contract is still possible.
 
 More compatibility information:
-- <Link to={useBaseUrl('/comparisonEVM')}>Comparison with EVM</Link>
+- [Comparison with EVM](comparisonEVM)
 - [Godwoken Compatibility Examples](https://github.com/honestgoing/godwoken-polyjuice-compatibility-examples)
 
 ## References

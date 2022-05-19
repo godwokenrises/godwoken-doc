@@ -1,12 +1,10 @@
 ---
 id: deployLocalNetwork
-title: Deploy Local Network with Godwoken-kicker
+title: Deploy a Local Network with Godwoken-Kicker
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-Godwoken-kicker is a one-line command to start a Godwoken network on Devnet. This deployment method helps developers deploy Ethereum contracts and quickly migrate Ethereum DApps to CKB Devnet in testing and development environments.
-
-Godwoken-kicker provides a quick mode and a manual-build mode for deployment.
+Godwoken-Kicker provides a quick mode and a manual-build mode for deployment.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,12 +15,15 @@ import TabItem from '@theme/TabItem';
     {label: 'Quick Mode', value: 'quick'},
     {label: 'Manual-build Mode', value: 'manual-build'},
   ]}>
-<TabItem value="quick"><p>The quick mode is fast and simple. It executes the builds of all components from pre-built docker images.</p><b>Environment</b><p><ul><li>Ubuntu 20.04 LTS</li></ul></p><b>Prerequisites</b><p><ul><li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></li><li><a href="https://docs.docker.com/compose/install/">Docker Compose >= 1.29.0</a></li></ul></p>
+
+<TabItem value="quick"><p>The quick mode is fast and simple. It executes the builds of all components from pre-built docker images.</p><b>Environment</b><p><ul><li>Ubuntu 20.04 LTS</li></ul></p><b>Prerequisites</b><p><ul><li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></li><li><a href="https://docs.docker.com/compose/install/">Docker Compose >= 1.29.0</a></li><li><a href="https://metamask.io/">MetaMask Wallet</a></li></ul></p>
+
 
 <p><b>Steps</b></p>
 
 <ol> 
-    <li><p>Clone the source of Godwoken-kicker under the branch <code>compatibility-change</code>.</p>
+    <li><p>Clone the source of Godwoken-Kicker under the branch <code>compatibility-change</code>.</p>
+
 
 ```bash
 $ git clone -b compatibility-changes https://github.com/RetricSu/godwoken-kicker
@@ -54,14 +55,12 @@ Recreating docker_web3_1                         ... done
 Creating docker_web3-indexer_1                   ... done
 [start] Services started successfully
 ```
-
 :::note
- For developers who have configured Godwoken, in case of reported errors that cause the service to fail to start, execute `./kicker stop` to disconnect from the Godwoken network and then run `./kickcer clean` to ensure a clean running environment.
+For developers who have configured Godwoken, in case of reported errors that cause the service to fail to start, execute `./kicker stop` to disconnect from the Godwoken network and then run `./kickcer clean` to ensure a clean running environment.
 
 :::
 
-
-<p>The command above deploys the Godwoken local network. The following docker containers should start running once deployment completed:</p>
+<p>The command above deploys the Godwoken local network. After deployment, the following docker containers begin running:</p>
 
 <ul>
 <li><code>docker_ckb_1</code></li><li><code>docker_ckb-miner_1</code></li><li><code>docker_ckb-indexer_1</code></li><li><code>docker_godwoken_1</code></li><li><code>docker_web3_1</code></li><li><code>docker_web3-indexer_1</code></li><li><code>docker_postgres_1</code></li><li><code>docker_redis_1</code></li></ul>
@@ -71,9 +70,9 @@ Creating docker_web3-indexer_1                   ... done
 
 More information can be viewed at <a href="https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/docker-compose.yml"><code>docker-compose.yml</code></a>.
 
-<li><p>Deposit CKB to a Layer 2 account for testing.</p>
+<li><p>Deposit CKB to a layer 2 account for testing.</p>
 
-The <code>kicker get-balance <'eth-address'></code> command can be used to check the layer 2 account balance.
+The `kicker get-balance <eth-address>` command can be used to check the layer 2 account balance.
 
 ```bash
 $ ./kicker get-balance 0xCD1d13450cFA630728D0390C99957C6948BF7d19 # check account balance
@@ -82,7 +81,7 @@ Creating docker_godwoken_run ... done
 [2022-04-14T18:06:14Z INFO  gw_tools::get_balance] Balance: 0
 ```
 
-The <code>kicker deposit <'eth-address'> <'amount'></code> command can be used to deposit CKB to the layer 2 account.
+The `kicker deposit <eth-address> <amount>` command can be used to deposit CKB to the layer 2 account.
 
 ```bash
 $ ./kicker deposit 0xCD1d13450cFA630728D0390C99957C6948BF7d19 999 # deposit ckb to account
@@ -116,6 +115,8 @@ Deposit finished
 </details>
 
 <p> Verify that the transfer executed successfully.</p>
+
+
 ```bash
 $ ./kicker get-balance 0xCD1d13450cFA630728D0390C99957C6948BF7d19
 Creating docker_godwoken_run ... done
@@ -124,7 +125,7 @@ Creating docker_godwoken_run ... done
 ```
 
 :::note
- Note that the accounts are defined in <a href="https://github.com/nervosnetwork/godwoken-tests/blob/develop/contracts/hardhat.config.js">contract/hardhat.config.js</a>.
+The accounts are defined in <a href="https://github.com/nervosnetwork/godwoken-tests/blob/develop/contracts/hardhat.config.js">contract/hardhat.config.js</a>.
 
 :::
 
@@ -370,17 +371,16 @@ $ npx hardhat run --network <your-network> scripts/deploy.js
 
 <li><p>Discontinue Godwoken devnet_v1.</p>
 
-<p>Direct to the <code>godwoken-kicker</code> directory, run the <code>kicker stop</code> command to stop the Godwoken services.</p>
+<p>Under the godwoken-kicker directory, the <code>kicker stop</code> command can be used to stop the Godwoken services.</p>
 
 ```bash
 $ ./kicker stop
-:> docker-compose -f docker/docker-compose.yml down --remove-orphans
 ```
 <details><summary>OUTPUT</summary>
 <p>
 
 ```bash
-
+:> docker-compose -f docker/docker-compose.yml down --remove-orphans
 Stopping docker_web3-indexer_1 ... done
 Stopping docker_web3_1         ... done
 Stopping docker_godwoken_1     ... done
@@ -415,13 +415,12 @@ Removing network docker_default
 
 ```bash
 $ sudo ./kicker clean
-:> docker-compose -f docker/docker-compose.yml ps --quiet
 ```
 <details><summary>OUTPUT</summary>
 <p>
 
 ```bash
-
+:> docker-compose -f docker/docker-compose.yml ps --quiet
 rm -rf docker/layer2/data/
 rm -f  docker/layer2/config/scripts-deployment.json
 rm -f  docker/layer2/config/rollup-genesis-deployment.json
@@ -443,16 +442,17 @@ rm -rf docker/manual-artifacts
 
 </li>
 
-<p>For more information on the use of the Godwoken-Kicker command line, see Godwoken-kicker Usage.</p></ol>
+For more information on the use of the Godwoken-Kicker command line, see [Godwoken-Kicker Commands](godwokenkicker#godwoken-kicker-commands).
+
+</ol>
 
 </TabItem>
-    <TabItem value="manual-build"><p>The manual-build mode is more flexible for custom requirements. It can build the components from local packages and executes the builds locally.</p><b>Environment</b><p><ul><li>Ubuntu 20.04 LTS</li></ul></p><b>Prerequisites</b><p><ul><li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></li><li><a href="https://docs.docker.com/compose/install/">Docker Compose >= 1.29.0</a></li></ul></p>
+    <TabItem value="manual-build"><p>The manual-build mode is more flexible for custom requirements. It can build the components from local packages and executes the builds locally.</p><b>Environment</b><p><ul><li>Ubuntu 20.04 LTS</li></ul></p><b>Prerequisites</b><p><ul><li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></li><li><a href="https://docs.docker.com/compose/install/">Docker Compose >= 1.29.0</a></li><li><a href="https://metamask.io/">MetaMask Wallet</a></li></ul></p>
 
 <p><b>Steps</b></p>
 
 <ol>  
-
-<li>Clone the source of Godwoken-kicker under the branch <code>compatibility-changes</code>.
+<li><p>Clone the source of Godwoken-Kicker under the branch <code>compatibility-changes</code>.</p>
 
 
 ```bash
@@ -480,22 +480,18 @@ command: [ "godwoken", "run", "-c", "/var/lib/layer2/config/godwoken-config.toml
 
 </li>
 
-<li><p>Build the godwoken binary manually and place it in <code>docker/manual-artifacts/godwoken</code>.</p>
+<li><p>Build the binary manually and place the built binary in <code>docker/manual-artifacts/godwoken</code>.</p>
 
 ```bash
-MANUAL_BUILD_GODWOKEN=true \
-GODWOKEN_GIT_URL=ssh://git@github.com/nervosnetwork/godwoken \
-GODWOKEN_GIT_CHECKOUT=compatibility-breaking-changes \
-```
-  
-<p>Use <code>./kicker manual-build</code>to build the binary. Or, users can build on their own, just make sure that the binary is placed in <code>docker/manual-artifacts/</code>.</p>
-
-```bash
+$ MANUAL_BUILD_GODWOKEN=true \
+$ GODWOKEN_GIT_URL=ssh://git@github.com/nervosnetwork/godwoken \
+$ GODWOKEN_GIT_CHECKOUT=compatibility-breaking-changes \
 $ ./kicker manual-build
 ```
+
 </li>
 
-<li><p>Replace the prebuild godwoken and gw-tools with manual-build in the file <code>docker/manual-godwoken.compose.yml</code>.</p>
+<li><p>Create a new Docker compose file <code>docker/manual-godwoken.compose.yml</code> as follows.</p>
 
 ```bash
 services:
@@ -513,11 +509,18 @@ godwoken:
 MANUAL_BUILD_GODWOKEN=true ./kicker start # Starts all services MANUAL_BUILD_GODWOKEN=true ./kicker start godwoken # Starts only a single godwoken service
 ```
 
-</li></ol>
+</li>
+
+For more details on the manual-build mode of Godwoken-Kicker, refer to [manual-build](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docs/manual-build.md), and [the example of a one-click launch read-only node](https://github.com/nervosnetwork/godwoken-info/tree/info/testnet_v1).
+
+</ol>
 
 </TabItem>
 </Tabs>
 
-For more details on manual-build mode of Godwoken-kicker, refer to ][manual-build mode](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docs/manual-build.md), and [the example of a one-click launch readonly node](https://github.com/nervosnetwork/godwoken-info/tree/info/testnet_v1).
+To use this local network in MetaMask:
 
-
+1. After the Godwoken network has been successfully launched, visit the website http://localhost:6100.
+2. Connect the MetaMask wallet and add the Godwoken network by using the following settings:
+   - RPC URL=http://localhost:8024
+   - CHAIN ID=1024777
