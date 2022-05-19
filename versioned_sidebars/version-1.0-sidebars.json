@@ -1,0 +1,39 @@
+{
+  "sidebar2": [
+      {
+        "Introduction": [
+          "overview",
+          "decentralizationRoadmap"
+        ]
+      },
+      
+      {
+        "Ethereum Compatibility": [
+          "integration",
+          "comparisonEVM"
+        ]
+      },
+    
+      {
+        "Deployment": [
+          "deployLocalNetwork",
+          "deployContractHardhat"
+        ]
+      },
+  
+      {
+        "Command-Lines": [
+          "commandUsage"
+        ]
+      },
+  
+      {
+        "Concepts": [
+          "keyConcepts"
+        ]
+      },
+      "releaseNote",
+      "faq"
+
+  ]
+}

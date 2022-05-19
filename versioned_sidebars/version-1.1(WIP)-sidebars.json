@@ -8,14 +8,41 @@
     },
 
     {
-      "Deployment": [
-		"godwokenkicker",
-        "deployLocalNetwork"
+      "Ethereum Compatibility": [
+        "integration",
+        "comparisonEVM",
+        "web3Compatible"
       ]
     },
-	"deployContractHardhat",
-	"integration",
-	"godwokenbridge",
+
+    "evmTraining",
+
+    {
+      "Deployment": [
+        "deployLocalNetwork",
+        "deployContractHardhat"
+      ]
+    },
+
+    {
+      "Light Godwoken": [
+        "lightGodwoken",
+        "liteGodwokenWithdraw"
+      ]
+    },
+
+    {
+      "Command-Lines": [
+        "commandUsage"
+      ]
+    },
+
+    {
+      "Concepts": [
+        "keyConcepts"
+      ]
+    },
+
     "releaseNote",
     "faq"
   ]
