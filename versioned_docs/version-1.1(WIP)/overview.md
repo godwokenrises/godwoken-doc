@@ -14,7 +14,7 @@ With the vision to enable interoperability across the blockchain ecosystem throu
 
 Both Godwoken and Polyjuice together forge a scalable EVM-compatible solution for Nervos, generally known as **Godwoken**.
 
-Godwoken is a suitable choice for those who wish to utilize Ethereum's advantages, including its platform, tooling, and documentation, without the downsides, such as network congestion, high gas fees, oversaturation, and scalability issues. By using Godwoken, Ethereum developers can easily port their existing DApps to Nervos and enjoy instant transactions and low fees in an Ethereum-like environment. For more information on poring Ethereum DApps to Nervos, see [Integration Guide for Ethereum Developers](integration).
+Godwoken is a suitable choice for those who wish to utilize Ethereum's advantages, including its platform, tooling, and documentation, without the downsides, such as network congestion, high gas fees, oversaturation, and scalability issues. By using Godwoken, Ethereum developers can easily port their existing DApps to Nervos and enjoy instant transactions and low fees in an Ethereum-like environment. For more information on porting Ethereum DApps to Nervos, see [Integration Guide for Ethereum Developers](integration).
 
 <!--Powered by Godwoken, developers can choose to work with Solidity, just like on Ethereum, while enjoying extra bonuses of interoperability with other blockchains. For Ethereum developers, Godwoken is the go-to option for both universes. By using Godwoken, they can easily port their existing DApps to Nervos. It enables them to expand their reach and brand awareness within the DeFi development-focused network, while benefitting from instant transactions and low fees in an Ethereum-like environment.-->
 
