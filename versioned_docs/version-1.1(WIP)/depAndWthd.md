@@ -5,25 +5,25 @@ title: Deposit and Withdrawal
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 
-Deposit and withdrawal is a special messaging mechanism between layer 1 and layer 2 with assets transfer function. Users can deposit assets from layer1 (CKB) to layer2 (Godwoken), or withdraw assets from layer 2 to layer 1.
+Deposits and withdrawals comprise a special messaging mechanism between layer 1 (CKB) and layer 2 (Godwoken) that enables the exchange of assets through the transfer function. Users can deposit assets from layer 1 to layer 2, or withdraw assets from layer 2 to layer 1.
 
 ## Deposit
 
-A deposit request is created by sending a layer1 transaction. This transaction generates a cell with a special lock - deposit lock. The block producer will collect these cells and process the deposit requests in the blocks. It will unlock the deposit cells, move the assets under the custodian lock，update layer2 state and submit layer1 transactions in the blocks. These transactions are checked by the layer1 script, so the block producer cannot take the assets away.
+When a layer 1 transaction is sent, it creates a deposit request by generating a cell with a special lock, the deposit lock. The block producer will collect these cells and process the deposit requests in the blocks. It will unlock the deposit cells, move the assets under the custodian lock, update the layer 2 state and submit layer 1 transactions in the blocks. The block producer cannot take away these assets, because a layer 1 script verifies these transactions.
 
 The deposit cell:
 
 ``` yaml
 lock:
-  code_hash:    (deposit lock's code hash),
-  hash_type:    Type,
+  code_hash:   (the deposit lock's code hash),
+  hash_type:   Type,
   args: (rollup_type_hash(32 bytes) | DepositLockArgs)
-capacity:   (deposit CKB),
+capacity: (the amount of CKB to be deposited),
 type_:  (none or SUDT script)
 data:   (none or SUDT amount)
 ```
 
-The `lock` field of the deposit cell uses deposit lock. The first 32 bytes of `args` is a unique value associated with the rollup instance. The data structure `DepositLockArgs` denotes to which layer2 account the user deposited. The `capacity` is the total amount of CKB user deposited. The `type_` and `data` fields follow the CKB Simple UDT format. All these fields enable users to deposit Simple UDT assets to layer2.
+The `lock` field of the deposit cell uses the deposit lock. The first 32 bytes of `args` is a unique value associated with the rollup instance. `DepositLockArgs` indicates the layer 2 account to which the deposit will be made. `capacity` is the total amount of CKB deposited. The `type_` and `data` fields comply with the CKB Simple UDT format. With these fields, users can deposit Simple UDT assets to layer 2.
 
 ```
 table DepositLockArgs {
@@ -35,25 +35,25 @@ table DepositLockArgs {
 }
 ```
 
-`DepositLockArgs` represents the script and `registry_id` of layer2 account, currently, which currently supports only the ETH registry. Users can cancel deposit after `cancel_timeout`, which can be used by block producer to reject packed deposit cell when the deposited cell contains invalid data.
+`DepositLockArgs` represents the script and `registry_id` of a layer 2 account, which currently supports only the ETH registry. Users can cancel a deposit after the expiration of `cancel_timeout`, which can be used by the block producer to reject packed deposit cells containing invalid data.
 
 ## Custodian Cell
 
-Deposit cells are converted to custodian cells when assets are deposited to layer2. Custodian cells are protected by the custodian lock, which restricts that assets can only be transferred out when user makes withdrawals.
+When assets are deposited to layer 2, deposit cells are converted to custodian cells. The custodian lock protects custodian cells and restricts the transfer of assets so users can only make withdrawals.
 
 The custodian cell:
 
 ``` yaml
 lock:
-  code_hash:    (custodian lock's code hash),
+  code_hash:    (the custodian lock's code hash),
   hash_type:    Type,
   args: (rollup_type_hash(32 bytes) | CustodianLockArgs)
-capacity:   (deposit CKB),
+capacity:   (the amount of CKB to be deposited),
 type_:  (none or SUDT script)
 data:   (none or SUDT amount)
 ```
 
-The first 32 bytes of `args` are unique values associated with the rollup instance. `CustodianLockArgs` records the deposit info. `capacity` is the amount of CKB, and the `type_` and `data` fields are following CKB Simple UDT format.
+The first 32 bytes of `args` are unique values associated with the rollup instance. `CustodianLockArgs` contains deposit information. `capacity` is the amount of CKB to be deposited. The `type_` and `data` fields are following CKB Simple UDT format.
 
 ```
 table CustodianLockArgs {
@@ -63,9 +63,9 @@ table CustodianLockArgs {
 }
 ```
 
-`CustodianLockArgs` saves the entire deposit info, `deposit_lock_args` is args from the original deposit cell, `deposit_block_hash` and `deposit_block_number` denotes the layer2 block that include the deposit.
+`CustodianLockArgs` stores the entire deposit information. `deposit_lock_args` is the args from the original deposit cell. `deposit_block_hash` and `deposit_block_number` denote the layer2 block that contains the deposit.
 
-CKB requires `capacity` to cover the cost of the cell, the `capacity` of the deposited cell must also cover the custodian cell, so the minimal deposit CKB that Godwoken allows is as follows:
+The `capacity` of a cell must cover the cost of the cell. The `capacity` of the deposit cell must also cover its custodian cell, so the minimum deposit capacity that Godwoken allows is as follows:
 
 * Deposit CKB: 298 CKB
 * Deposit CKB and Simple UDT: 379 CKB
@@ -73,16 +73,16 @@ CKB requires `capacity` to cover the cost of the cell, the `capacity` of the dep
 
 ## Withdrawal
 
-User signs withdrawal requests and sends them to the block producer. The block producer will process these requests in the blocks, update layer2 state and convert custodian cells to withdrawal cells in block submission layer1 transactions.
+Users sign withdrawal requests and send them to the block producer. The block producer will process these requests in the blocks, update the layer2 state, and convert custodian cells to withdrawal cells in layer1 block submission transactions.
 
 The withdrawal cell:
 
 ``` yaml
 lock:
-  code_hash:    (withdrawal lock's code hash),
+  code_hash:    (the withdrawal lock's code hash),
   hash_type:    Type,
   args: (rollup_type_hash(32 bytes) | WithdrawalLockArgs (n bytes) | len (4 bytes) | layer1 owner lock (n bytes))
-capacity:   (CKB amount),
+capacity:   (the CKB amount to be withdrawn),
 type_:  (none or SUDT script)
 data:   (none or SUDT amount)
 ```
@@ -99,9 +99,9 @@ struct WithdrawalLockArgs {
 }
 ```
 
-`withdrawal_block_hash` and `withdrawal_block_number` record the layer2 block including the withdrawal. `account_script_hash` denotes the layer2 account. `owner_lock_hash` denotes the layer1 lock user used to unlock the cell.
+`withdrawal_block_hash` and `withdrawal_block_number` record the layer2 block containing the withdrawal. `account_script_hash` denotes the layer2 account. `owner_lock_hash` denotes the layer1 lock that is used to unlock the cell.
 
-CKB requires `capacity` to cover the cost of the cell, so the minimal withdrawal CKB that Godwoken allows is as follows:
+The `capacity` of a cell must cover the cost of the cell, so the minimum withdrawal capacity that Godwoken allows is as follows:
 
 * Withdrawal CKB: 266 CKB
 * Withdrawal CKB and Simple UDT: 347 CKB
