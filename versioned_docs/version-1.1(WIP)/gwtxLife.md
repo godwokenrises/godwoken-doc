@@ -222,7 +222,7 @@ A JSON representation for this data structure is:
 
 In this example, we are transferring 400 shannons(denoted by `to_id` 0x1) from account 0x2(denoted by `from_id`) to account 0x0200000014000000bb1d13450cfa630728d0390c99957c6948bf7d19(denoted by `to_address` in `SUDTTransfer`). In addition, we may need to pay 100 shannons as layer 2 transaction fees. The next 2 sections will discuss layer 2 transaction in more detail.
 
-### Account Lock
+### Account Locks
 
 An account lock controls how a signature for a layer 2 transaction is validated. Recall that a deposit cell actually includes a layer 2 lock script in its `DepositLockArgs`:
 
@@ -237,7 +237,7 @@ table DepositLockArgs {
 
 When Godwoken sees a `layer2_lock` in a `DepositLockArgs` data structure, it first queries its internal storage to locate an account using the particular layer 2 lock script. Godwoken will create a new account for this lock script if there is none, and assign a 32-bit integer account ID to it. Godwoken enforces a one-to-one mapping between a layer 2 lock script and account ID:
 
-* Given an account ID, one can look up for the layer 2 lock script in Godwoken
+* Given an account ID, one can look up for the layer 2 lock script in Godwoken.
 * Given a layer 2 lock script, there can be at most one account ID using that lock script in current Godwoken deployment
 
 This provides some handy consequences for us:
@@ -271,14 +271,14 @@ A typical user account is a balance owned by the user, while a contract account 
 
 In the light of the above, the following rule can be introduced for executing backends:
 
-* Godwoken locates the corresponding backend script by using `to_id` in the layer 2 transaction.
+* Godwoken locates the corresponding backend script by using `to_id` in the layer 2 transaction;
 * The backend script is executed to calculate the state after applying current transaction.
 
 Similar to account locks, the above rule is more of a conceptual rule. The actual backend script is only executed on-chain in a cancel challenge request.
 
 Here are a few examples of backends:
 
-#### sUDT
+#### SUDT
 
 sUDT is the most common backend in Godwoken and all tokens, whether they are CKB or layer 1 sUDTs, are represented as layer 2 sUDT types. A layer 2 sUDT backend script is defined by the following specification:
 
