@@ -1,8 +1,7 @@
 ---
 id: gwtxLife
-title: Life of a Godwoken Transaction
+title: Godwoken Transaction
 ---
-
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 Godwoken is a layer 2 rollup framework for [Nervos CKB](https://github.com/nervosnetwork/ckb). It provides scalability and an account-based programming model to CKB. For an overview of Godwoken see [this post](https://medium.com/nervosnetwork/towards-ckb-style-lego-pieces-polyjuice-on-godwoken-cbc935d77abf). This article dives into the innards of Godwoken, explains how it works, and how each individual piece fits together.
@@ -97,11 +96,11 @@ In this design, an aggregator bears the liquidity costs for staking CKB, as well
 
 Godwoken is designed based on the assumption that anyone can propose layer2 blocks. But in the current deployment, Godwoken only has one block producer to sequence transactions and propose new blocks. Supporting multiple block producers (or sequencers) is still an open question for different rollups. In the future, we may introduce a consensus through an upgrade to support multiple block producer coordination.
 
-# Actions
+## Actions
 
 This sections contains an explaination of the actions that are available on Godwoken, along with detailed technical information on each action.
 
-## Deposit
+### Deposit
 
 To use Godwoken, you must first deposit some tokens(CKB or sUDT) from layer 1 to layer 2. This is called a **deposit** action. The deposit action is represented as a layer 1 transaction. It must create a special output cell called a **deposit cell**. [Here](https://pudge.explorer.nervos.org/transaction/0xb3aceeb1d84ea5b24e4b8fe339fc6e7814f1e58ebc99237068f22a6924501a1e) is an example of a deposit action. This transaction deposits 10000 CKB to Godwoken. All that matters here is the lock script of output cell #0:
 

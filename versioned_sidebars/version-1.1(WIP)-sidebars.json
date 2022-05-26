@@ -3,7 +3,6 @@
     {
       "Introduction": [
         "overview",
-        "decentralizationRoadmap",
         "gwtxLife",
         "depAndWthd"
       ]
@@ -11,12 +10,12 @@
 
     {
       "Deployment": [
-		"godwokenkicker",
+		    "godwokenkicker",
         "deployLocalNetwork"
       ]
     },
-	"integration",
-	"godwokenbridge",
+	  "integration",
+    "godwokenbridge",
     "releaseNote",
     "faq"
   ]
