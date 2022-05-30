@@ -64,7 +64,7 @@ In Godwoken, the rollup cell for each Godwoken deployment must use a script call
 
 The state validator type script is the backbone of Godwoken. It ensures all the security checks are performed on chain and all layer 2 funds remain secure in a decentralized environment.
 
-## Storage
+### Storage
 
 Godwoken provides an account model to Nervos CKB:
 
@@ -73,7 +73,7 @@ Godwoken provides an account model to Nervos CKB:
 
 Given the constant storage requirements in the above transactions, you may wonder where to store all the data. Godwoken leverages [Sparse Merkle Tree](https://medium.com/@kelvinfichter/whats-a-sparse-merkle-tree-acda70aeb837) to build the storage space. The rollup cell only contains the root hash of the Sparse Merkle Tree(SMT). State validator verifies that the sparse merkle tree is correctly updated in each layer 2 block. In fact, we have moved one step further here by building an optimized SMT, which can save a lot of space and calculation for CKB's use case. More details can be found [here](https://github.com/nervosnetwork/sparse-merkle-tree).
 
-## Optimistic Rollup
+### Optimistic Rollup
 
 The workflow of Godwoken is as shown below:
 
@@ -92,7 +92,7 @@ The workflow of Godwoken is as shown below:
 
 In this design, an aggregator bears the liquidity costs for staking CKB, as well as layer 1 transaction fees for the layer 1 transactions containing layer 2 blocks. In exchange, the aggregator can charge layer 2 transaction fees from layer 2 users. As explained below, layer 2 transaction fees can be paid in CKB or any kind of [sUDT](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0025-simple-udt/0025-simple-udt.md). In fact, Godwoken treats CKB and sUDTs as indentical in layer 2.
 
-## Multiple Block Producers
+### Multiple Block Producers
 
 Godwoken is designed based on the assumption that anyone can propose layer2 blocks. But in the current deployment, Godwoken only has one block producer to sequence transactions and propose new blocks. Supporting multiple block producers (or sequencers) is still an open question for different rollups. In the future, we may introduce a consensus through an upgrade to support multiple block producer coordination.
 
@@ -155,7 +155,7 @@ table CustodianLockArgs {
 
 As noted, a custodian cell contains the original deposit information, as well the layer 2 block information in which the original deposit cell is processed.
 
-## Layer 2 Transfer
+### Layer 2 Transfer
 
 Once tokens have been deposited and processed by Godwoken, they can be used in layer 2 Godwoken blockchain. A layer 2 Godwoken transaction uses totally different structure from a layer 1 CKB transaction:
 
@@ -221,7 +221,7 @@ A JSON representation for this data structure is:
 
 In this example, we are transferring 400 shannons(denoted by `to_id` 0x1) from account 0x2(denoted by `from_id`) to account 0x0200000014000000bb1d13450cfa630728d0390c99957c6948bf7d19(denoted by `to_address` in `SUDTTransfer`). In addition, we may need to pay 100 shannons as layer 2 transaction fees. The next 2 sections will discuss layer 2 transaction in more detail.
 
-### Account Locks
+#### Account Locks
 
 An account lock controls how a signature for a layer 2 transaction is validated. Recall that a deposit cell actually includes a layer 2 lock script in its `DepositLockArgs`:
 
@@ -255,7 +255,7 @@ Now we can derive the signature validation rule for a layer 2 Godwoken transacti
 
 The above flow has one quirk: the current version of Godwoken uses optimistic rollup design. Due to the "optimistic" nature, the layer 2 lock script is not typically executed on chain. It is only executed when a challenger initiates a challenge request on chain, and an aggregator validates the validity of the layer 2 transaction through a cancel challenge request. Hence the way to build a layer 2 lock script is also slightly different. An example of such a script can be found [here](https://github.com/nervosnetwork/godwoken-scripts/blob/master/contracts/eth-account-lock/src/entry.rs#L24).
 
-### Backend
+#### Backend
 
 After the signature has been verigied, another problem arises: how does Godwoken calculate the next on-layer2-chain state? **Backends** in Godwoken handle this task.
 
@@ -277,7 +277,7 @@ Similar to account locks, the above rule is more of a conceptual rule. The actua
 
 Here are a few examples of backends:
 
-#### SUDT
+##### SUDT
 
 sUDT is the most common backend in Godwoken and all tokens, whether they are CKB or layer 1 sUDTs, are represented as layer 2 sUDT types. A layer 2 sUDT backend script is defined by the following specification:
 
@@ -294,7 +294,7 @@ Note that Godwoken typically creates sUDT contract accounts when processing depo
 
 An implementation for the layer 2 sUDT backend can be found [here](https://github.com/nervosnetwork/godwoken-scripts/blob/v1.1.0-beta/c/contracts/sudt.c).
 
-#### MetaContract
+##### MetaContract
 
 MetaContract is a special backend in Godwoken:
 
@@ -333,15 +333,15 @@ The `args` part in this transaction contains a [MetaContractArgs](https://github
 }
 ```
 
-The details of this transactioon will be explained in [Life of a Polyjuice Transaction](./life_of_a_polyjuice_transaction.md).
+The details of this transaction will be explained in [Life of a Polyjuice Transaction](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md).
 
-#### Polyjuice
+##### Polyjuice
 
 Polyjuice is the main backend used now in Godwoken. It allows us to create a contract account using EVM bytecode. The resulting account will be able to execute smart contracts written for Ethereum. Polyjuice aims at 100% compatibility at EVM level, meaning all applications that runnable on Ethereum can be run on Godwoken powered by Polyjuice.
 
-For more details on polyjuice, refer to [Life of a Polyjuice Transaction](./life_of_a_polyjuice_transaction.md).
+For more details on polyjuice, refer to [Life of a Polyjuice Transaction](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md).
 
-### Managing Account Locks & Backends
+#### Managing Account Locks & Backends
 
 It is possible to create as many accounts as you like. However, Godwoken now only supports whitelisted account locks and backends for security reasons. The list now includes:
 
@@ -353,7 +353,7 @@ It is possible to create as many accounts as you like. However, Godwoken now onl
 
 If there is a particular account lock or backend that you like, please do not hesistate to let us know. We are interested in a future where an EOS wallet can control an Ethereum application, or a BTC wallet can control a [Diem](https://www.diem.com/en-us/) application. This is all possible with Godwoken thanks to the composability of account locks and backends.
 
-## Withdrawal
+### Withdraw
 
 The **withdraw** action enables you to withdraw tokens from layer 2 back to layer 1. A withdraw action uses the following data structure:
 
