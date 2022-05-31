@@ -71,7 +71,7 @@ Godwoken provides an account model to Nervos CKB:
 * A 256-bit key-value storage is provided for applications running on Godwoken.
 * Godwoken provides a sequential model conceptually: each layer 2 transaction is applied sequentially to the Godwoken storage. Smart contracts in layer 2 transactions are free to read from and write into the storage space.
 
-Given the constant storage requirements in the above transactions, you may wonder where to store all the data. Godwoken leverages [Sparse Merkle Tree](https://medium.com/@kelvinfichter/whats-a-sparse-merkle-tree-acda70aeb837) to build the storage space. The rollup cell only contains the root hash of the Sparse Merkle Tree(SMT). State validator verifies that the sparse merkle tree is correctly updated in each layer 2 block. In fact, we have moved one step further here by building an optimized SMT, which can save a lot of space and calculation for CKB's use case. More details can be found [here](https://github.com/nervosnetwork/sparse-merkle-tree).
+Given the constant storage requirements in the above transactions, you may wonder where to store all the data. Godwoken leverages [Sparse Merkle Tree](https://medium.com/@kelvinfichter/whats-a-sparse-merkle-tree-acda70aeb837) to build the storage space. The rollup cell only contains the root hash of the Sparse Merkle Tree (SMT). State validator verifies that the sparse merkle tree is correctly updated in each layer 2 block. In fact, we have moved one step further here by building an optimized SMT, which can save a lot of space and calculation for CKB's use case. More details can be found [here](https://github.com/nervosnetwork/sparse-merkle-tree).
 
 ### Optimistic Rollup
 
@@ -98,11 +98,11 @@ Godwoken is designed based on the assumption that anyone can propose layer2 bloc
 
 ## Actions
 
-This sections contains an explaination of the actions that are available on Godwoken, along with detailed technical information on each action.
+This sections contains an explanation of the actions that are available on Godwoken, along with detailed technical information on each action.
 
 ### Deposit
 
-To use Godwoken, you must first deposit some tokens(CKB or sUDT) from layer 1 to layer 2. This is called a **deposit** action. The deposit action is represented as a layer 1 transaction. It must create a special output cell called a **deposit cell**. [Here](https://pudge.explorer.nervos.org/transaction/0xb3aceeb1d84ea5b24e4b8fe339fc6e7814f1e58ebc99237068f22a6924501a1e) is an example of a deposit action. This transaction deposits 10000 CKB to Godwoken. All that matters here is the lock script of output cell #0:
+To use Godwoken, you must first deposit some tokens (CKB or sUDT) from layer 1 to layer 2. This is called a **deposit** action. The deposit action is represented as a layer 1 transaction. It must create a special output cell called a **deposit cell**. [Here](https://pudge.explorer.nervos.org/transaction/0xb3aceeb1d84ea5b24e4b8fe339fc6e7814f1e58ebc99237068f22a6924501a1e) is an example of a deposit action. This transaction deposits 10000 CKB to Godwoken. All that matters here is the lock script of output cell #0:
 
 ```
 {
@@ -157,7 +157,7 @@ As noted, a custodian cell contains the original deposit information, as well th
 
 ### Layer 2 Transfer
 
-Once tokens have been deposited and processed by Godwoken, they can be used in layer 2 Godwoken blockchain. A layer 2 Godwoken transaction uses totally different structure from a layer 1 CKB transaction:
+Once tokens have been deposited and processed by Godwoken, they can be used in layer 2 Godwoken blockchain. A layer 2 Godwoken transaction uses a totally different structure from a layer 1 CKB transaction:
 
 ```
 table RawL2Transaction {
@@ -194,7 +194,7 @@ While all operations on Godwoken can be represented as a `L2Transaction` in the 
 }
 ```
 
-This is the JSON representation of `L2Transaction` data structure. `args` contains a variable length, free formatted transaction argument data that is interpreted depending on the values of `to_id`. In this particular example, `args` contains [SUDTTransfer](https://github.com/nervosnetwork/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L260) data structure in molecule serialization format:
+This is the JSON representation of `L2Transaction` data structure. `args` contains a variable length, free formatted transaction argument data that is interpreted depending on the values of `to_id`. In this particular example, `args` contains [SUDTTransfer](https://github.com/nervosnetwork/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L260) data structure in the molecule serialization format:
 
 ```
 table SUDTTransfer {
@@ -246,14 +246,14 @@ This provides some handy consequences for us:
 
 Users can choose any lock script to use in layer 2 while still minimizing layer 2 transaction size. This approach offers the advantage that layer 1 is as flexible as layer 2.
 
-You may already be awared that we build Godwoken together with Polyjuice, our Ethereum compatible solution. Naturally, we have an Ethereum compatible lock, that enables you to use [Metamask](https://metamask.io/) together with Polyjuice. This actually has much wider usage. With a different layer 2 lock that implements, for example, EOS signature validation logic, an EOS wallet can also be empowered to call Ethereum dApps with Polyjuice. The entire interoperability power of Nervos CKB is preserved in Godwoken as well.
+We developed Godwoken in conjunction with Polyjuice, our Ethereum-compatible solution. Furthermore, we provide an Ethereum compatible lock that enables you to use [MetaMask](https://metamask.io/) in conjunction with Polyjuice. In practice, this feature has a broader application with different layer 2 locks. An example of this would be a lock that implements the EOS signature validation logic that enables an EOS wallet to call Ethereum dApps through Polyjuice. The entire interoperability power of Nervos CKB is preserved in Godwoken as well.
 
 Now we can derive the signature validation rule for a layer 2 Godwoken transaction:
 
 * Godwoken locates the corresponding layer 2 lock script by using `from_id` in the layer 2 transaction.
 * The layer 2 lock script is executed to validate the layer 2 transaction.
 
-The above flow has one quirk: the current version of Godwoken uses optimistic rollup design. Due to the "optimistic" nature, the layer 2 lock script is not typically executed on chain. It is only executed when a challenger initiates a challenge request on chain, and an aggregator validates the validity of the layer 2 transaction through a cancel challenge request. Hence the way to build a layer 2 lock script is also slightly different. An example of such a script can be found [here](https://github.com/nervosnetwork/godwoken-scripts/blob/master/contracts/eth-account-lock/src/entry.rs#L24).
+The above flow has one quirk: the current version of Godwoken uses the optimistic rollup design. Due to the "optimistic" nature, the layer 2 lock script is not typically executed on chain. It is only executed when a challenger initiates a challenge request on chain, and an aggregator validates the validity of the layer 2 transaction through a cancel challenge request. Hence the way to build a layer 2 lock script is also slightly different. An example of such a script can be found [here](https://github.com/nervosnetwork/godwoken-scripts/blob/master/contracts/eth-account-lock/src/entry.rs#L24).
 
 #### Backend
 
@@ -271,7 +271,7 @@ A typical user account is a balance owned by the user, while a contract account 
 In the light of the above, the following rule can be introduced for executing backends:
 
 * Godwoken locates the corresponding backend script by using `to_id` in the layer 2 transaction;
-* The backend script is executed to calculate the state after applying current transaction.
+* The backend script is executed to calculate the state after applying the current transaction.
 
 Similar to account locks, the above rule is more of a conceptual rule. The actual backend script is only executed on-chain in a cancel challenge request.
 
@@ -303,7 +303,7 @@ MetaContract is a special backend in Godwoken:
 
 The sole purpose of MetaContract now is to create contract account given a particular backend.
 
-Here is the JSON representation for a layer 2 transaction, which invokes MetaContract to create a polyjuice root contract account:
+Here is the JSON representation for a layer 2 transaction, which invokes MetaContract to create a Polyjuice root contract account:
 
 ```
 {
