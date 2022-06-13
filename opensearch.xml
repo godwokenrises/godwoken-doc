@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <ShortName>Godwoken Documentation</ShortName>
+  <Description>Search Godwoken Documentation</Description>
+  <InputEncoding>UTF-8</InputEncoding>
+  <Image width="16" height="16" type="image/x-icon">http://docs.godwoken.io/img/favicon.png</Image>
+  <Url type="text/html" method="get" template="http://docs.godwoken.io/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="http://docs.godwoken.io/opensearch.xml" />
+  <moz:SearchForm>http://docs.godwoken.io/</moz:SearchForm>
+</OpenSearchDescription>
