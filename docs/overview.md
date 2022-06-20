@@ -6,35 +6,58 @@ sidebar_label: Overview
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-With the vision to enable interoperability across the blockchain ecosystem through a multi-chain solution, Godwoken is an impactful move towards this objective for Nervos Network.
+[Godwoken](https://github.com/nervosnetwork/godwoken) is a layer 2 rollup framework that provides an abstract account model and abstract layer 2 transactions atop Nervos CKB.
 
-[Godwoken](https://github.com/nervosnetwork/godwoken) is a layer 2 optimistic rollup solution and an EVM-compatible layer that builds on top of Nervos Layer 1, which is also known as CKB. Godwoken comprises two key component: Godwoken optimistic rollup framework and the Polyjuice EVM-compatible framework. Both Godwoken and Polyjuice together forge a scalable EVM-compatible solution for Nervos, generally known as **Godwoken**.
-
-Godwoken emerged as a solution for dapp builders as they seek to benefit from the advantages of Ethereum, such as its establishment, good tooling, and documentation, by not being plagued by its drawbacks, such as network congestion, high gas fees, oversaturation, and scalability issues. 
-
-Powered by Godwoken, developers can choose to work with Solidity, just like on Ethereum, while enjoying extra bonuses of interoperability with other blockchains. For Ethereum developers, Godwoken is the go-to option for both universes. Developers can port their existing dapps to Nervos with ease, expanding their reach and brand awareness in a DeFi development-focused network, while benefiting from an instant transaction end result and a low fee in an Ethereum-like environment.
-
-**Polyjuice** is a backend for the Ethereum-compatible Godwoken rollup framework, provides an Ethereum-compatible layer atop Nervos CKB. Polyjuice leverages the account model and the scalability provided by Godwoken to integrate evmone as the EVM engine to run Ethereum smart contracts. More information about Polyjuice, visite [godwoken-polyjuice](https://github.com/nervosnetwork/godwoken-polyjuice).
+[Polyjuice](https://github.com/nervosnetwork/godwoken-polyjuice) is an Ethereum compatible layer designed upon the Godwoken account model. Godwoken comes together with Polyjuice giving developers the ability to seamlessly deploy and run Ethereum contracts.
 
 <img src={useBaseUrl("img/arch.png")}  width="40%"/>
 
 Figure 1. Architecture of Godwoken
 
-## Current Version
-
-Godwoken v1 version now is available. Godwoken v1 adds a new built-in contract: the Ethereum address registry. To wit, deploying and interacting with Solidity contracts will become simpler with Godwoken v1, thanks to the compatibility of Godwoken v1 with the existing toolchains of Ethereum.
-
-To be specific, when a user creates a new account by making a deposit, an Ethereum address will be inserted into the contract. With the new built-in contract, the Ethereum address is directly supported in EVM so users can submit transactions to Godwoken with no need to use the web3-provider plugin. Godwoken is designed for 100% compatibility on RPC level, so users can use Ethereum dapps or toolchains with no modification when switching to the Godwoken network.
-
 ## Godwoken Public Networks
 
-Godwoken is under active deveopment phase, for more information on Godwoken public Networks see [godwoken](https://github.com/nervosnetwork/godwoken).
+Testnet and Mainnet are provided for deploying Ethereum DApps to CKB.
+
+- [Testnet](https://github.com/nervosnetwork/godwoken-testnet/tree/master/testnet)
+  - RPC URL: https://godwoken-testnet-web3-rpc.ckbapp.dev/
+  - Chain ID: 71393
+  - Websocket RPC URL: ws://godwoken-testnet-web3-rpc.ckbapp.dev/ws
+  - Explorer: https://aggron.gwscan.com/
+- [Mainnet](https://github.com/nervosnetwork/godwoken-testnet/tree/master/mainnet)
+  - RPC URL: https://mainnet.godwoken.io/rpc
+  - Chain ID: 71394
+
+  - Websocket RPC URL: https://mainnet.godwoken.io/ws
+
+  - Explorer: https://www.gwscan.com/
 
 
-Godwoken v1 network can be deployed locally with Godwoken-kicker in two ways, quick deploy and manual-build mode. For more information, refer to Github Repository [godwoken-info](https://github.com/nervosnetwork/godwoken-info/tree/info). 
+A Godwoken network can also be deployed locally. For more information, see the sections of Deployment.
 
-For an introduction to the Nervos ecosystem, an overview of various important concepts, and hands-on direct experience with the platform in preparation for deploying real-world dapps, check **[Nervos Layer 2 EVM training](https://nervos.gitbook.io/layer-2-evm/).**
+## Current Version 
 
+The current version available is the **v0.10.4**. For more information refer to [godwoken-docker-prebuilds](https://github.com/nervosnetwork/godwoken-docker-prebuilds/releases/tag/v0.10.4). 
+
+**About Godwoken Beta**
+
+It is the responsible way to make Godwoken available while we keep up improving the system before the official release.
+Here is what you can do with Godwoken beta:
+
+| features                    | maintainer | developer |
+| :-------------------------- | :--------: | :-------: |
+| deploy contract             |    yes     | trusted*  |
+| deploy ERC20 proxy contract |    yes     |    no     |
+| run full nodes              |    yes     |    no     |
+| run readonly nodes          |    yes     |   yes**   |
+
+During the Godwoken beta phase, the deploy contract feature is only open to developers allowed on the list. We need to upgrade the Godwoken beta or coordinate with developers in case of emergency. Developers or teams are welcome to participate in the Godwoken beta anyways.
+
+Godwoken beta is limited to the following design choices:
+
+1. An optimistic rollup-based design will be used
+2. A single sequencer sort transactions and issue blocks
+
+Beware of Scams and Rugs: Nervos is a permissionless platform. Anybody can deploy an instant of Godwoken. Users and developers must interact with the instant that they can trust.
 
 ## Reference
 

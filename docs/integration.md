@@ -24,26 +24,74 @@ The knowledge of Ethereum is a prerequisite for using this guide.
 
 ## Known Caveats
 
-Godwoken V1 is still under development and targets 100% EVM compatibility. Having the best compatibility is the objective of designing and building Godwoken/Polyjuice:
+Godwoken V1 is still under development and targets 100% EVM compatibility.
 
-- The EVM being used in Godwoken/Polyjuice should be 100% compatible with the latest forked version of Ethereum.
-- Godwoken/Polyjuice should be 100% compatible with Ethereum over the Web3 interfaces by using the [Web3 layer](https://github.com/nervosnetwork/godwoken-web3).
+To develop on Godwoken V1, the following caveats must be noted:
 
-Given the wide architechtural and design differences between Godwoken/Polyjuice and Ethereum, several discrepancies inevitably exsit. 
+- The existing web3.js libraries are not used to interact with Godwoken because the web3 RPC is not fully compatible with EVM. [compatible providers](https://github.com/nervosnetwork/polyjuice-provider) are provided to minimize the workload of porting existing work with web3.js, ethers.js, Truffle and Hardhat. Simply replace the provider with polyjuice-provider when initiating the wallet provider.
+- Ethereum wallets are used as transaction signers instead of a full-featured wallet that support checking balances, tracking transactions, transferring assets etc. The Ethereum wallets such as MetaMask support signing and sending transactions on Godwoken.
+- For more details on the incompatibilities when deploying Ethereum contracts, see the links below:
+  - [Comparison with EVM](comparisonEVM)
+  - [Godwoken Compatibility Examples](https://github.com/honestgoing/godwoken-polyjuice-compatibility-examples)
 
-## Account Creation
+## Account Initialization
 
-It is mandatory to create an account on a Godwoken chain in order to use Polyjuice. Two ways to create a layer 2 account:
-- Make a deposit to Godwoken at layer 1;
-- Call the Godwoken built-in `[meta_contract](https://github.com/nervosnetwork/godwoken-scripts/blob/86b299f/c/contracts/meta_contract.c)` and create an account at layer 2.
+It is necessary to initialize an account in order to send transactions on Godwoken.
 
-## pCKB
+1. Visit YokaiSwap ([Testnet](https://testnet.yokaiswap.com/) or [Mainnet](https://www.yokaiswap.com/)). 
 
-**pCKB** is a defined layer 2 sUDT token type of choice when deploying a Godwoken/Polyjuice chain. The pCKB serves a similar purpose for the Godwoken/Polyjuice chain as ETH does for the Ethereum chain, i.e., to collect transaction fees. The gas price of a Godwoken transaction is measured with the pCKB that is designated to the Godwoken chain, and will be debited from the sender's account once the transaction is committed on the chain. Godwoken chain uses CKB as pCKB by default, while different Godwoken chains may use different token types as pCKB.
+2. Connect the wallet and obtain the **L1 YOKAI DEPOSIT ADDRESS**.
+   <img src={useBaseUrl("img/integration/yokai-wallet.png")}  width="60%"/>
+   <img src={useBaseUrl("img/integration/deposit-address.png")}  width="50%"/>
+   
+3. Send a minimum of **400** CKBs from a CKB wallet to this address.
 
-## All Tokens Are ERC20 Tokens
+   **Note:** Use [Nervos Faucet](https://faucet.nervos.org/) to fund the CKB wallet in Testnet.
 
-The difference in handling ERC20 tokens and native ETH tokens in Ethereum brought wETH into existence. But with Godwoken, this difference disappears. Either the native CKB or any sUDT token types are all layer 2 sUDT types in Godwoken.
+   Once the deposit is completed, the CKB balance will be visible on the Yokai Exchange page, which means the account has been initialized.
 
-From this layer 2 sUDT contract, Polyjuice ensures that all tokens on Godwoken are ERC20 compatible, regardless the tokens are backed by native CKBs or sUDTs. In other words, it will not be necessary to deal with native tokens and ERC20 tokens separately, as all the different tokens have the same ERC20 interface.
+   <img src={useBaseUrl("img/integration/ckb-balance.png")}  width="60%"/>
 
+## Assets Management
+
+There are two different types of tokens on Godwoken, the [bridged token](https://www.gwscan.com/tokens/bridge) and the [layer 2 native token](https://www.gwscan.com/tokens/native).
+
+The bridged token is a token bridged from other chains, and mapped as an ERC20 token on Godwoken.
+
+The current source chains can be:
+- Nervos Network
+- Ethereum
+- Binance Smart Chain
+
+It is possible to manipulate the bridged token with ERC20 ABI and given address.
+
+- [Bridged Token list](https://github.com/nervosnetwork/godwoken-info/blob/master/mainnet/ERC20TokenList.json)
+- [ERC20 contract and ABI used in Godwoken](https://github.com/nervosnetwork/godwoken-polyjuice/tree/main/solidity/erc20)
+
+CKB is also a bridged token on Godwoken. CKB acts as a native token for Godwoken in the same way that ETH does for Ethereum, but can also operate with the ERC20 proxy contract.
+
+A few facts to keep in mind when manipulating the CKB:
+
+1. Do not transfer CKB with `sendTransaction` to arbitrary address carrying the value. Use the `transfer` method in the CKB ERC20 proxy contract to transfer CKB.
+2. Use the `getBalance` method of the Ethereum RPC to get the balance of CKB. Note that the decimal return value for CKB is 8, not 18 as in ETH. The balance of CKB can also be obtained using the `balanceOf` method in the CKB ERC20 proxy contract.
+3. The CKB ERC20 proxy contract address is `0x6BFD7c449B3FFDaCCcac80Cf3cA6bb89e9bF309C` for Testnet, and `0x9D9599c41383D7009C2093319d576AA6F89A4449` for Mainnet.
+4. It is **impossible** to use MetaMask or other wallets to show or send CKB.
+
+Check the [demo](https://github.com/huwenchao/godwoken-demos/blob/main/gw-scripts/assets.ts) for more details.
+
+## DApp Development
+
+An existing contract written in Solidity or Vyper can be ported to Godwoken, otherwise write a new contract.
+
+There is a [demo](https://github.com/huwenchao/godwoken-demos/blob/main/gw-scripts/contract.ts) showing a simple way to deploy a contract to and interact with Godwoken.
+There is no difference in compiling, so using Truffle or Hardhat to write, compile and test the contract is still possible.
+
+More compatibility information:
+- [Comparison with EVM](comparisonEVM)
+- [Godwoken Compatibility Examples](https://github.com/honestgoing/godwoken-polyjuice-compatibility-examples)
+
+## References
+
+- Rollup
+  - [What is Rollup solution?](https://ethereum.org/en/developers/docs/scaling/layer-2-rollups/)
+  - [(Almost) Everything you need to know about Optimistic Rollup | Low trust and Low Cost is important](https://research.paradigm.xyz/rollups)

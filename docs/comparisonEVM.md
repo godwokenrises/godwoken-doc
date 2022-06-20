@@ -4,60 +4,129 @@ title: Comparison with EVM
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-Godwoken targets 100% EVM compatibility and is designed to work with every smart contract that the latest Ethereum hard fork version supports. But, the current version is not yet fully compatible with EVM.
+Godwoken targets 100% EVM compatibility, the plan is to back every smart contract that the latest Ethereum hard fork version supports. But there are certain things that are incompatible with EVM in the current version.
 
-## EVM revision
+## pETH
 
-The maximum EVM revision supported is `EVMC_BERLIN`.
+Godwoken introduced a new concept called pETH.
 
-- [ ]  support EVMC_LONDON
-- [ ]  support EVMC_SHANGHAI
-
-## pCKB
-
-Godwoken v1 introduced a new concept, [**pCKB**](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md#pckb).
-
-In Ethereum, the gas for each smart contract is derived by calculation. And the transaction fee is then calculated by multiplying the gas with the specified gas price. In Godwoken, **pCKB** is the unit for calculating transaction fees. In other words, the gas price in Ethereum is calculated as ETH/gas (in wei, i.e. 1e-18 ether), and the gas price in Godwoken is calculated as pCKB/gas. When executing a transaction, Godwoken will deduct the transaction fee by using the layer2 [sUDT](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0025-simple-udt/0025-simple-udt.md) type which is represented by **pCKB**.
-
-Note that with certain transactions being sent to the smart contract, the `value` of the transaction is `pCKB`.
+In Ethereum, the gas for each smart contract is derived by calculation, then calculating the transaction fee by multiplying the gas with a specified gas price. In Godwoken, however, pETH comes in as the unit for calculating transaction fees. In other words, the price of gas in Ethereum is ETH/gas ( denominated in wei, i. e. 1e-18 ether), while that of Godwoken is measured in pETH/gas.  When executing a transaction, Godwoken deducts the transaction fee by using tokens with the layer 2 sUDT type denoted by pETH. 
 
 ## Account Abstraction
 
-Polyjuice only provides [contract accounts](https://ethereum.org/en/glossary/#contract-account). Godwoken's user accounts are leveraged as [EOAs](https://ethereum.org/en/glossary/#eoa).
+Godwoken only provides [contract accounts](https://ethereum.org/en/glossary/#contract-account), and the user accounts of Godwoken serve as [EoAs](https://ethereum.org/en/glossary/#eoa).
 
-## All Tokens Are ERC20 Tokens
+### Different Address Types
 
-Ethereum processes ERC20 tokens differently from native ETH tokens, which is the reason wETH was invented. And, Godwoken conceals this difference:
+* All eth_address(EoA/contract) format are `short_godwoken_account_script_hash`, which is the 20 bytes prefix of Godwoken account script hash.
+* Creating a contract account returns `short_godwoken_account_script_hash`
 
-All tokens on Godwoken are represented as Layer 2 sUDT types whether using native CKB or any sUDT token type. Polyjuice proceeds from this Layer 2 sUDT [contract](https://github.com/nervosnetwork/godwoken-polyjuice/blob/b9c3ad4/solidity/erc20/SudtERC20Proxy_UserDefinedDecimals.sol) and ensures that all tokens on Godwoken are ERC20 compliant, regardless if supported by native CKB or sUDT. That is to say, it is unnecessary to distinguish between native tokens and ERC20 tokens. All that has to be handled is the same ERC20 interface for all the different tokens.
+When passing some parameters of [address-type](https://docs.soliditylang.org/en/v0.8.9/types.html#address) to call smart-contract, the `address` conversion has to be done beforehand, and vice versa to return the `address` value. Polyjuice-Provider is designed to handle these conversion tasks. It conducts `address` type conversions based on the ABI of the contract.
+
+> Unfortunately, we are not yet able to display assets directly on metamask or other Ethereum wallets. We currently use a single web app to display users' assets. This wallet display issue will be resolved in future updates.
 
 ## Transaction Structure
 
-A Polyjuice transaction is essentially a Godwoken transaction. Ethereum transactions will be converted to the Godwoken [RawL2Transaction](https://github.com/nervosnetwork/godwoken/blob/v1.0.0-rc1/crates/types/schemas/godwoken.mol#L69-L74) type when being sent, and will be automatically processed by [Godwoken Web3](https://github.com/nervosnetwork/godwoken-web3/tree/v1.0.0-rc1).
+A Polyjuice transaction is essentially a Godwoken transaction.
 
-## Behavioral differences of some opcodes
+When sending an Ethereum transaction, the transaction gets converted to a Godwoken [RawL2Transaction](https://github.com/nervosnetwork/godwoken/blob/9a3d92/crates/types/schemas/godwoken.mol#L56-L61) type, which is automatically processed by [Polyjuice-Provider](https://github.com/nervosnetwork/polyjuice-provider).
 
-| EVM Opcode | Solidity Usage | Behavior in Polyjuice | Behavior in EVM |
-| --- | --- | --- | --- |
-| COINBASE | block.coinbase | address of the block_producer | address of the current block miner |
-| GASLIMIT | block.gaslimit | 12,500,000 | current block’s gas limit |
-| DIFFICULTY | block.difficulty | 2,500,000,000,000,000 | current block’s difficulty |
+## Behavioral Differences of Some Opcodes
 
-## Others
+| EVM Opcode | Solidity Usage     | Behavior in Polyjuice         | Behavior in EVM                                         |
+| ---------- | ------------------ | ----------------------------- | ------------------------------------------------------- |
+| COINBASE   | `block.coinbase`   | address of the block_producer | address of the current block's miner                    |
+| CHAINID    | `chain_id()`       | creator_account_id            | Istanbul hardfork, EIP-1344: current network's chain id |
+| GASLIMIT   | `block.gaslimit`   | 12,500,000                    | current block's gas limit                               |
+| DIFFICULTY | `block.difficulty` | 2,500,000,000,000,000         | current block's difficulty                              |
 
-- Transaction context
-    - `chain_id` is defined in Godwoken [RollupConfig#chain_id](https://github.com/nervosnetwork/godwoken/blob/a099f2010b212355f5504a8d464b6b70d29640a5/crates/types/schemas/godwoken.mol#L64).
-    - the block difficulty is always `2500000000000000`
-    - the gas limit  is 12500000 per block, but it is not a transaction-level limit. Any transaction can reach the gas limit
-    - the size limit for contract's return data is `[25600B](https://github.com/nervosnetwork/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22)`
-    - the size limit for contract's storage is `[25600B](https://github.com/nervosnetwork/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22)`
-  
-- `transaction.to` MUST be a Contract Address
-    
-    Direct transfer of the value (pCKB) from EOA to EOA is not supported.
-    > Scenario: pCKB (CKB) is represented as an ERC20 token on layer2, which can be transferred through the sUDT_ERC20_Proxycontract transfer function.
-    
-- The `transfer value` can not exceed uint128:MAX
-- Pre-compiled contract
-    - `bn256_pairing` is not yet supported because of the high cycle cost (WIP)
-    - [addition pre-compiled contracts](https://github.com/nervosnetwork/godwoken-polyjuice/blob/compatibility-breaking-changes/docs/Addition-Features.md)
+## Addition Features
+
+- pre-compiled contract
+  - Add `recover_account` for recover any supported signature
+  - Add `balance_of_any_sudt` for query the balance of any sudt_id account
+  - Add `transfer_to_any_sudt` for transfer value by sudt_id (Must collaborate with SudtErc20Proxy.sol contract)
+  - Add `eth_to_godwoken_addr` for convert ETH address to polyjuice contract address (godwoken short address)
+
+### `recover_account` Spec
+
+```
+  Recover an EoA account script hash by signature
+
+  input: (the input data is from abi.encode(mesage, signature, code_hash))
+  ======
+    input[ 0..32]  => message
+    input[32..64]  => offset of signature part
+    input[64..96]  => code_hash (EoA lock hash)
+    input[96..128] => length of signature data
+    input[128..]   => signature data
+
+  output (32 bytes):
+  =======
+    output[0..32] => account script hash
+```
+
+See: [Example](https://github.com/nervosnetwork/godwoken-polyjuice/blob/docs-evm-compatibility/polyjuice-tests/src/test_cases/evm-contracts/RecoverAccount.sol)
+
+### `balance_of_any_sudt` Spec
+
+```
+  Query the balance of `account_id` of `sudt_id` token.
+
+   input:
+   ======
+     input[ 0..32] => sudt_id (big endian)
+     input[32..64] => address (short_address)
+
+   output:
+   =======
+     output[0..32] => amount
+```
+
+See: [Example](https://github.com/nervosnetwork/godwoken-polyjuice/blob/docs-evm-compatibility/solidity/erc20/SudtERC20Proxy.sol)
+
+### `transfer_to_any_sudt` Spec
+
+```
+  Transfer `sudt_id` token from `from_id` to `to_id` with `amount` balance.
+
+  NOTE: This pre-compiled contract need caller to check permission of `from_id`,
+  currently only `solidity/erc20/SudtERC20Proxy.sol` is allowed to call this contract.
+
+   input:
+   ======
+     input[ 0..32 ] => sudt_id (big endian)
+     input[32..64 ] => from_addr (short address)
+     input[64..96 ] => to_addr (short address)
+     input[96..128] => amount (big endian)
+
+   output: []
+```
+
+See: [Example](https://github.com/nervosnetwork/godwoken-polyjuice/blob/docs-evm-compatibility/solidity/erc20/SudtERC20Proxy.sol)
+
+### `eth_to_godwoken_addr` Spec
+
+```
+ Calculate godwoken short address of an contract account by it's corresponding ETH address
+
+ input:
+ ======
+   input[12..32] => ETH address
+
+ output:
+   output[12..32] => godwoken short address
+```
+
+See: [Example](https://github.com/nervosnetwork/godwoken-polyjuice/blob/docs-evm-compatibility/polyjuice-tests/src/test_cases/evm-contracts/EthToGodwokenAddr.sol)
+
+### Others
+
+- transaction context
+  - chain_id is [creator_account_id](https://github.com/nervosnetwork/godwoken/blob/5735d8f/docs/life_of_a_polyjuice_transaction.md#root-account--deployment)
+  - block gas limit is `12500000`, and is not block level limit, every transaction can reach the limit
+  - block difficulty is always `2500000000000000`
+- The `transfer value` can not exceed uint128:MAX
+- pre-compiled contract
+  - `bn256_pairing` is not supported yet，due to too high cycle cost (WIP)
+  - [addition pre-compiled contracts](https://github.com/nervosnetwork/godwoken-polyjuice/blob/docs-evm-compatibility/docs/Addition-Features.md)
