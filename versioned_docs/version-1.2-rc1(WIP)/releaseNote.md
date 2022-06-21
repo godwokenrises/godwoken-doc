@@ -4,7 +4,7 @@ title: Godwoken V1.2 Release Note
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-The following release notes cover the most recent and major changes in Godwoken v1.2. You can also see all release notes in the [Godwoken Changlog.](https://github.com/nervosnetwork/godwoken/blob/develop/CHANGELOG.md) 
+The following release notes cover the most recent and major changes in Godwoken v1.2. You can also see all release notes in the [Godwoken Changlog](https://github.com/nervosnetwork/godwoken/blob/develop/CHANGELOG.md). 
 
 > Godwoken v1 is not an upgrade on the existing chain but is being deployed as a new vhain with tools to help users and developers migrate to the new chain.  Developers can use Godwoken v1 to switch networks to Godwoken in the same way as they use other EVM-compatible chains.
 > 
