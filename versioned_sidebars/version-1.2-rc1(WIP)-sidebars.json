@@ -1,0 +1,22 @@
+{
+  "sidebar2": [
+    {
+      "Introduction": [
+        "overview",
+        "gwtxLife",
+        "depAndWthd"
+      ]
+    },
+
+    {
+      "Deployment": [
+		    "godwokenkicker",
+        "deployLocalNetwork"
+      ]
+    },
+	  "integration",
+    "godwokenbridge",
+    "releaseNote",
+    "faq"
+  ]
+}
