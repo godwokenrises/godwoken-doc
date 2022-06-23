@@ -7,7 +7,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 Godwoken v1 introduced the registry and registry address, both of which can be seen as alias mechanisms for layer 2 accounts. 
 
-A layer 2 account can be referenced by ID or by script ( a hash of a script usually) itself. However, in some environments, it is also required to access an account by alias. For example, there is no such thing as a Godwoken `ID` or `script` in the EVM environment, and so access to an account can only be made through an ETH address.
+A layer 2 account can be referenced by ID or by script (a hash of a script usually) itself. However, in some environments, it is also required to access an account by alias. For example, there is no such thing as a Godwoken `ID` or `script` in the EVM environment, and so access to an account can only be made through an ETH address.
 
 In this case, a registry is an account. The alias mapping relation is stored in the key value storage of the registry account. The registry address code is:
 
