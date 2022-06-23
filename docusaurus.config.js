@@ -18,6 +18,11 @@ module.exports = {
       disableSwitch: true,
       respectPrefersColorScheme: false,
     },
+    algolia: {
+      appId: 'W0P1A076NN',
+      apiKey: "4a00c5457da3a6e940925cf7cb834418",
+      indexName: "godwoken",
+    },	
     navbar: {
 	hideOnScroll: true,
       title: 'Godwoken Documentation',
