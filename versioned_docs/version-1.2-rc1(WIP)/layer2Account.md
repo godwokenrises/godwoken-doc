@@ -9,7 +9,7 @@ Godwoken v1 introduced the registry and registry address, both of which can be s
 
 A layer 2 account can be referenced by ID or by script (a hash of a script usually) itself. However, in some environments, it is also required to access an account by alias. For example, there is no such thing as a Godwoken `ID` or `script` in the EVM environment, and so access to an account can only be made through an ETH address.
 
-In this case, a registry is an account. The alias mapping relation is stored in the key value storage of the registry account. The registry address code is:
+In this case, a registry is an account. The alias mapping relation is stored in the key-value storage of the registry account. The registry address is encoded as follows:
 
 ```
 (registry ID 4 bytes) | (alias address length 4 bytes) | (alias address n bytes)
@@ -32,7 +32,7 @@ This structure indicates the script that will be loaded when validating an L1 tr
 
 - `code_hash - code_hash` indicates the executable binary used for verifying the layer 2 transaction. If a layer 2 account represents an EVM contract,  the `script.code_hash` of that account will point to the binary file that can verify the EVM transaction.
 - `hash_type - hash_type` shapes the way CKB loads the script binary, which is fixed to `HashType::Type` in the layer 2 account.
-- args - args is used to set the script initial args. The first 32 bytes are set to `rollup_script_hash` in Godwoken to distinguish between accounts from different rollups.
+- `args - args` is used to set the script initial args. The first 32 bytes are set to `rollup_script_hash` in Godwoken to distinguish between accounts from different rollups.
 
 An account on layer 2 is an EOA or a contract is determined by the `code_hash` of that account. If the script assumes the account is a receiver of transactions invariably, then the account is a contract. If the script assumes the account is the sender of a transaction, then the account is an EOA. Code in the script is expected to perform some contract logic checks or signature checks based on the assumptions.
 
