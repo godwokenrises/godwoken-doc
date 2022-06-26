@@ -7,7 +7,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 Moving assets between blockchains is an extremely important part of building the cross-chain dApps of the future. Not only do developers need secure infrastructure to build on, but the experience for the end user must be simple and straightforward.
 
-Nervos' solutions to cross-chain interoperability are major steps towards these goals. At the base of this is Force Bridge, the decentralized cross-chain bridge which enables the transfer of assets between Nervos and other blockchains. You can learn more about the way a user from another blockchain will interact with Nervos in this document about the [Common User Action Flow](../concept-explainers/structure.md#common-user-action-flow).
+Nervos' solutions to cross-chain interoperability are major steps towards these goals. At the base of this is Force Bridge, the decentralized cross-chain bridge which enables the transfer of assets between Nervos and other blockchains. You can learn more about the way a user from another blockchain will interact with Nervos in this document about the [Common User Action Flow](structure.md#common-user-action-flow).
 
 Force Bridge is currently deployed both to [mainnet ](https://forcebridge.com)and [testnet](https://testnet.forcebridge.com) network. It supports moving tokens to and from the Ethereum Rinkeby testnet as well as Ethereum Mainnet. The Cardano bridge has also been announced and is in the late stages of development. More networks will continue to be added, continuously growing the available audience for any developers building on Nervos today.
 
@@ -19,7 +19,7 @@ To do this, you will use MetaMask and Force Bridge to transfer ETH from the Rink
 
 ### Prerequisites
 
-This task requires the Code Examples repo ([layer2-evm-documentation](https://github.com/nervosnetwork/layer2-evm-documentation)) which was setup in [task 2](2.deploy.eth.contract.md#2.-clone-and-setup-the-code-examples-repository). If you do not have this repo available for any reason, please set it up now.
+This task requires the Code Examples repo ([layer2-evm-documentation](https://github.com/nervosnetwork/layer2-evm-documentation)) which was setup in [task 2](evmTask2.md#2.-clone-and-setup-the-code-examples-repository). If you do not have this repo available for any reason, please set it up now.
 
 ### 1. Configure MetaMask to Use the Rinkeby Testnet
 
@@ -96,7 +96,7 @@ At this point the SUDT tokens reside on Layer 1, and are awaiting collection by 
 
 ### Check Your Layer 2 Balance
 
-If you would like to check your Layer 2 token balance, you can use ["Tokens" page](../ecosystem/tokens.md) to find ERC20 token addresses. You are encouraged to do so to verify that the tokens have arrived safely in your account.
+If you would like to check your Layer 2 token balance, you can use ["Tokens" page](tokens.md) to find ERC20 token addresses. You are encouraged to do so to verify that the tokens have arrived safely in your account.
 
 
 

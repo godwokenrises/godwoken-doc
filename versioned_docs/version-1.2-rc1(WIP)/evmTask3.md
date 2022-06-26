@@ -5,25 +5,25 @@ title: 3. Issue a Smart Contract Call to the Deployed Smart Contract
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 
-In this task we will learn how to make function calls to the smart contract that was deployed in the previous task. We will provide some simple example code that uses the popular Web3.js library to do so. This code will allow you to interact with your smart contract which is running on Nervos' [Layer 2](../concept-explainers/structure.md#layer-1--layer-2) in a nearly identical way to if it was running on Ethereum.
+In this task we will learn how to make function calls to the smart contract that was deployed in the previous task. We will provide some simple example code that uses the popular Web3.js library to do so. This code will allow you to interact with your smart contract which is running on Nervos' [Layer 2](structure.md#layer-1--layer-2) in a nearly identical way to if it was running on Ethereum.
 
-Your smart contract should operate just like it would on Ethereum, but in actuality, it will be running in an EVM environment provided by [Polyjuice](../concept-explainers/frameworks.md#polyjuice). When combined with [Godwoken](../concept-explainers/frameworks.md#godwoken), which provides a Layer 2 solution with optimistic rollups, total throughput performance is significantly higher. This means that all users will experience dramatically lower fees, and more reliable transaction confirmation than if they were using Ethereum.
+Your smart contract should operate just like it would on Ethereum, but in actuality, it will be running in an EVM environment provided by [Polyjuice](frameworks.md#polyjuice). When combined with [Godwoken](frameworks.md#godwoken), which provides a Layer 2 solution with optimistic rollups, total throughput performance is significantly higher. This means that all users will experience dramatically lower fees, and more reliable transaction confirmation than if they were using Ethereum.
 
 ## Task Instructions
 
 ### Prerequisites
 
-Before you begin on this task you must complete the [first](1.create.godwoken.account.md) and [second](2.deploy.eth.contract.md) tasks. If you have not completed them, please do so now.
+Before you begin on this task you must complete the [first](evmTask1.md) and [second](evmTask2.md) tasks. If you have not completed them, please do so now.
 
-You will need the private key from the **Ethereum** address that you used in the previous task. Make sure this is Ethereum private key for Layer 2, not the private key from your Nervos CKB Layer 1 address. If you do not have this, you can follow the instructions in [this tutorial](../component-tutorials/5.extract.ethereum.private.key.md), to extract your private key from MetaMask.
+You will need the private key from the **Ethereum** address that you used in the previous task. Make sure this is Ethereum private key for Layer 2, not the private key from your Nervos CKB Layer 1 address. If you do not have this, you can follow the instructions in [this tutorial](evmTask5.md), to extract your private key from MetaMask.
 
-This task requires the Code Examples repo ([layer2-evm-documentation](https://github.com/nervosnetwork/layer2-evm-documentation)) which was setup in [task 2](2.deploy.eth.contract.md#2.-clone-and-setup-the-code-examples-repository). If you do not have this repo available for any reason, please set it up now.
+This task requires the Code Examples repo ([layer2-evm-documentation](https://github.com/nervosnetwork/layer2-evm-documentation)) which was setup in [task 2](evmTask2.md#2.-clone-and-setup-the-code-examples-repository). If you do not have this repo available for any reason, please set it up now.
 
 ### 1. Prepare the Smart Contract Address and ABI
 
 In order to execute a function call on a smart contract, it must be deployed, and you must have the ABI that was generated when the code was originally compiled. "ABI" stands for Application Binary Interface, and it contains the information required by an application to interface and call functions on the smart contract.
 
-In the [previous task](2.deploy.eth.contract.md), you compiled and deployed an Ethereum smart contract. You may be able to reuse that smart contract for this task. If it is no longer available, please revisit the [previous task](2.deploy.eth.contract.md) and complete it again.&#x20;
+In the [previous task](evmTask2.md), you compiled and deployed an Ethereum smart contract. You may be able to reuse that smart contract for this task. If it is no longer available, please revisit the [previous task](evmTask2.md) and complete it again.&#x20;
 
 The example smart contract from the previous task is `SimpleStorage.sol`, and the corresponding ABI value can be found in `code-examples/2-deploy-contract/artifacts/contracts/SimpleStorage.sol/SimpleStorage.json` after the contract is compiled. Below is the ABI value which has been extracted from this file.
 

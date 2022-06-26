@@ -4,7 +4,7 @@ title: Extract a Privkey from MetaMask Wallet
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-This tutorial will show you how to extract a private key from the [MetaMask](../concept-explainers/wallets.md#metamask) wallet. This will allow you to provide it to tools and services which require it to create transactions on your behalf.
+This tutorial will show you how to extract a private key from the [MetaMask](wallets.md#metamask) wallet. This will allow you to provide it to tools and services which require it to create transactions on your behalf.
 
 **Sharing your private keys with any other person or application gives them complete control of all funds on the account!** Never provide this information for any account with real funds unless you are absolutely certain that this is something you can trust.
 

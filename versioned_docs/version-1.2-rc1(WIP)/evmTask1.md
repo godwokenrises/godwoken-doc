@@ -5,13 +5,13 @@ title: 1. Create account on the EVM Layer 2 Testnet
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 
-Nervos supports the use of Ethereum compatible smart contracts which allow developers to create dApps using the popular Solidity smart contract language. This is done by running the EVM (Ethereum Virtual Machine) in a [Layer 2](../concept-explainers/structure.md#layer-1--layer-2) based execution environment using the [Godwoken](../concept-explainers/frameworks.md#godwoken) and [Polyjuice](../concept-explainers/frameworks.md#polyjuice) frameworks.
+Nervos supports the use of Ethereum compatible smart contracts which allow developers to create dApps using the popular Solidity smart contract language. This is done by running the EVM (Ethereum Virtual Machine) in a [Layer 2](structure.md#layer-1--layer-2) based execution environment using the [Godwoken](frameworks.md#godwoken) and [Polyjuice](frameworks.md#polyjuice) frameworks.
 
-EVM dApps run nearly identically on Nervos as they do on Ethereum. This, in turn, allows dApp users to continue using the popular [MetaMask](../concept-explainers/wallets.md#metamask) wallet without having to install anything new. DApp users who are familiar with Ethereum will feel right at home!
+EVM dApps run nearly identically on Nervos as they do on Ethereum. This, in turn, allows dApp users to continue using the popular [MetaMask](wallets.md#metamask) wallet without having to install anything new. DApp users who are familiar with Ethereum will feel right at home!
 
 ## Introduction
 
-In this tutorial you'll create a Godwoken account on Nervos' EVM Layer 2 [Testnet](../concept-explainers/structure.md#mainnet-testnet-devnet). Creating a Godwoken account is the first step that all users must perform on Nervos' [Layer 1](../concept-explainers/structure.md#layer-1--layer-2) blockchain before they can begin interacting with EVM smart contracts on Layer 2.
+In this tutorial you'll create a Godwoken account on Nervos' EVM Layer 2 [Testnet](structure.md#mainnet-testnet-devnet). Creating a Godwoken account is the first step that all users must perform on Nervos' [Layer 1](structure.md#layer-1--layer-2) blockchain before they can begin interacting with EVM smart contracts on Layer 2.
 
 We will be focusing on Layer 2 in this documentation, so you don't need to think about Layer 1 too much right now. Alright, let's start creating an account!
 

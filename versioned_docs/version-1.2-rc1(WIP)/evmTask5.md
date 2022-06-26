@@ -5,9 +5,9 @@ title: 5. Port an Existing Ethereum dApp to Polyjuice
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 
-In this tutorial you will learn how to port an existing browser Ethereum application to run on Nervos' EVM compatible [Layer 2](../concept-explainers/structure.md#layer-1-layer-2).
+In this tutorial you will learn how to port an existing browser Ethereum application to run on Nervos' EVM compatible [Layer 2](structure.md#layer-1-layer-2).
 
-[MetaMask](../concept-explainers/wallets.md#metamask) is the primary method of interacting with dApps on Nervos. The overall user experience will be very similar to existing Ethereum.
+[MetaMask](wallets.md#metamask) is the primary method of interacting with dApps on Nervos. The overall user experience will be very similar to existing Ethereum.
 
 ## Task Instructions
 

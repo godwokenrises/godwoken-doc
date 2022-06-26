@@ -4,7 +4,7 @@ title: 2. Deploy a Simple Ethereum Smart Contract on Polyjuice
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-Compiling and deploying a smart contract on Nervos' EVM compatible [Layer 2](../concept-explainers/structure.md#layer-1-layer-2) is a process that has a lot of similarity to the process on Ethereum. There are only a few small changes that need to be made.
+Compiling and deploying a smart contract on Nervos' EVM compatible [Layer 2](structure.md#layer-1-layer-2) is a process that has a lot of similarity to the process on Ethereum. There are only a few small changes that need to be made.
 
 ## Task Instructions
 
@@ -16,7 +16,7 @@ The instructions will provide a basic smart contract you can work with, but you 
 
 ### Prerequisites
 
-Before you begin on this task you must complete the [previous task](1.create.godwoken.account.md) to create a Godwoken account on the EVM Layer 2 Testnet. You will also need the private key and Testnet address from the previous task in order to proceed. If you have not completed it, please do so now.
+Before you begin on this task you must complete the [previous task](evmTask1.md) to create a Godwoken account on the EVM Layer 2 Testnet. You will also need the private key and Testnet address from the previous task in order to proceed. If you have not completed it, please do so now.
 
 ### 1. Prepare Your Ethereum Private Key
 
@@ -24,7 +24,7 @@ You need to extract private key for your **Ethereum** account. This private key 
 
 > Note: Never use a private key that is associated with a real account for any of these tasks. The following steps will show you how to extract your private key from MetaMask, but you should never do this using a MetaMask installation that you use for real funds since this could potentially leak infomation that could compromise your account.
 
-If you need instructions on how to extract your private key from MetaMask, follow the steps in [this tutorial](../component-tutorials/5.extract.ethereum.private.key.md).
+If you need instructions on how to extract your private key from MetaMask, follow the steps in [this tutorial](evmTask5.md).
 
 ### 2. Clone and Setup the Code Examples Repository
 

@@ -3,20 +3,22 @@
     "overview",
     {
       "Basic Concepts": [
-        "gwtxLife",
-        "depAndWthd",
         "frameworks",
+        "infrastructure",
         "standards",
         "structure",
         "tooling",
-        "wallets"
+        "wallets",
+        "tokens",
+        "gwtxLife",
+        "depAndWthd",
+        "godwokenkicker"
       ]
     },
 
     {
       "Hands On Tutorials": {
         "Dapp Development":[
-        "godwokenkicker",
         "deployLocalNetwork",
         "integration",
         "evmIntro",
@@ -44,6 +46,7 @@
       "releaseNote1"
       ]
     },
+    "otherTools",
     "faq"
   ]
 }
