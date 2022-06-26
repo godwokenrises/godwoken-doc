@@ -1,22 +1,44 @@
 {
   "sidebar2": [
+    "overview",
     {
-      "Introduction": [
-        "overview",
+      "Basic Concepts": [
         "gwtxLife",
         "depAndWthd"
       ]
     },
 
     {
-      "Deployment": [
-		    "godwokenkicker",
-        "deployLocalNetwork"
+      "Hands On Tutorials": {
+        "Dapp Development":[
+        "godwokenkicker",
+        "deployLocalNetwork",
+        "integration",
+        "evmIntro",
+        [
+          "evmPrep",
+          "evmTask1",
+          "evmTask2",
+          "evmTask3",
+          "evmTask4",
+          "evmTask5",
+          "evmTask6"
+         ]
+      ],
+        "Asset Management":[
+        "bridgeIntro",
+        "fastWithdrawal",
+        "extractPrivkey"
+        ]
+      }
+    },
+    
+    {
+      "Release Notes":[
+      "releaseNote",
+      "releaseNote1"
       ]
     },
-	  "integration",
-    "godwokenbridge",
-    "releaseNote",
     "faq"
   ]
 }

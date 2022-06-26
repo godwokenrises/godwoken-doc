@@ -1,15 +1,17 @@
 ---
-id: godwokenbridge
-title: Godwoken Bridge
+id: fastWithdrawal
+title: Deposit & Fast Withdrawal to Godwoken Version 1
 ---
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-[Godwoken Bridge](https://testnet.bridge.godwoken.io/#/v1/) functions as a token bridge between CKB and Godwoken and allows the quick deposit and withdrawal of assets. It is powered by [Light Godwoken](https://github.com/zhangyouxin/light-godwoken), an SDK dedicated to the development of decentralized applications on Godwoken.
+:::note
+This tutorial shows how to deposit and withdraw funds from old Godwoken - version 0 - to the new network - version 1. If you don't have any funds on old network you should skip this article.
+:::
 
-In contrast to the previous version, the current version of Godwoken Bridge offers:
-- A unified deposit/withdraw page;
-- Quick asset withdrawal from Godwoken v0 to v1.
+This guide will show you how to do Fast Withdrawal, which takes minutes instead of days and transfer funds from old Layer 2 EVM Godwoken network to the new Godwoken.
+
+If you wish to withdraw funds from Godwoken V0 to Nervos Layer 1 then it will be a slower process (days) due to Optimistic Rollup security architecture. 
 
 In order to follow this tutorial, you must have already downloaded a web3 wallet, such as [MetaMask](https://metamask.io/), and have enough CKB or supported sUDT tokens in the wallet.
 
@@ -92,11 +94,7 @@ To withdraw assets from Godwoken v0 to Godwoken v1:
 
    <img src={useBaseUrl("img/withdrawBalance.png")}  width="40%"/>
 
-:::note
 
-When withdrawing assets from Godwoken v0 to v1, a withdrawal period of at least five days is required. Therefore, you must wait for at least five days after a withdrawal from v0 to v1 before receiving the assets.
-
-:::
 
  ## Reference
 
