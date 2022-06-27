@@ -9,7 +9,11 @@ import Link from "@docusaurus/Link";
 
 This documentation can be used as an integration guide for wallets and exchanges, or as a reference for developing dApps on Godwoken. It explains the rationale for developing decentralized applications using Godwoken, the known caveats of version 1 and corresponding workarounds, as well as providing hands on training on integrating Ethereum dApps with CKB through Godwoken.
 
-Prior knowledge of Ethereum is required for using this guide.
+Prior knowledge of Ethereum is required for using this guide. 
+
+:::note
+If you want to obtain a direct experience and prepare yourself for deploying an applications, you can check out the [Layer 2 EVM Training](evmIntro.md) section for a hands-on trial of developing your own EVM dapps on the Nervos platform.
+:::
 
 ## Why Develop on Godwoken?
 
@@ -147,27 +151,3 @@ There are two ways to create a layer 2 account:
 - Make a deposit to Godwoken at layer 1;
 - Call the Godwoken built-in [meta_contract](https://github.com/nervosnetwork/godwoken-scripts/blob/86b299f/c/contracts/meta_contract.c) and create an account at layer 2.
 
-## Hands-On EVM Training
-
-This section covers the step-by-step tasks of developing EVM dApps on the Nervos platform. Developers can gain direct experience and prepare themselves for deploying their own applications by practicing these tasks.
-
-### Prerequisites
-
-- Connect MetaMask with Godwoken Testnet. For more information about Godwoken testnet v1, see [Testnet V1](https://github.com/nervosnetwork/godwoken-info/tree/main/testnet_v1).
-- [Task Setup and Requirements - Layer 2 EVM (gitbook.io)](https://nervos.gitbook.io/layer-2-evm/task-setup-and-requirements)
-
-### Tasks
-
-The following tasks provide instructions on what must be done, guidance on all necessary tooling, and detailed information on relevant topics:
-
-1. [Create account on the EVM Layer 2 Testnet](https://nervos.gitbook.io/layer-2-evm/tasks/1.create.godwoken.account)
-2. [Deploy a Simple Ethereum Smart Contract on Polyjuice](https://nervos.gitbook.io/layer-2-evm/tasks/2.deploy.eth.contract)
-3. [Issue a Smart Contract Call to the Deployed Smart Contract](https://nervos.gitbook.io/layer-2-evm/tasks/3.issue.contract.call)
-4. [Issue an SUDT Token on Layer 1 and Deposit it to Layer 2](https://nervos.gitbook.io/layer-2-evm/tasks/4.issue.sudt.deposit)
-5. [Deploy the ERC20 Proxy Contract for the Deposited SUDT](https://nervos.gitbook.io/layer-2-evm/tasks/5.deploy.erc20.proxy.contract)
-6. [Use Force Bridge to Deposit Tokens on Ethereum to Polyjuice](https://nervos.gitbook.io/layer-2-evm/tasks/6.use.force.bridge.to.deposit)
-7. [Port an Existing Ethereum dApp to Polyjuice](https://nervos.gitbook.io/layer-2-evm/tasks/7.port.eth.dapp)
-8. [Modify the Ported dApp so it Supports Ethereum Assets via Force Bridge](https://nervos.gitbook.io/layer-2-evm/tasks/8.modify.dapp.support.force.bridge)
-9. [Withdraw From Layer 2 Back to Layer 1](https://nervos.gitbook.io/layer-2-evm/tasks/9.withdraw)
-
-<!--For details on the Nervos ecosystem, key concepts, and hands-on practice with the platform in preparation for deploying real-world DApps, check out **[Nervos Layer 2 EVM training](https://nervos.gitbook.io/layer-2-evm/).**-->
