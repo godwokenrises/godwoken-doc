@@ -1,6 +1,7 @@
 {
   "sidebar2": [
     "overview",
+    
     {
       "Basic Concepts": [
         "frameworks",
@@ -17,12 +18,11 @@
     },
 
     {
-      "Hands On Tutorials": {
-        "Dapp Development":[
+      "Dapp Deployment": [
+		    "integration",
         "deployLocalNetwork",
-        "integration",
-        "evmIntro",
-        [
+        {"Layer 2 EVM Training":[
+          "evmIntro",
           "evmPrep",
           "evmTask1",
           "evmTask2",
@@ -30,22 +30,26 @@
           "evmTask4",
           "evmTask5",
           "evmTask6"
-         ]
-      ],
-        "Asset Management":[
+          ]
+        }
+      ]
+    },
+    
+    {
+      "Asset Management":[
         "bridgeIntro",
         "fastWithdrawal",
         "extractPrivkey"
         ]
-      }
     },
-    
+
     {
       "Release Notes":[
       "releaseNote",
       "releaseNote1"
       ]
     },
+
     "otherTools",
     "faq"
   ]
