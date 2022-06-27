@@ -2,7 +2,7 @@
 module.exports = {
   title: 'Godwoken Documentation',
   tagline: 'Godwoken Documentation',
-  url: 'https://ashleewang888.github.io/godwoken-doc/',
+  url: 'https://ashleewang888.github.io',
   baseUrl: '/godwoken-doc/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
