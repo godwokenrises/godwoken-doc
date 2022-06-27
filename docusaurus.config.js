@@ -2,12 +2,12 @@
 module.exports = {
   title: 'Godwoken Documentation',
   tagline: 'Godwoken Documentation',
-  url: 'https://ashleewang888.github.io',
-  baseUrl: '/godwoken-doc/',
+  url: 'https://docs.godwoken.io/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
-  organizationName: 'ashleewang888', // Usually your GitHub org/user name.
+  organizationName: 'nervosnetwork', // Usually your GitHub org/user name.
   projectName: 'godwoken-doc', // Usually your repo name.
   plugins: [
     'docusaurus-plugin-matomo',
