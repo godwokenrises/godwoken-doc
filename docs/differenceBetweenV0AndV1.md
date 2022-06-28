@@ -56,4 +56,4 @@ Withdraw from layer2 must be in `8` decimals, so you cannot withdraw CKB that is
 
 ### Minimal gas price
 
-To prevent DoS attacks, a minimal gas price is introduced into the v1 network, currently, the minimal gas price is `1000 shannon`.
+To prevent DoS attacks, a minimal gas price is introduced into the v1 network. Currently, the minimal gas price is around `9000 shannon`, which means that a normal ERC20 transfer will cost less than $0.01.
