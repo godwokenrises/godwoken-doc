@@ -1,8 +1,6 @@
 ---
-slug: /
 id: overview
 title: Overview
-sidebar_label: Overview
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 

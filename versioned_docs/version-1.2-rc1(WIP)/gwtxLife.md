@@ -221,7 +221,7 @@ A JSON representation for this data structure is:
 
 In this example, we are transferring 400 shannons(denoted by `to_id` 0x1) from account 0x2(denoted by `from_id`) to account 0x0200000014000000bb1d13450cfa630728d0390c99957c6948bf7d19(denoted by `to_address` in `SUDTTransfer`). In addition, we may need to pay 100 shannons as layer 2 transaction fees. The next 2 sections will discuss layer 2 transaction in more detail.
 
-#### Account Locks
+### Account Locks
 
 An account lock controls how a signature for a layer 2 transaction is validated. Recall that a deposit cell actually includes a layer 2 lock script in its `DepositLockArgs`:
 
@@ -255,7 +255,7 @@ Now we can derive the signature validation rule for a layer 2 Godwoken transacti
 
 The above flow has one quirk: the current version of Godwoken uses the optimistic rollup design. Due to the "optimistic" nature, the layer 2 lock script is not typically executed on chain. It is only executed when a challenger initiates a challenge request on chain, and an aggregator validates the validity of the layer 2 transaction through a cancel challenge request. Hence the way to build a layer 2 lock script is also slightly different. An example of such a script can be found [here](https://github.com/nervosnetwork/godwoken-scripts/blob/master/contracts/eth-account-lock/src/entry.rs#L24).
 
-#### Backend
+### Backend
 
 After the signature has been verigied, another problem arises: how does Godwoken calculate the next on-layer2-chain state? **Backends** in Godwoken handle this task.
 
@@ -277,7 +277,7 @@ Similar to account locks, the above rule is more of a conceptual rule. The actua
 
 Here are a few examples of backends:
 
-##### SUDT
+### SUDT
 
 sUDT is the most common backend in Godwoken and all tokens, whether they are CKB or layer 1 sUDTs, are represented as layer 2 sUDT types. A layer 2 sUDT backend script is defined by the following specification:
 
@@ -294,7 +294,7 @@ Note that Godwoken typically creates sUDT contract accounts when processing depo
 
 An implementation for the layer 2 sUDT backend can be found [here](https://github.com/nervosnetwork/godwoken-scripts/blob/v1.1.0-beta/c/contracts/sudt.c).
 
-##### MetaContract
+### MetaContract
 
 MetaContract is a special backend in Godwoken:
 
@@ -335,13 +335,13 @@ The `args` part in this transaction contains a [MetaContractArgs](https://github
 
 The details of this transaction will be explained in [Life of a Polyjuice Transaction](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md).
 
-##### Polyjuice
+### Polyjuice
 
 Polyjuice is the main backend used now in Godwoken. It allows us to create a contract account using EVM bytecode. The resulting account will be able to execute smart contracts written for Ethereum. Polyjuice aims at 100% compatibility at EVM level, meaning all applications that runnable on Ethereum can be run on Godwoken powered by Polyjuice.
 
 For more details on polyjuice, refer to [Life of a Polyjuice Transaction](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md).
 
-#### Managing Account Locks & Backends
+### Managing Account Locks & Backends
 
 It is possible to create as many accounts as you like. However, Godwoken now only supports whitelisted account locks and backends for security reasons. The list now includes:
 

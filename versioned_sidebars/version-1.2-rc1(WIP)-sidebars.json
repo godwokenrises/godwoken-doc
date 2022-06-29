@@ -1,22 +1,59 @@
 {
   "sidebar2": [
+    "getStart",
+    
     {
-      "Introduction": [
+      "Basic Concepts": [
         "overview",
+        "connectionInfo",
+        "frameworks",
+        "infrastructure",
+        "standards",
+        "structure",
+        "tooling",
+        "wallets",
+        "tokens",
         "gwtxLife",
-        "depAndWthd"
+        "depAndWthd",
+        "godwokenkicker"
       ]
     },
 
     {
-      "Deployment": [
-		    "godwokenkicker",
-        "deployLocalNetwork"
+      "Dapp Deployment": [
+		    "integration",
+        "deployLocalNetwork",
+        {"Layer 2 EVM Training":[
+          "evmIntro",
+          "evmPrep",
+          "evmTask1",
+          "evmTask2",
+          "evmTask3",
+          "evmTask4",
+          "evmTask5",
+          "evmTask6"
+          ]
+        }
       ]
     },
-	  "integration",
-    "godwokenbridge",
-    "releaseNote",
+    
+    {
+      "Asset Management":[
+        "bridgeIntro",
+        "fastWithdrawal",
+        "extractPrivkey"
+        ]
+    },
+
+    {
+      "Release Notes":[
+      "releaseNote",
+      "releaseNote1",
+      "v0difv1"
+      ]
+    },
+
+    "otherTools",
     "faq"
   ]
 }

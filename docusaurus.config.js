@@ -2,11 +2,11 @@
 module.exports = {
   title: 'Godwoken Documentation',
   tagline: 'Godwoken Documentation',
-  url: 'http://docs.godwoken.io/',
+  url: 'https://docs.godwoken.io/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.png',
+  favicon: 'img/godwoken.png',
   organizationName: 'nervosnetwork', // Usually your GitHub org/user name.
   projectName: 'godwoken-doc', // Usually your repo name.
   plugins: [
@@ -28,8 +28,8 @@ module.exports = {
       title: 'Godwoken Documentation',
       logo: {
         alt: 'Nervos',
-        src: 'img/favicon.png',
-		href: 'https://www.nervos.org/',
+        src: 'img/godwoken.png',
+		href: 'https://www.nervos.org/godwoken/',
       },
       items: [
         {
