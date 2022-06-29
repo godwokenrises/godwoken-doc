@@ -1,9 +1,10 @@
 {
   "sidebar2": [
-    "overview",
+    "getStart",
     
     {
       "Basic Concepts": [
+        "overview",
         "frameworks",
         "infrastructure",
         "standards",
@@ -46,7 +47,8 @@
     {
       "Release Notes":[
       "releaseNote",
-      "releaseNote1"
+      "releaseNote1",
+      "v0difv1"
       ]
     },
 

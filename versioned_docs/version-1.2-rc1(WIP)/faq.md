@@ -11,8 +11,20 @@ Every optimistic rollup L2 uses challenge mechanism in their withdrawal process.
 
 We're actively exploring ways to improve the withdrawal experience and support fast withdrawal. Please stay tuned.
 
+----
+
 **Q**: Why does it require an amount of 63 CKBs to an intermediate address to move funds back to Layer 1 when using Yokai? 
 
 **A**: This is a constraint of the current release of Godwoken (L2). Godwoken uses a withdrawal recipient account (actually a cell in Nervos' term) on Nervos CKB (L1) to act as an identity authenticator. Godwoken authenticates the receiver's identity by using an account signature provided by the recipient and then sends corresponding withdrawal funds. The recipient account requires at least 63 CKBs to be stored on Nervos CKB (L1). Those 63 CKBs are still yours and can be claimed back if you don't need this account later. [Actually anything stored on Nervos CKB (L1) requires an amount of CKBs (1 CKB = 1 Byte) for its storage space. L1 storage is validated by global consensus thus it's scarce and needs to be used carefully.](https://docs.nervos.org/docs/basics/concepts/economics)
 
 This constraint is a temporary mechanism and will be removed in a future release. Godwoken is the world's first rollup running on a UTXO blockchain. The answer is not ready-made and we have to explore different ways to find the best design. It's your feedback and patience help us improve Godwoken and make it better in future iterations. Thank you.
+
+----
+
+**Q:** How to Get Layer 1 Block Number?
+
+**A:** Defi contracts often require interests to be calculated by block number, however, both v0 and v1 networks do not have a fixed layer2 block interval (it is affected by layer1 block interval).
+
+Arbitrum solved this issue by providing a syscall to get the layer1 block number. However, this does not work for Godwoken since the layer1 chain, CKB itself, does not have a fixed block interval (CKB block interval is adjusted by the uncle block rate at each epoch).
+
+We recommend developers use layer2 block timestamp as the trusted timestamp to calculate on-chain interests. More information is available in the following discussion thread: https://talk.nervos.org/t/how-to-get-layer-1-block-number-on-layer-2/6647
