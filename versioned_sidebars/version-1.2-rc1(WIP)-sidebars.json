@@ -5,6 +5,7 @@
     {
       "Basic Concepts": [
         "overview",
+        "connectionInfo",
         "frameworks",
         "infrastructure",
         "standards",

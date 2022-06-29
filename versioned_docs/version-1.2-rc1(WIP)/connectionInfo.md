@@ -19,24 +19,25 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 ### Deployment Information
 
 - **Chain ID**: 71402
+
 ```bash
-$ curl -X POST 'https://v1.mainnet.godwoken.io/rpc' \
-    -H "Content-Type: application/json" \
-    -d '{"jsonrpc":"2.0","method":"eth_chainId","params": [],"id":1}'
+ curl -X POST 'https://v1.mainnet.godwoken.io/rpc' \
+   -H "Content-Type: application/json" \
+   -d '{"jsonrpc":"2.0","method":"eth_chainId","params": [],"id":1}'
 
  # Result
  # {"jsonrpc":"2.0","id":1,"result":"0x116ea"}
-```
+ ```
 
 - **ETH Address Registry ID**: 2
    > `ETH Address Registry` layer2 [contract](https://github.com/nervosnetwork/godwoken-scripts/blob/master/c/contracts/eth_addr_reg.c) introduces two-ways mappings between `eth_address` and `gw_script_hash`.
 
--  [sUDT_ERC20_Proxy contracts](./briged-token-list.json)
+-  [sUDT_ERC20_Proxy contracts](https://github.com/nervosnetwork/godwoken-info/blob/mainnet_v1/mainnet_v1/bridged-token-list.json)
 
 
 ### Run a Godwoken mainnet_v1 readonly node
 
--  [Godwoken readonly node config](./gw-mainnet_v1-config-readonly.toml)
+-  [Godwoken readonly node config](https://github.com/nervosnetwork/godwoken-info/blob/mainnet_v1/mainnet_v1/gw-mainnet_v1-config-readonly.toml)
 ```sh
 $ cd mainnet_v1
 # Note: It is better to run your own CKB mainnet node first.
