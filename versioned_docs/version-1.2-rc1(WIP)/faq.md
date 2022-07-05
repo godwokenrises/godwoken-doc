@@ -2,12 +2,13 @@
 id: faq
 title: FAQ
 ---
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 **Q**: It is so easy to switch from Layer 1 to Layer 2. Why does it take so long in reverse?
 
 **A**: Layer 2 can trust Layer 1 because Layer 1 is more secure. But Layer 1 needs more time to make sure everything is fine on Layer 2 especially for optimistic rollup (a popular Layer 2 solution). 
 
-Every optimistic rollup L2 uses challenge mechanism in their withdrawal process. After you initiated a withdrawal request, L1 put the withdrawal into a challenge period (~ 3 days), waiting for observers or challengers to report problems. The withdrawal can be approved only when no challenge is submitted. L1 guarantees that every withdrawal is intact and that the funds kept on L2 are safe in this way. Not only Godwoken, other optitmisc rollups like arbitrum and optimism also have such a challenge period, e.g. Arbitrum mandates a 7-day challenge period during a withdrawal.
+Every optimistic rollup L2 uses challenge mechanism in their withdrawal process. In Godwoken v1, L1 puts the withdrawal into a challenge period (~7 days) after you initiated the withdrawal request, waiting for observers or challengers to report problems. The withdrawal can be approved only when no challenge is submitted. L1 guarantees that every withdrawal is intact and that the funds kept on L2 are safe in this way. Not only Godwoken, other optitmisc rollups like arbitrum and optimism also have such a challenge period, e.g. Arbitrum mandates a 7-day challenge period during a withdrawal.
 
 We're actively exploring ways to improve the withdrawal experience and support fast withdrawal. Please stay tuned.
 
@@ -28,3 +29,13 @@ This constraint is a temporary mechanism and will be removed in a future release
 Arbitrum solved this issue by providing a syscall to get the layer1 block number. However, this does not work for Godwoken since the layer1 chain, CKB itself, does not have a fixed block interval (CKB block interval is adjusted by the uncle block rate at each epoch).
 
 We recommend developers use layer2 block timestamp as the trusted timestamp to calculate on-chain interests. More information is available in the following discussion thread: https://talk.nervos.org/t/how-to-get-layer-1-block-number-on-layer-2/6647
+
+----
+
+**Q:** CKB transfer on Godwoken testnet via Metamask has failed. What is the solution?
+
+**A:** In Godwoken, `transaction.to` must be a contract address. In RPCs such as `eth_call`, `eth_estimateGas` and `eth_sendRawTransaction`, the `to` parameter can only be a contract address, not an EOA address.
+
+To transfer value from EOA to EOA, we recommend developers to use the `transfer function` in the `pCKB_ERC20_Proxy` contract which combines sUDT_ID=1. In Godwoken and Polyjuice, we use CKB as pCKB. More details can be found at [pCKB](integration.md#pckb) and [Godwoken Web3 API Compatibility](integration.md#godwoken-web3-api-compatibility). The contract addresses are:
+ - mainnet_v1 pCKB_ERC20_Proxy contract: 0x7538C85caE4E4673253fFd2568c1F1b48A71558a (pCKB)
+ - testnet_v1 pCKB_ERC20_Proxy contract: 0xE05d380839f32bC12Fb690aa6FE26B00Bd982613 (pCKB)
