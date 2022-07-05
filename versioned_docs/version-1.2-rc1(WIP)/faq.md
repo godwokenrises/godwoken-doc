@@ -7,7 +7,7 @@ title: FAQ
 
 **A**: Layer 2 can trust Layer 1 because Layer 1 is more secure. But Layer 1 needs more time to make sure everything is fine on Layer 2 especially for optimistic rollup (a popular Layer 2 solution). 
 
-Every optimistic rollup L2 uses challenge mechanism in their withdrawal process. After you initiated a withdrawal request, L1 put the withdrawal into a challenge period (~ 3 days), waiting for observers or challengers to report problems. The withdrawal can be approved only when no challenge is submitted. L1 guarantees that every withdrawal is intact and that the funds kept on L2 are safe in this way. Not only Godwoken, other optitmisc rollups like arbitrum and optimism also have such a challenge period, e.g. Arbitrum mandates a 7-day challenge period during a withdrawal.
+Every optimistic rollup L2 uses challenge mechanism in their withdrawal process. In Godwoken v0, L1 puts the withdrawal into a challenge period (~3 days) after you initiated the withdrawal request, waiting for observers or challengers to report problems. The withdrawal can be approved only when no challenge is submitted. L1 guarantees that every withdrawal is intact and that the funds kept on L2 are safe in this way. Not only Godwoken, other optitmisc rollups like arbitrum and optimism also have such a challenge period, e.g. Arbitrum mandates a 7-day challenge period during a withdrawal.
 
 We're actively exploring ways to improve the withdrawal experience and support fast withdrawal. Please stay tuned.
 
