@@ -1,10 +1,9 @@
 ---
 id: v0difv1
-title: Comparison with EVM
+title: Differences Between V0 and V1
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-# Difference between v0 and v1
 
 Godwoken v1 is a release of the Godwoken source code and a standalone network. This release fixes many compatibility issues of the Godwoken v0 network. The following document explains the differences between the two versions.
 
