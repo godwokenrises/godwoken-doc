@@ -2,6 +2,7 @@
 id: faq
 title: FAQ
 ---
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 **Q**: It is so easy to switch from Layer 1 to Layer 2. Why does it take so long in reverse?
 
