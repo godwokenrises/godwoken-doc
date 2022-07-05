@@ -7,7 +7,7 @@ title: FAQ
 
 **A**: Layer 2 can trust Layer 1 because Layer 1 is more secure. But Layer 1 needs more time to make sure everything is fine on Layer 2 especially for optimistic rollup (a popular Layer 2 solution). 
 
-Every optimistic rollup L2 uses challenge mechanism in their withdrawal process. In Godwoken v0, L1 puts the withdrawal into a challenge period (~3 days) after you initiated the withdrawal request, waiting for observers or challengers to report problems. The withdrawal can be approved only when no challenge is submitted. L1 guarantees that every withdrawal is intact and that the funds kept on L2 are safe in this way. Not only Godwoken, other optitmisc rollups like arbitrum and optimism also have such a challenge period, e.g. Arbitrum mandates a 7-day challenge period during a withdrawal.
+Every optimistic rollup L2 uses challenge mechanism in their withdrawal process. In Godwoken v1, L1 puts the withdrawal into a challenge period (~7 days) after you initiated the withdrawal request, waiting for observers or challengers to report problems. The withdrawal can be approved only when no challenge is submitted. L1 guarantees that every withdrawal is intact and that the funds kept on L2 are safe in this way. Not only Godwoken, other optitmisc rollups like arbitrum and optimism also have such a challenge period, e.g. Arbitrum mandates a 7-day challenge period during a withdrawal.
 
 We're actively exploring ways to improve the withdrawal experience and support fast withdrawal. Please stay tuned.
 
@@ -35,4 +35,4 @@ We recommend developers use layer2 block timestamp as the trusted timestamp to c
 
 **A:** In Godwoken, `transaction.to` must be a contract address. In RPCs such as `eth_call`, `eth_estimateGas` and `eth_sendRawTransaction`, the `to` parameter can only be a contract address, not an EOA address.
 
-To transfer value from EOA to EOA, we recommend developers to use the `transfer function` in the pCKB_ERC20_Proxy contract which combines sUDT_ID=1. In Godwoken and Polyjuice, we use CKB as pCKB. More details can be found at [pCKB](integration.md#pckb) and [Godwoken Web3 API Compatibility](integration.md#godwoken-web3-api-compatibility). 
+To transfer value from EOA to EOA, we recommend developers to use the `transfer function` in the `pCKB_ERC20_Proxy` contract which combines sUDT_ID=1. In Godwoken and Polyjuice, we use CKB as pCKB. More details can be found at [pCKB](integration.md#pckb) and [Godwoken Web3 API Compatibility](integration.md#godwoken-web3-api-compatibility). 
