@@ -2,7 +2,10 @@
 id: integration
 title: Integration Guide for Ethereum Developers
 ---
+
 import useBaseUrl from "@docusaurus/useBaseUrl";
+
+import Link from "@docusaurus/Link";
 
 This documentation can be used as an integration guide for wallets and exchanges, or as a reference for developing dApps on Godwoken. It explains the rationale for developing decentralized applications using Godwoken, the known caveats of version 1 and corresponding workarounds, as well as providing hands on training on integrating Ethereum dApps with CKB through Godwoken.
 
