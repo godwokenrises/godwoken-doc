@@ -22,7 +22,7 @@ import TabItem from '@theme/TabItem';
 <p><b>Steps</b></p>
 
 <ol> 
-    <li><p>Clone the source of Godwoken-Kicker under the branch <code>compatibility-change</code>.</p>
+    <li><p>Clone the source of Godwoken-Kicker under the branch <code>master</code>.</p>
 
 
 ```bash
@@ -467,7 +467,7 @@ For more information on the use of the Godwoken-Kicker command line, see [Godwok
 <p><b>Steps</b></p>
 
 <ol>  
-<li><p>Clone the source of Godwoken-Kicker under the branch <code>compatibility-changes</code>.</p>
+<li><p>Clone the source of Godwoken-Kicker under the branch <code>master</code>.</p>
 
 
 ```bash
