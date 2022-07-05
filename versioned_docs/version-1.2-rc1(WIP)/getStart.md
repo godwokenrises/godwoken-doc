@@ -2,7 +2,7 @@
 slug: /
 id: getStart
 title: Get Started with Godwoken
-sidebar_title: Get Started with Godwoken
+sidebar_lable: Get Started with Godwoken
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
