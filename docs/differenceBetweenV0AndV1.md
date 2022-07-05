@@ -1,5 +1,5 @@
 ---
-id: comparisonEVM
+id: v0difv1
 title: Comparison with EVM
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
