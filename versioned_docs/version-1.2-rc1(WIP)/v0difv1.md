@@ -1,6 +1,6 @@
 ---
 id: v0difv1
-title: Differences Between V0 and V1
+title: Differences Between v0 and v1
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
