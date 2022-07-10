@@ -45,4 +45,4 @@ Lay2 are the developers of the [PW-SDK](https://github.com/lay2dev/pw-core) fram
 - [Official Website](https://ckb.pw/)
 - [Github](https://github.com/lay2dev/PortalWallet)
 
-<img src={useBaseUrl("img/wallets-portal-wallet.png")}  width="60%"/>
+<img src={useBaseUrl("img/portal-wallet.png")}  width="60%"/>

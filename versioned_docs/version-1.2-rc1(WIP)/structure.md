@@ -8,7 +8,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 Nervos officially supports three different types of networks.
 
-The Mainnet, also known as "Lina", is the live production network for Nervos. This public network is fully decentralized and permissionless, and relies on a robust Proof of Work (PoW) based incentive system to protect all of the assets on the network.
+The Mainnet, also known as "Mirana", is the live production network for Nervos. This public network is fully decentralized and permissionless, and relies on a robust Proof of Work (PoW) based incentive system to protect all of the assets on the network.
 
 The Mainnet is the network people are referring to when they are talking about the "Nervos Blockchain" or when they casually refer to something being "on CKB". In casual conversation, Mainnet may also refer to any layer 2 network that is also connected connected to the layer 1 Mainnet.
 

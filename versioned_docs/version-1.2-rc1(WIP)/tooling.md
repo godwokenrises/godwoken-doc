@@ -58,7 +58,7 @@ Tippy is very useful for developers to manage multiple Devnet chains quickly wit
 
 ## CKB.tools
 
-CKB.tools is a online collection of free development tools created for use with Nervos Network.
+CKB.tools is an online collection of free development tools created for use with Nervos Network.
 
 The current tools available include:
 
@@ -71,7 +71,7 @@ All tools rely on the MetaMask wallet exclusively, and run completely in the bro
 - [Official Website](https://ckb.tools/)
 - [Github](https://github.com/jordanmack/ckb-tools)
 
-<img src={useBaseUrl("img/tool-ckb-tools")}  width="60%"/>
+<img src={useBaseUrl("img/tool-ckb-tools.png")}  width="60%"/>
 
 ## SUDT-CLI
 
