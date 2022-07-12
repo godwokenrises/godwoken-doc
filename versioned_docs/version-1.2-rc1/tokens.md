@@ -22,7 +22,7 @@ These are ERC20 token addresses on Godwoken **testnet**:
 
 Below are the ERC20 token addresses on Godwoken **mainnet**:
 
-* CKB: 0xE05d380839f32bC12Fb690aa6FE26B00Bd982613
+* CKB: 0x7538C85caE4E4673253fFd2568c1F1b48A71558a
 * ETH (via Forcebridge from ETH): 0x9e858a7aaedf9fdb1026ab1f77f627be2791e98a
 * USDC (via Celer cBridge from ETH): 0x53bb26dc8c5efc6c95c37155aca487d1d043436a
 * USDT (via Celer cBridge from ETH): 0x3c790b38f466514ffcb4230e7b2334e52b64c942
