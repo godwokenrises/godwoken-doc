@@ -47,10 +47,11 @@
 
     {
       "Release Notes":[
-      "releaseNote2",
-      "releaseNote1",
-      "v0difv1"
-      ]
+        "releaseNote3",
+        "releaseNote2",
+        "releaseNote1",
+        "v0difv1"
+        ]
     },
 
     "otherTools",
