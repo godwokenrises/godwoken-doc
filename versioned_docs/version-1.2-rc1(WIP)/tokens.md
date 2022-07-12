@@ -9,7 +9,7 @@ On this page you can find test tokens deployed on Godwoken Testnet that you can 
 
 # Tokens
 
-These are ERC20 token addresses on Godwoken testnet:
+These are ERC20 token addresses on Godwoken **testnet**:
 
 * CKB: 0xE05d380839f32bC12Fb690aa6FE26B00Bd982613
 * ETH (from Rinkeby Force Bridge): 0x0902574C86aEc810B727fD08Aa186DBC20579c08
@@ -18,6 +18,18 @@ These are ERC20 token addresses on Godwoken testnet:
 * DAI (from Rinkeby Force Bridge): 0xA2370D7aFFf03e1E2FB77b28Fb65532636e0cB61
 * USDC (from [https://testnet.bridge.godwoken.io](https://testnet.bridge.godwoken.io)): 0x30D4B957139785B979aF5312d71505809dc563ed
 * dCKB (from [https://aggron.nexisdao.com/dckb](https://aggron.nexisdao.com/dckb)): 0x7e54f7324902B72334827F40f613116F06a88845
+* pCKB: 0xe05d380839f32bc12fb690aa6fe26b00bd982613
+
+Below are the ERC20 token addresses on Godwoken **mainnet**:
+
+* CKB: 0xE05d380839f32bC12Fb690aa6FE26B00Bd982613
+* ETH (via Forcebridge from ETH): 0x9e858a7aaedf9fdb1026ab1f77f627be2791e98a
+* USDC (via Celer cBridge from ETH): 0x53bb26dc8c5efc6c95c37155aca487d1d043436a
+* USDT (via Celer cBridge from ETH): 0x3c790b38f466514ffcb4230e7b2334e52b64c942
+* DAI (via Celer cBridge from ETH): 0x317f8d18fb16e49a958becd0ea72f8e153d25654
+* dCKB (via [GodwokenBridge](https://bridge.godwoken.io/#/v1) from CKB): 0x893474456c475e738b13dda824979bf7a355de39
+* pCKB: 0x7538C85caE4E4673253fFd2568c1F1b48A71558a
+
 
 ### Claimable Test ERC20 Token
 
