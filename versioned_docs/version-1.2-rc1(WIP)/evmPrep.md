@@ -6,7 +6,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## Supported Architectures
 
-The tooling currently supports the Intel-compatible x86\_64 architecture and ARM (eg. M1 Macs).
+The tooling currently supports the Intel-compatible x86\_64 architecture and ARM (e.g. M1 Macs).
 
 ## Supported Environments
 
@@ -49,7 +49,7 @@ $ sudo apt install build-essential git curl p7zip-full unzip
 
 The default version of Node.js included with Ubuntu 20.04 is v10.19.0, and this is not sufficient.
 
-**For these tasks, version 16.13.x is needed. Versions lower than this may not work.** This can be installed using NVM (Node Version Manager), or the normal Node.js installation instructions. We generally recommend using NVM because it allows you to quickly change between any version of Node.js.
+**For these tasks, version 16.13.x is needed. Versions lower than this may not work.** This can be installed using NVM (Node Version Manager), or the normal Node.js installation instructions. We recommend using NVM because it allows you to change between any version of Node.js quickly.
 
 * [NVM Install](https://github.com/nvm-sh/nvm#installing-and-updating)
 * [Node.js Install](https://github.com/nodesource/distributions/blob/master/README.md#debinstall)
@@ -84,22 +84,22 @@ Download and install the Xcode Command Line Tools from [developer.apple.com](htt
 
 #### Curl
 
-Curl should be installed by default on recent versions of MacOS.
+Curl should be installed by default on recent versions of macOS.
 
 #### 7zip
 
-There are several decompressors available for MacOS that can handle 7z files, but we recommend `p7zip` since it will be fully compatible with our scripts. This can be installed using [Homebrew](https://formulae.brew.sh/formula/p7zip).
+There are several decompressors available for macOS that can handle 7z files. Still, we recommend `p7zip` since it will be fully compatible with our scripts. This can be installed using [Homebrew](https://formulae.brew.sh/formula/p7zip).
 
 #### Node.js
 
-Node.js can be installed on MacOS using NVM, or by using the Node.js installer. **For these tasks, version 16.13.x is needed. Versions lower than this may not work.**
+Node.js can be installed on macOS using NVM, or the Node.js installer. **For these tasks, version 16.13.x is needed. Versions lower than this may not work.**
 
 * [NVM Install](https://github.com/nvm-sh/nvm#installing-and-updating)
 * [Node.js Installer](https://nodejs.org/en/download/)
 
 #### Python 2.7.x
 
-To install Python 2.7.x on MacOS, please visit the official Python [download](https://www.python.org/downloads/release/python-2718/) page.
+To install Python 2.7.x on macOS, please visit the official Python [download](https://www.python.org/downloads/release/python-2718/) page.
 
 #### Yarn
 
@@ -122,7 +122,7 @@ Docker will be used for running the Solidity compiler to compile smart contracts
 
 ## Checking Your Node.js and Yarn Versions
 
-One of the most common causes of errors is having the incorrect version of Node.js or Yarn. These tasks specifically require Node.js v16.x.x, and a recent version of Yarn. You can check these versions using the commands belowx
+One of the most common causes of errors is having the incorrect version of Node.js or Yarn. These tasks specifically require Node.js v16.x.x, and a recent version of Yarn. You can check these versions using the commands below:
 
 ```
 $ node -v

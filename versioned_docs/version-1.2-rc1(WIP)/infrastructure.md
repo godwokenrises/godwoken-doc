@@ -16,7 +16,7 @@ Developers can also integrate the Force Bridge protocol into their projects, giv
 
 Force Bridge's operation is being rolled out in two phases:
 
-The first phase, which is currently in progress, uses a Proof of Authority (PoA) setup with multiple trusted industry partners. This is being done initially, because there will not be enough bridge traffic at launch to give proper incentivization for a fully decentralization.
+The first phase, which is currently in progress, uses a Proof of Authority (PoA) setup with multiple trusted industry partners. This is being done initially, because there will not be enough bridge traffic at launch to give proper incentivization for a full decentralization.
 
 The second phase is fully decentralized and based on Proof of Stake (PoS). Anyone will be able to run a validator node and earn income from their participation. Nodes are kept honest by being required to put up a bond (the stake), which will be slashed if the node attempts to do malicious actions. As long as two-thirds (66.67%) of the nodes remain honest, the bridge will remain fully secure.
 
@@ -31,7 +31,7 @@ The second phase is fully decentralized and based on Proof of Stake (PoS). Anyon
 
 The Nervos Explorer is a website that analyzes and organizes the data from the blockchain and makes it accessible through a user-friendly searchable website interface. Users and developers can quickly find out information about the blockchain without having to run a node, and without having to run complex commands.
 
-Some of the common uses for the explorer are looking up a transaction to see all of the actions that occurred within it. Looking up an address to see all the transactions it was involved with, and the amount of tokens and assets that it holds. Looking up an individual cell to see the data contain within it, and the smart contracts associated with it.
+Some of the common uses for the explorer are looking up a transaction to see all of the actions that occurred within it. Looking up an address to see all the transactions it was involved with, and the amount of tokens and assets that it holds. Looking up an individual cell to see the data contained within it, and the smart contracts associated with it.
 
 The Nervos Explorer is available for both the Mainnet and the Testnet.
 

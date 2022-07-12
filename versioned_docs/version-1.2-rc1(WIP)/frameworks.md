@@ -19,7 +19,7 @@ Godwoken is designed to be used with a second framework which defines the progra
 
 Godwoken Kicker is a tool which allows developers to quickly launch an instance of Godwoken-Polyjuice on a private Devnet. Since this runs on a brand new Devnet chain, there is no need to synchronize the Mainnet or Testnet.
 
-This is useful to developers who need a quick solution to setup an Ethereum compatible Nervos environment to test compatibility with an existing Solidity dApps.
+This is useful to developers who need a quick solution to setup an Ethereum-compatible Nervos environment to test compatibility with existing Solidity dApps.
 
 * [Github](https://github.com/RetricSu/godwoken-kicker)
 
@@ -39,7 +39,7 @@ PW-Core is a Typescript based framework to build transactions and interface with
 
 PW-Lock is a generic multi-chain lock script (smart contract) that allows Nervos to support signatures from Bitcoin, Ethereum, EOS, Tron, as well as other blockchains. This allows Nervos to directly support interoperability with other blockchains by allowing their addresses to automatically map to Nervos CKB addresses.
 
-PW-Core and PW-Lock successfully utilize the flexibility of Nervos' underlying platform, giving Nervos distinct advantage over the competition when it comes to supporting interoperability. Users from other chains can begin interacting with Nervos dApps immediately, without needing to install any new software, and without needing to change their wallet configuration.
+PW-Core and PW-Lock successfully utilize the flexibility of Nervos' underlying platform, giving Nervos a distinct advantage over the competition when it comes to supporting interoperability. Users from other chains can begin interacting with Nervos dApps immediately, without needing to install any new software, and without needing to change their wallet configuration.
 
 Lay2 are also the developers of the popular [Portal Wallet](https://ckb.pw), a web based wallet for Nervos. This wallet relies on the MetaMask wallet browser extension for private key management.
 

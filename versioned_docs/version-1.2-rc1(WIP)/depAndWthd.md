@@ -35,7 +35,7 @@ table DepositLockArgs {
 }
 ```
 
-`DepositLockArgs` represents the script and `registry_id` of a layer 2 account, which currently supports only the ETH registry. Users can cancel a deposit after the expiration of `cancel_timeout`, which can be used by the block producer to reject packed deposit cells containing invalid data.
+`DepositLockArgs` represents the script and `registry_id` of a layer 2 account, which currently supports only the ETH registry. Users can cancel a deposit after the expiration of `cancel_timeout`, which the block producer can use to reject packed deposit cells containing invalid data.
 
 ## Custodian Cell
 
@@ -53,7 +53,7 @@ type_:  (none or SUDT script)
 data:   (none or SUDT amount)
 ```
 
-The first 32 bytes of `args` are unique values associated with the rollup instance. `CustodianLockArgs` contains deposit information. `capacity` is the amount of CKB to be deposited. The `type_` and `data` fields are following CKB Simple UDT format.
+The first 32 bytes of `args` are unique values associated with the rollup instance. `CustodianLockArgs` contains deposit information. `capacity` is the amount of CKB to be deposited. The `type_` and `data` fields follow the CKB Simple UDT format.
 
 ```
 table CustodianLockArgs {
@@ -73,7 +73,7 @@ The `capacity` of a cell must cover the cost of the cell. The `capacity` of the 
 
 ## Withdrawal
 
-Users sign withdrawal requests and send them to the block producer. The block producer will process these requests in the blocks, update the layer2 state, and convert custodian cells to withdrawal cells in layer1 block submission transactions.
+Users sign and sent withdrawal requests to the block producer. The block producer will process these requests in the blocks, update the layer2 state, and convert custodian cells to withdrawal cells in layer1 block submission transactions.
 
 The withdrawal cell:
 

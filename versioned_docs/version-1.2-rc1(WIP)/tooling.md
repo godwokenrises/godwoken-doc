@@ -8,7 +8,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 Nervos Network is a decentralized and permissionless multi-layer blockchain ecosystem. The Nervos blockchain, also known as the Common Knowledge Base, is the bottom-most layer in the Nervos ecosystem. It serves as a foundation to build on and provides trust to all layers built on top. It is designed to maximize decentralization while remaining minimal, flexible, and secure. Its main purpose is the reliable preservation of any data and assets stored within it.
 
-The focus of layer 1 is security and decentralization. Layer 1 provides a source of trust to all layers above it. Layer 2 focuses on scalability, providing high-throughput with millions of transactions per second. The two layers function together to achieve higher levels of decentralization, security, and scalability than are possible on a single layer.
+The focus of layer 1 is security and decentralization. Layer 1 provides a source of trust to all layers above it. Layer 2 focuses on scalability, providing high throughput with millions of transactions per second. The two layers function together to achieve higher levels of decentralization, security, and scalability than are possible on a single layer.
 
 The CKB node software is what powers the layer 1 blockchain. It handles the aspects of networking, consensus, smart contract execution, data storage, and data retrieval. CKB nodes are run by all participants of the network that need RPC access to the information contained within the blockchain.
 
@@ -48,7 +48,7 @@ CKB-CLI can be downloaded separately, but it is also included with the native CK
 
 Tippy is a tool for managing instances of CKB nodes and CKB Indexers using a desktop GUI interface. Tippy allows you to create Mainnet, Testnet, and Devnet chains with just a few clicks.
 
-Tippy is very useful for developers to manage multiple Devnet chains quickly without having spend time moving data around on the command line.
+Tippy is very useful for developers to manage multiple Devnet chains quickly without having to spend time moving data around on the command line.
 
 - [Github](https://github.com/nervosnetwork/tippy)
 - [Download](https://github.com/nervosnetwork/tippy/releases)

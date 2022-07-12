@@ -5,9 +5,9 @@ title: 3. Issue a Smart Contract Call to the Deployed Smart Contract
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 
-In this task we will learn how to make function calls to the smart contract that was deployed in the previous task. We will provide some simple example code that uses the popular Web3.js library to do so. This code will allow you to interact with your smart contract which is running on Nervos' [Layer 2](structure.md#layer-1--layer-2) in a nearly identical way to if it was running on Ethereum.
+In this task, we will learn how to make function calls to the smart contract deployed in the previous task. We will provide some simple example code that uses the popular Web3.js library to do so. This code will allow you to interact with your smart contract, which is running on Nervos' [Layer 2](structure.md#layer-1--layer-2) in a nearly identical way to if it was running on Ethereum.
 
-Your smart contract should operate just like it would on Ethereum, but in actuality, it will be running in an EVM environment provided by [Polyjuice](frameworks.md#polyjuice). When combined with [Godwoken](frameworks.md#godwoken), which provides a Layer 2 solution with optimistic rollups, total throughput performance is significantly higher. This means that all users will experience dramatically lower fees, and more reliable transaction confirmation than if they were using Ethereum.
+Your smart contract should operate just like it would on Ethereum, but in actuality, it will be running in an EVM environment provided by [Polyjuice](frameworks.md#polyjuice). When combined with [Godwoken](frameworks.md#godwoken), which provides a Layer 2 solution with optimistic rollups, total throughput performance is significantly higher. This means that all users will experience dramatically lower fees and more reliable transaction confirmation than if they were using Ethereum.
 
 ## Task Instructions
 
@@ -15,13 +15,13 @@ Your smart contract should operate just like it would on Ethereum, but in actual
 
 Before you begin on this task you must complete the [first](evmTask1.md) and [second](evmTask2.md) tasks. If you have not completed them, please do so now.
 
-You will need the private key from the **Ethereum** address that you used in the previous task. Make sure this is Ethereum private key for Layer 2, not the private key from your Nervos CKB Layer 1 address. If you do not have this, you can follow the instructions in [this tutorial](evmTask5.md), to extract your private key from MetaMask.
+You will need the private key from the **Ethereum** address you used in the previous task. Make sure this is Ethereum private key for Layer 2, not the private key from your Nervos CKB Layer 1 address. If you do not have this, you can follow the instructions in [this tutorial](evmTask5.md) to extract your private key from MetaMask.
 
-This task requires the Code Examples repo ([layer2-evm-documentation](https://github.com/nervosnetwork/layer2-evm-documentation)) which was setup in [task 2](evmTask2.md#2.-clone-and-setup-the-code-examples-repository). If you do not have this repo available for any reason, please set it up now.
+This task requires the Code Examples repo ([layer2-evm-documentation](https://github.com/nervosnetwork/layer2-evm-documentation)) which was set up in [task 2](evmTask2.md#2.-clone-and-setup-the-code-examples-repository). If you do not have this repo available for any reason, please set it up now.
 
 ### 1. Prepare the Smart Contract Address and ABI
 
-In order to execute a function call on a smart contract, it must be deployed, and you must have the ABI that was generated when the code was originally compiled. "ABI" stands for Application Binary Interface, and it contains the information required by an application to interface and call functions on the smart contract.
+In order to execute a function call on a smart contract, it must be deployed, and you must have the ABI that was generated when the code was originally compiled. "ABI" stands for Application Binary Interface, which contains the information an application requires to interface and call functions on the smart contract requires.
 
 In the [previous task](evmTask2.md), you compiled and deployed an Ethereum smart contract. You may be able to reuse that smart contract for this task. If it is no longer available, please revisit the [previous task](evmTask2.md) and complete it again.&#x20;
 
@@ -71,7 +71,7 @@ The SimpleStorage contract has also been deployed to Testnet at the address belo
 
 ### 2. Prepare and Run the Example Code to Call the Smart Contract
 
-Next we will use the example code to make a function call in your smart contract. Open the file `code-examples/3-call-contract/index.js` in an editor of your choosing, and find the `readCall()` and `writeCall()` functions.
+Next, we will use the example code to make a function call in your smart contract. Open the file `code-examples/3-call-contract/index.js` in an editor of your choosing, and find the `readCall()` and `writeCall()` functions.
 
 The function `readCall()` will read a value from the smart contract without a state change. This does not require a transaction because no data is changing. The `writeCall()` function will write a new value to your smart contract. A transaction will be required because state changes can only occur through transactions. This behavior is the same as on the Ethereum chain.
 
@@ -97,7 +97,7 @@ const CONTRACT_ABI = [<YOUR_CONTRACT_ABI>]; // Array
 
 #### Contract Address
 
-Replace `<YOUR_CONTRACT_ADDRESS>` with the address of the Ethereum contract you will be making calls to. This value should be a hex string that was returned when the after deploying the contract.
+Replace `<YOUR_CONTRACT_ADDRESS>` with the address of the Ethereum contract you will call. This value should be a hex string that will be returned after deploying the contract.
 
 ```js
 const CONTRACT_ADDRESS = '<YOUR_CONTRACT_ADDRESS>';
@@ -126,7 +126,7 @@ const callResult = await contract.methods.<YOUR_WRITE_FUNCTION_NAME>().call({
 
 #### Run the Script
 
-After all values have been replaced, use the following commands in a console to execute the script.
+After having replaced all values, use the following command in the console to execute the script.
 
 ```
 cd ~/projects/layer2-evm-documentation/code-examples/3-call-contract
@@ -158,4 +158,4 @@ Write call transaction receipt:  {
 Read call result: 3332
 ```
 
-If you've seen transaction hash and the transaction receipt then congratulations! You have successfully issued a smart contract write call on Nervos Layer 2.
+If you've seen transaction hash and the transaction receipt, then congratulations! You have successfully issued a smart contract write call on Nervos Layer 2.

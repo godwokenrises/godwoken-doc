@@ -7,18 +7,18 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 import Link from "@docusaurus/Link";
 
-This documentation can be used as an integration guide for wallets and exchanges, or as a reference for developing dApps on Godwoken. It explains the rationale for developing decentralized applications using Godwoken, the known caveats of version 1 and corresponding workarounds, as well as providing hands on training on integrating Ethereum dApps with CKB through Godwoken.
+This documentation can be used as an integration guide for wallets and exchanges or as a reference for developing dApps on Godwoken. It explains the rationale for developing decentralized applications using Godwoken, the known caveats of version 1 and corresponding workarounds, as well as providing hands-on training on integrating Ethereum dApps with CKB through Godwoken.
 
 Prior knowledge of Ethereum is required for using this guide. 
 
 :::note
-If you want to obtain a direct experience and prepare yourself for deploying an applications, you can check out the [Layer 2 EVM Training](evmIntro.md) section for a hands-on trial of developing your own EVM dapps on the Nervos platform.
+If you want to obtain direct experience and prepare yourself for deploying applications, you can check out the [Layer 2 EVM Training](evmIntro.md) section for a hands-on trial of developing your own EVM dapps on the Nervos platform.
 :::
 
 ## Why Develop on Godwoken?
 
-- **Security** - Nervos Network is a Proof-of-Work (PoW) layer 1 chain and Godwoken is an optimistic rollup layer 2 chain built on Nervos Network. The security model is quite different from other EVM-compatible PoS/DPoS/PoA chains or sidechains.
-- **Low cost** - A typical Godwoken transaction currently costs less than $0.0001.
+- **Security** - Nervos Network is a Proof-of-Work (PoW) layer 1 chain, and Godwoken is an optimistic rollup layer 2 chain built on Nervos Network. The security model is quite different from other EVM-compatible PoS/DPoS/PoA chains or sidechains.
+- **Low-cost** - A typical Godwoken transaction currently costs less than $0.0001.
 - **Ecosystem**
   - With Force Bridge, assets from 3 chains (Nervos, Ethereum and BSC) are already available on Godwoken. The support for more chains (Cardano, BTC) is on the way.
   - The TVL of Godwoken is now nearly [100 million](https://defillama.com/chains). A number of DeFi dApps (e.g. [YokaiSwap](https://www.yokaiswap.com/)) and wallets (e.g. [SafePal](https://www.safepal.io/download)) have already been integrated. 
@@ -31,7 +31,7 @@ Godwoken V1 is still under development and targets 100% EVM compatibility. Havin
 - The EVM being used in Godwoken must be 100% compatible with the latest forked version of Ethereum.
 - Godwoken must be 100% compatible with Ethereum over the Web3 interfaces by using [Godwoken Web3](https://github.com/nervosnetwork/godwoken-web3).
 
-Given the wide architectural and design differences between Godwoken and Ethereum, several discrepancies inevitably exist.
+Several discrepancies inevitably exist due to the wide architectural and design differences between Godwoken and Ethereum.
 
 ### Comparison with EVM
 
@@ -45,7 +45,7 @@ The maximum EVM revision supported is `EVMC_BERLIN`.
 
 Godwoken v1 introduced a new concept, [**pCKB**](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md#pckb) which is a defined layer 2 sUDT token type when deploying a Godwoken chain.
 
-pCKB serves a similar purpose for the Godwoken chain as ETH does for the Ethereum chain, in the sense that it is used for collecting transaction fees. In Ethereum, the gas for each smart contract is derived by calculation. And the transaction fee is then calculated by multiplying the gas with the specified gas price. In Godwoken, pCKB is the unit for calculating transaction fees. In other words, the gas price in Ethereum is calculated as ETH/gas (in wei, i.e. 10<sup>-18</sup> ETH), and the gas price in Godwoken is calculated as pCKB/gas. When Godwoken executes a transaction, it will deduct the transaction fee by using the layer 2 [sUDT](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0025-simple-udt/0025-simple-udt.md) type, which is represented by **pCKB**.
+pCKB serves a similar purpose for the Godwoken chain as ETH does for the Ethereum chain, in the sense that it is used for collecting transaction fees. In Ethereum, the gas for each smart contract is derived by calculation. And the transaction fee is then calculated by multiplying the gas with the specified gas price. In Godwoken, pCKB is the unit for calculating transaction fees. In other words, the gas price in Ethereum is calculated as ETH/gas (in wei, i.e. 10<sup>-18</sup> ETH), and the gas price in Godwoken is calculated as pCKB/gas. When Godwoken executes a transaction, it will deduct the transaction fee by using layer 2 [sUDT](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0025-simple-udt/0025-simple-udt.md) type, which is represented by **pCKB**.
 
 Godwoken chain uses CKB as pCKB by default, while different Godwoken chains may use different token types as pCKB.
 
@@ -59,11 +59,11 @@ Polyjuice only provides [contract accounts](https://ethereum.org/en/glossary/#c
 
 Ethereum processes ERC20 tokens differently from native ETH tokens, which is the reason wETH was invented. However, Godwoken conceals this difference.
 
-All tokens on Godwoken are represented as Layer 2 sUDT types, regardless of whether they are native CKB or any sUDT types. Polyjuice proceeds from this Layer 2 sUDT [contract](https://github.com/nervosnetwork/godwoken-polyjuice/blob/b9c3ad4/solidity/erc20/SudtERC20Proxy_UserDefinedDecimals.sol) and ensures that all tokens on Godwoken are ERC20 compliant, regardless of whether supported by native CKB or sUDT. That is to say, it is unnecessary to distinguish between native tokens and ERC20 tokens. All the differenct tokens must be handled with the same ERC20 interface.
+All tokens on Godwoken are represented as Layer 2 sUDT types, regardless of whether they are native CKB or any sUDT types. Polyjuice proceeds from this Layer 2 sUDT [contract](https://github.com/nervosnetwork/godwoken-polyjuice/blob/b9c3ad4/solidity/erc20/SudtERC20Proxy_UserDefinedDecimals.sol) and ensures that all tokens on Godwoken are ERC20 compliant, regardless of whether supported by native CKB or sUDT. That is to say, it is unnecessary to distinguish between native tokens and ERC20 tokens. All the different tokens must be handled with the same ERC20 interface.
 
 #### Transaction Structure
 
-A Polyjuice transaction is essentially a Godwoken transaction. When Ethereum transactions are sent, they are converted to the Godwoken [RawL2Transaction](https://github.com/nervosnetwork/godwoken/blob/v1.0.0-rc1/crates/types/schemas/godwoken.mol#L69-L74) type when being sent, and are automatically processed by [Godwoken Web3](https://github.com/nervosnetwork/godwoken-web3/tree/v1.0.0-rc1).
+A Polyjuice transaction is essentially a Godwoken transaction. When Ethereum transactions are sent, they are converted to the Godwoken [RawL2Transaction](https://github.com/nervosnetwork/godwoken/blob/v1.0.0-rc1/crates/types/schemas/godwoken.mol#L69-L74) type when being sent and are automatically processed by [Godwoken Web3](https://github.com/nervosnetwork/godwoken-web3/tree/v1.0.0-rc1).
 
 #### Behavioral Differences of Some Opcodes
 
@@ -79,7 +79,7 @@ A Polyjuice transaction is essentially a Godwoken transaction. When Ethereum tra
 
   - `chain_id` is defined in Godwoken [RollupConfig#chain_id](https://github.com/nervosnetwork/godwoken/blob/a099f2010b212355f5504a8d464b6b70d29640a5/crates/types/schemas/godwoken.mol#L64).
   - the block difficulty is always `2500000000000000`.
-  - the gas limit  is 12500000 per block, but it is not a transaction-level limit. Any transaction can reach the gas limit.
+  - the gas limit is 12500000 per block, but it is not a transaction-level limit. Any transaction can reach the gas limit.
   - the size limit for contract's return data is [25600B](https://github.com/nervosnetwork/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22).
   - the size limit for contract's storage is [25600B](https://github.com/nervosnetwork/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22).
 
@@ -148,6 +148,6 @@ It is mandatory to create an account on a Godwoken chain for using Godwoken and 
 
 There are two ways to create a layer 2 account:
 
-- Make a deposit to Godwoken at layer 1;
+- Deposit to Godwoken at layer 1;
 - Call the Godwoken built-in [meta_contract](https://github.com/nervosnetwork/godwoken-scripts/blob/86b299f/c/contracts/meta_contract.c) and create an account at layer 2.
 

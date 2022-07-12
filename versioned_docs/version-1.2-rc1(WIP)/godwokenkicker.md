@@ -56,7 +56,7 @@ SUBCOMMANDS:
   $ ./kicker deposit <eth-address> <amount>
   ```
 
-- To verify balance of the account:
+- To verify the balance of the account:
 
   ```bash
   $ ./kicker get-balance <eth-address>
@@ -299,7 +299,7 @@ The private key of the account can be found [here](https://github.com/RetricSu/g
 
 ### Deployer of Rollup Scripts
 
-This account is used by `gw-tools deploy-scripts` to deploy rollup-related scripts to layer 1. The account will deactivated later on. 
+This account is used by `gw-tools deploy-scripts` to deploy rollup-related scripts to layer 1. The account will be deactivated later on. 
 
 The private key of the account can be found [here](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/accounts/rollup-scripts-deployer.key). 
 

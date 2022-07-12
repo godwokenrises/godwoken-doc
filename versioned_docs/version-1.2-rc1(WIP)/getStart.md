@@ -10,7 +10,7 @@ Welcome to the Godwoken Docs site.
 
 Godwoken is an EVM-compatible, layer 2 optimistic rollup solution built on Nervos layer 1. Godwoken - a key component of Nervos Layer 2 - works in conjunction with the Polyjuice EVM framework in order to create a scalable EVM-compatible solution for Nervos, that is, **Godwoken**.
 
-Godwoken aims to provide a solution for dApp builders who seek the advantages of ethereum - its build, good tools and documentation - but not the drawbacks, such as network congestion, high gas costs, oversaturation and scalability issues.
+Godwoken aims to provide a solution for dApp builders who seek the advantages of Ethereum - its build, good tools and documentation - but not the drawbacks, such as network congestion, high gas costs, oversaturation and scalability issues.
 
 Nervos Network has the vision to enable interoperability across the blockchain ecosystem with a multi-chain solution. And Godwoekn is a big step towards achieving this greater vision.
 
@@ -24,9 +24,9 @@ This section will guide you to get started in the Godwoken. Here are links to so
 - To understand the structure of the Nervos Network, visit [Structure](structure.md).
 - For instructions on how to deploy a Godwoken local network, visit [Deploy a Local Network with Godwoken-Kicker](deployLocalNetwork.md).
 - To deploy a smart contract to Godwoken layer 2, visit [Deploy a Simple Smart Contract with Hardhat](deployContractHardhat.md) or [Deploy a Simple Ethereum Smart Contract on Polyjuice](evmTask2.md).
-- If you want to obtain a direct experience and prepare yourself for deploying dapps, check [Layer 2 EVM Training](evmIntro.md).
+- If you want to obtain direct experience and prepare yourself for deploying dapps, check [Layer 2 EVM Training](evmIntro.md).
 - Information about tokens deployed on Godwoken Testnet can be found at [Tokens](tokens.md).
-- In the [Asset Management setction](fastWithdrawal.md), you will know more about the cross-layer operations between Nervos CKB layer 1 and Godwoken layer 2.
+- In the [Asset Management section](fastWithdrawal.md), you will know more about the cross-layer operations between Nervos CKB layer 1 and Godwoken layer 2.
 - The latest changes in Godwoken can be viewed at [Release Notes](releaseNote.md).
 
 
