@@ -27,7 +27,7 @@ This section will guide you to get started in the Godwoken. Here are links to so
 - If you want to obtain direct experience and prepare yourself for deploying dapps, check [Layer 2 EVM Training](evmIntro.md).
 - Information about tokens deployed on Godwoken Testnet can be found at [Tokens](tokens.md).
 - In the [Asset Management section](fastWithdrawal.md), you will know more about the cross-layer operations between Nervos CKB layer 1 and Godwoken layer 2.
-- The latest changes in Godwoken can be viewed at [Release Notes](releaseNote.md).
+- The latest changes in Godwoken can be viewed at [Release Notes](releaseNote2.md).
 
 
 **Docs:**
