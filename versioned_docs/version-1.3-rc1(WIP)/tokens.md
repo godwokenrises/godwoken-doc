@@ -22,12 +22,12 @@ These are ERC20 token addresses on Godwoken **testnet**:
 
 Below are the ERC20 token addresses on Godwoken **mainnet**:
 
-* CKB: 0x7538C85caE4E4673253fFd2568c1F1b48A71558a
-* ETH (via Forcebridge from ETH): 0x9e858a7aaedf9fdb1026ab1f77f627be2791e98a
-* USDC (via Celer cBridge from ETH): 0x53bb26dc8c5efc6c95c37155aca487d1d043436a
-* USDT (via Celer cBridge from ETH): 0x3c790b38f466514ffcb4230e7b2334e52b64c942
-* DAI (via Celer cBridge from ETH): 0x317f8d18fb16e49a958becd0ea72f8e153d25654
-* dCKB (via [GodwokenBridge](https://bridge.godwoken.io/#/v1) from CKB): 0x893474456c475e738b13dda824979bf7a355de39
+* ETH (via Forcebridge from ETH): 0x9E858A7aAEDf9FDB1026Ab1f77f627be2791e98A
+* USDC (via Forcebridge from ETH): 0x186181e225dc1Ad85a4A94164232bD261e351C33
+* USDC (via Forcebridge from BSC): 0xfA307CfdEA89DC197A346c338a98aC85d517af6e
+* USDT (via Forcebridge from ETH): 0x8E019acb11C7d17c26D334901fA2ac41C1f44d50
+* DAI (via Forcebridge from ETH): 0x2c9Fc6087875646112f66a3C92fEF2d158FAa76e
+* dCKB (via [GodwokenBridge](https://bridge.godwoken.io/#/v1) from CKB): 0x893474456C475E738b13DdA824979bF7a355DE39
 * pCKB: 0x7538C85caE4E4673253fFd2568c1F1b48A71558a
 
 
