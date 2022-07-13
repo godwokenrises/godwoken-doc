@@ -25,9 +25,9 @@ The second phase is fully decentralized and based on Proof of Stake (PoS). Anyon
 * [Github](https://github.com/nervosnetwork/force-bridge)
 * [Documentation](https://github.com/nervosnetwork/force-bridge/tree/main/docs)
 
-<img src={useBaseUrl("img/infra-force-bridge.png")}  width="60%"/>
+<img src={useBaseUrl("img/nervos-force-bridge.png")}  width="80%"/>
 
-## Nervos Explorer
+## Layer1 Explorer
 
 The Nervos Explorer is a website that analyzes and organizes the data from the blockchain and makes it accessible through a user-friendly searchable website interface. Users and developers can quickly find out information about the blockchain without having to run a node, and without having to run complex commands.
 
@@ -42,7 +42,7 @@ The Nervos Explorer is available for both the Mainnet and the Testnet.
 
 <img src={useBaseUrl("img/infra-nervos-explorer.png")}  width="60%"/>
 
-## Nervos Faucet
+## [Nervos Faucet](https://faucet.nervos.org/)
 
 The Nervos Faucet is a website that allows developers to claim a small amount of CKBytes on the Testnet for the purposes of research and development.
 
