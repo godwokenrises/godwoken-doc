@@ -27,7 +27,7 @@ https://talk.nervos.org/t/how-to-get-layer-1-block-number-on-layer-2/6647
 
 In the v0 network, the withdrawal time is 3 days.
 
-In the v1 network, the withdrawal time is adjusted to 8 ~ 12 days(dependes on the network status). This gives more time for layer2 verification and challenge.
+In the v1 network, the withdrawal time is adjusted to 8 ~ 12 days(depend on the network status). This gives more time for layer2 verification and challenge.
 
 ### Failed transactions
 
