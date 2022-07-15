@@ -85,3 +85,10 @@ SUDT-CLI supports operation on the public Mainnet and Testnet, and private Devne
 - [Download](https://github.com/jordanmack/sudt-cli/releases)
 
 <img src={useBaseUrl("img/tool-sudt-cli.png")}  width="60%"/>
+
+## [Godwoken Bridge](https://bridge.godwoken.io/) 
+
+Godwoken Bridge is a token bridge between CKB layer 1 network and Godwoken layer 2 network. Godwoken Bridge, functions as a token bridge between CKB and Godwoken, enables users to quickly deposit and withdraw assets. It is powered by [Light Godwoken](https://github.com/zhangyouxin/light-godwoken), an SDK dedicated to developing decentralized applications on Godwoken. 
+
+- [GitHub](https://github.com/nervosnetwork/light-godwoken)
+- 
