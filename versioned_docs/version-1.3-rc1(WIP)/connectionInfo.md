@@ -4,7 +4,7 @@ title: Godwoken Public Networks
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-## GODWOKEN L2 MAINNET V1：
+## GODWOKEN MAINNET V1：
 
 ### Godwoken Web3 RPC
 
@@ -20,62 +20,54 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 - **Chain ID**: 71402
 
-```bash
- curl -X POST 'https://v1.mainnet.godwoken.io/rpc' \
-   -H "Content-Type: application/json" \
-   -d '{"jsonrpc":"2.0","method":"eth_chainId","params": [],"id":1}'
-
- # Result
- # {"jsonrpc":"2.0","id":1,"result":"0x116ea"}
- ```
-
 - **ETH Address Registry ID**: 2
    > `ETH Address Registry` layer2 [contract](https://github.com/nervosnetwork/godwoken-scripts/blob/master/c/contracts/eth_addr_reg.c) introduces two-ways mappings between `eth_address` and `gw_script_hash`.
 
 -  [sUDT_ERC20_Proxy contracts](https://github.com/nervosnetwork/godwoken-info/blob/mainnet_v1/mainnet_v1/bridged-token-list.json)
 
 
-### Run a Godwoken mainnet_v1 readonly node
+## GODWOKEN TESTNET V1:
 
--  [Godwoken readonly node config](https://github.com/nervosnetwork/godwoken-info/blob/mainnet_v1/mainnet_v1/gw-mainnet_v1-config-readonly.toml)
-```sh
-$ cd mainnet_v1
-# Note: It is better to run your own CKB mainnet node first.
-# see: https://docs.nervos.org/docs/basics/guides/run-ckb-with-docker/#run-a-ckb-mainnet-node
-$ docker-compose up -d gw-readonly
-```
+### Godwoken Web3 RPC
 
-## GODWOKEN L2 TESTNET:
+* **RPC URL**: https://godwoken-testnet-v1.ckbapp.dev
+* **WebSocket**: wss://godwoken-testnet-v1.ckbapp.dev/ws
 
-**RPC url**: [https://godwoken-testnet-v1.ckbapp.dev](https://godwoken-testnet-v1.ckbapp.dev/)
+### Tools
 
-**Chain ID:** 71401 (or 0x116e9)
+* **Explorer (GwScan)**: https://v1.testnet.gwscan.com
+* **Explorer (Blockscout)**: https://gw-explorer.nervosdao.community
+* **Token Bridge**: https://testnet.bridge.godwoken.io
+  It's also a testnet account generator.
 
-**L2 Godwoken Testnet explorer:**
+### Deployment Information
 
-- [https://v1.betanet.gwscan.com](https://v1.betanet.gwscan.com/)
-- [https://gw-explorer.nervosdao.community](https://gw-explorer.nervosdao.community/) (Blockscout)
+* **Chain ID:** 71401
+  
+* **ETH Address Registry ID:** 2
+  > `ETH Address Registry` layer2 [contract](https://github.com/nervosnetwork/godwoken-scripts/blob/master/c/contracts/eth_addr_reg.c) introduces two-ways mappings between `eth_address` and `gw_script_hash`.
 
-**L2 Godwoken Testnet Account Generator:**
+* **L2 Godwoken Testnet pCKB Contract**
 
 - [https://testnet.bridge.godwoken.io](https://testnet.bridge.godwoken.io/)
+    - Address: 0xE05d380839f32bC12Fb690aa6FE26B00Bd982613
+    - Symbol: pCKB
+    - Decimals: 18
 
-**L2 Godwoken Testnet pCKB Contract**
+## Nervos Layer 1
 
-- Address: 0xE05d380839f32bC12Fb690aa6FE26B00Bd982613
-- Symbol: pCKB
-- Decimals: 18
+### CKB Mainnet Mirana:
 
-## Nervos L1 Mainnet Mirana:
-
-**L1 Mainnet explorer:** [https://explorer.nervos.org](https://explorer.nervos.org)
+**Explorer:** [https://explorer.nervos.org](https://explorer.nervos.org)
 
 Use the [latest release](https://github.com/nervosnetwork/ckb/releases/latest) and run `ckb init --chain mainnet` to initialize the node.
  - Mirana is active since the epoch 5414, see the [migration guide](https://github.com/jordanmack/nervos-ckb2021-hard-fork-migration-guide) to upgrade from Lina.
 
 
-## **NERVOS L1 TESTNET:**
+### **CKB Testnet Pudge:**
 
-**L1 Testnet explorer:** [https://pudge.explorer.nervos.org/](https://pudge.explorer.nervos.org/)
+* **Explorer:** [https://pudge.explorer.nervos.org/](https://pudge.explorer.nervos.org/)
+* **Faucet:** [https://faucet.nervos.org/](https://faucet.nervos.org/)
 
-**L1 Testnet faucet:** [https://faucet.nervos.org/](https://faucet.nervos.org/)
+### Run a CKB Mainnet Node and Testnet Node with Docker
+- https://docs.nervos.org/docs/basics/guides/run-ckb-with-docker
