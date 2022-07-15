@@ -18,10 +18,9 @@ If you want to obtain direct experience and prepare yourself for deploying appli
 ## Why Develop on Godwoken?
 
 - **Security** - Nervos Network is a Proof-of-Work (PoW) layer 1 chain, and Godwoken is an optimistic rollup layer 2 chain built on Nervos Network. The security model is quite different from other EVM-compatible PoS/DPoS/PoA chains or sidechains.
-- **Low-cost** - A typical Godwoken transaction currently costs less than $0.0001.
+- **Low-cost** - A typical Godwoken transaction currently costs less than $0.01.
 - **Ecosystem**
   - With Force Bridge, assets from 3 chains (Nervos, Ethereum and BSC) are already available on Godwoken. The support for more chains (Cardano, BTC) is on the way.
-  - The TVL of Godwoken is now nearly [100 million](https://defillama.com/chains). A number of DeFi dApps (e.g. [YokaiSwap](https://www.yokaiswap.com/)) and wallets (e.g. [SafePal](https://www.safepal.io/download)) have already been integrated. 
 - [**Interoperability 2.0**](https://medium.com/nervosnetwork/blockchain-abstraction-and-interoperability-2-0-eea98d81b7b6) - This may be the trump card of Godwoken. With the design abstractions of Nervos Network and Godwoken, it is possible to use any on-chain tool to port smart contracts to manipulate assets on the corresponding chain.
 
 ## Known Caveats
