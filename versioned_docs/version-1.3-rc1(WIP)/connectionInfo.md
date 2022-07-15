@@ -49,7 +49,6 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 * **L2 Godwoken Testnet pCKB Contract**
 
-- [https://testnet.bridge.godwoken.io](https://testnet.bridge.godwoken.io/)
     - Address: 0xE05d380839f32bC12Fb690aa6FE26B00Bd982613
     - Symbol: pCKB
     - Decimals: 18
