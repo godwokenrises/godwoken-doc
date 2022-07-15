@@ -42,7 +42,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 * **Token Bridge**: https://testnet.bridge.godwoken.io
   It's also a testnet account generator.
 
-## Deployment information
+### Deployment information
 
 * **Chain ID**: 71401
 
