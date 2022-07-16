@@ -55,9 +55,3 @@ Developers can currently claim 10,000 CKBytes per address every 24 hours.
 
 <img src={useBaseUrl("img/infra-nervos-faucet.png")}  width="60%"/>
 
-
-## Layer 2 Explorer
-
-Layer 2 explorer&#x20;
-
-* [Official Website (Testnet)](https://explorer.nervos.org/aggron)
