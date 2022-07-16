@@ -91,6 +91,6 @@ SUDT-CLI supports operation on the public Mainnet and Testnet, and private Devne
 Godwoken Bridge is a token bridge between CKB layer 1 network and Godwoken layer 2 network. Godwoken Bridge, functions as a token bridge between CKB and Godwoken, enabling users to quickly deposit and withdraw assets using the MetaMask wallet. It is powered by [Light Godwoken](https://github.com/nervosnetwork/light-godwoken), an SDK dedicated to developing decentralized applications on Godwoken. 
 
 - [GitHub](https://github.com/nervosnetwork/light-godwoken)
-- [Documentation](https://github.com/zhangyouxin/light-godwoken/blob/develop/docs/introduction.md)
+- [Documentation](https://github.com/nervosnetwork/light-godwoken/blob/develop/docs/introduction.md)
 
 <img src={useBaseUrl("img/bridge.png")}  width="40%"/>
