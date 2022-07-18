@@ -12,7 +12,7 @@ Nervos has opted to support MetaMask as one of the primary wallets of the Nervos
 
 Two modes of operation are supported with MetaMask when interacting with the Nervos ecosystem.
 
-When interacting with an Ethereum-compatible layer 2 chain using the Godwoken and Polyjuice frameworks, MetaMask should be configured to use the Godwoken RPC. This process is identical to other layer 2 chains, such as Polygon (Matic), and is used to interact with EVM-compatible Solidity-based dApps running on Nervos.
+When interacting with an Ethereum-compatible layer 2 chain using the Godwoken and Polyjuice frameworks, MetaMask should be configured to use the Godwoken RPC. This process is identical to other layer 2 chains, such as Polygon (Matic), and is used to interact with EVM-compatible Solidity-based dApps running on Nervos. Godwoken uses pCKB to calculate the gas fee by default, click to learn about [pCKB](pCKB.md).
 
 When interacting directly with Nervos' layer 1 CKB blockchain, no configuration changes are required. The flexibility of Nervos' layer 1 blockchain allows for full compatibility out-of-the-box. To facilitate this, the Nervos community-supported [PW-SDK](https://github.com/lay2dev/pw-core) framework is used.
 
