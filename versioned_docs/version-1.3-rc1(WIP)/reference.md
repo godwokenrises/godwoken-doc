@@ -19,4 +19,4 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 |Godwoken Docs	|https://github.com/nervosnetwork/godwoken/tree/develop/docs|
 |Godwoken Gitcoin Instruction |https://github.com/Kuzirashi/gw-gitcoin-instruction|
 |Force Bridge	|https://github.com/nervosnetwork/force-bridge/tree/main/docs
-|Ethereum RPC  (web3 RPC)	|https://geth.ethereum.org/docs/rpc/server|
+|Ethereum RPC  (web3 RPC)	|https://ethereum.org/en/developers/docs/apis/json-rpc|
