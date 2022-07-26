@@ -4,19 +4,17 @@ title: Add & Transfer pCKB on Godwoken v1
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-This guide will show you how to make add and transfer pCKB on Godwoken. This process takes minutes to transfer funds from the old layer 2 EVM Godwoken network to the new Godwoken.
-
-If you want to withdraw funds from Godwoken V0 to Nervos Layer 1 then this will be a slower process (a few days) due to the optimised rollup security architecture.
+This guide will show you how to add and transfer pCKB on Godwoken. Godwoken chain uses CKB as pCKB by default to collect transaction fees. For more information about pCKB, refer to [pCKB](pCKB.md). 
 
 In order to follow this tutorial, make sure that you have already installed a web3 wallet, and that you have successfully created an account and have enough CKBs or supported sUDT tokens in your wallet. In the current version of GodwokenBridge, a [MetaMask](https://metamask.io/) wallet is recommended for users.
 
-All operations in this tutorial are performed on the Godwoken v1 Testnet. For more information on the concept of CKBs, please refer to the [Nervos CKB](https://docs.nervos.org/docs/basics/introduction). You can also check out the tutorial video by clicking [here](https://youtu.be/58YHw4YJL8s).
+All operations in this tutorial are performed on the Godwoken v1 Testnet. For more information on the concept of CKBs, refer to the [Nervos CKB](https://docs.nervos.org/docs/basics/introduction). You can also check out the tutorial video by clicking [here](https://youtu.be/58YHw4YJL8s).
 
 ## Prerequisites
 
 - [MetaMask](https://metamask.io/) account
 - Connect [Godwoken Bridge](https://testnet.bridge.godwoken.io/#/v1/) with the MetaMask wallet and switch the network to **Godwoken Testnet v1**.
-- Acquire CKB for your layer 1 wallet from [CKB Testnet Faucet](https://faucet.nervos.org/). The **L1 Wallet address** can be found on the Deposit page of Godwoken Bridge.
+- Acquire CKB for your layer 1 wallet from [CKB Testnet Faucet](https://faucet.nervos.org/). The **L1 Wallet address** can be found on the Deposit page of Godwoken Bridge. 
     
 :::note
 A deposit or a withdrawal requires at least 400 CKB.
