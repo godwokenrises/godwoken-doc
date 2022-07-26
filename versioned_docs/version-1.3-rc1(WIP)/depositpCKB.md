@@ -1,14 +1,14 @@
 ---
 id: depositpCKB
-title: Deposit & Transfer pCKB on Godwoken v1
+title: Add & Transfer pCKB on Godwoken v1
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-This guide will show you how to make fast deposit and withdrawal on Godwoken. This process takes minutes, instead of days, to transfer funds from the old layer 2 EVM Godwoken network to the new Godwoken.
+This guide will show you how to make add and transfer pCKB on Godwoken. This process takes minutes to transfer funds from the old layer 2 EVM Godwoken network to the new Godwoken.
 
 If you want to withdraw funds from Godwoken V0 to Nervos Layer 1 then this will be a slower process (a few days) due to the optimised rollup security architecture.
 
-In order to follow this tutorial, make sure that you have already installed a web3 wallet, such as [MetaMask](https://metamask.io/), and that you have successfully created an account and have enough CKBs or supported sUDT tokens in your wallet. 
+In order to follow this tutorial, make sure that you have already installed a web3 wallet, and that you have successfully created an account and have enough CKBs or supported sUDT tokens in your wallet. In the current version of GodwokenBridge, a [MetaMask](https://metamask.io/) wallet is recommended for users.
 
 All operations in this tutorial are performed on the Godwoken v1 Testnet. For more information on the concept of CKBs, please refer to the [Nervos CKB](https://docs.nervos.org/docs/basics/introduction). You can also check out the tutorial video by clicking [here](https://youtu.be/58YHw4YJL8s).
 
@@ -24,7 +24,7 @@ A deposit or a withdrawal requires at least 400 CKB.
 
 ## Configure MetaMask for Godwoken pCKB
 
-<li><p>Connect to the <a href="https://testnet.bridge.godwoken.io/#/v1">Godwoken Bridge</a> with your Metamask wallet, which will add automatically Godwoken Testnet to your wallet.</p></li>
+<li><p>Connect to the <a href="https://testnet.bridge.godwoken.io/#/v1">Godwoken Bridge</a> with your Metamask wallet, which will automatically add Godwoken Testnet to your wallet.</p></li>
 
 <img src={useBaseUrl("img/depositPCKB/configure1.png")}  width="30%"/>
 
@@ -48,7 +48,7 @@ A deposit or a withdrawal requires at least 400 CKB.
 
 ## Send Funds on Godwoken
 
-<li><p>Go to your MetaMask wallet, select pCKB in your Assets.</p></li>
+<li><p>Go to your MetaMask wallet, select pCKB in your Assets. On Godwoken, users use tokens instead of native assets when making transfer, because <a href="http://docs.godwoken.io/faq#q-ckb-transfer-on-godwoken-testnet-via-metamask-has-failed-what-is-the-solution">Godwoken uses pCKB to calculate transaction fees by default</a>. </p></li>
 
 <img src={useBaseUrl("img/depositPCKB/send1.png")}  width="30%"/>
 
