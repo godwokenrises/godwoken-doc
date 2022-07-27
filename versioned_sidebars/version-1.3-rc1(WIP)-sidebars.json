@@ -41,7 +41,7 @@
     {
       "Asset Management":[
         "fastWithdrawal",
-        "depositpCKB",
+        "sendPCKB",
         "extractPrivkey"
         ]
     },
