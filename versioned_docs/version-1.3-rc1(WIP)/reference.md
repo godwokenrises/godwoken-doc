@@ -12,6 +12,8 @@ This page covers the repositories and articles that are currently referenced in 
 | --------------- | :---------------------------|
 |Introducing Godwoken - A missing piece of the cell model |https://talk.nervos.org/t/introducing-godwoken-a-missing-piece-of-the-cell-model/4464?_360safeparam=13594453|
 |Towards CKB style Lego pieces: Polyjuice on Godwoken |https://medium.com/nervosnetwork/towards-ckb-style-lego-pieces-polyjuice-on-godwoken-cbc935d77abf|
+|Nervos Document Website	|https://docs.nervos.org/|
+|Nervos Layer2 SDK	|https://docs.lay2.dev/pw-sdk/|
 
 ## Godwoken Open Source Repositories
 
@@ -29,14 +31,14 @@ This page covers the repositories and articles that are currently referenced in 
 
 | Reference       | Link                        | 
 | --------------- | :---------------------------|
-|Nervos Document Website	|https://docs.nervos.org/|
-|Nervos Network YouTube Channel	|https://www.youtube.com/c/NervosNetwork/featured|
-|Nervos Layer2 SDK	|https://docs.lay2.dev/pw-sdk/|
-|Lumos	|https://github.com/nervosnetwork/lumos|
-|Force Bridge	|https://github.com/nervosnetwork/force-bridge/tree/main/docs
+|Neuron: Nervos CKB Wallet |https://github.com/nervosnetwork/neuron|
+|Nervos CKB       |https://github.com/nervosnetwork/ckb|
+|Lumos	          |https://github.com/nervosnetwork/lumos|
+|Force Bridge	    |https://github.com/nervosnetwork/force-bridge/tree/main/docs
 
 ## Others
 
 | Reference       | Link                        | 
 | --------------- | :---------------------------|
 |Ethereum RPC  (web3 RPC)	|https://ethereum.org/en/developers/docs/apis/json-rpc|
+|Nervos Network YouTube Channel	|https://www.youtube.com/c/NervosNetwork/featured|
