@@ -23,7 +23,6 @@ This page covers the repositories and articles that are currently referenced in 
 |Godwoken On-chain Scripts |https://github.com/nervosnetwork/godwoken-scripts|
 |Godwoken Polyjuice |https://github.com/nervosnetwork/godwoken-polyjuice|
 |Godwoken Web3 API 	|https://github.com/nervosnetwork/godwoken-web3|
-|Godwoken testnet config	|https://github.com/nervosnetwork/godwoken-info/tree/main/testnet_v1_1|
 |Godwoken Ingegration Test	|https://github.com/nervosnetwork/godwoken-tests|
 
 ## Nervos Open Source Repositories
