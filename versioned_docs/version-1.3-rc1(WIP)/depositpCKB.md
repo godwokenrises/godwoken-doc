@@ -46,7 +46,7 @@ A deposit or a withdrawal requires at least 400 CKB.
 
 ## Send Funds on Godwoken
 
-<li><p>Go to your MetaMask wallet, select pCKB in your Assets. On Godwoken, users use tokens instead of native assets when making transfer, because <a href="http://docs.godwoken.io/faq#q-ckb-transfer-on-godwoken-testnet-via-metamask-has-failed-what-is-the-solution">Godwoken uses pCKB to calculate transaction fees by default</a>. </p></li>
+<li><p>Go to your MetaMask wallet, select pCKB in your Assets. On Godwoken, users use `pCKB (ERC20)` when making native token transfer, because <a href="http://docs.godwoken.io/faq#q-ckb-transfer-on-godwoken-testnet-via-metamask-has-failed-what-is-the-solution">Godwoken uses pCKB to calculate transaction fees by default</a>. </p></li>
 
 <img src={useBaseUrl("img/depositPCKB/send1.png")}  width="30%"/>
 
