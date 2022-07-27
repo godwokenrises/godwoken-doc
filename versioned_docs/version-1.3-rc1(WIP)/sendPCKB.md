@@ -1,14 +1,14 @@
 ---
-id: depositpCKB
-title: Add & Transfer pCKB on Godwoken v1
+id: sendPCKB
+title: Transfer pCKB on Godwoken v1 
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-This guide will show you how to add and transfer pCKB on Godwoken. Godwoken chain uses CKB as pCKB by default to collect transaction fees. For more information about pCKB, refer to [pCKB](pCKB.md). 
+This guide will show you how to configure, import and send pCKBs on Godwoken using [MetaMask](https://metamask.io/) wallet. Godwoken is a layer 2 optimistic rollup solution and an EVM-compatible layer that builds on top of Nervos Layer 1. When Godwoken executes a transaction, the transaction fee is deducted by using a layer 2 sUDT token, which is defined as the **pCKB**. That is to say, Godwoken uses pCKB，in place of CKB, to collect transaction fees by default, and users use [`pCKB (ERC20)`](pCKB.md) when [making native token transfer](faq.md#q-ckb-transfer-on-godwoken-testnet-via-metamask-has-failed-what-is-the-solution) on Godwoken. 
 
-In order to follow this tutorial, make sure that you have already installed a web3 wallet, and that you have successfully created an account and have enough CKBs or supported sUDT tokens in your wallet. In the current version of GodwokenBridge, a [MetaMask](https://metamask.io/) wallet is recommended for users.
+In order to follow this tutorial, make sure that you have already installed a web3 wallet, and that you have successfully created an account and have enough CKBs or supported sUDT tokens in your wallet. In the current version of [GodwokenBridge](https://bridge.godwoken.io/#/v1), a [MetaMask](https://metamask.io/) wallet is recommended for users.
 
-All operations in this tutorial are performed on the Godwoken v1 Testnet. For more information on the concept of CKBs, refer to the [Nervos CKB](https://docs.nervos.org/docs/basics/introduction). You can also check out the tutorial video by clicking [here](https://youtu.be/58YHw4YJL8s).
+All operations in this tutorial are performed on the Godwoken v1 Testnet. For more information on the concept of CKBs, refer to the [Nervos CKB](https://docs.nervos.org/docs/basics/introduction). You can also check out the tutorial video by clicking [here](https://youtu.be/58YHw4YJL8s). To fund an account on with CKB on Nervos Layer 1 testnet, you can refer to [Transfer tokens from Nervos L1 to L2](quickstart.md#transfer-tokens-from-Nervos-L1-to-L2).
 
 ## Prerequisites
 
@@ -46,7 +46,7 @@ A deposit or a withdrawal requires at least 400 CKB.
 
 ## Send Funds on Godwoken
 
-<li><p>Go to your MetaMask wallet, select pCKB in your Assets. On Godwoken, users use `pCKB (ERC20)` when making native token transfer, because <a href="http://docs.godwoken.io/faq#q-ckb-transfer-on-godwoken-testnet-via-metamask-has-failed-what-is-the-solution">Godwoken uses pCKB to calculate transaction fees by default</a>. </p></li>
+<li><p>Go to your MetaMask wallet, select pCKB in your Assets.</p></li>
 
 <img src={useBaseUrl("img/depositPCKB/send1.png")}  width="30%"/>
 
