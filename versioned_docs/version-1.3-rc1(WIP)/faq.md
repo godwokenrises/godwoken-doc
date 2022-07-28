@@ -4,7 +4,7 @@ title: FAQ
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-**Q**: It is so easy to switch from Layer 1 to Layer 2. Why does it take so long in reverse?
+### Q: It is so easy to switch from Layer 1 to Layer 2. Why does it take so long in reverse?
 
 **A**: Layer 2 can trust Layer 1 because Layer 1 is more secure. But Layer 1 needs more time to make sure everything is fine on Layer 2 especially for optimistic rollup (a popular Layer 2 solution). 
 
@@ -14,7 +14,7 @@ We're actively exploring ways to improve the withdrawal experience and support f
 
 ----
 
-**Q**: Why does it require an amount of 63 CKBs to an intermediate address to move funds back to Layer 1 when using Yokai? 
+### Q: Why does it require an amount of 63 CKBs to an intermediate address to move funds back to Layer 1 when using Yokai? 
 
 **A**: This is a constraint of the current release of Godwoken (L2). Godwoken uses a withdrawal recipient account (actually a cell in Nervos' term) on Nervos CKB (L1) to act as an identity authenticator. Godwoken authenticates the receiver's identity by using an account signature provided by the recipient and then sends corresponding withdrawal funds. The recipient account requires at least 63 CKBs to be stored on Nervos CKB (L1). Those 63 CKBs are still yours and can be claimed back if you don't need this account later. [Actually, anything stored on Nervos CKB (L1) requires an amount of CKBs (1 CKB = 1 Byte) for its storage space. L1 storage is validated by global consensus, thus it's scarce and needs to be used carefully.](https://docs.nervos.org/docs/basics/concepts/economics)
 
@@ -22,7 +22,7 @@ This constraint is a temporary mechanism and will be removed in a future release
 
 ----
 
-**Q:** How to Get Layer 1 Block Number?
+### Q: How to Get Layer 1 Block Number?
 
 **A:** Defi contracts often require interests to be calculated by block number. However, both v0 and v1 networks do not have a fixed layer2 block interval (it is affected by layer1 block interval).
 
@@ -32,7 +32,7 @@ We recommend developers use layer2 block timestamp as the trusted timestamp to c
 
 ----
 
-**Q:** CKB transfer on Godwoken testnet via Metamask has failed. What is the solution?
+### Q: CKB transfer on Godwoken testnet via Metamask has failed. What is the solution?
 
 **A:** In Godwoken, `transaction.to` must be a contract address. In RPCs such as `eth_call`, `eth_estimateGas` and `eth_sendRawTransaction`, the `to` parameter can only be a contract address, not an EOA address.
 

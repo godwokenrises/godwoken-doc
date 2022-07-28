@@ -1,6 +1,6 @@
 ---
 id: fastWithdrawal
-title: Deposit & Fast Withdrawal to Godwoken Version 1
+title: Deposit & Fast Withdrawal to Godwoken v1
 ---
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
@@ -94,15 +94,4 @@ To withdraw assets from Godwoken v0 to Godwoken v1:
 
    <img src={useBaseUrl("img/withdrawBalance.png")}  width="40%"/>
 
-
-
- ## Reference
-
-| Resource                | Link                                                         |
-| ----------------------- | ------------------------------------------------------------ |
-| Godwoken Docs           | https://github.com/nervosnetwork/godwoken/blob/develop/docs/RPC.md#method-gw_submit_withdrawal_request |
-| Godwoken Demos          | https://github.com/classicalliu/gw-demos                     |
-| Godwoken testnet config | https://github.com/nervosnetwork/godwoken-info/tree/main/testnet_v1_1 |
-| Godwoken Web3           | https://github.com/nervosnetwork/godwoken-web3#godwoken-web3-api |
-| Lumos Documentation     | https://github.com/nervosnetwork/lumos                       |
 
