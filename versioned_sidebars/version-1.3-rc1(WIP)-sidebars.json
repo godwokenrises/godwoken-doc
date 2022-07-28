@@ -41,7 +41,9 @@
     },
 
     {
-      "Asset Management": ["fastWithdrawal", "extractPrivkey"]
+
+      "Asset Management": ["fastWithdrawal", "sendPCKB", "extractPrivkey"]
+
     },
 
     {
@@ -54,6 +56,7 @@
     },
 
     "otherTools",
-    "faq"
+    "faq",
+    "reference"
   ]
 }
