@@ -1,11 +1,11 @@
 {
   "sidebar2": [
     "getStart",
+    "quickStart",
 
     {
       "Basic Concepts": [
         "overview",
-        "quickStart",
         "connectionInfo",
         "frameworks",
         "infrastructure",
@@ -48,6 +48,7 @@
 
     {
       "Release Notes": [
+        "releaseNote4",
         "releaseNote3",
         "releaseNote2",
         "releaseNote",
