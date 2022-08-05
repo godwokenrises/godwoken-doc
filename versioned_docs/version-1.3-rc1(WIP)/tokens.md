@@ -4,8 +4,7 @@ title: Tokens
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-On this page you can find test tokens deployed on Godwoken Testnet that you can use to experiment.
-
+On this page you can find tokens deployed on Godwoken.
 
 # Tokens
 
@@ -29,9 +28,8 @@ Below are the ERC20 token addresses on Godwoken **mainnet**:
 * DAI (via Forcebridge from ETH): 0x2c9Fc6087875646112f66a3C92fEF2d158FAa76e
 * dCKB (via [GodwokenBridge](https://bridge.godwoken.io/#/v1) from CKB): 0x893474456C475E738b13DdA824979bF7a355DE39
 * pCKB: 0x7538C85caE4E4673253fFd2568c1F1b48A71558a
-
-
-### Claimable Test ERC20 Token
+* [More tokens can be found in this list.](https://github.com/nervosnetwork/godwoken-info/blob/main/mainnet_v1/bridged-token-list.json)
+### Claimable Testnet ERC20 Token
 
 Test ERC20 token: 0xd68d7a4d5fac6E2F93449afe40865a0a91278593
 
