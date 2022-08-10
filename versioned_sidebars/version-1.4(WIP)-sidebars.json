@@ -48,7 +48,6 @@
 
     {
       "Release Notes": [
-        "releaseNote4",
         "releaseNote3",
         "releaseNote2",
         "releaseNote",
@@ -56,7 +55,13 @@
       ]
     },
 
-    "otherTools",
+    {
+      "Ecosystem Tools": [
+        "covalent",
+        "otherTools"
+      ]
+    },
+    
     "faq",
     "reference"
   ]
