@@ -48,10 +48,20 @@
 
     {
       "Release Notes": [
-        "releaseNote3",
-        "releaseNote2",
-        "releaseNote",
-        "v0difv1"
+        {
+          "Godwoken Release Note":[
+            "releaseNote4",
+            "releaseNote3",
+            "releaseNote2",
+            "releaseNote",
+            "v0difv1"
+          ]
+        },
+        {
+          "Godwoken Web3 Release Note":[
+            "web3/web3Change1.5"
+          ]
+        }
       ]
     },
 
@@ -61,7 +71,7 @@
         "otherTools"
       ]
     },
-    
+
     "faq",
     "reference"
   ]
