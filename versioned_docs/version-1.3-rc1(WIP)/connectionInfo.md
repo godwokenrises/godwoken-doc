@@ -7,16 +7,16 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## Godwoken
 
-| ITEM            | Godwoken Testnet                        | Godwoken Mainnet                   |
-| --------------- | :-------------------------------------- | :--------------------------------- |
-| NETWORK NAME    | Godwoken/PolyJuice Testnet              | Godwoken/PolyJuice Mainnet         |
-| RPC URL         | https://godwoken-testnet-v1.ckbapp.dev, | https://v1.mainnet.godwoken.io/rpc |
-| Chain ID        | 71401                                   | 71402                              |
-| Currency Symbol | CKB                                     | CKB                                |
-| Block Explorer  | https://v1.testnet.gwscan.com/          | https://v1.gwscan.com/             |
-|                 | https://gw-explorer.nervosdao.community |                                    |
-| Token Bridge    | https://testnet.bridge.godwoken.io      | https://bridge.godwoken.io         |
-| WebSocket       | wss://godwoken-testnet-v1.ckbapp.dev/ws | wss://v1.mainnet.godwoken.io/ws    |
+| ITEM            | Godwoken Testnet                                             | Godwoken Mainnet v0                | Godwoken Mainnet v1                         |
+| --------------- | :----------------------------------------------------------- | :--------------------------------- | :------------------------------------------ |
+| NETWORK NAME    | Godwoken/PolyJuice Testnet                                   | Godwoken/PolyJuice Mainnet         | Godwoken/PolyJuice Mainnet                  |
+| RPC URL         | https://godwoken-testnet-v1.ckbapp.dev,                      | https://v1.mainnet.godwoken.io/rpc |
+| Chain ID        | 71401                                                        | 71402                              | 71402                                       |
+| Currency Symbol | CKB                                                          | CKB                                | CKB                                         |
+| Block Explorer  | https://testnet.gwscan.com/, https://v1.testnet.gwscan.com/, | https://v0.gwscan.com/             | https://gwscan.com/, https://v1.gwscan.com/ |
+|                 | https://gw-explorer.nervosdao.community                      |                                    |
+| Token Bridge    | https://testnet.bridge.godwoken.io                           |                                    | https://bridge.godwoken.io                  |
+| WebSocket       | wss://godwoken-testnet-v1.ckbapp.dev/ws                      | wss://v1.mainnet.godwoken.io/ws    | wss://v1.mainnet.godwoken.io/ws             |
 
 ## Nervos Layer 1
 
