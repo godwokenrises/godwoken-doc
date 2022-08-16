@@ -31,10 +31,11 @@ module.exports = {
         href: "https://www.nervos.org/godwoken/",
       },
       items: [
-        // {
-        //   type: "docsVersionDropdown",
-        //   position: "right",
-        // },
+        {
+           type: "docsVersionDropdown",
+           position: "right",
+         },
+         
         {
           href: "https://github.com/nervosnetwork/godwoken",
           label: "GitHub",

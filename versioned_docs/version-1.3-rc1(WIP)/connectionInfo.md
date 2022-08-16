@@ -56,7 +56,7 @@ Use the [latest release](https://github.com/nervosnetwork/ckb/releases/latest) a
 ### **CKB Testnet Pudge**
 
 After adding the “Godwoken Testnet v1” to your wallet and copied your L1 Wallet Address which is connected to Metamask L1 address. We want to get some free CKB. Make sure your wallet is set to the “Godwoken Testnet v1”.
- 
+
 To deploy to Nervos L1 Testnet we need some free CKB on the L1 to use. Testnets require money just like our mainnets require real money but testnets use fake money that we can collect through a faucet. 
 
 There are many testnets available in this case the one we are using is the L1 Testnet faucet link below. 
