@@ -4,7 +4,6 @@ title: Godwoken V1.4 Release Note
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-Godwoken is an EVM-compatible, layer2 optimistic rollup solution built on Nervos layer1. Godwoken v1 is being deployed as a new chain rather than an upgrade on the existing chain. Godwoken v1 will also provide tools to help users and developers migrate to the new chain.  Developers can use Godwoken v1 to switch networks to Godwoken in the same way as they use other EVM-compatible chains.
 
 Currently, Godwoken is updated on a regular basis to provide new features and updates. The following release notes covers the most recent changes in Godwoken v1.4. You can check the full release notes in the [Godwoken Changlog](https://github.com/nervosnetwork/godwoken/blob/develop/CHANGELOG.md).
 
