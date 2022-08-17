@@ -7,16 +7,16 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## Godwoken
 
-| ITEM            | Godwoken Testnet                        | Godwoken Mainnet                   |
-| --------------- | :-------------------------------------- | :--------------------------------- |
-| NETWORK NAME    | Godwoken/PolyJuice Testnet              | Godwoken/PolyJuice Mainnet         |
-| RPC URL         | https://godwoken-testnet-v1.ckbapp.dev, | https://v1.mainnet.godwoken.io/rpc |
-| Chain ID        | 71401                                   | 71402                              |
-| Currency Symbol | CKB                                     | CKB                                |
-| Block Explorer  | https://v1.testnet.gwscan.com/          | https://v1.gwscan.com/             |
-|                 | https://gw-explorer.nervosdao.community | https://gw-mainnet-explorer.nervosdao.community |
-| Token Bridge    | https://testnet.bridge.godwoken.io      | https://bridge.godwoken.io         |
-| WebSocket       | wss://godwoken-testnet-v1.ckbapp.dev/ws | wss://v1.mainnet.godwoken.io/ws    |
+| ITEM            | Godwoken Testnet                        | Godwoken Mainnet v0             | Godwoken Mainnet v1                         |
+| --------------- | :-------------------------------------- | :------------------------------ | :------------------------------------------ |
+| NETWORK NAME    | Godwoken/PolyJuice Testnet              | Godwoken/PolyJuice Mainnet      | Godwoken/PolyJuice Mainnet                  |
+| RPC URL         | https://godwoken-testnet-v1.ckbapp.dev, | https://mainnet.godwoken.io/rpc | https://v1.mainnet.godwoken.io/rpc          |
+| Chain ID        | 71401                                   | 71394                           | 71402                                       |
+| Currency Symbol | CKB                                     | CKB                             | CKB                                         |
+| Block Explorer  | https://v1.testnet.gwscan.com/,         | https://v0.gwscan.com/          | https://gwscan.com/, https://v1.gwscan.com/ |
+|                 | https://gw-explorer.nervosdao.community |                                 |
+| Token Bridge    | https://testnet.bridge.godwoken.io      | https://bridge.godwoken.io      | https://bridge.godwoken.io                  |
+| WebSocket       | wss://godwoken-testnet-v1.ckbapp.dev/ws | wss://mainnet.godwoken.io/ws    | wss://v1.mainnet.godwoken.io/ws             |
 
 ## Nervos Layer 1
 
@@ -57,16 +57,16 @@ Use the [latest release](https://github.com/nervosnetwork/ckb/releases/latest) a
 
 After adding the “Godwoken Testnet v1” to your wallet and copied your L1 Wallet Address which is connected to Metamask L1 address. We want to get some free CKB. Make sure your wallet is set to the “Godwoken Testnet v1”.
 
-To deploy to Nervos L1 Testnet we need some free CKB on the L1 to use. Testnets require money just like our mainnets require real money but testnets use fake money that we can collect through a faucet. 
+To deploy to Nervos L1 Testnet we need some free CKB on the L1 to use. Testnets require money just like our mainnets require real money but testnets use fake money that we can collect through a faucet.
 
-There are many testnets available in this case the one we are using is the L1 Testnet faucet link below. 
+There are many testnets available in this case the one we are using is the L1 Testnet faucet link below.
 
-Paste your L1 address which should start with `ckt` and click claim. 
+Paste your L1 address which should start with `ckt` and click claim.
 
 **Note:** this might take a min to process.
 
-* **Explorer:** [https://pudge.explorer.nervos.org/](https://pudge.explorer.nervos.org/)
-* **Faucet:** [https://faucet.nervos.org/](https://faucet.nervos.org/)
+- **Explorer:** [https://pudge.explorer.nervos.org/](https://pudge.explorer.nervos.org/)
+- **Faucet:** [https://faucet.nervos.org/](https://faucet.nervos.org/)
 
 ### Run a CKB Mainnet Node and Testnet Node with Docker
 
