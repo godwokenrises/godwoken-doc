@@ -1,0 +1,80 @@
+{
+  "sidebar2": [
+    "getStart",
+    "quickStart",
+
+    {
+      "Basic Concepts": [
+        "overview",
+        "connectionInfo",
+        "frameworks",
+        "infrastructure",
+        "standards",
+        "structure",
+        "tooling",
+        "wallets",
+        "tokens",
+        "gwtxLife",
+        "pCKB",
+        "depAndWthd",
+        "godwokenkicker"
+      ]
+    },
+
+    {
+      "Dapp Deployment": [
+        "integration",
+        "deployLocalNetwork",
+        {
+          "Layer 2 EVM Training": [
+            "evm_training/evmIntro",
+            "evm_training/evmPrep",
+            "evm_training/evmTask1",
+            "evm_training/evmTask2",
+            "evm_training/evmTask3",
+            "evm_training/evmTask4",
+            "evm_training/evmTask5",
+            "evm_training/evmTask6"
+          ]
+        }
+      ]
+    },
+
+    {
+
+      "Asset Management": ["fastWithdrawal", "sendPCKB", "extractPrivkey"]
+
+    },
+
+    {
+      "Release Notes": [
+        {
+          "Godwoken Release Note":[
+            "gwchangelog/releaseNote4",
+            "gwchangelog/releaseNote3",
+            "gwchangelog/releaseNote2",
+            "gwchangelog/releaseNote",
+            "gwchangelog/v0difv1"
+          ]
+        },
+
+        {
+          "Godwoken Web3 Release Note":[
+            "web3changelog/web3Change1.5"
+          ]
+        }
+
+      ]
+    },
+
+    {
+      "Ecosystem Tools": [
+        "covalent",
+        "otherTools"
+      ]
+    },
+
+    "faq",
+    "reference"
+  ]
+}

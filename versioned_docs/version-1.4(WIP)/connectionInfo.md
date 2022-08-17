@@ -5,18 +5,45 @@ title: Godwoken Public Networks
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-## Godwoken
 
-| ITEM            | Godwoken Testnet                        | Godwoken Mainnet v0             | Godwoken Mainnet v1                         |
-| --------------- | :-------------------------------------- | :------------------------------ | :------------------------------------------ |
-| NETWORK NAME    | Godwoken/PolyJuice Testnet              | Godwoken/PolyJuice Mainnet      | Godwoken/PolyJuice Mainnet                  |
-| RPC URL         | https://godwoken-testnet-v1.ckbapp.dev, | https://mainnet.godwoken.io/rpc | https://v1.mainnet.godwoken.io/rpc          |
-| Chain ID        | 71401                                   | 71394                           | 71402                                       |
-| Currency Symbol | CKB                                     | CKB                             | CKB                                         |
-| Block Explorer  | https://v1.testnet.gwscan.com/,         | https://v0.gwscan.com/          | https://gwscan.com/, https://v1.gwscan.com/ |
-|                 | https://gw-explorer.nervosdao.community |                                 |
-| Token Bridge    | https://testnet.bridge.godwoken.io      | https://bridge.godwoken.io      | https://bridge.godwoken.io                  |
-| WebSocket       | wss://godwoken-testnet-v1.ckbapp.dev/ws | wss://mainnet.godwoken.io/ws    | wss://v1.mainnet.godwoken.io/ws             |
+## Godwoken Mainnet v1
+
+|ITEM             |                  Detail                     |
+| --------------- | :------------------------------------------ |
+| NETWORK NAME    | Godwoken/PolyJuice Mainnet                  |
+| RPC URL         | https://v1.mainnet.godwoken.io/rpc          |
+| Chain ID        | 71402                                       |
+| Currency Symbol | CKB                                         |
+| Block Explorer  | https://gwscan.com/, https://v1.gwscan.com/ |
+| Token Bridge    | https://bridge.godwoken.io                  |
+| WebSocket       | wss://v1.mainnet.godwoken.io/ws             |
+
+
+## Godwoken Mainnet v0
+
+|ITEM             |                  Detail                     |
+| --------------- | :------------------------------------------ |
+| NETWORK NAME    | Godwoken/PolyJuice Mainnet                  |
+| RPC URL         | https://mainnet.godwoken.io/rpc             |
+| Chain ID        | 71394                                       |
+| Currency Symbol | CKB                                         |
+| Block Explorer  | https://v0.gwscan.com/                      |
+| Token Bridge    | https://bridge.godwoken.io                  |
+| WebSocket       | wss://mainnet.godwoken.io/ws                |
+
+## Godwoken Testnet
+
+|ITEM             |                  Detail                     |
+| --------------- | :------------------------------------------ |
+| NETWORK NAME    | Godwoken/PolyJuice Testnet                  |
+| RPC URL         | https://godwoken-testnet-v1.ckbapp.dev      |
+| Chain ID        | 71401                                       |
+| Currency Symbol | CKB                                         |
+| Block Explorer  | https://v1.testnet.gwscan.com/              |
+|                 | https://gw-explorer.nervosdao.community     |
+| Token Bridge    | https://testnet.bridge.godwoken.io          |
+| WebSocket       | wss://godwoken-testnet-v1.ckbapp.dev/ws     |
+
 
 ## Nervos Layer 1
 
@@ -33,7 +60,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
   > `ETH Address Registry` layer2 [contract](https://github.com/nervosnetwork/godwoken-scripts/blob/master/c/contracts/eth_addr_reg.c) introduces two-ways mappings between `eth_address` and `gw_script_hash`.
 
-- [sUDT_ERC20_Proxy contracts](https://github.com/nervosnetwork/godwoken-info/blob/mainnet_v1/mainnet_v1/bridged-token-list.json)
+- [sUDT_ERC20_Proxy contracts](https://github.com/nervosnetwork/godwoken-info/blob/main/mainnet_v1/bridged-token-list.json)
 
 ### GODWOKEN TESTNET V1
 
