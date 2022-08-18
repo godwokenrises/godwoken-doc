@@ -14,7 +14,8 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 | RPC URL         | https://v1.mainnet.godwoken.io/rpc          |
 | Chain ID        | 71402                                       |
 | Currency Symbol | CKB                                         |
-| Block Explorer  | https://gwscan.com/, https://v1.gwscan.com/ |
+| Block Explorer  | https://gwscan.com/                         |
+|                 | https://v1.gwscan.com/                      |
 | Token Bridge    | https://bridge.godwoken.io                  |
 | WebSocket       | wss://v1.mainnet.godwoken.io/ws             |
 
