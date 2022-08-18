@@ -70,6 +70,7 @@
     {
       "Ecosystem Tools": [
         "covalent",
+        "oracles",
         "otherTools"
       ]
     },
