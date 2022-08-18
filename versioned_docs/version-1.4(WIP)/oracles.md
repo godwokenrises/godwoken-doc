@@ -38,6 +38,8 @@ Oracle: [0xda7a001b254cd22e46d3eab04d937489c93174c3](https://gw-mainnet-explorer
 
 Oracle: [0x0c2362c9a0586dd7295549c65a4a5e3afe10a88a](https://gw-explorer.nervosdao.community/address/0x0c2362c9A0586Dd7295549C65a4A5e3aFE10a88A)
 
+*Code and ABI can be found in "Code" section of the verified smart contract.*
+
 ## DIA
 
 [Official documentation](https://docs.diadata.org/documentation/oracle-documentation/deployed-contracts#nervos)
