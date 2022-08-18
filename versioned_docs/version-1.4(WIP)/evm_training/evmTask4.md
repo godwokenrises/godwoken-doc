@@ -19,7 +19,7 @@ To do this, you will use MetaMask and Force Bridge to transfer ETH from the Rink
 
 ### Prerequisites
 
-This task requires the Code Examples repo ([layer2-evm-documentation](https://github.com/nervosnetwork/layer2-evm-documentation)) which was set up in [task 2](evmTask2.md#2.-clone-and-setup-the-code-examples-repository). If you do not have this repo available for any reason, please set it up now.
+This task requires the Code Examples repo ([layer2-evm-documentation](https://github.com/nervosnetwork/layer2-evm-documentation)) which was set up in [task 2](evm_training/evmTask2.md#2.-clone-and-setup-the-code-examples-repository). If you do not have this repo available for any reason, please set it up now.
 
 ### 1. Configure MetaMask to Use the Rinkeby Testnet
 

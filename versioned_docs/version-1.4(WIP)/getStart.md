@@ -28,10 +28,11 @@ Here are links to some useful resources for you to build on Godwoken.
 - If you want to obtain direct experience and prepare yourself for deploying dapps, check [Layer 2 EVM Training](evm_training/evmIntro.md).
 - Information about tokens deployed on Godwoken Testnet can be found at [Tokens](tokens.md).
 - In the [Asset Management section](fastWithdrawal.md), you will find more about the cross-layer operations between Nervos CKB layer 1 and Godwoken layer 2.
-- The latest changes to Godwoken can be viewed here [Release Notes](gwchangelog/releaseNote3.md).
+- The latest changes to Godwoken can be viewed here [Release Notes](gwchangelog/releaseNote4.md).
+- The latest changes to Godwoken Web3 can be seen at [Godwoken Web3 Release Note](web3changelog/web3Change1.5.md)
 
 
-**Docs:**
+**Sites:**
 
 - Nervos Network Official Website: https://www.nervos.org/godwoken/
 - Official Godwoken Docs: https://docs.godwoken.io/
