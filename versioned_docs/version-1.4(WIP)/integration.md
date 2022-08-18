@@ -12,7 +12,7 @@ This documentation can be used as an integration guide for wallets and exchanges
 Prior knowledge of Ethereum is required for using this guide. 
 
 :::note
-If you want to obtain direct experience and prepare yourself for deploying applications, you can check out the [Layer 2 EVM Training](evmIntro.md) section for a hands-on trial of developing your own EVM dapps on the Nervos platform.
+If you want to obtain direct experience and prepare yourself for deploying applications, you can check out the [Layer 2 EVM Training](evm_training/evmIntro.md) section for a hands-on trial of developing your own EVM dapps on the Nervos platform.
 :::
 
 ## Why Develop on Godwoken?

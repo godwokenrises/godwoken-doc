@@ -13,17 +13,17 @@ Your smart contract should operate just like it would on Ethereum, but in actual
 
 ### Prerequisites
 
-Before you begin on this task you must complete the [first](evmTask1.md) and [second](evmTask2.md) tasks. If you have not completed them, please do so now.
+Before you begin on this task you must complete the [first](evm_training/evmTask1.md) and [second](evm_training/evmTask2.md) tasks. If you have not completed them, please do so now.
 
-You will need the private key from the **Ethereum** address you used in the previous task. Make sure this is Ethereum private key for Layer 2, not the private key from your Nervos CKB Layer 1 address. If you do not have this, you can follow the instructions in [this tutorial](evmTask5.md) to extract your private key from MetaMask.
+You will need the private key from the **Ethereum** address you used in the previous task. Make sure this is Ethereum private key for Layer 2, not the private key from your Nervos CKB Layer 1 address. If you do not have this, you can follow the instructions in [this tutorial](evm_training/evmTask5.md) to extract your private key from MetaMask.
 
-This task requires the Code Examples repo ([layer2-evm-documentation](https://github.com/nervosnetwork/layer2-evm-documentation)) which was set up in [task 2](evmTask2.md#2.-clone-and-setup-the-code-examples-repository). If you do not have this repo available for any reason, please set it up now.
+This task requires the Code Examples repo ([layer2-evm-documentation](https://github.com/nervosnetwork/layer2-evm-documentation)) which was set up in [task 2](evm_training/evmTask2.md#2.-clone-and-setup-the-code-examples-repository). If you do not have this repo available for any reason, please set it up now.
 
 ### 1. Prepare the Smart Contract Address and ABI
 
 In order to execute a function call on a smart contract, it must be deployed, and you must have the ABI that was generated when the code was originally compiled. "ABI" stands for Application Binary Interface, which contains the information an application requires to interface and call functions on the smart contract requires.
 
-In the [previous task](evmTask2.md), you compiled and deployed an Ethereum smart contract. You may be able to reuse that smart contract for this task. If it is no longer available, please revisit the [previous task](evmTask2.md) and complete it again.&#x20;
+In the [previous task](evm_training/evmTask2.md), you compiled and deployed an Ethereum smart contract. You may be able to reuse that smart contract for this task. If it is no longer available, please revisit the [previous task](evm_training/evmTask2.md) and complete it again.&#x20;
 
 The example smart contract from the previous task is `SimpleStorage.sol`, and the corresponding ABI value can be found in `code-examples/2-deploy-contract/artifacts/contracts/SimpleStorage.sol/SimpleStorage.json` after the contract is compiled. Below is the ABI value which has been extracted from this file.
 

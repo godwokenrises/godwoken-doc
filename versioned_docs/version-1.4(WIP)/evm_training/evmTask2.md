@@ -16,7 +16,7 @@ The instructions will provide a basic smart contract you can work with, but you 
 
 ### Prerequisites
 
-Before you begin this task, you must complete the [previous task](evmTask1.md) to create a Godwoken account on the EVM Layer 2 Testnet. You will also need the private key and Testnet address from the previous task in order to proceed. If you have not completed it, please do so now.
+Before you begin this task, you must complete the [previous task](evm_training/evmTask1.md) to create a Godwoken account on the EVM Layer 2 Testnet. You will also need the private key and Testnet address from the previous task in order to proceed. If you have not completed it, please do so now.
 
 ### 1. Prepare Your Ethereum Private Key
 
@@ -24,7 +24,7 @@ You need to extract the private key for your **Ethereum** account. The tooling w
 
 > Note: Never use a private key associated with a real account for any of these tasks. The following steps will show you how to extract your private key from MetaMask. But, you should never do this using a MetaMask installation that you use for real funds since this could potentially leak information that could compromise your account.
 
-If you need instructions on how to extract your private key from MetaMask, follow the steps in [this tutorial](evmTask5.md).
+If you need instructions on how to extract your private key from MetaMask, follow the steps in [this tutorial](evm_training/evmTask5.md).
 
 ### 2. Clone and Setup the Code Examples Repository
 

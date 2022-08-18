@@ -117,4 +117,4 @@ alt="Video Guide" width="50%" height="180" border="10" /></a>
 
 ### Next Steps
 
-Continue with the rest of the guides or dive into the [L2 EVM Training](./evmIntro.md)
+Continue with the rest of the guides or dive into the [L2 EVM Training](evm_training/evmIntro.md)

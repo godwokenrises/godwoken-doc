@@ -19,7 +19,7 @@ In this task, you will use withdraw from your Layer 2 account. This is the first
 
 ### Prerequisites
 
-Before starting this task, you must complete the [first task](evmTask1.md) to create a Godwoken account on the EVM Layer 2 Testnet. If you have not already done so, please do so now.
+Before starting this task, you must complete the [first task](evm_training/evmTask1.md) to create a Godwoken account on the EVM Layer 2 Testnet. If you have not already done so, please do so now.
 
 ### 1. Go to Godwoken Bridge <a href="#1.-go-to-create-layer-2-account-tab-on-ckb-tools-website" id="1.-go-to-create-layer-2-account-tab-on-ckb-tools-website"></a>
 
