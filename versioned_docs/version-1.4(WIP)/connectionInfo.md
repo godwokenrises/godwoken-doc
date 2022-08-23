@@ -63,6 +63,12 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 - [sUDT_ERC20_Proxy contracts](https://github.com/nervosnetwork/godwoken-info/blob/main/mainnet_v1/bridged-token-list.json)
 
+- **L2 Godwoken Mainnet pCKB Contract**
+
+  - Address: 0x7538C85caE4E4673253fFd2568c1F1b48A71558a
+  - Symbol: pCKB
+  - Decimals: 18
+
 ### GODWOKEN TESTNET V1
 
 - **ETH Address Registry ID:** 2
