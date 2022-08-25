@@ -8,16 +8,20 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## Godwoken Mainnet v1
 
-|ITEM             |                  Detail                     |
-| --------------- | :------------------------------------------ |
-| NETWORK NAME    | Godwoken/PolyJuice Mainnet                  |
-| RPC URL         | https://v1.mainnet.godwoken.io/rpc          |
-| Chain ID        | 71402                                       |
-| Currency Symbol | CKB                                         |
-| Block Explorer  | https://gwscan.com/                         |
-|                 | https://v1.gwscan.com/                      |
-| Token Bridge    | https://bridge.godwoken.io                  |
-| WebSocket       | wss://v1.mainnet.godwoken.io/ws             |
+| ITEM            	| Detail                                             	|
+|-----------------	|----------------------------------------------------	|
+| NETWORK NAME    	| Godwoken/PolyJuice Mainnet                         	|
+| RPC URL         	| https://v1.mainnet.godwoken.io/rpc                 	|
+| Chain ID        	| 71402                                              	|
+| Currency Symbol 	| CKB                                                	|
+| Block Explorer  	| https://gwscan.com/                                	|
+|                 	| https://v1.gwscan.com/                             	|
+|                 	| https://gw-mainnet-explorer.nervosdao.community    	|
+| Token Bridge    	| https://bridge.godwoken.io                         	|
+| WebSocket       	| wss://v1.mainnet.godwoken.io/ws                    	|
+| Graph (subgraph)  | https://gw-mainnet-graph.nervosdao.community  	    |
+| Graph RPC       	| https://gw-mainnet-graph.nervosdao.community/rpc/  	|
+| Graph IPFS      	| https://gw-mainnet-graph.nervosdao.community/ipfs/ 	|
 
 
 ## Godwoken Mainnet v0
@@ -34,16 +38,19 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## Godwoken Testnet
 
-|ITEM             |                  Detail                     |
-| --------------- | :------------------------------------------ |
-| NETWORK NAME    | Godwoken/PolyJuice Testnet                  |
-| RPC URL         | https://godwoken-testnet-v1.ckbapp.dev      |
-| Chain ID        | 71401                                       |
-| Currency Symbol | CKB                                         |
-| Block Explorer  | https://v1.testnet.gwscan.com/              |
-|                 | https://gw-explorer.nervosdao.community     |
-| Token Bridge    | https://testnet.bridge.godwoken.io          |
-| WebSocket       | wss://godwoken-testnet-v1.ckbapp.dev/ws     |
+| ITEM            	| Detail                                             	|
+|-----------------	|----------------------------------------------------	|
+| NETWORK NAME    	| Godwoken/PolyJuice Testnet                         	|
+| RPC URL         	| https://godwoken-testnet-v1.ckbapp.dev             	|
+| Chain ID        	| 71401                                              	|
+| Currency Symbol 	| CKB                                                	|
+| Block Explorer  	| https://v1.testnet.gwscan.com/                     	|
+|                 	| https://gw-testnet-explorer.nervosdao.community    	|
+| Token Bridge    	| https://testnet.bridge.godwoken.io                 	|
+| WebSocket       	| wss://godwoken-testnet-v1.ckbapp.dev/ws            	|
+| Graph (subgraph)  | https://gw-testnet-graph.nervosdao.community  	    |
+| Graph RPC       	| https://gw-testnet-graph.nervosdao.community/rpc/  	|
+| Graph IPFS      	| https://gw-testnet-graph.nervosdao.community/ipfs/ 	|
 
 
 ## Nervos Layer 1
