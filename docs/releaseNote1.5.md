@@ -4,7 +4,7 @@ title: Godwoken V1.5 Release Note
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-Godwoken is currently updated on a regular basis to provide new features and updates. The following release notes covers the most recent changes in Godwoken v1.4. You can check the full release notes in the [Godwoken Changlog](https://github.com/nervosnetwork/godwoken/blob/develop/CHANGELOG.md).
+Godwoken is currently updated on a regular basis to provide new features and updates. The following release notes covers the most recent changes in Godwoken v1.5. You can check the full release notes in the [Godwoken Changlog](https://github.com/nervosnetwork/godwoken/blob/develop/CHANGELOG.md).
 
 The latest update to Godwoken v1.5 includes the following changes:
 
