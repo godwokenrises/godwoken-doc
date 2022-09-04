@@ -19,9 +19,6 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 |                 	| https://gw-mainnet-explorer.nervosdao.community    	|
 | Token Bridge    	| https://bridge.godwoken.io                         	|
 | WebSocket       	| wss://v1.mainnet.godwoken.io/ws                    	|
-| Graph (subgraph)  | https://gw-mainnet-graph.nervosdao.community  	    |
-| Graph RPC       	| https://gw-mainnet-graph.nervosdao.community/rpc/  	|
-| Graph IPFS      	| https://gw-mainnet-graph.nervosdao.community/ipfs/ 	|
 
 
 ## Godwoken Mainnet v0
