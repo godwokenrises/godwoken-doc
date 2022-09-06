@@ -34,7 +34,7 @@ Godwoken V1 is still under development and targets 100% EVM compatibility. Havin
 
 Several discrepancies inevitably exist due to the wide architectural and design differences between Godwoken and Ethereum.
 
-### Comparison with EVM
+## Comparison with EVM
 
 Godwoken targets 100% EVM compatibility and is designed to work with every smart contract that the latest Ethereum hard fork version supports. But, the current version is not yet fully compatible with EVM.
 
@@ -42,7 +42,7 @@ Godwoken targets 100% EVM compatibility and is designed to work with every smart
 
 The maximum EVM revision supported is `EVMC_BERLIN`.
 
-#### pCKB
+### pCKB
 
 Godwoken v1 introduced a new concept, [**pCKB**](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md#pckb) which is a defined layer 2 sUDT token type when deploying a Godwoken chain.
 
@@ -52,21 +52,21 @@ Godwoken chain uses CKB as pCKB by default, while different Godwoken chains may 
 
 **Note**: With certain transactions being sent to the smart contract, the `value` of the transaction is `pCKB`.
 
-#### Account Abstraction
+### Account Abstraction
 
 Polyjuice only provides [contract accounts](https://ethereum.org/en/glossary/#contract-account). Godwoken's user accounts are leveraged as [EOAs](https://ethereum.org/en/glossary/#eoa).
 
-#### All Tokens Are ERC20 Tokens
+### All Tokens Are ERC20 Tokens
 
 Ethereum processes ERC20 tokens differently from native ETH tokens, which is the reason wETH was invented. However, Godwoken conceals this difference.
 
 All tokens on Godwoken are represented as Layer 2 sUDT types, regardless of whether they are native CKB or any sUDT types. Polyjuice proceeds from this Layer 2 sUDT [contract](https://github.com/nervosnetwork/godwoken-polyjuice/blob/b9c3ad4/solidity/erc20/SudtERC20Proxy_UserDefinedDecimals.sol) and ensures that all tokens on Godwoken are ERC20 compliant, regardless of whether supported by native CKB or sUDT. That is to say, it is unnecessary to distinguish between native tokens and ERC20 tokens. All the different tokens must be handled with the same ERC20 interface.
 
-#### Transaction Structure
+### Transaction Structure
 
 A Polyjuice transaction is essentially a Godwoken transaction. When Ethereum transactions are sent, they are converted to the Godwoken [RawL2Transaction](https://github.com/nervosnetwork/godwoken/blob/v1.0.0-rc1/crates/types/schemas/godwoken.mol#L69-L74) type when being sent and are automatically processed by [Godwoken Web3](https://github.com/nervosnetwork/godwoken-web3/tree/v1.0.0-rc1).
 
-#### Behavioral Differences of Some Opcodes
+### Behavioral Differences of Some Opcodes
 
 | EVM Opcode | Solidity Usage   | Behavior in Polyjuice         | Behavior in EVM                    |
 | ---------- | ---------------- | ----------------------------- | ---------------------------------- |
@@ -74,7 +74,7 @@ A Polyjuice transaction is essentially a Godwoken transaction. When Ethereum tra
 | GASLIMIT   | block.gaslimit   | 12,500,000                    | current block’s gas limit          |
 | DIFFICULTY | block.difficulty | 2,500,000,000,000,000         | current block’s difficulty         |
 
-#### Others
+### Others
 
 - Transaction context
 
@@ -91,57 +91,29 @@ A Polyjuice transaction is essentially a Godwoken transaction. When Ethereum tra
   - `bn256_pairing` is not yet supported because of the high cycle cost (WIP)
   - [addition pre-compiled contracts](https://github.com/nervosnetwork/godwoken-polyjuice/blob/compatibility-breaking-changes/docs/Addition-Features.md)
 
-### Godwoken Web3 API Compatibility
+## Godwoken Web3 Compatibility
 
-[Godwoken Web3 API](https://github.com/nervosnetwork/godwoken-web3) is a Web3 RPC compatible layer developed on top of Godwoken.
+[Godwoken Web3](https://github.com/nervosnetwork/godwoken-web3) is a Web3 RPC compatible layer developed on top of Godwoken. Direct transfer of values (pCKB) from EOA to EOA will be supported from this release onwards.
 
-For more information about the usage, see [Ethereum RPC](https://eth.wiki/json-rpc/API) docs.
+### ETH Compatibility
 
-#### `transaction.to` MUST be a Contract Address
-
-The `to` member of a Godwoken transaction must be a contract address. Direct transfer of the value (pCKB) from EOA to EOA is **not** supported.
-
-**Result**
-
-The `to` parameter of the following RPC methods must be a contract address, **not** an EOA address:
-
- - `eth_call`
- - `eth_estimateGas`
- - `eth_sendRawTransaction`
-
-**Recommend Workaround**
-
-Use the transfer function of the [CKB_ERC20_Proxy](https://github.com/nervosnetwork/godwoken-polyjuice/blob/3f1ad5b/solidity/erc20/README.md) contract [combined](https://github.com/nervosnetwork/godwoken-polyjuice/blob/3f1ad5b322/solidity/erc20/SudtERC20Proxy_UserDefinedDecimals.sol#L154) with `sudtId = 1` (CKB a.k.a. [pCKB](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md#pckb)) to transfer assets from EOA To EOA.
-
-----
-
-#### Signing Transaction Only Support EIP155
-
-Currently, we only support the [EIP155](https://eips.ethereum.org/EIPS/eip-155) signing scheme that incorporated `CHAIN_ID` for simple replay attack protection. 
-
-**Result**
-
-If you use an outdated Ethereum toolchain to send transactions, such as `truffle-hdwallet-provider`, you will experience failures.
-
-**Recommend Workaround**
-
-Make sure to use the latest Ethereum toolchain, such as [ether.js](https://docs.ethers.io/v5/) / [web3.js](https://web3js.readthedocs.io/en/v1.7.3/) / [truffle](https://trufflesuite.com/truffle/) / [@truffle/hdwallet-provider](https://github.com/trufflesuite/truffle-hdwallet-provider), etc.
-
-----
-
-#### Zero Address
+**1. Zero Address**
 
 Godwoken does not support the concept of [zero address](https://ethereum.org/ru/glossary/#zero-address) (0x0000000000000000000000000000000000000000). This means that Polyjuice cannot support the zero address as well.
 
-**Result**
+  **Result**
 
-Transactions with the zero address in the `from`/`to` field are not supported.
+   Transactions with the zero address in the `from`/`to` field are not supported.
 
-**Recommend Workaround**
+  **Recommend Workaround**
 
-To use the zero address as a black hole to burn ethers, you can use the transfer function of the [CKB_ERC20_Proxy](https://github.com/nervosnetwork/godwoken-polyjuice/blob/3f1ad5b/solidity/erc20/README.md) contract to send ethers to the zero address.
+   To use the zero address as a black hole to burn ethers, you can use the transfer function of the [CKB_ERC20_Proxy](https://github.com/nervosnetwork/godwoken-polyjuice/blob/3f1ad5b/solidity/erc20/README.md) contract to send ethers to the zero address.
 
-For more information on the compatibility changes of Godwoken Web3 API, see [compatibility-breaking-changes](https://github.com/nervosnetwork/godwoken-web3/tree/compatibility-breaking-changes).
+For more information on the compatibility changes of Godwoken Web3 API, see [APIs](https://github.com/nervosnetwork/godwoken-web3/blob/main/docs/apis.md).
+
+**2. Gas Limit** 
+
+Godwoken applies the [Cycle Limit](https://docs-xi-two.vercel.app/docs/rfcs/0014-vm-cycle-limits/0014-vm-cycle-limits) to limit transaction execution resources in CKB-VM. By setting the `RPC_GAS_LIMIT` to `50000000` to maximise the compatibility with Ethereum toolchain, but the real gas limit that users can utilize relies on this Cycle Limit. 
 
 ### A Layer 2 Account is Mandatory
 
