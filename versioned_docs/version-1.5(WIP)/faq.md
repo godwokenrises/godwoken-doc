@@ -10,7 +10,7 @@ In short, a [custodian cell](depAndWthd.md#custodian-cell) is an asset held in t
 
 ----
 
-### What is Registry Address?
+### What is ETH Registry Address?
 
 Registry address, or ETH registry address, is a new term introduced in Godwoken v1 which can be understood as a simple two-way mapping of eth_address and gw_script_hash to the registry. It serves as alias mechanism for Godwoken layer 2 account, because some environments require an alias to access an account. For example, there is no Godwoken ID or script in the EVM environment. Therefore, to access an account you have to use an ETH address. For more details, see [Layer 2 Account in Godwoken](layer2Account.md).
 
