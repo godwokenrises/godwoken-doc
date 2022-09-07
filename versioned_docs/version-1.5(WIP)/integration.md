@@ -44,9 +44,9 @@ The maximum EVM revision supported is `EVMC_BERLIN`.
 
 ### pCKB
 
-Godwoken v1 introduced a new concept, [**pCKB**](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md#pckb) which is a defined layer 2 sUDT token type when deploying a Godwoken chain.
+Godwoken v1 introduced a new concept, [**pCKB**](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md#pckb) which is a defined layer-2 sUDT token type when deploying a Godwoken chain.
 
-pCKB serves a similar purpose for the Godwoken chain as ETH does for the Ethereum chain, in the sense that it is used for collecting transaction fees. In Ethereum, the gas for each smart contract is derived by calculation. And the transaction fee is then calculated by multiplying the gas with the specified gas price. In Godwoken, pCKB is the unit for calculating transaction fees. In other words, the gas price in Ethereum is calculated as ETH/gas (in wei, i.e. 10<sup>-18</sup> ETH), and the gas price in Godwoken is calculated as pCKB/gas. When Godwoken executes a transaction, it will deduct the transaction fee by using layer 2 [sUDT](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0025-simple-udt/0025-simple-udt.md) type, which is represented by **pCKB**.
+pCKB serves a similar purpose for the Godwoken chain as ETH does for the Ethereum chain, in the sense that it is used for collecting transaction fees. In Ethereum, the gas for each smart contract is derived by calculation. And the transaction fee is then calculated by multiplying the gas with the specified gas price. In Godwoken, pCKB is the unit for calculating transaction fees. In other words, the gas price in Ethereum is calculated as ETH/gas (in wei, i.e. 10<sup>-18</sup> ETH), and the gas price in Godwoken is calculated as pCKB/gas. When Godwoken executes a transaction, it will deduct the transaction fee by using layer-2 [sUDT](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0025-simple-udt/0025-simple-udt.md) type, which is represented by **pCKB**.
 
 Godwoken chain uses CKB as pCKB by default, while different Godwoken chains may use different token types as pCKB.
 
@@ -56,15 +56,21 @@ Godwoken chain uses CKB as pCKB by default, while different Godwoken chains may 
 
 Polyjuice only provides [contract accounts](https://ethereum.org/en/glossary/#contract-account). Godwoken's user accounts are leveraged as [EOAs](https://ethereum.org/en/glossary/#eoa).
 
-### All Tokens Are ERC20 Tokens
+### sUDT-ERC20 proxy contract
 
-Ethereum processes ERC20 tokens differently from native ETH tokens, which is the reason wETH was invented. However, Godwoken conceals this difference.
+All tokens on Godwoken are represented as Layer-2 sUDT types, regardless of whether they are native CKB or any sUDT types. With the [sUDT-ERC2 Procy Contract](https://github.com/nervosnetwork/godwoken-polyjuice/blob/docs/solidity/erc20/README.md), Polyjuice ensures that all layer-2 tokens on Godwoken are ERC20 standard compliant. The contract enables the EVM code to interact with the ERC20 standard interface, making it possible to manipulate sUDT tokens on Godwoken as if they were ERC20 tokens.
 
-All tokens on Godwoken are represented as Layer 2 sUDT types, regardless of whether they are native CKB or any sUDT types. Polyjuice proceeds from this Layer 2 sUDT [contract](https://github.com/nervosnetwork/godwoken-polyjuice/blob/b9c3ad4/solidity/erc20/SudtERC20Proxy_UserDefinedDecimals.sol) and ensures that all tokens on Godwoken are ERC20 compliant, regardless of whether supported by native CKB or sUDT. That is to say, it is unnecessary to distinguish between native tokens and ERC20 tokens. All the different tokens must be handled with the same ERC20 interface.
+That is to say, it is unnecessary to distinguish between native tokens and ERC20 tokens. All the different tokens must be handled with the same ERC20 interface. All the bridged sUDT tokens you will deal with have the same ERC20 interface.
+
+### Bridged sUDT Token List
+
+- mainnet_v1: https://github.com/nervosnetwork/godwoken-info/blob/main/mainnet_v1/bridged-token-list.json
+
+ - testnet_v1: https://github.com/nervosnetwork/godwoken-info/blob/main/testnet_v1_1/bridged-token-list.json
 
 ### Transaction Structure
 
-A Polyjuice transaction is essentially a Godwoken transaction. When Ethereum transactions are sent, they are converted to the Godwoken [RawL2Transaction](https://github.com/nervosnetwork/godwoken/blob/v1.0.0-rc1/crates/types/schemas/godwoken.mol#L69-L74) type when being sent and are automatically processed by [Godwoken Web3](https://github.com/nervosnetwork/godwoken-web3/tree/v1.0.0-rc1).
+A Polyjuice transaction is essentially a Godwoken transaction. When Ethereum transactions are sent, they are converted to the Godwoken [RawL2Transaction](https://github.com/nervosnetwork/godwoken/blob/v1.5.0/crates/types/schemas/godwoken.mol#L69-L76) type when being sent and are automatically processed by [Godwoken Web3](https://github.com/nervosnetwork/godwoken-web3/tree/v1.6.4).
 
 ### Behavioral Differences of Some Opcodes
 
@@ -74,17 +80,24 @@ A Polyjuice transaction is essentially a Godwoken transaction. When Ethereum tra
 | GASLIMIT   | block.gaslimit   | 12,500,000                    | current block’s gas limit          |
 | DIFFICULTY | block.difficulty | 2,500,000,000,000,000         | current block’s difficulty         |
 
+### Restriction of Memory Usage
+
+Polyjuice runs EVM on [ckb-vm](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0003-ckb-vm/0003-ckb-vm.md#risc-v-runtime-model). EVM has no limit on memory usage, yet EVM has a limit of 1024 on stack depth. But, ckb-vm can currently use a maximum of 4MB of memory, of which 3MB is for heap space and 1MB is for stack space. For more information, refer to [here](https://github.com/nervosnetwork/riscv-newlib/blob/00c6ae3c481bc62b4ac016b3e86c508cdf2e68d2/libgloss/riscv/sys_sbrk.c#L38-L56). 
+
+
 ### Others
 
 - Transaction context
 
-  - `chain_id` is defined in Godwoken [RollupConfig#chain_id](https://github.com/nervosnetwork/godwoken/blob/a099f2010b212355f5504a8d464b6b70d29640a5/crates/types/schemas/godwoken.mol#L64).
+  - `chain_id` is defined in Godwoken [RollupConfig#chain_id](https://github.com/nervosnetwork/godwoken/blob/v1.5.0/crates/types/schemas/godwoken.mol#L64).
   - the block difficulty is always `2500000000000000`.
   - the gas limit is 12500000 per block, but it is not a transaction-level limit. Any transaction can reach the gas limit.
-  - the size limit for contract's return data is [25600B](https://github.com/nervosnetwork/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22).
-  - the size limit for contract's storage is [25600B](https://github.com/nervosnetwork/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22).
+  - the size limit for contract's return data is [`25KB`](https://github.com/nervosnetwork/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22).
+  - the size limit for contract's storage is [`25KB`](https://github.com/nervosnetwork/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22).
 
-- The `transfer value` can not exceed uint128:MAX.
+- The `transaction.to` MUST be a Contract Address.
+
+- The `transfer value` can not exceed `uint128:MAX`, because the type of [sUDT.amount](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0025-simple-udt/0025-simple-udt.md#sudt-cell) is `uint128`.
 
 - Pre-compiled contract
 
