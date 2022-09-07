@@ -18,7 +18,7 @@ In short, a [custodian cell](depAndWthd.md#custodian-cell) is an asset held in t
 
 ### What data is committed to layer-1 by Godwoken?
 
-The transactions, deposits and withdrawals in layer 2 are contained in the block structure of layer 2. We use the optimistic roll-up mechanism, so we do not verify the signatures of tx s and withdrawals on-chain. For more details, check [Godwoken-scripts](https://github.com/nervosnetwork/godwoken-scripts/blob/master/README.md).
+The transactions, deposits and withdrawals are contained in the block [structure](https://github.com/nervosnetwork/godwoken/blob/v1.5.0/crates/types/schemas/godwoken.mol#L97-L110) of a layer-2 block, which is committed to layer-1. We use the optimistic rollup mechanism, so we do not verify the signatures of transactions and withdrawals on-chain. For more details, check [Godwoken-scripts](https://github.com/nervosnetwork/godwoken-scripts/blob/master/README.md).
 
 ----
 
