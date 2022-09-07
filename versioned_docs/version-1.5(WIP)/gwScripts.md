@@ -8,12 +8,12 @@ Godwoken scripts are written in *Rust* and *C*. Rust scripts run on the CKB to c
 
 Rust scripts are built in the `contracts` directory with the `capsule build` command. C scripts are built in the `c` directory with the `cd c && make` command. All data structures use [molecule](https://github.com/nervosnetwork/molecule) format for serialization, which is defined in the [godwoken.mol](https://github.com/nervosnetwork/godwoken/blob/develop/crates/types/schemas/godwoken.mol) file. 
 
-Further details about the Godwokende mechanism can be found at [Life of a godwoken transaction](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_godwoken_transaction.md) and [Life of a polyjuice transaction](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md).
+Further details about the Godwoken mechanism can be found at [Life of a godwoken transaction](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_godwoken_transaction.md) and [Life of a polyjuice transaction](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md).
 
 ### State Validator
 
 State validator is the main script to verify the on-chain Rollup cell.
-Rollup cell is an identity cell on CKB which stores the [GlobalState](https://github.com/nervosnetwork/godwoken/blob/develop/crates/types/schemas/godwoken.mol), a structure that represents the layer-2 state.
+The Rollup cell is an identity cell on CKB which stores the [GlobalState](https://github.com/nervosnetwork/godwoken/blob/develop/crates/types/schemas/godwoken.mol), a structure that represents the layer-2 state.
 
   ```bash
   Rollup cell:
@@ -23,12 +23,12 @@ Rollup cell is an identity cell on CKB which stores the [GlobalState](https://gi
   type: <state validator script>,
   ```
 
-To update the Rollup cell, we need to build a tx to consume the old cell and generate a new Rollup cell as the tx's output. We also need to provide a args in the tx's witness: `RollupAction`, which is a structure that contains the layer-2 block and Merkle proof. And state validator will ensure the state transition of the Rollup cell is valid by verifying these proofs.
+To update the Rollup cell, we need to build a tx to consume the old cell and generate a new Rollup cell as the tx's output. We also need to provide a args in the tx's witness: `RollupAction`, which is a structure that contains the layer-2 block and Merkle proof. The state validator will ensure the state transition of the Rollup cell is valid by verifying these proofs.
 
 The rollup behaviors are defined as the enumerated type `RollupAction`, which includes:
 
   - `RollupSubmitBlock`, which submits a layer-2 block.
-    - The layer-2 transactions, deposits, and withdrawals are included in a layer-2 block structure. We won't verify the signatures of txs and withdrawald on-chain since we are using the optimistic mechanism.
+    - The layer-2 transactions, deposits, and withdrawals are included in a layer-2 block structure. We won't verify the signatures of txs and withdrawals on-chain since we are using the optimistic mechanism.
     - Deposit cells are collected as inputs, and the action converts these deposit cells into custodian cells to complete the deposit.
 
   - `RollupEnterChallenge`, which refers to a challenger submitting a challenging target(transaction or withdrawal) to halt the rollup.
@@ -37,7 +37,7 @@ The rollup behaviors are defined as the enumerated type `RollupAction`, which in
 
   - `RollupRevert` represents a challenge that is successfully initiated and not cancelled within the challenge time. This action reverts the layer-2 block state to the parent block of the challenged block, and the stake of the block producer will be penalized. Within this action, we only revert the layer-2 state, the reverting of layer-1 locked cells(deposit/custodian/withdrawal) is handled in the `RollupSubmitBlock` action.
 
-Also, another important structure need to be mentioned here is the `RollupConfig`, where we define the consensus and initial Rollup settings in the cell.
+Also, another important structure needed to be mentioned here is the `RollupConfig`, where we define the consensus and initial Rollup settings in the cell.
   ```js
   table RollupConfig {
     l1_sudt_script_type_hash: Byte32,
@@ -60,7 +60,7 @@ Also, another important structure need to be mentioned here is the `RollupConfig
 
 
 
-The `lock` field of Rollup cell has its own rules comparatively. We assumed in the initial design that everyone who stakes can submit to the Rollup. But during the preliminary phase, we want a more stable setup in which only the block producer can submit to the rollup.
+The `lock` field of a Rollup cell has its own rules comparatively. We assumed in the initial design that everyone who stakes can submit to the Rollup. But during the preliminary phase, we want a more stable setup in which only the block producer can submit to the rollup.
 
 ### Stake Lock
 
@@ -81,7 +81,7 @@ There are two ways to unlock stake lock:
 
 ### Deposit Lock
 
-A layer1 user can join the Rollup by creating a deposit cell. Godwoken collects deposit cells from the layer1 blockchain and puts them into the input of the tx which submits layer-2 block.
+A layer-1 user can join the Rollup by creating a deposit cell. Godwoken collects deposit cells from the layer1 blockchain and puts them into the input of the tx which submits to a layer-2 block.
 
 If the deposit is not processed by Godwoken, the sender can unlock a deposit cell after `cancel_timeout`. 
 
@@ -98,7 +98,7 @@ If the deposit is not processed by Godwoken, the sender can unlock a deposit cel
 
 ### Custodian Lock
 
-Rollup uses the custodian lock to hold the deposited assets. `CustodianLockArgs` is the args of custodian lock, the field `deposit_block_number` represents the block number that the deposit is processed. The `deposit_block_number` also denotes whether the custodian lock is finalized or unfinalized.
+Our Rollup uses the custodian lock to hold the deposited assets. `CustodianLockArgs` is the args of custodian lock, the field `deposit_block_number` represents the block number that the deposit is processed. The `deposit_block_number` also denotes whether the custodian lock is finalized or unfinalized.
 
 ```js
 table CustodianLockArgs {
@@ -114,8 +114,8 @@ struct UnlockCustodianViaRevertWitness {
 }
 ```
 
-For unfinalized custodian cells, once the deposit block is reverted, these cells must be also reverted to the deposit cells.
-For finalized custodian cells, since they are finalized, we can free merge or split these cells.
+For unfinalized custodian cells, once the deposit block is reverted, these cells must also be reverted to the deposit cells.
+Since finalized custodian cells are finalized, we can free merge or split these cells.
 
 When a withdrawal request is sent, Godwoken moves assets from finalized custodian cells to generate withdrawal cells.
 
@@ -150,9 +150,9 @@ The withdrawal lock has two unlock paths:
 
 ### Challenge Lock
 
-When a Godwoken node found that an invalid state in the Rollup, it can send a `RollupEnterChallenge` action to the Rollup cell and generate a challenging cell. A challenge cell must set a challenging target in its `ChallengeLockArgs` lock args. The challenging target can be a layer-2 transaction or a withdrawal request.
+When a Godwoken node finds an invalid state in the Rollup, it can send a `RollupEnterChallenge` action to the Rollup cell and generates a challenging cell. A challenge cell must set a challenging target in its `ChallengeLockArgs` lock args. The challenging target can be a layer-2 transaction or a withdrawal request.
 
-If the challenging unit does not get cancelled when completed, the challenger can execute the `RollupRevert` action on the Rollup cell and take stake cell sent by reverted block submitter as a reward.
+If the challenging unit does not get cancelled when completed, the challenger can execute the `RollupRevert` action on the Rollup cell and takes the stake cell sent by reverted block submitter as a reward.
 
 If the challenging target is invalid, other nodes can cancel this challenge by executing the `RollupCancelChallenge` action, and the challenging cell must be included in the tx.inputs.
 
@@ -163,29 +163,29 @@ If the challenging target is invalid, other nodes can cancel this challenge by e
 
 The C scripts that located in the `c` directory are Godwoken layer-2 scripts. The layer-2 script can be executed on CKB when a challenge occurs, which means that a layer-2 script is also a valid layer-1 script, only it follows the special interface convenience required by Godwoken.
 
-Godwoken account consisted of the following fields: `(id: u32, nonce: u32, script: Script)`. The `script` field determines the script that the account used. 
+Godwoken accounts consisted of the following fields: `(id: u32, nonce: u32, script: Script)`. The `script` field determines the script that the account used. 
 
-Layer-2 scripts exist in two types: lock and contract. If an account ID appears in `l2tx.from_id`, we will assume that the account's script is a lock, implying that the script follows the lock script interface convenience that can verify signatures(e.g. Ethereum EOA). If an account ID appears in `l2tx.to_id`, we will assume that the account's script is a contract, which means we should execute the tx when it is sent to the account(like an Ethereum contract account).
+Layer-2 scripts exist in two types: lock and contract. If an account ID appears in `l2tx.from_id`, we will assume that the account's script is a lock, implying that the script follows the lock script interface convenience that can verify signatures(e.g., Ethereum EOA). If an account ID appears in `l2tx.to_id`, we will assume that the account's script is a contract, which means we should execute the tx when it is sent to the account(like an Ethereum contract account).
 
 A layer-2 contract script is run both on and off-chain. The unified interface is defined in the `c/gw_def.h`. The on-chain implementation is `validator_utils.h`, and the off-chain implementation is `generator_utils.h`.
 
 ### ETH Account Lock
 
-ETH Account Lock is a 2-layer lock script that verifies the layer 2 account signature.
+ETH Account Lock is a layer-2 lock script that verifies the layer-2 account signature.
 
 ### Meta Contract
 
-Meta contract is a layer-2 contract script. A built-in layer-2 account allows creating another account by sending a tx to the account. Meta contract args is `MetaContractArgs`, the built-in contract id is `0`.
+Meta contract is a layer-2 contract script. A built-in layer-2 account allows creating another account by sending a tx to the account. Meta contract args is `MetaContractArgs`, and the built-in contract id is `0`.
 
 ### sUDT Contract
 
-sUDT contract is a layer-2 contract script that keeps a consistent mapping to the layer-1 sUDT. The layer-1 sUDT script hash is equal to `account.script.args`. When the user deposits a new type of sUDT, Godwoken will create a new corresponding sUDT account. This contract args is `SUDTArgs`, the built-in CKB Simple UDT contract id is `1`.
+sUDT contract is a layer-2 contract script that keeps a consistent mapping to the layer-1 sUDT. The layer-1 sUDT script hash is equal to `account.script.args`. When the user deposits a new type of sUDT, Godwoken will create a new corresponding sUDT account. This contract args is `SUDTArgs`, and the built-in CKB Simple UDT contract id is `1`.
 
 ### ETH Address Registry
 
 ETH address registry is a layer-2 contract that handles the mapping of Ethereum addresses to Godwoken accounts.
 
-When a user deposits token to create a new account, a corresponding Ethereum address will be inserted into the contract. If the account is created through a Meta contract, the user must register the Ethereum address for the acount by calling the ETH address registry contract.
+When a user deposits tokens to create a new account, a corresponding Ethereum address will be inserted into the contract. If the account is created through a Meta contract, the user must register the Ethereum address for the acount by calling the ETH address registry contract.
 
 The built-in ETH address registry is allocated to id `2`.
 
@@ -193,11 +193,11 @@ The built-in ETH address registry is allocated to id `2`.
 
 Polyjuice is a backend of Godwoken for state computation. The C scripts are in the `c` directory and are built using the command `make all-via-docker`. All tests run with the command `bash devtools/ci/integration-test.sh`.
 
-Polyjuice backend accepts an Ethrereum-like transaction and executes it in EVM. Ethereum [transaction structure](https://eth.wiki/json-rpc/API#eth_sendtransaction) is as follows:
+Polyjuice backend accepts an Ethrereum-like transaction and executes it in the EVM. The Ethereum [transaction structure](https://eth.wiki/json-rpc/API#eth_sendtransaction) is as follows:
 
 `(from, to, gas, gasPrice, value, data)`
 
-In polyjuice, `from` and `to` are included in RawL2Transaction (`from_id`, `to_id`) directly. `call_kind`(CREATE/CALL), `gas`, `gasPrice`, `value` and `data` are included in `RawL2Transaction.args`.
+With polyjuice, `from` and `to` are included in RawL2Transaction (`from_id`, `to_id`) directly. `call_kind`(CREATE/CALL), `gas`, `gasPrice`, `value` and `data` are included in `RawL2Transaction.args`.
 
 ----
 
