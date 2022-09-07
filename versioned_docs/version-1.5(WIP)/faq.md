@@ -12,7 +12,7 @@ In short, a [custodian cell](depAndWthd.md#custodian-cell) is an asset held in t
 
 ### What is ETH Registry Address?
 
-[ETH address registry](https://github.com/nervosnetwork/godwoken-scripts/blob/master/c/contracts/eth_addr_reg.c) is a new built-in contract introduced in Godwoken v1 which can be understood as a simple two-way mapping between `eth_address` and `gw_script_hash`. It serves as the alias mechanism for Godwoken layer 2 account. Because there is no concept of Godwoken ID or script in the EVM environment. With the ETH address registry, we could locate a Godwoken account by its ETH address. For more details, see [Layer 2 Account in Godwoken](layer2Account.md).
+[ETH address registry](https://github.com/nervosnetwork/godwoken-scripts/blob/master/c/contracts/eth_addr_reg.c) is a new built-in contract introduced in Godwoken v1 which can be understood as a simple two-way mapping between `eth_address` and `gw_script_hash`. It serves as the alias mechanism for Godwoken layer 2 account. Because there is no concept of Godwoken ID or script in the EVM environment，with the ETH address registry, we could locate a Godwoken account by its ETH address. For more details, see [Layer 2 Account in Godwoken](layer2Account.md).
 
 ----
 
@@ -24,9 +24,9 @@ The transactions, deposits and withdrawals are contained in the block [structure
 
 ### It is so easy to switch from Layer 1 to Layer 2. Why does it take so long in reverse?
 
-Layer 2 can trust Layer 1 because Layer 1 is more secure. But Layer 1 needs more time to make sure everything is fine on Layer 2 especially for optimistic rollup (a popular Layer 2 solution). 
+Layer 2 can trust Layer 1 because Layer 1 is more secure. But Layer 1 needs more time to ensure everything is fine on Layer 2 especially for optimistic rollup (a popular Layer 2 solution). 
 
-Every optimistic rollup L2 uses a challenge mechanism in their withdrawal process. In Godwoken v1, L1 puts the withdrawal into a challenge period (~7 days) after you initiated the withdrawal request, waiting for observers or challengers to report problems. The withdrawal can be approved only when no challenge is submitted. L1 guarantees that every withdrawal is intact and that the funds kept on L2 are safe in this way. Not only Godwoken, other optimistic rollups like arbitrum and optimism also have such a challenge period, e.g. Arbitrum mandates a 7-day challenge period during a withdrawal.
+Every optimistic rollup L2 uses a challenge mechanism in its withdrawal process. In Godwoken v1, L1 puts the withdrawal into a challenge period (~7 days) after you initiated the withdrawal request, waiting for observers or challengers to report problems. The withdrawal can be approved only when no challenge is submitted. L1 guarantees that every withdrawal is intact and that the funds kept on L2 are safe in this way. Not only Godwoken, but other optimistic rollups like arbitrum and optimism also have such a challenge period, e.g., Arbitrum mandates a 7-day challenge period during a withdrawal.
 
 We're actively exploring ways to improve the withdrawal experience and support fast withdrawal. Please stay tuned.
 
@@ -40,7 +40,7 @@ This constraint is a temporary mechanism and will be removed in a future release
 
 ----
 
-### How to Get Layer 1 Block Number?
+### How to get Layer 1 Block Number?
 
 Defi contracts often require interests to be calculated by block number. However, both v0 and v1 networks do not have a fixed layer2 block interval (it is affected by layer1 block interval).
 
