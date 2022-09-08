@@ -47,3 +47,15 @@ Defi contracts often require interests to be calculated by block number. However
 Arbitrum solved this issue by providing a syscall to get the layer1 block number. However, this does not work for Godwoken since the layer1 chain, CKB itself, does not have a fixed block interval (CKB block interval is adjusted by the uncle block rate at each epoch).
 
 We recommend developers use layer2 block timestamp as the trusted timestamp to calculate on-chain interests. More information is available in the following discussion thread: https://talk.nervos.org/t/how-to-get-layer-1-block-number-on-layer-2/6647
+
+----
+
+### CKB transfer on Godwoken testnet via Metamask has failed. What is the solution?
+
+In Godwoken, `transaction.to` must be a contract address. In RPCs such as `eth_call`, `eth_estimateGas` and `eth_sendRawTransaction`, the `to` parameter can only be a contract address, not an EOA address.
+
+To transfer value from EOA to EOA, we recommend developers to use the `transfer function` in the `pCKB_ERC20_Proxy` contract which combines sUDT_ID=1. In Godwoken and Polyjuice, we use CKB as pCKB. More details can be found at [pCKB](integration.md#pckb) and [Godwoken Web3 API Compatibility](integration.md#godwoken-web3-api-compatibility). The contract addresses are:
+
+ - mainnet_v1 pCKB_ERC20_Proxy contract: 0x7538C85caE4E4673253fFd2568c1F1b48A71558a (pCKB)
+ - testnet_v1 pCKB_ERC20_Proxy contract: 0xE05d380839f32bC12Fb690aa6FE26B00Bd982613 (pCKB)
+ 
