@@ -81,7 +81,7 @@ There are two ways to unlock stake lock:
 
 ### Deposit Lock
 
-A layer-1 user can join the Rollup by creating a deposit cell. Godwoken collects deposit cells from the layer1 blockchain and puts them into the input of the tx which submits to a layer-2 block.
+A layer-1 user can join the Rollup by creating a deposit cell. Godwoken collects deposit cells from the layer-1 blockchain and puts them into the input of the tx which submits to a layer-2 block.
 
 If the deposit is not processed by Godwoken, the sender can unlock a deposit cell after `cancel_timeout`. 
 
@@ -159,7 +159,7 @@ If the challenging target is invalid, other nodes can cancel this challenge by e
 * The challenge lock verifies that the account script is in tx.inputs in order to verify the signature for a withdrawal target.
 * For a layer-2 transaction target, challenge lock reads the backend script code_hash from the state tree, then verifies if the backend validator script is in the tx.inputs.
 
-## Layer 2 Scripts
+## Layer-2 Scripts
 
 The C scripts that located in the `c` directory are Godwoken layer-2 scripts. The layer-2 script can be executed on CKB when a challenge occurs, which means that a layer-2 script is also a valid layer-1 script, only it follows the special interface convenience required by Godwoken.
 

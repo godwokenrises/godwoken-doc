@@ -13,7 +13,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 | NETWORK NAME    	| Godwoken/PolyJuice Mainnet                         	|
 | RPC URL         	| https://v1.mainnet.godwoken.io/rpc                 	|
 | Chain ID        	| 71402                                              	|
-| Currency Symbol 	| CKB                                                	|
+| Currency Symbol 	| pCKB                                                	|
 | Block Explorer  	| https://gwscan.com/                                	|
 |                 	| https://v1.gwscan.com/                             	|
 |                 	| https://gw-mainnet-explorer.nervosdao.community    	|
@@ -28,7 +28,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 | NETWORK NAME    | Godwoken/PolyJuice Mainnet                  |
 | RPC URL         | https://mainnet.godwoken.io/rpc             |
 | Chain ID        | 71394                                       |
-| Currency Symbol | CKB                                         |
+| Currency Symbol | pCKB                                         |
 | Block Explorer  | https://v0.gwscan.com/                      |
 | Token Bridge    | https://bridge.godwoken.io                  |
 | WebSocket       | wss://mainnet.godwoken.io/ws                |
@@ -40,7 +40,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 | NETWORK NAME    	| Godwoken/PolyJuice Testnet                         	|
 | RPC URL         	| https://godwoken-testnet-v1.ckbapp.dev             	|
 | Chain ID        	| 71401                                              	|
-| Currency Symbol 	| CKB                                                	|
+| Currency Symbol 	| pCKB                                                	|
 | Block Explorer  	| https://v1.testnet.gwscan.com/                     	|
 |                 	| https://gw-testnet-explorer.nervosdao.community    	|
 | Token Bridge    	| https://testnet.bridge.godwoken.io                 	|
