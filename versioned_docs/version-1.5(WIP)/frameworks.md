@@ -15,7 +15,7 @@ Godwoken is designed to be used with a second framework which defines the progra
 * [Github](https://github.com/nervosnetwork/godwoken)
 * [Documentation](https://github.com/nervosnetwork/godwoken/tree/master/docs)
 
-## Godwoken Kicker
+## [Godwoken Kicker](godwokenkicker.md)
 
 Godwoken Kicker is a tool which allows developers to quickly launch an instance of Godwoken-Polyjuice on a private Devnet. Since this runs on a brand new Devnet chain, there is no need to synchronize the Mainnet or Testnet.
 

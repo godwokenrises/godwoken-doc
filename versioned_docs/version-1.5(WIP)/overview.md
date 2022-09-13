@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Overview
+title: Godwoken Overview
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 

@@ -2,11 +2,11 @@
   "sidebar2": [
     "getStart",
     "quickStart",
+    "overview",
+    "connectionInfo",
 
     {
-      "Basic Concepts": [
-        "overview",
-        "connectionInfo",
+      "Basic Concepts": [ 
         "frameworks",
         "infrastructure",
         "standards",
@@ -49,24 +49,9 @@
 
     {
       "Release Notes": [
-        {
-          "Godwoken Release Note":[
-            "gwchangelog/releaseNote1.5",
-            "gwchangelog/releaseNote1.4",
-            "gwchangelog/releaseNote1.3",
-            "gwchangelog/releaseNote1.2",
-            "gwchangelog/releaseNote1.1",
-            "gwchangelog/v0difv1"
-          ]
-        },
-
-        {
-          "Godwoken Web3 Release Note":[
-            "web3changelog/web3Change1.6", 
-            "web3changelog/web3Change1.5"
-          ]
-        }
-
+        "gwchangelog/v0difv1",
+        "gwchangelog/releaseNote1.5",
+        "web3changelog/web3Change1.6"
       ]
     },
 
