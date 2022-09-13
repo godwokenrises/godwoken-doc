@@ -4,9 +4,9 @@ title: Godwoken V1.5 Release Note
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-[Godwoken Web3](https://github.com/nervosnetwork/godwoken-web3) is a Ethereum-compatibility RPC layer on Godwoken. Godwoken Web3 is being continually updated. The following content covers the most recent changes in Godwoken Web3 v1.5. For the full release notes refer to [Godwoken Web3 Releases](https://github.com/nervosnetwork/godwoken-web3/releases).
+Currently, Godwoken is updated on a regular basis to provide new features and updates. The following release notes covers the most recent changes in Godwoken v1.5. You can check the full release notes in the [Godwoken Changlog](https://github.com/nervosnetwork/godwoken/blob/develop/CHANGELOG.md).
 
-The latest update to Godwoken Web3 v1.5 includes the following changes:
+The latest update to Godwoken v1.5 includes the following changes:
 
 ### Added
 
