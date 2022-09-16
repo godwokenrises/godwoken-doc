@@ -24,7 +24,6 @@ The latest update to Godwoken v1.6 includes the following changes:
 
 - refactor: remove sentry in [#780](https://github.com/nervosnetwork/godwoken/pull/780)
 
-- chore: bump version v1.5.0 in [#786](https://github.com/nervosnetwork/godwoken/pull/786)
 
 - fix: recover sender of non EIP-155 txs in [#790](https://github.com/nervosnetwork/godwoken/pull/790)
 
