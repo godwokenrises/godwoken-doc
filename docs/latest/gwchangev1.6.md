@@ -30,7 +30,6 @@ The latest update to Godwoken v1.6 includes the following changes:
 
 - fix(tools): Fix for withdraw cli in [#792](https://github.com/nervosnetwork/godwoken/pull/792)
 
-- chore: bump version v1.6.0-rc1 in [#794](https://github.com/nervosnetwork/godwoken/pull/794)
 
 ## Polyjuice
 
