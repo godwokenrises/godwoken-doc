@@ -8,6 +8,7 @@ This section will show you how to deposit, withdraw and send pCKBs on Godwoken u
 
 Make sure that you have already installed the [MetaMask](https://metamask.io/) wallet, and that you have successfully connect your Metamask wallet to Godwoken. If not, you can check out [Developer Quick Start](quickstart.md) for details. All operations in this tutorial are performed on the Godwoken v1 Testnet. 
 
+
 ## Prerequisites
 
 - [MetaMask](https://metamask.io/) account
@@ -105,4 +106,3 @@ Make sure that you have already installed the [MetaMask](https://metamask.io/) w
     <img src={useBaseUrl("img/sendpckb1.6/send6.png")}  width="30%"/>
     
     <img src={useBaseUrl("img/sendpckb1.6/send6-1.png")}  width="30%"/>
-

@@ -91,6 +91,7 @@ data:   (none or SUDT amount)
 
 Withdrawal lock guarantees the user can only unlock this cell after `finality blocks`.
 
+
 ```
 struct WithdrawalLockArgs {
     withdrawal_block_hash: Byte32,
@@ -102,6 +103,7 @@ struct WithdrawalLockArgs {
 ```
 
 `withdrawal_block_hash` and `withdrawal_block_number` record the layer2 block that includes the withdrawal. `account_script_hash` represents the layer2 account. `owner_lock_hash` represents the layer1 lock that user uses to unlock the cell.
+
 
 The `capacity` of a cell must cover the cost of the cell, so the minimum withdrawal capacity that Godwoken allows is as follows:
 
@@ -154,3 +156,4 @@ We have **Optional** fields in the withdrawal cell's args:
 - `withdrawal_to_v1`: functions only if the "owner lock" exists. If `withdrawal_to_v1` exists and the value is `1`, the withdrawal is a fast withdrawal to Godwoken v1. Fast withdrawal from Godwoken v0 to v1 can be instantly processed, and the assets will be migrated to Godwoken v1.
 
 - `manually withdrawl` - if `owner lock` **does not exist**, the user must manually unlock the legacy withdrawal cell when finalized. And, the user must provide an input cell in the unlocking transaction with a `lock hash` that equals to the `owner_lock_hash` of the withdrawal lock args.
+
