@@ -18,7 +18,7 @@ In short, a [custodian cell](depAndWthd.md#custodian-cell) is an asset held in t
 
 ### How to get Layer 1 Block Number?
 
-Defi contracts often require interests to be calculated by block number. However, both v0 and v1 networks do not have a fixed layer2 block interval (it is affected by layer1 block interval).
+DeFi contracts often require interests to be calculated by block number. However, both v0 and v1 networks do not have a fixed layer2 block interval (it is affected by layer1 block interval).
 
 Arbitrum solved this issue by providing a syscall to get the layer1 block number. However, this does not work for Godwoken since the layer1 chain, CKB itself, does not have a fixed block interval (CKB block interval is adjusted by the uncle block rate at each epoch).
 
