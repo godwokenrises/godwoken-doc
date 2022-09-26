@@ -58,12 +58,14 @@ This constraint is a temporary mechanism and will be removed in a future release
 
 Q: CKB transfer on Godwoken testnet via Metamask has failed. What is the solution?
 
-A: In Godwoken, `transaction.to` must be a contract address. In RPCs such as `eth_call`, `eth_estimateGas` and `eth_sendRawTransaction`, the `to` parameter can only be a contract address, not an EOA address.
+A: In Godwoken and Polyjuice, we use CKB as pCKB. Previously, transfers on Godwoken using Metamask must have pCKB imported as a custom ERC20 contract, which means the `transaction.to` must be a contract address. In RPCs such as `eth_call`, `eth_estimateGas` and `eth_sendRawTransaction`, the `to` parameter can only be a contract address, not an EOA address.
 
-To transfer value from EOA to EOA, we recommend developers to use the `transfer function` in the `pCKB_ERC20_Proxy` contract which combines sUDT_ID=1. In Godwoken and Polyjuice, we use CKB as pCKB. More details can be found at [pCKB](integration.md#pckb) and [Godwoken Web3 API Compatibility](integration.md#godwoken-web3-api-compatibility). The contract addresses are:
+However, native token transfers are supported from Godwoken v1.6 onwards. pCKB is now working as the Godwoken native token and is available for use with Metamask automatically, custom ERC20 contracts are no longer necessary.
 
- - mainnet_v1 pCKB_ERC20_Proxy contract: 0x7538C85caE4E4673253fFd2568c1F1b48A71558a (pCKB)
- - testnet_v1 pCKB_ERC20_Proxy contract: 0xE05d380839f32bC12Fb690aa6FE26B00Bd982613 (pCKB)
+Detailed descriptions is available at:
+ - [feat: support native token transfer #173](https://github.com/nervosnetwork/godwoken-polyjuice/pull/173) godwoken-polyjuice
+ - [Validate native token transfer raw tx and signature #788](https://github.com/nervosnetwork/godwoken/pull/788) godwoken
+ - [Support native transfer #505](https://github.com/nervosnetwork/godwoken-web3/pull/505) godwoken-web3
  
 ----
 
@@ -74,3 +76,7 @@ Q: The average block confirmation interval on Godwoken is 30s or more, yet I wou
 A: This can be done with the Godwoken instant finality feature. Instant finality is a feature of Godwoken aimed at return to users an Ethereum-like receipt of the transaction, giving users a faster way to verify the status of the transaction before it goes on-chain. 
 
 To utilise this feature, simply send the transaction and obtain forthwith the [`eth_getTransactionReceipt`](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_ gettransactionreceipt) transaction receipt will suffice.
+
+Godwoken average block confirmation interval can be viewed at:
+- Avg. Block Time of Godwoken testnet_v1: https://v1.testnet.gwscan.com/
+- Avg. Block Time of Godwoken mainnet_v1: https://v1.gwscan.com/
