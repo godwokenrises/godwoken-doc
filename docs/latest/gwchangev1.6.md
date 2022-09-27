@@ -5,7 +5,9 @@ title: Godwoken V1.6 Release Note
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
+
 Godwoken is currently updated on a regular basis to provide new features and updates. The following release notes covers the most recent changes in Godwoken v1.6. You can check the full release notes in the [Godwoken Changlog](https://github.com/nervosnetwork/godwoken/blob/develop/CHANGELOG.md).
+
 
 The latest update to Godwoken v1.6 includes the following changes:
 
@@ -23,7 +25,6 @@ The latest update to Godwoken v1.6 includes the following changes:
 
 
 - refactor: remove sentry in [#780](https://github.com/nervosnetwork/godwoken/pull/780)
-
 
 - fix: recover sender of non EIP-155 txs in [#790](https://github.com/nervosnetwork/godwoken/pull/790)
 

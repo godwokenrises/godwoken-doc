@@ -28,7 +28,6 @@ The latest update to Godwoken v1.6 includes the following changes:
 
 - fix(tools): Fix for withdraw cli in [#792](https://github.com/nervosnetwork/godwoken/pull/792)
 
-
 ## Polyjuice
 
 Polyjuice is an EVM-compatible executing environment built to work with the Godwoken layer-2 rollup framework, and allows Solidity-based smart contracts to run on the Nervos infrastructure.
