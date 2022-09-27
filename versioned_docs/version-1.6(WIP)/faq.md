@@ -54,21 +54,6 @@ This constraint is a temporary mechanism and will be removed in a future release
 
 ----
 
-### Failed to transfer token via Metamask on Godwoken
-
-Q: CKB transfer on Godwoken testnet via Metamask has failed. What is the solution?
-
-A: In Godwoken and Polyjuice, we use CKB as pCKB. Previously, transfers on Godwoken using Metamask must have pCKB imported as a custom ERC20 contract, which means the `transaction.to` must be a contract address. In RPCs such as `eth_call`, `eth_estimateGas` and `eth_sendRawTransaction`, the `to` parameter can only be a contract address, not an EOA address.
-
-However, native token transfers are supported from Godwoken v1.6 onwards. pCKB is now working as the Godwoken native token and is available for use with Metamask automatically, custom ERC20 contracts are no longer necessary.
-
-Detailed descriptions is available at:
- - [feat: support native token transfer #173](https://github.com/nervosnetwork/godwoken-polyjuice/pull/173) godwoken-polyjuice
- - [Validate native token transfer raw tx and signature #788](https://github.com/nervosnetwork/godwoken/pull/788) godwoken
- - [Support native transfer #505](https://github.com/nervosnetwork/godwoken-web3/pull/505) godwoken-web3
- 
-----
-
 ### Getting the transaction completed faster
 
 Q: The average block confirmation interval on Godwoken is 30s or more, yet I would like to have my transactions completed more quickly, what should I do to make this happen?
