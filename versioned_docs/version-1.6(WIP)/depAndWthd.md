@@ -114,7 +114,9 @@ The block producer processes layer-1 withdrawal cells without leaving the user w
 
 ### Legacy Withdrawal Cells in Godwoken v0
 
-In , the lagacy withdrawal cells are no longer in use in Godwoken v1.
+:::note
+The lagacy withdrawal cells are no longer in use in Godwoken v1.
+:::
 
 The withdrawal cell:
 
