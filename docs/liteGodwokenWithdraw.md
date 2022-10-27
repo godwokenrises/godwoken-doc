@@ -13,7 +13,7 @@ Visit [MetaMask](https://metamask.io/) to download the wallet. For more informat
 
 1. Add the Godwoken Network manually to the MetaMask wallet.  
 
- Godwoken v1 is currently in active development. For more information on Godwoken public networks, see [godwoken](https://github.com/nervosnetwork/godwoken-info).
+ Godwoken v1 is currently in active development. For more information on Godwoken public networks, see [godwoken](https://github.com/godwokenrises/godwoken-info).
 
 
 2. Bridge Your Own Assets
@@ -50,9 +50,9 @@ In the [Godwoken Bridge Withdrawal UI](https://testnet.bridge.godwoken.io/#/v0),
 
 |Resource|Link|
 |---|---|
-|Godwoken Docs| https://github.com/nervosnetwork/godwoken/blob/develop/docs/RPC.md#method-gw_submit_withdrawal_request|
+|Godwoken Docs| https://github.com/godwokenrises/godwoken/blob/develop/docs/RPC.md#method-gw_submit_withdrawal_request|
 |Godwoken Demos| https://github.com/classicalliu/gw-demos|
-|Godwoken testnet config| https://github.com/nervosnetwork/godwoken-public/blob/master/testnet/config/scripts-deploy-result.json|
+|Godwoken testnet config| https://github.com/godwokenrises/godwoken-public/blob/master/testnet/config/scripts-deploy-result.json|
 |Polyjuice Provider| https://github.com/nervosnetwork/polyjuice-provider|
-|Godwoken Web3| https://github.com/nervosnetwork/godwoken-web3#godwoken-web3-api|
+|Godwoken Web3| https://github.com/godwokenrises/godwoken-web3#godwoken-web3-api|
 |Lumos Documentation| https://github.com/nervosnetwork/lumos| 

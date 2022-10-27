@@ -152,11 +152,11 @@ MANUAL_BUILD_POLYJUICE=false
 
 ```title="/docker/.build.mode.env"
 ####[packages]
-GODWOKEN_GIT_URL=https://github.com/nervosnetwork/godwoken.git
+GODWOKEN_GIT_URL=https://github.com/godwokenrises/godwoken.git
 GODWOKEN_GIT_CHECKOUT=master
 POLYMAN_GIT_URL=https://github.com/RetricSu/godwoken-polyman.git
 POLYMAN_GIT_CHECKOUT=master
-WEB3_GIT_URL=https://github.com/nervosnetwork/godwoken-web3.git
+WEB3_GIT_URL=https://github.com/godwokenrises/godwoken-web3.git
 WEB3_GIT_CHECKOUT=main
 ...
 ```
@@ -356,7 +356,7 @@ The current user must have permissions to run ckb-cli, Capsule, Moleculec and do
    Open a new terminal window and run the following command to clone the Godwoken source:
 
    ```bash
-   $ git clone --recursive https://github.com/nervosnetwork/godwoken
+   $ git clone --recursive https://github.com/godwokenrises/godwoken
    ```
 
 4. Deploy an SUDT script to the chain.
@@ -414,8 +414,8 @@ The current user must have permissions to run ckb-cli, Capsule, Moleculec and do
          {
              "prebuild_image": "nervos/godwoken-prebuilds:v0.6.9-rc1",
              "repos": {
-                 "godwoken_scripts": "https://github.com/nervosnetwork/godwoken-scripts#master",
-                 "godwoken_polyjuice": "https://github.com/nervosnetwork/godwoken-polyjuice#main",
+                 "godwoken_scripts": "https://github.com/godwokenrises/godwoken-scripts#master",
+                 "godwoken_polyjuice": "https://github.com/godwokenrises/godwoken-polyjuice#main",
                  "clerkb": "https://github.com/nervosnetwork/clerkb#v0.4.0"
              }
          } 
@@ -551,10 +551,10 @@ The current user must have permissions to run ckb-cli, Capsule, Moleculec and do
 
 9. Set up Polyjuice.
 
-   Clone the source of godwoken-examples. For more information, see [godwoken-examples](https://github.com/nervosnetwork/godwoken-examples).
+   Clone the source of godwoken-examples. For more information, see [godwoken-examples](https://github.com/godwokenrises/godwoken-examples).
 
    ```bash
-   $ git clone --recursive https://github.com/nervosnetwork/godwoken-examples
+   $ git clone --recursive https://github.com/godwokenrises/godwoken-examples
    ```
 
    Then, create an account on Polyjuice. It will take some time to build index for the first time. 
@@ -581,10 +581,10 @@ The current user must have permissions to run ckb-cli, Capsule, Moleculec and do
           $ docker run --name postgres -e POSTGRES_USER=user -e POSTGRES_DB=godwoken -e POSTGRES_PASSWORD=mypassword -d -p 5432:5432 postgres
           ```
 
-       2. Clone the source of [godwoken-web3](https://github.com/nervosnetwork/godwoken-web3).
+       2. Clone the source of [godwoken-web3](https://github.com/godwokenrises/godwoken-web3).
 
           ```shell
-          $ git clone https://github.com/nervosnetwork/godwoken-web3
+          $ git clone https://github.com/godwokenrises/godwoken-web3
           ```
 
        3. Prepare the `.env` file under `/godwoken-web3/packages/api-server`.

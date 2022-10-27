@@ -65,7 +65,7 @@ For more information on the CKB RPC, refer to [CKB Wiki](https://github.com/nerv
 |fee          |The transaction fee, this is a CKB transaction and the default rate is 0.0001 CKB.|
 |godwoken-rpc-url          |The RPC address of Godwoken, by default http://127.0.0.1:8119/|
 |privkey-path          |A file written with the private key (hex string) which is used to pay the deposit fee.|
-|scripts-deployment-path          |The JSON file path of the [script's deployment results](https://github.com/nervosnetwork/godwoken-public/blob/master/testnet/config/scripts-deploy-result.json).|
+|scripts-deployment-path          |The JSON file path of the [script's deployment results](https://github.com/godwokenrises/godwoken-public/blob/master/testnet/config/scripts-deploy-result.json).|
 
 ---
 
@@ -125,14 +125,14 @@ For more information on `Godwoken RPC`, refer to [Godwoken Public Network](/#god
 |godwoken-rpc-url             |The RPC address of Godwoken, by default http://127.0.0.1:8119/|
 |owner-ckb-address             |The CKB address of the recipient.|
 |privkey-path             |A file written with the private key (hex string) which is used to pay the deposit fee.|
-|scripts-deployment-path             |The JSON file path of the [script's deployment results](https://github.com/nervosnetwork/godwoken-public/blob/master/testnet/config/scripts-deploy-result.json)|
+|scripts-deployment-path             |The JSON file path of the [script's deployment results](https://github.com/godwokenrises/godwoken-public/blob/master/testnet/config/scripts-deploy-result.json)|
 |sudt-script-hash             |The script hash of sUDT on layer 1, defaults to 0x0000000000000000000000000000000000000000000000000000, indicating only CKB is redeemed (amount left unfilled or filled with 0).|
 
 ## **Unlocking** the Funds to Complete Withdrawal Process
 
 Withdrawing funds from Godwoken is a **two-step** process. Step one initiates the withdrawal and step two releases the funds. Godwoken uses an optimistic rollup architecture that permits only one honest node in the network. All this provides a very secure foundation for Layer 2, but comes at the cost of a **5-day** 'challenge period' when exiting from Layer 2. This is a period where the Layer 2 network operator gets time to examine and flag up any potential problems with malicious transactions and roll back if necessary. The five-day challenge period will begin once the withdrawal process has commenced. The five-day time interval is a bit long but necessary. 
 
-To `unlock` the withdrawal cells to normal ckb cells and to perform common Layer2 actions, the [`account-cli tool`](https://github.com/nervosnetwork/godwoken-examples/tree/develop/packages/tools) will be applied. 
+To `unlock` the withdrawal cells to normal ckb cells and to perform common Layer2 actions, the [`account-cli tool`](https://github.com/godwokenrises/godwoken-examples/tree/develop/packages/tools) will be applied. 
 
 Execute the `account-cli tool` unlock command:
 

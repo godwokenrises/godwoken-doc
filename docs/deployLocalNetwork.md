@@ -118,7 +118,7 @@ Creating docker_godwoken_run ... done
 ```
 
 :::note
- Note that the accounts are defined in <a href="https://github.com/nervosnetwork/godwoken-tests/blob/develop/contracts/hardhat.config.js">contract/hardhat.config.js</a>.
+ Note that the accounts are defined in <a href="https://github.com/godwokenrises/godwoken-tests/blob/develop/contracts/hardhat.config.js">contract/hardhat.config.js</a>.
 
 :::
 
@@ -127,7 +127,7 @@ Creating docker_godwoken_run ... done
 <li><p>Run Godwoken-test cases with <a href="https://hardhat.org/">Hardhat</a>.</p>
 
 ```bash
-$ git clone https://github.com/nervosnetwork/godwoken-tests
+$ git clone https://github.com/godwokenrises/godwoken-tests
 $ cd godwoken-tests
 $ cd contracts
 $ npm install
@@ -476,7 +476,7 @@ rm -rf docker/manual-artifacts
 
   ```bash
 MANUAL_BUILD_GODWOKEN=true \
-GODWOKEN_GIT_URL=ssh://git@github.com/nervosnetwork/godwoken \
+GODWOKEN_GIT_URL=ssh://git@github.com/godwokenrises/godwoken \
 GODWOKEN_GIT_CHECKOUT=compatibility-breaking-changes \
 ```
 <p>Use <code>./kicker manual-build</code>to build the binary. Or, users can build on their own, just make sure that the binary is placed in <code>docker/manual-artifacts/</code>.</p>
@@ -509,6 +509,6 @@ MANUAL_BUILD_GODWOKEN=true ./kicker start godwoken # Starts only a single godwok
 </TabItem>
 </Tabs>
 
-For more details on manual-build mode of Godwoken-kicker, refer to ][manual-build mode](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docs/manual-build.md), and [the example of a one-click launch readonly node](https://github.com/nervosnetwork/godwoken-info/tree/info/testnet_v1).
+For more details on manual-build mode of Godwoken-kicker, refer to ][manual-build mode](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docs/manual-build.md), and [the example of a one-click launch readonly node](https://github.com/godwokenrises/godwoken-info/tree/info/testnet_v1).
 
 

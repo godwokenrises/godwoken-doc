@@ -15,7 +15,7 @@ The maximum EVM revision supported is `EVMC_BERLIN`.
 
 ## pCKB
 
-Godwoken v1 introduced a new concept, [**pCKB**](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md#pckb).
+Godwoken v1 introduced a new concept, [**pCKB**](https://github.com/godwokenrises/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md#pckb).
 
 In Ethereum, the gas for each smart contract is derived by calculation. And the transaction fee is then calculated by multiplying the gas with the specified gas price. In Godwoken, **pCKB** is the unit for calculating transaction fees. In other words, the gas price in Ethereum is calculated as ETH/gas (in wei, i.e. 1e-18 ether), and the gas price in Godwoken is calculated as pCKB/gas. When executing a transaction, Godwoken will deduct the transaction fee by using the layer2 [sUDT](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0025-simple-udt/0025-simple-udt.md) type which is represented by **pCKB**.
 
@@ -29,11 +29,11 @@ Polyjuice only provides [contract accounts](https://ethereum.org/en/glossary/#c
 
 Ethereum processes ERC20 tokens differently from native ETH tokens, which is the reason wETH was invented. And, Godwoken conceals this difference:
 
-All tokens on Godwoken are represented as Layer 2 sUDT types whether using native CKB or any sUDT token type. Polyjuice proceeds from this Layer 2 sUDT [contract](https://github.com/nervosnetwork/godwoken-polyjuice/blob/b9c3ad4/solidity/erc20/SudtERC20Proxy_UserDefinedDecimals.sol) and ensures that all tokens on Godwoken are ERC20 compliant, regardless if supported by native CKB or sUDT. That is to say, it is unnecessary to distinguish between native tokens and ERC20 tokens. All that has to be handled is the same ERC20 interface for all the different tokens.
+All tokens on Godwoken are represented as Layer 2 sUDT types whether using native CKB or any sUDT token type. Polyjuice proceeds from this Layer 2 sUDT [contract](https://github.com/godwokenrises/godwoken-polyjuice/blob/b9c3ad4/solidity/erc20/SudtERC20Proxy_UserDefinedDecimals.sol) and ensures that all tokens on Godwoken are ERC20 compliant, regardless if supported by native CKB or sUDT. That is to say, it is unnecessary to distinguish between native tokens and ERC20 tokens. All that has to be handled is the same ERC20 interface for all the different tokens.
 
 ## Transaction Structure
 
-A Polyjuice transaction is essentially a Godwoken transaction. Ethereum transactions will be converted to the Godwoken [RawL2Transaction](https://github.com/nervosnetwork/godwoken/blob/v1.0.0-rc1/crates/types/schemas/godwoken.mol#L69-L74) type when being sent, and will be automatically processed by [Godwoken Web3](https://github.com/nervosnetwork/godwoken-web3/tree/v1.0.0-rc1).
+A Polyjuice transaction is essentially a Godwoken transaction. Ethereum transactions will be converted to the Godwoken [RawL2Transaction](https://github.com/godwokenrises/godwoken/blob/v1.0.0-rc1/crates/types/schemas/godwoken.mol#L69-L74) type when being sent, and will be automatically processed by [Godwoken Web3](https://github.com/godwokenrises/godwoken-web3/tree/v1.0.0-rc1).
 
 ## Behavioral differences of some opcodes
 
@@ -46,11 +46,11 @@ A Polyjuice transaction is essentially a Godwoken transaction. Ethereum transact
 ## Others
 
 - Transaction context
-    - `chain_id` is defined in Godwoken [RollupConfig#chain_id](https://github.com/nervosnetwork/godwoken/blob/a099f2010b212355f5504a8d464b6b70d29640a5/crates/types/schemas/godwoken.mol#L64).
+    - `chain_id` is defined in Godwoken [RollupConfig#chain_id](https://github.com/godwokenrises/godwoken/blob/a099f2010b212355f5504a8d464b6b70d29640a5/crates/types/schemas/godwoken.mol#L64).
     - the block difficulty is always `2500000000000000`
     - the gas limit  is 12500000 per block, but it is not a transaction-level limit. Any transaction can reach the gas limit
-    - the size limit for contract's return data is `[25600B](https://github.com/nervosnetwork/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22)`
-    - the size limit for contract's storage is `[25600B](https://github.com/nervosnetwork/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22)`
+    - the size limit for contract's return data is `[25600B](https://github.com/godwokenrises/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22)`
+    - the size limit for contract's storage is `[25600B](https://github.com/godwokenrises/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22)`
   
 - `transaction.to` MUST be a Contract Address
     
@@ -60,4 +60,4 @@ A Polyjuice transaction is essentially a Godwoken transaction. Ethereum transact
 - The `transfer value` can not exceed uint128:MAX
 - Pre-compiled contract
     - `bn256_pairing` is not yet supported because of the high cycle cost (WIP)
-    - [addition pre-compiled contracts](https://github.com/nervosnetwork/godwoken-polyjuice/blob/compatibility-breaking-changes/docs/Addition-Features.md)
+    - [addition pre-compiled contracts](https://github.com/godwokenrises/godwoken-polyjuice/blob/compatibility-breaking-changes/docs/Addition-Features.md)

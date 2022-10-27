@@ -27,7 +27,7 @@ The knowledge of Ethereum is a prerequisite for using this guide.
 Godwoken V1 is still under development and targets 100% EVM compatibility. Having the best compatibility is the objective of designing and building Godwoken/Polyjuice:
 
 - The EVM being used in Godwoken/Polyjuice should be 100% compatible with the latest forked version of Ethereum.
-- Godwoken/Polyjuice should be 100% compatible with Ethereum over the Web3 interfaces by using the [Web3 layer](https://github.com/nervosnetwork/godwoken-web3).
+- Godwoken/Polyjuice should be 100% compatible with Ethereum over the Web3 interfaces by using the [Web3 layer](https://github.com/godwokenrises/godwoken-web3).
 
 Given the wide architechtural and design differences between Godwoken/Polyjuice and Ethereum, several discrepancies inevitably exsit. 
 
@@ -35,7 +35,7 @@ Given the wide architechtural and design differences between Godwoken/Polyjuice 
 
 It is mandatory to create an account on a Godwoken chain in order to use Polyjuice. Two ways to create a layer 2 account:
 - Make a deposit to Godwoken at layer 1;
-- Call the Godwoken built-in `[meta_contract](https://github.com/nervosnetwork/godwoken-scripts/blob/86b299f/c/contracts/meta_contract.c)` and create an account at layer 2.
+- Call the Godwoken built-in `[meta_contract](https://github.com/godwokenrises/godwoken-scripts/blob/86b299f/c/contracts/meta_contract.c)` and create an account at layer 2.
 
 ## pCKB
 

@@ -20,7 +20,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 Godwoken provides a web3 RPC compatible layer.
 
-For more information, see [Ethereum RPC (web3 RPC)](https://github.com/nervosnetwork/godwoken-web3).
+For more information, see [Ethereum RPC (web3 RPC)](https://github.com/godwokenrises/godwoken-web3).
 
 ## An Example of Deploying an Ethereum DApp to Godwoken by Godwoken-Kicker
 

@@ -204,7 +204,7 @@ CKB faucet uses the same key as CKB miner. When executing `./kicker deposit`, CK
 
 ## [Deployer of Rollup Genesis Cell](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/accounts/godwoken-block-producer.key)
 
-This key is used when the deployer of rollup genesis cell on layer 1 deploys the rollup genesis cell. When setting up the rollup genesis cell on layer 1, `gw-tools deploy-genesis` uses `[Omnilock](https://blog.cryptape.com/omnilock-a-universal-lock-that-powers-interoperability-1)` to [record the public key](https://github.com/nervosnetwork/godwoken/blob/c18807b5cfaa961c230e15e3a381570c324db6f8/crates/tools/src/deploy_genesis.rs#L428-L448).
+This key is used when the deployer of rollup genesis cell on layer 1 deploys the rollup genesis cell. When setting up the rollup genesis cell on layer 1, `gw-tools deploy-genesis` uses `[Omnilock](https://blog.cryptape.com/omnilock-a-universal-lock-that-powers-interoperability-1)` to [record the public key](https://github.com/godwokenrises/godwoken/blob/c18807b5cfaa961c230e15e3a381570c324db6f8/crates/tools/src/deploy_genesis.rs#L428-L448).
 
 ## [Deployer of Rollup Scripts](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/accounts/rollup-scripts-deployer.key)
 

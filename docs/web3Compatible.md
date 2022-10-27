@@ -25,7 +25,7 @@ The `to` member of a Godwoken transaction must be a contract.
 
 **Recommend Workaround**
 
- - *Transfer Value From EOA To EOA*: Use the `transfer function` in [CKB_ERC20_Proxy](https://github.com/nervosnetwork/godwoken-polyjuice/blob/3f1ad5b/solidity/erc20/README.md) contract [combined](https://github.com/nervosnetwork/godwoken-polyjuice/blob/3f1ad5b322/solidity/erc20/SudtERC20Proxy_UserDefinedDecimals.sol#L154) with sUDT_ID = 1 (CKB a.k.a. [pCKB](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md#pckb)).
+ - *Transfer Value From EOA To EOA*: Use the `transfer function` in [CKB_ERC20_Proxy](https://github.com/godwokenrises/godwoken-polyjuice/blob/3f1ad5b/solidity/erc20/README.md) contract [combined](https://github.com/godwokenrises/godwoken-polyjuice/blob/3f1ad5b322/solidity/erc20/SudtERC20Proxy_UserDefinedDecimals.sol#L154) with sUDT_ID = 1 (CKB a.k.a. [pCKB](https://github.com/godwokenrises/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md#pckb)).
 
 ----
 
@@ -52,4 +52,4 @@ Godwoken does not have corresponding "zero address"(0x00000000000000000000000000
 
  - if you are trying use zero address as a black hole to burn ethers, you can use `transfer function` in CKB_ERC20_Proxy to send ethers to zero address. more info can be found on above section `Transfer Value From EOA To EOA`.
 
-For more information on Godwoken Web3 API, visite [godwoken-web3](https://github.com/nervosnetwork/godwoken-web3/tree/compatibility-breaking-changes).
+For more information on Godwoken Web3 API, visite [godwoken-web3](https://github.com/godwokenrises/godwoken-web3/tree/compatibility-breaking-changes).
