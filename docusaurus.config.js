@@ -1,12 +1,12 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: "Godwoken Documentation",
-  tagline: "Godwoken Documentation",
+  title: "Godwoken Docs",
+  tagline: "Godwoken Docs",
   url: "https://docs.godwoken.io/",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/godwoken.png",
+  favicon: "img/favicon.ico",
   organizationName: "godwokenrises", // Usually your GitHub org/user name.
   projectName: "godwoken-doc", // Usually your repo name.
   plugins: ["docusaurus-plugin-matomo"],
@@ -23,19 +23,18 @@ module.exports = {
     },
     navbar: {
       hideOnScroll: true,
-      title: "Godwoken Documentation",
+      title: "Godwoken Docs",
       style: "dark",
       logo: {
         alt: "Nervos",
-        src: "img/godwoken.png",
-        href: "https://www.nervos.org/godwoken/",
+        src: "img/favicon.ico",
+        href: "https://godwoken.com",
       },
       items: [
         {
-           type: "docsVersionDropdown",
-           position: "right",
-         },
-         
+          type: "docsVersionDropdown",
+          position: "right",
+        },
         {
           href: "https://github.com/godwokenrises/godwoken",
           label: "GitHub",
@@ -50,7 +49,7 @@ module.exports = {
     },
     footer: {
       style: "dark",
-      copyright: `Copyright © ${new Date().getFullYear()} Nervos Foundation. All Rights Reserved.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Godwoken. All Rights Reserved.`,
     },
     matomo: {
       matomoUrl: "https://cryptapeblog.matomo.cloud/",
