@@ -18,7 +18,7 @@ module.exports = {
     },
     algolia: {
       appId: "W0P1A076NN",
-      apiKey: "4a00c5457da3a6e940925cf7cb834418",
+      apiKey: "0180602fbb3e258d02a3c959074d3b04",
       indexName: "godwoken",
     },
     navbar: {
