@@ -5,7 +5,7 @@ title: pCKB
 
 # pCKB
 
-**[pCKB](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md#pckb)** is a defined layer 2 sUDT token type when deploying a Godwoken chain, it is the new concept that Godwoken v1 introduced.
+**[pCKB](https://github.com/godwokenrises/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md#pckb)** is a defined layer 2 sUDT token type when deploying a Godwoken chain, it is the new concept that Godwoken v1 introduced.
 
 In Godwoken, pCKB is used to collect transaction fees, similar to the role of ETH in Ethereum. Godwoken chain uses CKB as pCKB by default, while different Godwoken chains may use different token types as pCKB.
 

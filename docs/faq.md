@@ -12,7 +12,7 @@ In short, a [custodian cell](depAndWthd.md#custodian-cell) is an asset held in t
 
 ### What is an ETH Registry Address?
 
-[ETH address registry](https://github.com/nervosnetwork/godwoken-scripts/blob/master/c/contracts/eth_addr_reg.c) is a new built-in contract introduced in Godwoken v1 which can be understood as a simple two-way mapping between `eth_address` and `gw_script_hash`. It serves as the alias mechanism for Godwoken layer 2 account. Because there is no concept of Godwoken ID or script in the EVM environment，with the ETH address registry, we could locate a Godwoken account by its ETH address. For more details, see [Layer 2 Account in Godwoken](layer2Account.md).
+[ETH address registry](https://github.com/godwokenrises/godwoken-scripts/blob/master/c/contracts/eth_addr_reg.c) is a new built-in contract introduced in Godwoken v1 which can be understood as a simple two-way mapping between `eth_address` and `gw_script_hash`. It serves as the alias mechanism for Godwoken layer 2 account. Because there is no concept of Godwoken ID or script in the EVM environment，with the ETH address registry, we could locate a Godwoken account by its ETH address. For more details, see [Layer 2 Account in Godwoken](layer2Account.md).
 
 ----
 
@@ -28,7 +28,7 @@ We recommend developers use layer2 block timestamp as the trusted timestamp to c
 
 ### What data is committed to layer-1 by Godwoken?
 
-The transactions, deposits and withdrawals are contained in the block [structure](https://github.com/nervosnetwork/godwoken/blob/v1.5.0/crates/types/schemas/godwoken.mol#L97-L110) of a layer-2 block, which is committed to layer-1. We use the optimistic rollup mechanism, so we do not verify the signatures of transactions and withdrawals on-chain. For more details, check [Godwoken-scripts](https://github.com/nervosnetwork/godwoken-scripts/blob/master/README.md).
+The transactions, deposits and withdrawals are contained in the block [structure](https://github.com/godwokenrises/godwoken/blob/v1.5.0/crates/types/schemas/godwoken.mol#L97-L110) of a layer-2 block, which is committed to layer-1. We use the optimistic rollup mechanism, so we do not verify the signatures of transactions and withdrawals on-chain. For more details, check [Godwoken-scripts](https://github.com/godwokenrises/godwoken-scripts/blob/master/README.md).
 
 ----
 

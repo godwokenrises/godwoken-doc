@@ -123,4 +123,4 @@ async setStoredValue(value: number) {
 
 * You might need to wait for MetaMask confirmation that your transaction has been included in a block before interacting with the contract. It can take about a minute.
 * If you get a CORS error in your web browser's console, try searching your code for a Godwoken RPC URL that is **not** using `https`. Change any instances of `http://godwoken-testnet-v1.ckbapp.dev` to `https://godwoken-testnet-v1.ckbapp.dev`.
-* There are a number of small differences that can potentially impact your application and cause problems if you're unaware of them. A list of these differences can be found [here](https://github.com/nervosnetwork/godwoken-polyjuice/blob/main/docs/EVM-compatible.md).
+* There are a number of small differences that can potentially impact your application and cause problems if you're unaware of them. A list of these differences can be found [here](https://github.com/godwokenrises/godwoken-polyjuice/blob/main/docs/EVM-compatible.md).

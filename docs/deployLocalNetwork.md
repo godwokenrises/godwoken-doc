@@ -140,7 +140,7 @@ Creating docker_godwoken_run ... done
 ```
 
 :::note
-The accounts are defined in <a href="https://github.com/nervosnetwork/godwoken-tests/blob/develop/contracts/hardhat.config.js">contract/hardhat.config.js</a>.
+The accounts are defined in <a href="https://github.com/godwokenrises/godwoken-tests/blob/develop/contracts/hardhat.config.js">contract/hardhat.config.js</a>.
 
 :::
 
@@ -149,7 +149,7 @@ The accounts are defined in <a href="https://github.com/nervosnetwork/godwoken-t
 <li><p>Run Godwoken-test cases with <a href="https://hardhat.org/">Hardhat</a>.</p>
 
 ```bash
-$ git clone https://github.com/nervosnetwork/godwoken-tests
+$ git clone https://github.com/godwokenrises/godwoken-tests
 $ cd godwoken-tests
 $ cd contracts
 $ npm install
@@ -499,7 +499,7 @@ command: [ "godwoken", "run", "-c", "/var/lib/layer2/config/godwoken-config.toml
 
 ```bash
 $ MANUAL_BUILD_GODWOKEN=true \
-$ GODWOKEN_GIT_URL=ssh://git@github.com/nervosnetwork/godwoken \
+$ GODWOKEN_GIT_URL=ssh://git@github.com/godwokenrises/godwoken \
 $ GODWOKEN_GIT_CHECKOUT=compatibility-breaking-changes \
 $ ./kicker manual-build
 ```
@@ -526,7 +526,7 @@ MANUAL_BUILD_GODWOKEN=true ./kicker start # Starts all services MANUAL_BUILD_GOD
 
 </li>
 
-For more details on the manual-build mode of Godwoken-Kicker, refer to [manual-build](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docs/manual-build.md), and [the example of a one-click launch read-only node](https://github.com/nervosnetwork/godwoken-info/tree/info/testnet_v1).
+For more details on the manual-build mode of Godwoken-Kicker, refer to [manual-build](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docs/manual-build.md), and [the example of a one-click launch read-only node](https://github.com/godwokenrises/godwoken-info/tree/info/testnet_v1).
 
 </ol>
 

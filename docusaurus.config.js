@@ -7,7 +7,7 @@ module.exports = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/godwoken.png",
-  organizationName: "nervosnetwork", // Usually your GitHub org/user name.
+  organizationName: "godwokenrises", // Usually your GitHub org/user name.
   projectName: "godwoken-doc", // Usually your repo name.
   plugins: ["docusaurus-plugin-matomo"],
   themeConfig: {
@@ -37,7 +37,7 @@ module.exports = {
          },
          
         {
-          href: "https://github.com/nervosnetwork/godwoken",
+          href: "https://github.com/godwokenrises/godwoken",
           label: "GitHub",
           position: "right",
         },

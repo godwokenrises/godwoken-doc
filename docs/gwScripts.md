@@ -6,14 +6,14 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 Godwoken scripts are written in *Rust* and *C*. Rust scripts run on the CKB to constrain the Rollup behavior, and C scripts run on Godwoken's nodes to provide layer-2 built-in contracts and programming interfaces.
 
-Rust scripts are built in the `contracts` directory with the `capsule build` command. C scripts are built in the `c` directory with the `cd c && make` command. All data structures use [molecule](https://github.com/nervosnetwork/molecule) format for serialization, which is defined in the [godwoken.mol](https://github.com/nervosnetwork/godwoken/blob/develop/crates/types/schemas/godwoken.mol) file. 
+Rust scripts are built in the `contracts` directory with the `capsule build` command. C scripts are built in the `c` directory with the `cd c && make` command. All data structures use [molecule](https://github.com/nervosnetwork/molecule) format for serialization, which is defined in the [godwoken.mol](https://github.com/godwokenrises/godwoken/blob/develop/crates/types/schemas/godwoken.mol) file. 
 
-Further details about the Godwoken mechanism can be found at [Life of a godwoken transaction](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_godwoken_transaction.md) and [Life of a polyjuice transaction](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md).
+Further details about the Godwoken mechanism can be found at [Life of a godwoken transaction](https://github.com/godwokenrises/godwoken/blob/develop/docs/life_of_a_godwoken_transaction.md) and [Life of a polyjuice transaction](https://github.com/godwokenrises/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md).
 
 ### State Validator
 
 State validator is the main script to verify the on-chain Rollup cell.
-The Rollup cell is an identity cell on CKB which stores the [GlobalState](https://github.com/nervosnetwork/godwoken/blob/develop/crates/types/schemas/godwoken.mol), a structure that represents the layer-2 state.
+The Rollup cell is an identity cell on CKB which stores the [GlobalState](https://github.com/godwokenrises/godwoken/blob/develop/crates/types/schemas/godwoken.mol), a structure that represents the layer-2 state.
 
   ```bash
   Rollup cell:
@@ -189,7 +189,7 @@ When a user deposits tokens to create a new account, a corresponding Ethereum ad
 
 The built-in ETH address registry is allocated to id `2`.
 
-### [Polyjuice](https://github.com/nervosnetwork/godwoken-polyjuice)
+### [Polyjuice](https://github.com/godwokenrises/godwoken-polyjuice)
 
 Polyjuice is a backend of Godwoken for state computation. The C scripts are in the `c` directory and are built using the command `make all-via-docker`. All tests run with the command `bash devtools/ci/integration-test.sh`.
 
@@ -201,4 +201,4 @@ With polyjuice, `from` and `to` are included in RawL2Transaction (`from_id`, `to
 
 ----
 
-For more information about Godwoken scripts, refer to [godwoken-scripts](https://github.com/nervosnetwork/godwoken-scripts).
+For more information about Godwoken scripts, refer to [godwoken-scripts](https://github.com/godwokenrises/godwoken-scripts).

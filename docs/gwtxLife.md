@@ -32,7 +32,7 @@ struct GlobalState {
 }
 ```
 
-More definitions can be found in [this file](https://github.com/nervosnetwork/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol).
+More definitions can be found in [this file](https://github.com/godwokenrises/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol).
 
 The block submission transaction also contains the actual layer 2 Godwoken block. The first witness of the [transaction](https://pudge.explorer.nervos.org/transaction/0x9fd03b09d27326aa54dc53e11d7f7c01f27e570bdc645233b91664323cac0568) mentioned above contains the following data:
 
@@ -40,7 +40,7 @@ The block submission transaction also contains the actual layer 2 Godwoken block
 0x600300001000000069000000690000005500000055000000100000005500000055000000410000004082de966ef59f3777d5c6b447d7912a457cb6bffc6317f336b03f39930c4c0f474779d431f4832a4779a804880f0d1ff4e9a48554ca8e85b56511c982c2094400f302000000000000ef02000010000000e7020000eb020000d70200001c0000006c010000700100007401000078010000d3020000500100002c000000340000005400000074000000940000009c000000c0000000e4000000e80000000c010000aa6f0000000000001c0000000200000014000000715ab282b873b79a7be8b0e8c13c4e8966a52040c822d671a8097366aacd98746a00407cd378b54b2facb8ac8fe8970e447ced1ff245705db4fe72be953e4f9ee3808a1700a578341aa80a8b2349c236c4af64e5cfe4f3d6800100004ca62a4c652697c96b7e02eea3a1bc21c5369bcb30626b9aee1cbb1babea11ff4f1600004ca62a4c652697c96b7e02eea3a1bc21c5369bcb30626b9aee1cbb1babea11ff4f1600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011b7aeea1224e8e80173fe93db2187d0251d4b41f00e61fe3c3433f0e6953800000000000000000004000000570100004c4f0150f4dad550e8b95696636f041140059724eacb55453d70a18072520c97411ae6b64f01501e5a5863aa3e7d66c1e19a26b1eaac8183aa59e9ce8d77db4e2cb30b65d95b534f01505677593a7fbb2a4ecf82f3b1f7bee953c0199d4c9d6552154a95d844635901e64f0150870913864cfddf50dc51a88b5ca5b8bdf95c476a068fbd2eaa19398318703af05060f8c8c082fafd59eca27762ccbebc580271e0bac92f7a381c739d1954f1c6c9508c4c5f7fb230bee4a9877f3039feb2675dd44d04e8ac0e41dd9f9e13f277119f503e6ee57e32132b778b0e14a9a06b185c73c4a4d01b6cab9370991c3897f90f7050dc2f0723654791da20e1dc7713e167d58c71ceac4839364a6e5033f07f00efc14f0150ad18935a95613207b9baec1fb60f35eab69f273e3423ddb58cb37d886205488650b32cd6babf0fd7a5506a00365d252bc7162f527f4123ec22dcb51ad9336797294ff1040000000000000000000000
 ```
 
-This is actually the `WitnessArgs` data structure described [here](https://github.com/nervosnetwork/godwoken/blob/v1.1.0-beta/crates/types/schemas/blockchain.mol#L116) and is serialized in the [molecule](https://github.com/nervosnetwork/molecule) format. In the `output_type` field of WitnessArgs, the actual `L2Block` data structure is stored and serialized in the molecule format:
+This is actually the `WitnessArgs` data structure described [here](https://github.com/godwokenrises/godwoken/blob/v1.1.0-beta/crates/types/schemas/blockchain.mol#L116) and is serialized in the [molecule](https://github.com/nervosnetwork/molecule) format. In the `output_type` field of WitnessArgs, the actual `L2Block` data structure is stored and serialized in the molecule format:
 
 ```
 table L2Block {
@@ -53,7 +53,7 @@ table L2Block {
 }
 ```
 
-Further details about `L2Block`, refer to [this file](https://github.com/nervosnetwork/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L114).
+Further details about `L2Block`, refer to [this file](https://github.com/godwokenrises/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L114).
 
 An output cell containing the `GlobalState` is the **rollup cell**, as this cell contains all the latest information for a particular Godwoken rollup deployment. Godwoken has no restrictions on the number of the rollup cells permitted in CKB. Multiple Godwoken deployments can be setup in a single CKB blockchain for different purposes. Each Godwoken deployment is thus identified by a rollup cell.
 
@@ -112,7 +112,7 @@ To use Godwoken, you must first deposit some tokens (CKB or sUDT) from layer 1 t
 }
 ```
 
-`code_hash` and `hash_type` are pre-determined by each Godwoken deployment. `args` contains two parts: **rollup type hash** and **DepositLockArgs**. The first 32 bytes of `args` contain the **rollup type hash** of the current Godwoken deployment, which functions as a chain ID. The [DepositLockArgs](https://github.com/nervosnetwork/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L177) data structure is serialized in molecule format as follows:
+`code_hash` and `hash_type` are pre-determined by each Godwoken deployment. `args` contains two parts: **rollup type hash** and **DepositLockArgs**. The first 32 bytes of `args` contain the **rollup type hash** of the current Godwoken deployment, which functions as a chain ID. The [DepositLockArgs](https://github.com/godwokenrises/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L177) data structure is serialized in molecule format as follows:
 
 ```
 table DepositLockArgs {
@@ -141,7 +141,7 @@ Custodian cells contain all the tokens that are managed internally in Godwoken. 
 }
 ```
 
-Like deposit cells, custodian cells have pre-determined `code_hash` and `hash_type` based on Godwoken deployments. The first 32 bytes in `args` contain the rollup type hash as well. What's different here is that [CustodianLockArgs](https://github.com/nervosnetwork/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L188) is used to fill the remaining part of `args`:
+Like deposit cells, custodian cells have pre-determined `code_hash` and `hash_type` based on Godwoken deployments. The first 32 bytes in `args` contain the rollup type hash as well. What's different here is that [CustodianLockArgs](https://github.com/godwokenrises/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L188) is used to fill the remaining part of `args`:
 
 ```
 table CustodianLockArgs {
@@ -175,7 +175,7 @@ table L2Transaction {
 }
 ```
 
-Full definition and related types can be found in [this file](https://github.com/nervosnetwork/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L69-L81).
+Full definition and related types can be found in [this file](https://github.com/godwokenrises/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L69-L81).
 
 There are no cells in the layer 2 Godwoken transaction structure. There is only 32-bit integer value representing the accounts, a 32-bit nonce which is not used in layer 1 CKB, as well as a single variable-length `args` part. This layer 2 transaction structure will be detailed piece by piece.
 
@@ -194,7 +194,7 @@ While all operations on Godwoken can be represented as a `L2Transaction` in the 
 }
 ```
 
-This is the JSON representation of `L2Transaction` data structure. `args` contains a variable-length, free formatted transaction argument data that is interpreted depending on the values of `to_id`. In this particular example, `args` contains [SUDTTransfer](https://github.com/nervosnetwork/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L260) data structure in the molecule serialization format:
+This is the JSON representation of `L2Transaction` data structure. `args` contains a variable-length, free formatted transaction argument data that is interpreted depending on the values of `to_id`. In this particular example, `args` contains [SUDTTransfer](https://github.com/godwokenrises/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L260) data structure in the molecule serialization format:
 
 ```
 table SUDTTransfer {
@@ -253,7 +253,7 @@ Now we can derive the signature validation rule for a layer 2 Godwoken transacti
 * Godwoken locates the corresponding layer 2 lock script by using `from_id` in the layer 2 transaction.
 * The layer 2 lock script is executed to validate the layer 2 transaction.
 
-The above flow has one quirk: the current version of Godwoken uses the optimistic rollup design. Due to the "optimistic" nature, the layer 2 lock script is not typically executed on chain. It is only executed when a challenger initiates a challenge request on chain, and an aggregator validates the validity of the layer 2 transaction through a cancel challenge request. Hence the way to build a layer 2 lock script is also slightly different. An example of such a script can be found [here](https://github.com/nervosnetwork/godwoken-scripts/blob/master/contracts/eth-account-lock/src/entry.rs#L24).
+The above flow has one quirk: the current version of Godwoken uses the optimistic rollup design. Due to the "optimistic" nature, the layer 2 lock script is not typically executed on chain. It is only executed when a challenger initiates a challenge request on chain, and an aggregator validates the validity of the layer 2 transaction through a cancel challenge request. Hence the way to build a layer 2 lock script is also slightly different. An example of such a script can be found [here](https://github.com/godwokenrises/godwoken-scripts/blob/master/contracts/eth-account-lock/src/entry.rs#L24).
 
 ### Backend
 
@@ -266,7 +266,7 @@ Godwoken actually has 2 kinds of accounts:
 
 This design is quite similar to the EOA vs. contract account in Ethereum, which is appropriate because Godwoken was inspired by Ethereum.
 
-A typical user account is a balance owned by the user, while a contract account provides storage for the on-chain smart contracts. The user account is generated from a general lock script with a user's public key hash. The smart contract for the contract account is generated from a backend with some special script args. In the Nervos ecosystem, smart contracts are also represented using the unified [script](https://github.com/nervosnetwork/godwoken/blob/v1.1.0-beta/crates/types/schemas/blockchain.mol#L32) data structure: the combination of `code_hash` and `hash_type` in a script identifies the backend, while args provides specific contract account arguments. 
+A typical user account is a balance owned by the user, while a contract account provides storage for the on-chain smart contracts. The user account is generated from a general lock script with a user's public key hash. The smart contract for the contract account is generated from a backend with some special script args. In the Nervos ecosystem, smart contracts are also represented using the unified [script](https://github.com/godwokenrises/godwoken/blob/v1.1.0-beta/crates/types/schemas/blockchain.mol#L32) data structure: the combination of `code_hash` and `hash_type` in a script identifies the backend, while args provides specific contract account arguments. 
 
 In the light of the above, the following rule can be introduced for executing backends:
 
@@ -288,11 +288,11 @@ In this way, we can correlate layer 1 sUDT type scripts with its corresponding l
 
 The layer 2 sUDT backend provides [ERC20](https://eips.ethereum.org/EIPS/eip-20) compatible interface. You may not use Solidity and EVM, but a similar API is available.
 
-Layer 2 transaction using a sUDT backend must provide a [SUDTArgs](https://github.com/nervosnetwork/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L250) data structure serialized in molecule format in layer 2 transaction args. The two supported actions for sUDT backend is [SUDTQuery](https://github.com/nervosnetwork/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L255) and [SUDTTransfer](https://github.com/nervosnetwork/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L260). Later versions may expand this list to include other ERC20 operations.
+Layer 2 transaction using a sUDT backend must provide a [SUDTArgs](https://github.com/godwokenrises/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L250) data structure serialized in molecule format in layer 2 transaction args. The two supported actions for sUDT backend is [SUDTQuery](https://github.com/godwokenrises/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L255) and [SUDTTransfer](https://github.com/godwokenrises/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L260). Later versions may expand this list to include other ERC20 operations.
 
 Note that Godwoken typically creates sUDT contract accounts when processing deposit cells. It doesn't create new contract accounts using sUDT as the backend script.
 
-An implementation for the layer 2 sUDT backend can be found [here](https://github.com/nervosnetwork/godwoken-scripts/blob/v1.1.0-beta/c/contracts/sudt.c).
+An implementation for the layer 2 sUDT backend can be found [here](https://github.com/godwokenrises/godwoken-scripts/blob/v1.1.0-beta/c/contracts/sudt.c).
 
 ### MetaContract
 
@@ -318,7 +318,7 @@ Here is the JSON representation for a layer 2 transaction, which invokes MetaCon
 }
 ```
 
-The `args` part in this transaction contains a [MetaContractArgs](https://github.com/nervosnetwork/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L232) data structure serialized in molecule format. A JSON representation for `args` is as follows:
+The `args` part in this transaction contains a [MetaContractArgs](https://github.com/godwokenrises/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L232) data structure serialized in molecule format. A JSON representation for `args` is as follows:
 
 ```
 {
@@ -333,13 +333,13 @@ The `args` part in this transaction contains a [MetaContractArgs](https://github
 }
 ```
 
-The details of this transaction will be explained in [Life of a Polyjuice Transaction](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md).
+The details of this transaction will be explained in [Life of a Polyjuice Transaction](https://github.com/godwokenrises/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md).
 
 ### Polyjuice
 
 Polyjuice is the main backend used now in Godwoken. It allows us to create a contract account using EVM bytecode. The resulting account will be able to execute smart contracts written for Ethereum. Polyjuice aims at 100% compatibility at EVM level, meaning all applications that are runnable on Ethereum can be run on Godwoken powered by Polyjuice.
 
-For more details on Polyjuice, refer to [Life of a Polyjuice Transaction](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md).
+For more details on Polyjuice, refer to [Life of a Polyjuice Transaction](https://github.com/godwokenrises/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md).
 
 ### Managing Account Locks & Backends
 
@@ -385,7 +385,7 @@ struct WithdrawalRequest {
 }
 ```
 
-The full definition and related types can be found in [this file](https://github.com/nervosnetwork/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L136-L160).
+The full definition and related types can be found in [this file](https://github.com/godwokenrises/godwoken/blob/v1.1.0-beta/crates/types/schemas/godwoken.mol#L136-L160).
 
 `WithdrawalRequest` uses `account_script_hash` as a key to locate the account lock and perform the same signature verification flow as layer 2 transaction. The Withdraw action can be used to withdraw CKB and a layer 1 sUDT type simultaneously. Due to the constraint of CKB's cell model, Godwoken currently requires a minimum of 400 CKBytes  for each withdrawal.
 

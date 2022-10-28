@@ -22,9 +22,9 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 - **ETH Address Registry ID**: 2
 
-  > `ETH Address Registry` layer-2 [contract](https://github.com/nervosnetwork/godwoken-scripts/blob/master/c/contracts/eth_addr_reg.c) introduces two-ways mappings between `eth_address` and `gw_script_hash`.
+  > `ETH Address Registry` layer-2 [contract](https://github.com/godwokenrises/godwoken-scripts/blob/master/c/contracts/eth_addr_reg.c) introduces two-ways mappings between `eth_address` and `gw_script_hash`.
 
-- [sUDT_ERC20_Proxy contracts](https://github.com/nervosnetwork/godwoken-info/blob/main/mainnet_v1/bridged-token-list.json)
+- [sUDT_ERC20_Proxy contracts](https://github.com/godwokenrises/godwoken-info/blob/main/mainnet_v1/bridged-token-list.json)
 
 - **Layer-2 Godwoken Mainnet pCKB Contract**
 
@@ -50,7 +50,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 - **ETH Address Registry ID:** 2
 
-  > `ETH Address Registry` layer-2 [contract](https://github.com/nervosnetwork/godwoken-scripts/blob/master/c/contracts/eth_addr_reg.c) introduces two-ways mappings between `eth_address` and `gw_script_hash`.
+  > `ETH Address Registry` layer-2 [contract](https://github.com/godwokenrises/godwoken-scripts/blob/master/c/contracts/eth_addr_reg.c) introduces two-ways mappings between `eth_address` and `gw_script_hash`.
 
 - **Layer-2 Godwoken Testnet pCKB Contract**
 
