@@ -1,12 +1,10 @@
 ---
 id: deployLocalNetwork
-title: Deploy Local Network with Godwoken-kicker
+title: Deploy a Local Network with Godwoken-Kicker
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-Godwoken-kicker is a one-line command to start a Godwoken network on Devnet. This deployment method helps developers deploy Ethereum contracts and quickly migrate Ethereum DApps to CKB Devnet in testing and development environments.
-
-Godwoken-kicker provides a quick mode and a manual-build mode for deployment.
+Godwoken-Kicker provides a quick mode and a manual-build mode for deployment.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,15 +15,18 @@ import TabItem from '@theme/TabItem';
     {label: 'Quick Mode', value: 'quick'},
     {label: 'Manual-build Mode', value: 'manual-build'},
   ]}>
-<TabItem value="quick"><p>The quick mode is fast and simple. It executes the builds of all components from pre-built docker images.</p><b>Environment</b><p><ul><li>Ubuntu 20.04 LTS</li></ul></p><b>Prerequisites</b><p><ul><li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></li><li><a href="https://docs.docker.com/compose/install/">Docker Compose >= 1.29.0</a></li><li>Metamask Wallet</li></ul></p>
+
+<TabItem value="quick"><p>The quick mode is fast and simple. It executes the builds of all components from pre-built docker images.</p><b>Environment</b><p><ul><li>Ubuntu 20.04 LTS</li></ul></p><b>Prerequisites</b><p><ul><li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></li><li><a href="https://docs.docker.com/compose/install/">Docker Compose >= 1.29.0</a></li><li><a href="https://metamask.io/">MetaMask Wallet</a></li></ul></p>
+
 
 <p><b>Steps</b></p>
 
 <ol> 
-    <li><p>Clone the source of Godwoken-kicker under the branch <code>compatibility-change</code>.</p>
+    <li><p>Clone the source of Godwoken-Kicker under the branch <code>master</code>.</p>
+
 
 ```bash
-$ git clone -b compatibility-changes https://github.com/RetricSu/godwoken-kicker
+$ git clone -b master https://github.com/RetricSu/godwoken-kicker
 ```
 
 </li>
@@ -37,25 +38,29 @@ $ git clone -b compatibility-changes https://github.com/RetricSu/godwoken-kicker
 ```bash
 $ cd godwoken-kicker
 $ ./kicker start
-
 NOTE: The docker-compose version should be newer than 1.29.0
 NOTE: This might take several minutes on the first run
 
 :> docker-compose -f docker/docker-compose.yml up -d --build
 
-docker_postgres_1 is up-to-date
-docker_redis_1 is up-to-date
+docker_ckb_1 is up-to-date
+Starting docker_postgres_1 ...
 docker_ckb-miner_1 is up-to-date
-Starting docker_ckb_1 ... done
+Starting docker_postgres_1                       ... done
 Starting docker_check-ckb-started-successfully_1 ... done
 docker_ckb-indexer_1 is up-to-date
-Recreating docker_godwoken_1                     ... done
-Recreating docker_web3_1                         ... done
+Creating docker_godwoken_1                       ... done
+Creating docker_godwoken-readonly_1              ... done
+Creating docker_web3_1                           ... done
 Creating docker_web3-indexer_1                   ... done
 [start] Services started successfully
 ```
+:::note
+For developers who have configured Godwoken, in case of reported errors that cause the service to fail to start, execute `./kicker stop` to disconnect from the Godwoken network and then run `./kickcer clean` to ensure a clean running environment.
 
-<p>The command above deploys the Godwoken local network. The following docker containers should start running once deployment completed:</p>
+:::
+
+<p>The command above deploys the Godwoken local network. After deployment, the following docker containers begin running:</p>
 
 <ul>
 <li><code>docker_ckb_1</code></li><li><code>docker_ckb-miner_1</code></li><li><code>docker_ckb-indexer_1</code></li><li><code>docker_godwoken_1</code></li><li><code>docker_web3_1</code></li><li><code>docker_web3-indexer_1</code></li><li><code>docker_postgres_1</code></li><li><code>docker_redis_1</code></li></ul>
@@ -65,18 +70,18 @@ Creating docker_web3-indexer_1                   ... done
 
 More information can be viewed at <a href="https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/docker-compose.yml"><code>docker-compose.yml</code></a>.
 
-<li><p>Deposit CKB to a Layer 2 account for testing.</p>
+<li><p>Deposit CKB to a layer 2 account for testing.</p>
 
-The <code>kicker get-balance <'eth-address'></code> command can be used to check the layer 2 account balance.
+The `kicker get-balance <eth-address>` command can be used to check the layer 2 account balance.
 
 ```bash
 $ ./kicker get-balance 0xCD1d13450cFA630728D0390C99957C6948BF7d19 # check account balance
+script hash: 0x30e9d7aa4c5e72f7fe2a82af771d48b6324e0038a97d44d0b2950818004c378c
 Creating docker_godwoken_run ... done
-Creating docker_godwoken_run ... done
-[2022-04-14T18:06:14Z INFO  gw_tools::get_balance] Balance: 0
+2022-06-28T19:31:32.966645Z  INFO gw_tools::get_balance: Balance: 0
 ```
 
-The <code>kicker deposit <'eth-address'> <'amount'></code> command can be used to deposit CKB to the layer 2 account.
+The `kicker deposit <eth-address> <amount>` command can be used to deposit CKB to the layer 2 account.
 
 ```bash
 $ ./kicker deposit 0xCD1d13450cFA630728D0390C99957C6948BF7d19 999 # deposit ckb to account
@@ -85,40 +90,57 @@ $ ./kicker deposit 0xCD1d13450cFA630728D0390C99957C6948BF7d19 999 # deposit ckb 
 <p>
 
 ```bash
-[2022-04-14T18:07:55Z INFO  gw_tools::deposit_ckb] eth address: 0xcd1d13450cfa630728d0390c99957c6948bf7d19
-[2022-04-14T18:07:55Z INFO  gw_tools::deposit_ckb] layer2 script hash: 0xfe56afaef792f6d3de0d7271b995a6d663fa85483bf9ec757d6d2ce1346989a4
-[2022-04-14T18:07:55Z INFO  gw_tools::deposit_ckb] short script hash: 0xfe56afaef792f6d3de0d7271b995a6d663fa8548
-[2022-04-14T18:07:57Z INFO  gw_tools::deposit_ckb] tx_hash: 0xb8c84c7a2907b8765f7e6df6f95531466be83c76f8797d05ddf99be4f03d3552
-[2022-04-14T18:07:57Z INFO  gw_tools::utils::transaction] waiting tx b8c84c7a2907b8765f7e6df6f95531466be83c76f8797d05ddf99be4f03d3552
-[2022-04-14T18:08:02Z INFO  gw_tools::utils::transaction] tx pending
-[2022-04-14T18:08:07Z INFO  gw_tools::utils::transaction] tx pending
-[2022-04-14T18:08:12Z INFO  gw_tools::utils::transaction] tx pending
-[2022-04-14T18:08:17Z INFO  gw_tools::utils::transaction] tx proposed
-[2022-04-14T18:08:22Z INFO  gw_tools::utils::transaction] tx proposed
-[2022-04-14T18:08:27Z INFO  gw_tools::utils::transaction] tx commited
-[2022-04-14T18:08:29Z INFO  gw_tools::deposit_ckb] current balance: 0, waiting for 2 secs.
-[2022-04-14T18:08:31Z INFO  gw_tools::deposit_ckb] current balance: 0, waiting for 4 secs.
-[2022-04-14T18:08:33Z INFO  gw_tools::deposit_ckb] current balance: 0, waiting for 6 secs.
-[2022-04-14T18:08:35Z INFO  gw_tools::deposit_ckb] current balance: 0, waiting for 8 secs.
-[2022-04-14T18:08:37Z INFO  gw_tools::deposit_ckb] current balance: 99900000000, waiting for 10 secs.
-[2022-04-14T18:08:37Z INFO  gw_tools::deposit_ckb] deposit success!
-[2022-04-14T18:08:37Z INFO  gw_tools::deposit_ckb] Your account id: 7
-Deposit finished
+Creating docker_godwoken_run ... done
+2022-06-28T19:32:34.218450Z  INFO gw_tools::deposit_ckb: eth address: 0xcd1d13450cfa630728d0390c99957c6948bf7d19
+2022-06-28T19:32:34.221802Z  INFO gw_tools::deposit_ckb: layer2 script hash: 0x30e9d7aa4c5e72f7fe2a82af771d48b6324e0038a97d44d0b2950818004c378c
+2022-06-28T19:32:34.324741Z  INFO gw_tools::deposit_ckb: script hash: 0x30e9d7aa4c5e72f7fe2a82af771d48b6324e0038a97d44d0b2950818004c378c
+2022-06-28T19:32:34.326708Z  INFO gw_tools::deposit_ckb: balance before deposit: 0
+2022-06-28T19:32:34.953472Z  INFO gw_tools::deposit_ckb: tx_hash: 0xcf5cafaf8dbd02c1603681be437a1c4f6332b3d6ec0347c741c2273878a9a962
+2022-06-28T19:32:34.959452Z  INFO gw_rpc_client::ckb_client: waiting for transaction, status: Pending
+2022-06-28T19:32:37.961956Z  INFO gw_rpc_client::ckb_client: waiting for transaction, status: Pending
+2022-06-28T19:32:40.965957Z  INFO gw_rpc_client::ckb_client: waiting for transaction, status: Pending
+2022-06-28T19:32:43.969789Z  INFO gw_rpc_client::ckb_client: waiting for transaction, status: Pending
+2022-06-28T19:32:46.973281Z  INFO gw_rpc_client::ckb_client: waiting for transaction, status: Pending
+2022-06-28T19:32:49.976335Z  INFO gw_rpc_client::ckb_client: waiting for transaction, status: Pending
+2022-06-28T19:32:52.979368Z  INFO gw_rpc_client::ckb_client: waiting for transaction, status: Proposed
+2022-06-28T19:32:55.981554Z  INFO gw_rpc_client::ckb_client: waiting for transaction, status: Proposed
+2022-06-28T19:32:58.983675Z  INFO gw_rpc_client::ckb_client: waiting for transaction, status: Proposed
+2022-06-28T19:33:01.987721Z  INFO gw_rpc_client::ckb_client: waiting for transaction, status: Proposed
+2022-06-28T19:33:04.990121Z  INFO gw_rpc_client::ckb_client: transaction committed
+2022-06-28T19:33:06.992947Z  INFO gw_tools::deposit_ckb: current balance: 0, waiting for 2 secs.
+2022-06-28T19:33:08.995002Z  INFO gw_tools::deposit_ckb: current balance: 0, waiting for 4 secs.
+2022-06-28T19:33:10.996169Z  INFO gw_tools::deposit_ckb: current balance: 0, waiting for 6 secs.
+2022-06-28T19:33:12.997481Z  INFO gw_tools::deposit_ckb: current balance: 0, waiting for 8 secs.
+2022-06-28T19:33:14.998152Z  INFO gw_tools::deposit_ckb: current balance: 0, waiting for 10 secs.
+2022-06-28T19:33:16.999912Z  INFO gw_tools::deposit_ckb: current balance: 0, waiting for 12 secs.
+2022-06-28T19:33:19.001432Z  INFO gw_tools::deposit_ckb: current balance: 0, waiting for 14 secs.
+2022-06-28T19:33:21.003545Z  INFO gw_tools::deposit_ckb: current balance: 0, waiting for 16 secs.
+2022-06-28T19:33:23.005325Z  INFO gw_tools::deposit_ckb: current balance: 0, waiting for 18 secs.
+2022-06-28T19:33:25.007006Z  INFO gw_tools::deposit_ckb: current balance: 0, waiting for 20 secs.
+2022-06-28T19:33:27.008300Z  INFO gw_tools::deposit_ckb: current balance: 0, waiting for 22 secs.
+2022-06-28T19:33:29.010192Z  INFO gw_tools::deposit_ckb: current balance: 0, waiting for 24 secs.
+2022-06-28T19:33:31.011169Z  INFO gw_tools::deposit_ckb: current balance: 0, waiting for 26 secs.
+2022-06-28T19:33:33.012858Z  INFO gw_tools::deposit_ckb: current balance: 0, waiting for 28 secs.
+2022-06-28T19:33:35.014758Z  INFO gw_tools::deposit_ckb: current balance: 999000000000000000000, waiting for 30 secs.
+2022-06-28T19:33:35.014801Z  INFO gw_tools::deposit_ckb: deposit success!
+2022-06-28T19:33:35.015527Z  INFO gw_tools::deposit_ckb: Your account id: 5
 ```
 
 </p>
 </details>
 
 <p> Verify that the transfer executed successfully.</p>
+
+
 ```bash
 $ ./kicker get-balance 0xCD1d13450cFA630728D0390C99957C6948BF7d19
+script hash: 0x30e9d7aa4c5e72f7fe2a82af771d48b6324e0038a97d44d0b2950818004c378c
 Creating docker_godwoken_run ... done
-Creating docker_godwoken_run ... done
-[2022-04-14T18:13:20Z INFO  gw_tools::get_balance] Balance: 99900000000
+2022-06-28T19:35:01.434631Z  INFO gw_tools::get_balance: Balance: 999000000000000000000
 ```
 
 :::note
- Note that the accounts are defined in <a href="https://github.com/nervosnetwork/godwoken-tests/blob/develop/contracts/hardhat.config.js">contract/hardhat.config.js</a>.
+The accounts are defined in <a href="https://github.com/nervosnetwork/godwoken-tests/blob/develop/contracts/hardhat.config.js">contract/hardhat.config.js</a>.
 
 :::
 
@@ -364,17 +386,16 @@ $ npx hardhat run --network <your-network> scripts/deploy.js
 
 <li><p>Discontinue Godwoken devnet_v1.</p>
 
-<p>The <code>kicker stop</code> command can be used to stop the Godwoken services.</p>
+<p>Under the godwoken-kicker directory, the <code>kicker stop</code> command can be used to stop the Godwoken services.</p>
 
 ```bash
 $ ./kicker stop
-:> docker-compose -f docker/docker-compose.yml down --remove-orphans
 ```
 <details><summary>OUTPUT</summary>
 <p>
 
 ```bash
-
+:> docker-compose -f docker/docker-compose.yml down --remove-orphans
 Stopping docker_web3-indexer_1 ... done
 Stopping docker_web3_1         ... done
 Stopping docker_godwoken_1     ... done
@@ -409,13 +430,12 @@ Removing network docker_default
 
 ```bash
 $ sudo ./kicker clean
-:> docker-compose -f docker/docker-compose.yml ps --quiet
 ```
 <details><summary>OUTPUT</summary>
 <p>
 
 ```bash
-
+:> docker-compose -f docker/docker-compose.yml ps --quiet
 rm -rf docker/layer2/data/
 rm -f  docker/layer2/config/scripts-deployment.json
 rm -f  docker/layer2/config/rollup-genesis-deployment.json
@@ -437,78 +457,85 @@ rm -rf docker/manual-artifacts
 
 </li>
 
-<p>For more information on the use of the Godwoken-Kicker command line, see Godwoken-kicker Usage.</p></ol>
+For more information on the use of the Godwoken-Kicker command line, see [Godwoken-Kicker Commands](godwokenkicker#godwoken-kicker-commands).
+
+</ol>
 
 </TabItem>
-    <TabItem value="manual-build"><p>The manual-build mode is more flexible for custom requirements. It can build the components from local packages and executes the builds locally.</p><b>Environment</b><p><ul><li>Ubuntu 20.04 LTS</li></ul></p><b>Prerequisites</b><p><ul><li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></li><li><a href="https://docs.docker.com/compose/install/">Docker Compose >= 1.29.0</a></li></ul></p>
+    <TabItem value="manual-build"><p>The manual-build mode is more flexible for custom requirements. It can build the components from local packages and executes the builds locally.</p><b>Environment</b><p><ul><li>Ubuntu 20.04 LTS</li></ul></p><b>Prerequisites</b><p><ul><li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></li><li><a href="https://docs.docker.com/compose/install/">Docker Compose >= 1.29.0</a></li><li><a href="https://metamask.io/">MetaMask Wallet</a></li></ul></p>
 
-    <p><b>Steps</b></p>
+<p><b>Steps</b></p>
 
 <ol>  
-    <li><p>Clone the source of Godwoken-kicker under the branch <code>compatibility-changes</code>.</p>
-    ```bash
-    $ git clone -b compatibility-changes https://github.com/RetricSu/godwoken-kicker
-    ```
+<li><p>Clone the source of Godwoken-Kicker under the branch <code>master</code>.</p>
 
-    </li>
-
-    <li><p>Define a basic Godwoken service that runs on a pre-built image in <a href="https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/docker-compose.yml"><code>docker/docker-compose.yml</code></a>.</p>
-
-    ```bash
-    godwoken:
-  image: ghcr.io/flouse/godwoken-prebuilds:v1.0.x-202203160423
-  environment:
-    RUST_LOG: info,gw_generator=debug
-    GODWOKEN_MODE: fullnode
-    RUST_BACKTRACE: full
-  volumes:
-    - ./layer2:/var/lib/layer2
-  ports:
-    - 8119:8119
-    - 8120:8120
-  command: [ "godwoken", "run", "-c", "/var/lib/layer2/config/godwoken-config.toml" ]
-  ```
-  <p>Navigate to /usr/bin/godwoken to locate the Godwoken binary. </p>
-
-  </li>
-
-  <li><p>Build the godwoken binary manually and place it in <code>docker/manual-artifacts/godwoken</code>.</p>
-
-  ```bash
-MANUAL_BUILD_GODWOKEN=true \
-GODWOKEN_GIT_URL=ssh://git@github.com/nervosnetwork/godwoken \
-GODWOKEN_GIT_CHECKOUT=compatibility-breaking-changes \
-```
-<p>Use <code>./kicker manual-build</code>to build the binary. Or, users can build on their own, just make sure that the binary is placed in <code>docker/manual-artifacts/</code>.</p>
 
 ```bash
-$ ./kicker manual-build
+$ git clone -b master https://github.com/RetricSu/godwoken-kicker
 ```
 </li>
 
-<li><p>Replace the prebuild godwoken and gw-tools with manual-build in the file <code>docker/manual-godwoken.compose.yml</code>.</p>
+<li><p>Define a basic Godwoken service that runs on a pre-built image in <a href="https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/docker-compose.yml"><code>docker/docker-compose.yml</code></a>.</p>
+
 ```bash
-services:
-  godwoken:
-    volumes:
-      # Volume our manual-build godwoken to
-      # `/usr/bin/godwoken` inside container
-      - ./manual-artifacts/godwoken:/usr/bin/godwoken
+godwoken:
+mage: ghcr.io/flouse/godwoken-prebuilds:v1.0.x-202203160423
+environment:
+RUST_LOG: info,gw_generator=debug
+GODWOKEN_MODE: fullnode
+RUST_BACKTRACE: full
+volumes:
+  - ./layer2:/var/lib/layer2
+ports:
+  - 8119:8119
+  - 8120:8120
+command: [ "godwoken", "run", "-c", "/var/lib/layer2/config/godwoken-config.toml" ]
+```
+<p>Navigate to <code>/usr/bin/godwoken</code> to locate the Godwoken binary. </p>
+
+</li>
+
+<li><p>Build the binary manually and place the built binary in <code>docker/manual-artifacts/godwoken</code>.</p>
+
+```bash
+$ MANUAL_BUILD_GODWOKEN=true \
+$ GODWOKEN_GIT_URL=ssh://git@github.com/nervosnetwork/godwoken \
+$ GODWOKEN_GIT_CHECKOUT=compatibility-breaking-changes \
+$ ./kicker manual-build
 ```
 
+</li>
+
+<li><p>Create a new Docker compose file <code>docker/manual-godwoken.compose.yml</code> as follows.</p>
+
+```bash
+services:
+godwoken:
+  volumes:
+    # Volume our manual-build godwoken to
+    # `/usr/bin/godwoken` inside container
+    - ./manual-artifacts/godwoken:/usr/bin/godwoken
+```
 </li>
 
 <li><p>Launch the Godwoken service with manual-build artifacts.</p>
+
 ```bash
-MANUAL_BUILD_GODWOKEN=true ./kicker start # Starts all services
-MANUAL_BUILD_GODWOKEN=true ./kicker start godwoken # Starts only a single godwoken service
+MANUAL_BUILD_GODWOKEN=true ./kicker start # Starts all services MANUAL_BUILD_GODWOKEN=true ./kicker start godwoken # Starts only a single godwoken service
 ```
 
-</li></ol>
+</li>
+
+For more details on the manual-build mode of Godwoken-Kicker, refer to [manual-build](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docs/manual-build.md), and [the example of a one-click launch read-only node](https://github.com/nervosnetwork/godwoken-info/tree/info/testnet_v1).
+
+</ol>
 
 </TabItem>
 </Tabs>
 
-For more details on manual-build mode of Godwoken-kicker, refer to ][manual-build mode](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docs/manual-build.md), and [the example of a one-click launch readonly node](https://github.com/nervosnetwork/godwoken-info/tree/info/testnet_v1).
+To use this local network in MetaMask:
 
-
+1. After the Godwoken network has been successfully launched, visit the website http://localhost:6100.
+2. Connect the MetaMask wallet and add the Godwoken network by using the following settings:
+   - RPC URL=http://localhost:8024
+   - CHAIN ID=1024777
