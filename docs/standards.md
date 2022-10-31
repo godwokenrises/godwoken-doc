@@ -33,4 +33,4 @@ A deposit transaction is prepared on Layer 1, which takes the SUDT tokens and se
 
 A withdrawal follows the same process in reverse. The ERC20 Proxy Contract is used to send the layer 2 SUDT tokens to Godwoken, where they are burned. The equivalent number of locked SUDT tokens on Layer 1 are then released back to the user.
 
-* [Github](https://github.com/nervosnetwork/godwoken-polyjuice/tree/main/solidity/erc20)
+* [Github](https://github.com/godwokenrises/godwoken-polyjuice/tree/main/solidity/erc20)

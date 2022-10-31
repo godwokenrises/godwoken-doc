@@ -1,13 +1,13 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: "Godwoken Documentation",
-  tagline: "Godwoken Documentation",
+  title: "Godwoken Docs",
+  tagline: "Godwoken Docs",
   url: "https://docs.godwoken.io/",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/godwoken.png",
-  organizationName: "nervosnetwork", // Usually your GitHub org/user name.
+  favicon: "img/favicon.ico",
+  organizationName: "godwokenrises", // Usually your GitHub org/user name.
   projectName: "godwoken-doc", // Usually your repo name.
   plugins: ["docusaurus-plugin-matomo"],
   themeConfig: {
@@ -18,26 +18,25 @@ module.exports = {
     },
     algolia: {
       appId: "W0P1A076NN",
-      apiKey: "4a00c5457da3a6e940925cf7cb834418",
+      apiKey: "0180602fbb3e258d02a3c959074d3b04",
       indexName: "godwoken",
     },
     navbar: {
       hideOnScroll: true,
-      title: "Godwoken Documentation",
+      title: "Godwoken Docs",
       style: "dark",
       logo: {
         alt: "Nervos",
-        src: "img/godwoken.png",
-        href: "https://www.nervos.org/godwoken/",
+        src: "img/favicon.ico",
+        href: "https://godwoken.com",
       },
       items: [
         {
-           type: "docsVersionDropdown",
-           position: "right",
-         },
-         
+          type: "docsVersionDropdown",
+          position: "right",
+        },
         {
-          href: "https://github.com/nervosnetwork/godwoken",
+          href: "https://github.com/godwokenrises/godwoken",
           label: "GitHub",
           position: "right",
         },
@@ -50,7 +49,7 @@ module.exports = {
     },
     footer: {
       style: "dark",
-      copyright: `Copyright © ${new Date().getFullYear()} Nervos Foundation. All Rights Reserved.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Godwoken. All Rights Reserved.`,
     },
     matomo: {
       matomoUrl: "https://cryptapeblog.matomo.cloud/",

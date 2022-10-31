@@ -33,7 +33,7 @@ For more information about the concepts of CKB, refer to [Nervos CKB](https://do
 
 To deposit CKB from Nervos CKB to MetaMask:
 
-<!--Add the Godwoken Network manually to the MetaMask wallet.--><!--Godwoken v1 is currently in active development. For more information on Godwoken public networks, see [Godwoken info](https://github.com/nervosnetwork/godwoken-info).--><!--Login [Godwoken Bridge](https://testnet.bridge.godwoken.io/#/v1/).--><!--<img src={useBaseUrl("img/liteGdwknCon1.jpg")}  width="40%"/><img src={useBaseUrl("img/liteGdwknCon2.jpg")}  width="40%"/>Click **Switch network** to allow this site to switch the network to Godwoken Testnet v1.1.-->
+<!--Add the Godwoken Network manually to the MetaMask wallet.--><!--Godwoken v1 is currently in active development. For more information on Godwoken public networks, see [Godwoken info](https://github.com/godwokenrises/godwoken-info).--><!--Login [Godwoken Bridge](https://testnet.bridge.godwoken.io/#/v1/).--><!--<img src={useBaseUrl("img/liteGdwknCon1.jpg")}  width="40%"/><img src={useBaseUrl("img/liteGdwknCon2.jpg")}  width="40%"/>Click **Switch network** to allow this site to switch the network to Godwoken Testnet v1.1.-->
 
 1. If Godwoken Bridge is connected to Godwoken V0, select **Godwoken V1** from the drop-down menu on the top right of the page.
 

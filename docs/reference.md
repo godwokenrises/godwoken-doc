@@ -19,13 +19,13 @@ This page covers the repositories and articles that are currently referenced in 
 
 | Reference       | Link                        | 
 | --------------- | :---------------------------|
-|Godwoken Source Code	 |https://github.com/nervosnetwork/godwoken|
-|Godwoken Public Network Info |https://github.com/nervosnetwork/godwoken-info|
+|Godwoken Source Code	 |https://github.com/godwokenrises/godwoken|
+|Godwoken Public Network Info |https://github.com/godwokenrises/godwoken-info|
 |Godwoken-Kicker  |https://github.com/RetricSu/godwoken-kicker|
-|Godwoken On-chain Scripts |https://github.com/nervosnetwork/godwoken-scripts|
-|Godwoken Polyjuice |https://github.com/nervosnetwork/godwoken-polyjuice|
-|Godwoken Web3 API 	|https://github.com/nervosnetwork/godwoken-web3|
-|Godwoken Ingegration Test	|https://github.com/nervosnetwork/godwoken-tests|
+|Godwoken On-chain Scripts |https://github.com/godwokenrises/godwoken-scripts|
+|Godwoken Polyjuice |https://github.com/godwokenrises/godwoken-polyjuice|
+|Godwoken Web3 API 	|https://github.com/godwokenrises/godwoken-web3|
+|Godwoken Ingegration Test	|https://github.com/godwokenrises/godwoken-tests|
 
 ## Nervos Open Source Repositories
 

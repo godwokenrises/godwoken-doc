@@ -34,7 +34,7 @@ Here are links to some useful resources for you to build on Godwoken.
 
 **Sites:**
 
-- Nervos Network Official Website: https://www.nervos.org/godwoken/
+- Godwoken Official Website: https://godwoken.com/
 - Official Godwoken Docs: https://docs.godwoken.io/
 - Instructions for Launching on Godwoken: https://startwithnervos.com/godwoken
 - Godwoken Service Status Monitor: https://godwokenstatus.statuspage.io

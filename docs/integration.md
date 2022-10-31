@@ -30,7 +30,7 @@ If you want to obtain direct experience and prepare yourself for deploying appli
 Godwoken V1 is still under development and targets 100% EVM compatibility. Having the best compatibility is the objective of designing and building Godwoken:
 
 - The EVM being used in Godwoken must be 100% compatible with the latest forked version of Ethereum.
-- Godwoken must be 100% compatible with Ethereum over the Web3 interfaces by using [Godwoken Web3](https://github.com/nervosnetwork/godwoken-web3).
+- Godwoken must be 100% compatible with Ethereum over the Web3 interfaces by using [Godwoken Web3](https://github.com/godwokenrises/godwoken-web3).
 
 Several discrepancies inevitably exist due to the wide architectural and design differences between Godwoken and Ethereum.
 
@@ -44,7 +44,7 @@ The maximum EVM revision supported is `EVMC_BERLIN`.
 
 ### pCKB
 
-Godwoken v1 introduced a new concept, [**pCKB**](https://github.com/nervosnetwork/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md#pckb) which is a defined layer-2 sUDT token type when deploying a Godwoken chain.
+Godwoken v1 introduced a new concept, [**pCKB**](https://github.com/godwokenrises/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md#pckb) which is a defined layer-2 sUDT token type when deploying a Godwoken chain.
 
 pCKB serves a similar purpose for the Godwoken chain as ETH does for the Ethereum chain, in the sense that it is used for collecting transaction fees. In Ethereum, the gas for each smart contract is derived by calculation. And the transaction fee is then calculated by multiplying the gas by the specified gas price. In Godwoken, pCKB is the unit for calculating transaction fees. In other words, the gas price in Ethereum is calculated as ETH/gas (in wei, i.e., 10<sup>-18</sup> ETH), and the gas price in Godwoken is calculated as pCKB/gas. When Godwoken executes a transaction, it will deduct the transaction fee by using layer-2 [sUDT](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0025-simple-udt/0025-simple-udt.md) type, which is represented by **pCKB**.
 
@@ -58,19 +58,19 @@ Polyjuice only provides [contract accounts](https://ethereum.org/en/glossary/#c
 
 ### sUDT-ERC20 proxy contract
 
-All tokens on Godwoken are represented as Layer-2 sUDT types, regardless of whether they are native CKB or any sUDT types. With the [sUDT-ERC2 Procy Contract](https://github.com/nervosnetwork/godwoken-polyjuice/blob/docs/solidity/erc20/README.md), Polyjuice ensures that all layer-2 tokens on Godwoken are ERC20 standard compliant. The contract enables the EVM code to interact with the ERC20 standard interface, making it possible to manipulate sUDT tokens on Godwoken as if they were ERC20 tokens.
+All tokens on Godwoken are represented as Layer-2 sUDT types, regardless of whether they are native CKB or any sUDT types. With the [sUDT-ERC2 Procy Contract](https://github.com/godwokenrises/godwoken-polyjuice/blob/docs/solidity/erc20/README.md), Polyjuice ensures that all layer-2 tokens on Godwoken are ERC20 standard compliant. The contract enables the EVM code to interact with the ERC20 standard interface, making it possible to manipulate sUDT tokens on Godwoken as if they were ERC20 tokens.
 
 That is to say, it is unnecessary to distinguish between native tokens and ERC20 tokens. All the different tokens must be handled with the same ERC20 interface. All the bridged sUDT tokens you will deal with have the same ERC20 interface.
 
 ### Bridged sUDT Token List
 
-- mainnet_v1: https://github.com/nervosnetwork/godwoken-info/blob/main/mainnet_v1/bridged-token-list.json
+- mainnet_v1: https://github.com/godwokenrises/godwoken-info/blob/main/mainnet_v1/bridged-token-list.json
 
- - testnet_v1: https://github.com/nervosnetwork/godwoken-info/blob/main/testnet_v1_1/bridged-token-list.json
+ - testnet_v1: https://github.com/godwokenrises/godwoken-info/blob/main/testnet_v1_1/bridged-token-list.json
 
 ### Transaction Structure
 
-A Polyjuice transaction is essentially a Godwoken transaction. When Ethereum transactions are sent, they are converted to the Godwoken [RawL2Transaction](https://github.com/nervosnetwork/godwoken/blob/v1.5.0/crates/types/schemas/godwoken.mol#L69-L76) type when being sent and are automatically processed by [Godwoken Web3](https://github.com/nervosnetwork/godwoken-web3/tree/v1.6.4).
+A Polyjuice transaction is essentially a Godwoken transaction. When Ethereum transactions are sent, they are converted to the Godwoken [RawL2Transaction](https://github.com/godwokenrises/godwoken/blob/v1.5.0/crates/types/schemas/godwoken.mol#L69-L76) type when being sent and are automatically processed by [Godwoken Web3](https://github.com/godwokenrises/godwoken-web3/tree/v1.6.4).
 
 ### Behavioral Differences of Some Opcodes
 
@@ -89,11 +89,11 @@ Polyjuice runs EVM on [ckb-vm](https://github.com/nervosnetwork/rfcs/blob/master
 
 - Transaction context
 
-  - `chain_id` is defined in Godwoken [RollupConfig#chain_id](https://github.com/nervosnetwork/godwoken/blob/v1.5.0/crates/types/schemas/godwoken.mol#L64).
+  - `chain_id` is defined in Godwoken [RollupConfig#chain_id](https://github.com/godwokenrises/godwoken/blob/v1.5.0/crates/types/schemas/godwoken.mol#L64).
   - the block difficulty is always `2500000000000000`.
   - the gas limit is 12500000 per block, but it is not a transaction-level limit. Any transaction can reach the gas limit.
-  - the size limit for contract's return data is [`25KB`](https://github.com/nervosnetwork/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22).
-  - the size limit for contract's storage is [`25KB`](https://github.com/nervosnetwork/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22).
+  - the size limit for contract's return data is [`25KB`](https://github.com/godwokenrises/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22).
+  - the size limit for contract's storage is [`25KB`](https://github.com/godwokenrises/godwoken-scripts/blob/31293d1/c/gw_def.h#L21-L22).
 
 - The `transaction.to` MUST be a Contract Address.
 
@@ -102,11 +102,11 @@ Polyjuice runs EVM on [ckb-vm](https://github.com/nervosnetwork/rfcs/blob/master
 - Pre-compiled contract
 
   - `bn256_pairing` is not yet supported because of the high cycle cost (WIP)
-  - [addition pre-compiled contracts](https://github.com/nervosnetwork/godwoken-polyjuice/blob/compatibility-breaking-changes/docs/Addition-Features.md)
+  - [addition pre-compiled contracts](https://github.com/godwokenrises/godwoken-polyjuice/blob/compatibility-breaking-changes/docs/Addition-Features.md)
 
 ## Godwoken Web3 Compatibility
 
-[Godwoken Web3](https://github.com/nervosnetwork/godwoken-web3) is a Web3 RPC compatible layer developed on top of Godwoken. Direct transfer of values (pCKB) from EOA to EOA will be supported from this release onwards.
+[Godwoken Web3](https://github.com/godwokenrises/godwoken-web3) is a Web3 RPC compatible layer developed on top of Godwoken. Direct transfer of values (pCKB) from EOA to EOA will be supported from this release onwards.
 
 ### ETH Compatibility
 
@@ -120,9 +120,9 @@ Godwoken does not support the concept of [zero address](https://ethereum.org/ru/
 
   **Recommend Workaround**
 
-   To use the zero address as a black hole to burn ethers, you can use the transfer function of the [CKB_ERC20_Proxy](https://github.com/nervosnetwork/godwoken-polyjuice/blob/3f1ad5b/solidity/erc20/README.md) contract to send ethers to the zero address.
+   To use the zero address as a black hole to burn ethers, you can use the transfer function of the [CKB_ERC20_Proxy](https://github.com/godwokenrises/godwoken-polyjuice/blob/3f1ad5b/solidity/erc20/README.md) contract to send ethers to the zero address.
 
-For more information on the compatibility changes of Godwoken Web3 API, see [APIs](https://github.com/nervosnetwork/godwoken-web3/blob/main/docs/apis.md).
+For more information on the compatibility changes of Godwoken Web3 API, see [APIs](https://github.com/godwokenrises/godwoken-web3/blob/main/docs/apis.md).
 
 **2. Gas Limit** 
 
@@ -135,5 +135,5 @@ It is mandatory to create an account on a Godwoken chain for using Godwoken and 
 There are two ways to create a layer 2 account:
 
 - Deposit to Godwoken at layer 1;
-- Call the Godwoken built-in [meta_contract](https://github.com/nervosnetwork/godwoken-scripts/blob/86b299f/c/contracts/meta_contract.c) and create an account at layer 2.
+- Call the Godwoken built-in [meta_contract](https://github.com/godwokenrises/godwoken-scripts/blob/86b299f/c/contracts/meta_contract.c) and create an account at layer 2.
 

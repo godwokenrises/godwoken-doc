@@ -7,14 +7,14 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 Account-Faucet is a CLI tool for claiming faucets for Godwoken layer-2 accounts. Previously, to claim faucets, you must first visit the [Faucet](https://faucet.nervos.org) page, enter your CKB account address, then go to the [Godwoken Bridge](https://testnet.bridge.godwoken.io/) page and deposit those CKBs into your Godwoken layer-2 account. 
 
-With the Account-Faucet CLI tool, you can complete these two moves in one-step by simply having your `ETH address` and your `CKB private key` ready. The following will show you how to use this CLI tool. Before that, please install [Godwoken-Tests](https://github.com/nervosnetwork/godwoken-tests) in your local environment.
+With the Account-Faucet CLI tool, you can complete these two moves in one-step by simply having your `ETH address` and your `CKB private key` ready. The following will show you how to use this CLI tool. Before that, please install [Godwoken-Tests](https://github.com/godwokenrises/godwoken-tests) in your local environment.
 
 ## Install Godwoken-Tests
 
 - Enter the command-line below to install Godwoken-Tests in your local environment, and navigate to the `godwoken-tests` folder.
 
     ```jsx
-    $ git clone https://github.com/nervosnetwork/godwoken-tests
+    $ git clone https://github.com/godwokenrises/godwoken-tests
     $ cd godwoken-tests
     ```
 

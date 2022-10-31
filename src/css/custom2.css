@@ -242,12 +242,15 @@ video {
   width: 100%;
 }
 
+.navbar__brand {
+  height: 100%;
+}
 .navbar__brand::after {
   display: block;
   content: " ";
-  background: #dadde1;
+  background: #494949;
   width: 1px;
-  height: 60px;
+  height: 60%;
   margin-left: 20px;
   transform: skew(0);
 }

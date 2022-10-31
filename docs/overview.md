@@ -6,9 +6,9 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 With the vision to enable interoperability across the blockchain ecosystem through a multi-chain solution, Godwoken is an impactful move towards this objective for Nervos Network.
 
-<!--[Godwoken](https://github.com/nervosnetwork/godwoken) is a layer 2 optimistic rollup solution and an EVM-compatible layer that builds on top of Nervos Layer 1, which is also known as CKB.-->
+<!--[Godwoken](https://github.com/godwokenrises/godwoken) is a layer 2 optimistic rollup solution and an EVM-compatible layer that builds on top of Nervos Layer 1, which is also known as CKB.-->
 
-[Godwoken](https://github.com/nervosnetwork/godwoken) comprises two key components: the Godwoken optimistic rollup framework and the Polyjuice EVM-compatible framework. Polyjuice serves as the backend for the Godwoken rollup framework, providing an Ethereum-compatible layer atop Nervos CKB. Polyjuice leverages the account model and the scalability provided by Godwoken, and integrates [evmone](https://github.com/ethereum/evmone) as the EVM engine to run Ethereum smart contracts. For more information about Polyjuice, see [godwoken-polyjuice](https://github.com/nervosnetwork/godwoken-polyjuice).
+[Godwoken](https://github.com/godwokenrises/godwoken) comprises two key components: the Godwoken optimistic rollup framework and the Polyjuice EVM-compatible framework. Polyjuice serves as the backend for the Godwoken rollup framework, providing an Ethereum-compatible layer atop Nervos CKB. Polyjuice leverages the account model and the scalability provided by Godwoken, and integrates [evmone](https://github.com/ethereum/evmone) as the EVM engine to run Ethereum smart contracts. For more information about Polyjuice, see [godwoken-polyjuice](https://github.com/godwokenrises/godwoken-polyjuice).
 
 Both Godwoken and Polyjuice together forge a scalable EVM-compatible solution for Nervos, generally known as **Godwoken**.
 
@@ -22,7 +22,7 @@ Figure 1. Architecture of Godwoken
 
 ## Godwoken Public Networks
 
-Godwoken is currently in active development. For more information on Godwoken public networks, see [Godwoken info](https://github.com/nervosnetwork/godwoken-info/tree/info).
+Godwoken is currently in active development. For more information on Godwoken public networks, see [Godwoken info](https://github.com/godwokenrises/godwoken-info/tree/info).
 
 With Godwoken-Kicker, you can deploy a local Godwoken v1 network in two modes, quick mode or manual-build mode. For more information, see [Godwoken-Kicker](godwokenkicker).
 
