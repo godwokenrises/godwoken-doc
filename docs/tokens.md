@@ -33,4 +33,4 @@ Below you can find ERC20 token addresses on Godwoken networks.
 * dCKB (from [https://aggron.nexisdao.com/dckb](https://aggron.nexisdao.com/dckb)): 0x7e54f7324902B72334827F40f613116F06a88845
 * BNB (via Forcebridge from BSC): 0xFB60eBF591bc5e363A24b67518339F0015Ad02eE
 
-*Godwoken Testnet Force Bridge Rinkeby assets faucet: https://gliaswap-faucet-rinkeby.ckbapp.dev.*
+*Godwoken Testnet Force Bridge Goerli assets faucet: https://faucet-eth-goerli.ckbapp.dev*
