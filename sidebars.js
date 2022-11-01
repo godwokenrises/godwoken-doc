@@ -44,6 +44,7 @@ module.exports = {
 
     {
       "Asset Management": [
+        "claimFaucet",
         "fastWithdrawal",
         "sendPCKB",
         "extractPrivkey"
