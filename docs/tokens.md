@@ -24,12 +24,11 @@ Below you can find ERC20 token addresses on Godwoken networks.
 ## Godwoken Testnet
 
 * pCKB: 0xE05d380839f32bC12Fb690aa6FE26B00Bd982613
-* ETH (via Forcebridge from ETH): 0x0902574C86aEc810B727fD08Aa186DBC20579c08
-* USDC (via Forcebridge from ETH): 0x630AcC0A29E325ce022563Df69ba7E25Eeb1e184
-* USDT (via Forcebridge from ETH): 0x10A86c9C8CbE7cf2849bfCb0EaBE39b3bFEc91D4
-* DAI (via Forcebridge from ETH): 0xA2370D7aFFf03e1E2FB77b28Fb65532636e0cB61
-* WBTC (via Forcebridge from ETH): 0x744f7bc43F8492A688AFEe373dfd41EAf5C6000C
-* USDC (from [https://testnet.bridge.godwoken.io](https://testnet.bridge.godwoken.io)): 0x30D4B957139785B979aF5312d71505809dc563ed
+* ETH (via Forcebridge from ETH): 0x8375e0901419481Ad87eC8A2834F1A85f6D19143
+* USDC (via Forcebridge from ETH): 0x0ad79F7D32A1E54E9bfB3fCe4847e4718b7820Af
+* USDT (via Forcebridge from ETH): 0x8c4aa4Ad3591f391616a0401f3B621F568cC30CD
+* DAI (via Forcebridge from ETH): 0xd4d88E331F24DBc5a347cF351857676D62Eb226D
+* WBTC (via Forcebridge from ETH): 0x39C08260068533be2414cD504aD293c90F7302BF
 * dCKB (from [https://aggron.nexisdao.com/dckb](https://aggron.nexisdao.com/dckb)): 0x7e54f7324902B72334827F40f613116F06a88845
 * BNB (via Forcebridge from BSC): 0xFB60eBF591bc5e363A24b67518339F0015Ad02eE
 
