@@ -68,6 +68,13 @@ module.exports = {
         },
         docs: {
           path: "docs",
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: 'latest',
+              path: '/'
+            }
+          },
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "/",
         },
