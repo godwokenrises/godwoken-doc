@@ -4,6 +4,10 @@ title: 4. Use Force Bridge to Deposit Tokens from Ethereum
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
+:::caution
+This article is out of date as the Rinkeby testnet has been deprecated.
+We will update relevant articles later, if you like to study on how to claim Goerli tokens and bridge them from Goerli testnet to Godwoken, please visit: [Claim assets on testnet v1](../claimFaucet.md)
+:::
 
 Moving assets between blockchains is an extremely important part of building the cross-chain dApps of the future. Not only do developers need secure infrastructure to build on, but the experience for the end-user must be simple and straightforward.
 
