@@ -4,6 +4,7 @@ module.exports = {
   tagline: "Godwoken Docs",
   url: "https://docs.godwoken.io/",
   baseUrl: "/",
+  trailingSlash: false,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
@@ -71,7 +72,7 @@ module.exports = {
           lastVersion: 'current',
           versions: {
             current: {
-              label: 'latest',
+              label: 'Latest',
               path: '/'
             }
           },
