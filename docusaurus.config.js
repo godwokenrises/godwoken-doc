@@ -2,7 +2,7 @@
 module.exports = {
   title: "Godwoken Docs",
   tagline: "Godwoken Docs",
-  url: "https://docs.godwoken.io/",
+  url: "https://docs.godwoken.io",
   baseUrl: "/",
   trailingSlash: false,
   onBrokenLinks: "throw",
@@ -27,9 +27,8 @@ module.exports = {
       title: "Godwoken Docs",
       style: "dark",
       logo: {
-        alt: "Nervos",
-        src: "img/favicon.ico",
-        href: "https://godwoken.com",
+        alt: "Godwoken",
+        src: "img/favicon.ico"
       },
       items: [
         {

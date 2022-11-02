@@ -1,33 +1,34 @@
-# Website
+# Godwoken Docs
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+**Godwoken Docs** is a documentation site designed to help developers of all levels explore the world of Godwoken. 
 
-## Installation
+It's built with various articles about Godwoken, from simple concept explanations and step-by-step tutorials, to deep dives into how Godwoken actually works, all waiting for you to explore.
 
-```console
+To visit online: [Godwoken Docs](https://docs.godwoken.io).
+
+## Issues
+
+We are working hard to improve the reading experience of the website, if you find anything missed from the site, or anything mistaken, even anything you find it's difficult to read, you're more than welcome to open an issue to let us know.
+
+Create an issue: [New Issue](https://github.com/godwokenrises/godwoken-doc/issues/new).
+
+## Development
+
+This website is powered by Docusaurus 2, a modern static website generator. 
+
+You can run the project in local environment with the following commands, and if you have any questions about the configuration, you should be able to find them in Docusaurus' documentation site: [Docusaurus 2](https://docusaurus.io/).
+
+**Install dependencies:**
+```shell
 yarn install
 ```
 
-## Local Development
-
-```console
+**Run in local:**
+```shell
 yarn start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-## Build
-
-```console
+**Build:**
+```shell
 yarn build
 ```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-```console
-GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
