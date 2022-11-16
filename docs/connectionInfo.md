@@ -37,13 +37,13 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 | ITEM            	| Detail                                             	|
 |-----------------	|----------------------------------------------------	|
 | Network Name     	| Godwoken/PolyJuice Testnet                         	|
-| RPC URL         	| https://godwoken-testnet-v1.ckbapp.dev             	|
+| RPC URL         	| https://v1.testnet.godwoken.io/rpc             	|
 | Chain ID        	| 71401                                              	|
 | Currency Symbol 	| pCKB                                                |
 | Block Explorer  	| https://v1.testnet.gwscan.com/                     	|
 |                 	| https://gw-testnet-explorer.nervosdao.community    	|
 | Token Bridge    	| https://testnet.bridge.godwoken.io                 	|
-| WebSocket       	| wss://godwoken-testnet-v1.ckbapp.dev/ws            	|
+| WebSocket       	| wss://v1.testnet.godwoken.io/ws            	|
 | Graph (subgraph)  | https://gw-testnet-graph.nervosdao.community  	    |
 | Graph RPC       	| https://gw-testnet-graph.nervosdao.community/rpc/  	|
 | Graph IPFS      	| https://gw-testnet-graph.nervosdao.community/ipfs/ 	|

@@ -23,13 +23,13 @@ Developers who want to connect to the Godwoken chain can do so via Metamask wall
 
 Here are the credentials that you will need:
 
-| ITEM               | Testnet                                | Mainnet                            |
-| ------------------ | :------------------------------------- | :--------------------------------- |
-| NETWORK NAME       | Godwoken/PolyJuice Testnet             | Godwoken/PolyJuice Mainnet         |
-| New RPC URL        | https://godwoken-testnet-v1.ckbapp.dev | https://v1.mainnet.godwoken.io/rpc |
-| Chain ID           | 71401                                  | 71402                              |
-| Currency Symbol    | pCKB                                   | pCKB                               |
-| Block Explorer URL | https://v1.testnet.gwscan.com/         | https://v1.gwscan.com/             |
+| ITEM               | Testnet                             | Mainnet                            |
+| ------------------ |:------------------------------------| :--------------------------------- |
+| NETWORK NAME       | Godwoken/PolyJuice Testnet          | Godwoken/PolyJuice Mainnet         |
+| New RPC URL        | https://v1.testnet.godwoken.io/rpc  | https://v1.mainnet.godwoken.io/rpc |
+| Chain ID           | 71401                               | 71402                              |
+| Currency Symbol    | pCKB                                | pCKB                               |
+| Block Explorer URL | https://v1.testnet.gwscan.com/      | https://v1.gwscan.com/             |
 
 Below is a visual guide on how to connect Metamask to Godwoken:
 
