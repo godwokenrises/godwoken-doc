@@ -44,6 +44,7 @@ module.exports = {
 
     {
       "Asset Management": [
+        "purchaseCKB",
         "claimFaucet",
         "fastWithdrawal",
         "sendPCKB",
