@@ -18,7 +18,7 @@ If so, please continue to read the following sections.
 
 If you’ve purchased some CKB on an exchange and want to transfer it to CKB L1, so maybe later you can deposit to Godwoken L2, you should withdraw your CKB from the exchange to your `L1 Wallet Address` first. 
 
-To do that, please visit: [Godwoken Bridge (mainnet)](https://bridge.godwoken.io/). When you opened the page, you should connect your wallet with the account you want to use CKB to Godwoken Bridge, and then you should be ale to see the `L1 Wallet Address` field on the page. 
+To do that, please visit: [Godwoken Bridge (mainnet)](https://bridge.godwoken.io/). When you open the page, you should connect your wallet with the account you want to deposit CKB to Godwoken Bridge, and then you should be able to see the `L1 Wallet Address` field on the page. 
 
 And then, you should copy the address and go to the exchange, and then withdraw your CKB to the address. If everything works, you should have your CKB transferred to the right account’s `L1 Wallet Address`, and you should see your `L1 Balance` updated on Godwoken Bridge.
 
@@ -33,7 +33,7 @@ If you want to transfer 400+ CKB from the exchange to Godwoken L2, in fact you c
 But how does it work? Well, Godwoken treats live cells belong to the `L1 Deposit Address` with sufficient amount of CKB as deposit cells, so transferring assets (with sufficient amount of CKB) to your `L1 Deposit Address` can be regarded as deposit.
 
 :::tip
-We don't want to give you too much information at once as it might get your reading progress stuck, so if you have interest about the details of how the action of deposit works, please visit: [Life of a Godwoken Transaction](https://github.com/godwokenrises/godwoken/blob/ad898e7a9821df3e627737d32865bec85bf1a753/docs/life_of_a_godwoken_transaction.md#deposit).
+We don't want to give you too much information at once as it might get your reading progress stuck, so if you have an interest in the details of how the action of deposit works, please visit: [Life of a Godwoken Transaction](https://github.com/godwokenrises/godwoken/blob/ad898e7a9821df3e627737d32865bec85bf1a753/docs/life_of_a_godwoken_transaction.md#deposit).
 :::
 
 ## Problem with locks and exchanges
@@ -50,7 +50,7 @@ So, in the world of CKB L1, there are a lot of locks for different situations. F
 
 But in Godwoken’s perspective, we need to support transaction signing methods from the outside world, from other popular blockchains like `Ethereum` and `Bitcoin`, and we cannot do this with only the `SECP256K1/blake160` lock. So, here we have some other locks:
 
-- [Omni-lock](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0042-omnilock/0042-omnilock.md): The lock is designed for interoperability with built-in support for verification of transaction signing methods used in Ethereum, Bitcoin and more, you can also read this blog for more details: [https://blog.cryptape.com/omnilock-a-universal-lock-that-powers-interoperability-1](https://blog.cryptape.com/omnilock-a-universal-lock-that-powers-interoperability-1).
+- [Omni-lock](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0042-omnilock/0042-omnilock.md): The lock is designed for interoperability with built-in support for verification of transaction signing methods used in Ethereum, Bitcoin and more, you can also read this blog for more details: [Omnilock, a Universal Lock that Powers Interoperability](https://blog.cryptape.com/omnilock-a-universal-lock-that-powers-interoperability-1).
 - [Deposit-lock](https://github.com/godwokenrises/godwoken/blob/ad898e7a9821df3e627737d32865bec85bf1a753/docs/deposit_and_withdrawal.md#deposit): The lock is for depositing assets from CKB L1 to Godwoken L2, the block producer of Godwoken will collect cells with deposit-lock and process the deposit requests in blocks.
 
 If the above content is still vague to you, perhaps think of it this way: Different locks correspond to different L1 addresses, and some exchanges just don’t reorganize locks other than the `SECP256K1/blake160` lock. Therefore `L1 Wallet Address` (Omni-lock) and `L1 Deposit Address` (Deposit-lock) may not be valid in the eyes of these exchanges.
@@ -59,7 +59,7 @@ If the above content is still vague to you, perhaps think of it this way: Differ
 
 If you have encountered this issue, you can follow the below instructions to safely transfer your CKB to the `L1 Wallet Address` or the `L1 Deposit Address` of the target account.
 
-Since the problem we’re facing is that the exchange don’t support the type of address we tend to transfer to, the overall solution is to add an extra step in the middle of buying CKB. Let’s take `L1 Wallet Address` as an example. 
+Since the problem we’re facing is that the exchange doesn’t support the type of address we tend to transfer to, the overall solution is to add an extra step in the middle of buying CKB. Let’s take `L1 Wallet Address` as an example. 
 
 The purchase process previously:
 
@@ -70,16 +70,14 @@ Purchase CKB on the exchange → Withdraw to L1 Wallet Address
 New purchase process that solves our problem:
 
 ```
-Purchase CKB on the exchange → **Withdraw to a crypto wallet** → Transfer to L1 Wallet Address
+Purchase CKB on the exchange → Withdraw to a crypto wallet → Transfer to L1 Wallet Address
 ```
 
 You can see the solution is to withdraw to a crypto wallet that supports CKB, and then transfer to the `L1 Wallet Address` of the target account. This is because crypto wallets usually has a higher compatibility to different locks (or they just don't verify the lock of the recipient’s address).
 
-This solution should be simple enough, but it also has a disadvantage: you always need to leave some CKB in your crypto wallet for paying transaction fees. So in this solution, you will have to leave some CKB in your exchange’s wallet, and leave some CKB in your crypto wallet as well. However, this is a solid solution to the problem we’re facing.
+This solution should be simple enough, but as it always need us to make one more step in the process of purchasing CKB, the best solution for us should be to purchase on an exchange that allows us to withdraw to different kind of addresses. However, this is still a solid solution to the problem we’re facing.
 
 Finally, if you have trouble finding a wallet, here are some crypto wallets for you to pick:
 
-- [Neuron Wallet](https://linktr.ee/NeuronWallet)
 - [imToken Wallet](https://linktr.ee/Imtoken_Wallet)
-- [Safepal Wallet](https://linktr.ee/Safepal_Wallet)
-- [CKBull Wallet](https://linktr.ee/CKBullWallet)
+- [Neuron Wallet](https://linktr.ee/NeuronWallet)
