@@ -4,15 +4,23 @@ title: Purchase CKB
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-## Purchase CKB
+## Purchase and withdraw
 
 ### Purchase on an exchange
 
-If you need to use CKB/pCKB on mainnet, it's always safer to purchase it from an exchange. There are a lot of exchanges on the market, you can visit here to pick an exchange to purchase CKB: [CKB market-cap and chart | CoinMarketCap](https://coinmarketcap.com/currencies/nervos-network/markets/).
+If you need to use CKB/pCKB on mainnet, the most common way to get it is to purchase it from an exchange. There are a lot of exchanges on the market, you can visit here to pick an exchange to purchase CKB: [CKB market-cap and chart | CoinMarketCap](https://coinmarketcap.com/currencies/nervos-network/markets/).
 
 The general steps to purchase CKB should be simple, but you may still need some guidance when you complete the purchase and want to transfer your CKB to CKB L1 or Godwoken L2. 
 
 If so, please continue to read the following sections.
+
+:::tip
+After browsing the CoinMarketCap site, if you still don't know what exchange to use, here are some of the exchanges we tested, which definitely support the withdrawal of CKB to your `L1 wallet address` and `L1 recharge address`:
+- [Binance](https://www.binance.com/)
+- [KuCoin](https://www.kucoin.com/)
+- [Bittrex](https://global.bittrex.com/)
+- [Gate.io](https://www.gate.io/)
+:::
 
 ### Withdraw from an exchange
 
