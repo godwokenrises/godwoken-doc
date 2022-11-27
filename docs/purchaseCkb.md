@@ -15,7 +15,7 @@ The general steps to purchase CKB should be simple, but you may still need some 
 If so, please continue to read the following sections.
 
 :::tip
-After browsing the CoinMarketCap site, if you still don't know what exchange to use, here are some of the exchanges we tested, which definitely support the withdrawal of CKB to your `L1 wallet address` and `L1 recharge address`:
+After browsing the CoinMarketCap site, if you still don't know which exchange to use, here are some of the exchanges we tested, which definitely support the withdrawal of CKB to your `L1 Wallet Address` and `L1 Deposit Address`:
 - [Binance](https://www.binance.com/)
 - [KuCoin](https://www.kucoin.com/)
 - [Bittrex](https://global.bittrex.com/)
