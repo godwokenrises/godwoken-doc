@@ -1,6 +1,6 @@
 ---
-id: gasless-api
-title: Gasless API
+id: gasless-feature
+title: Gasless Feature
 ---
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
@@ -12,7 +12,6 @@ The gas feature is based on the [ERC-4337 solution](https://eips.ethereum.org/EI
 - `tx.data` must be the call data of calling `Entrypoint`'s `handleOp(UserOperation calldata op)` function, which contains the target contract and the paymaster address.
 - Must set `tx.gasPrice` to 0 (compatible with Metamask api)
 - The `tx.to` must be set to the `Entrypoint` contract.
-- `tx.paymasterAndData` contains a pay master address.
 - `tx.gas` is equals to `op.callGasLimit + op.verificationGasLimit * 3`.
 
 
@@ -25,7 +24,7 @@ Each solving some decentralized problem. WIth gasless feature some of dapps coul
 
 ### How to use gasless transaction for your dapp
 
-Let's say we have the entrypoint contract at `0x9a11f47c0729fc56d9c44c059987d40703249569` and as a game developer, we want to pay the gas fee for some whitelist users, so we wrote a paymaster contract just like [this one](https://github.com/godwokenrises/account-abstraction/blob/gw-gasless/contracts/samples/GaslessDemoPaymaster.sol) and deployed it at `0x6b019795aa36dd19eb4a4d76f3b9a40239b7c19f`.
+Let's say we have the entrypoint contract `ENTRYPOINT_CONTRACT_ADDRESS` and as a game developer, we want to pay the gas fee for some whitelist users, so we wrote a paymaster contract just like [this one](https://github.com/godwokenrises/account-abstraction/blob/gw-gasless/contracts/samples/GaslessDemoPaymaster.sol) as `PAYMASTER_CONTRACT_ADDRESS`.
 
 dapp frontend using ethers.js
 
@@ -38,7 +37,7 @@ dapp frontend using ethers.js
           verificationGasLimit: gasToVerifyPaymaster,
           maxFeePerGas: gasPrice,
           maxPriorityFeePerGas: gasPrice,
-          paymasterAndData: "0x6b019795aa36dd19eb4a4d76f3b9a40239b7c19f" 
+          paymasterAndData: PAYMASTER_CONTRACT_ADDRESS 
       }
       
       // 1. construct and send gasless transaction via native sendTransaction
@@ -50,7 +49,7 @@ dapp frontend using ethers.js
       const payload = "0x" + fnSelector + userOp.slice(2);
       const gaslessTx = {
         from: whitelistUser.address,
-        to: '0x9a11f47c0729fc56d9c44c059987d40703249569',
+        to: ENTRYPOINT_CONTRACT_ADDRESS,
         data: payload,
         gasPrice: 0,
         gasLimit: 1000000,
@@ -63,7 +62,7 @@ dapp frontend using ethers.js
       {
         // Send tx with a valid user.
         const EntryPoint = await ethers.getContractFactory("EntryPoint");
-        const entrypoint = await EntryPoint.attach('0x9a11f47c0729fc56d9c44c059987d40703249569');
+        const entrypoint = await EntryPoint.attach(ENTRYPOINT_CONTRACT_ADDRESS);
         const tx = await entryPoint.connect(whitelistUser).handleOp(userOp, {gasLimit: 100000, gasPrice: 0});
         await tx.wait();
       }

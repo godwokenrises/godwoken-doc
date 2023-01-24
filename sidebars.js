@@ -20,7 +20,7 @@ module.exports = {
         "depAndWthd",
         "godwokenkicker",
         "account-faucet",
-        "gasless-api"
+        "gasless-feature"
       ]
     },
 
