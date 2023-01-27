@@ -1,0 +1,9 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    ignore:
+      # All updates of `@mdx-js/react` are not compatible
+      - dependency-name: "@mdx-js/react"
