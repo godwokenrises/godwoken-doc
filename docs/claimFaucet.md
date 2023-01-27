@@ -29,7 +29,7 @@ Once you have connected to Godwoken Bridge, your layer1/layer2 addresses and bal
 | Field                | Explanation                                                                                                                                           |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `L1 Wallet Address`  | Your layer1 address, this is a CKB omni-lock address, you should use this address when claiming for layer1 assets                                     |
-| `L1 Deposit Address` | Your layer1 deposit address, you can transfer specific amount of capacity/sUDT to this address, and Godwoken will collect them to your layer2 account |
+| `L1 Deposit Address` | Your layer1 deposit address, Godwoken will collect the cells in this address and transform the assets to your layer2 account. You can transfer specific amount of capacity/sUDT to this address to achieve the purpose of recharging layer2. Note that the CKB capacity of every transfer to this address MUST be greater than or equal to 400 CKB |
 | `Ethereum Address`   | Your layer2 address, you should use this address when claiming for Goerli assets, or when you make actions on Ethereum networks                       |
 | `L1 Balance`         | Your layer1 balance, it means how much CKB your `L1 Wallet Address` has on CKB layer1, you can deposit your `L1 Balance` to layer2                    |
 | `L2 Balance`         | Your layer2 balance, it means how much pCKB your **`Ethereum Address`** has on Godwoken layer2, you can withdraw your `L2 Balance` to layer1          |
