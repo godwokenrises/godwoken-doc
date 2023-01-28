@@ -5,9 +5,9 @@ title: Gasless Feature
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-The gas fee is preventing new users step into the web3 world. Users must learn to get the native token (CKB or ETH) before playing a blockchain game or exchanging tokens with a DEX. The gasless feature can provide a way for developers to sponsor transaction fees for users to give them a smooth experience.
+Gas fees prevent new users from entering the Web3 world every day. This forces new users to acquire the native token (CKB or ETH) before participating in blockchain games or exchanging tokens on a DEX, which can be challenging. The gasless feature enables developers to sponsor transaction fees for users to ensure a smooth user experience.
 
-The gas feature is based on the [ERC-4337 solution](https://eips.ethereum.org/EIPS/eip-4337) but way simpler. To use a such feature, users sign and send a special gasless transaction to call a specific smart contract named `Entrypoint`, then `Entrypoint` will call another smart contract named `Paymaster` deployed by developers to check if they are willing to pay the gas fee for this transaction. The special gasless transaction must satisfy the requirements:
+The gas feature is based on a simpler version of the [ERC-4337 solution](https://eips.ethereum.org/EIPS/eip-4337). To use such a feature, users sign and send a unique gasless transaction to call a specific smart contract named `Entrypoint`, `Entrypoint` will then call another smart contract named `Paymaster`, which developers deploy to check if they are willing to pay the gas fee for this transaction. The unique gasless transaction must satisfy these requirements:
 
 - `tx.data` must be the call data of calling `Entrypoint`'s `handleOp(UserOperation calldata op)` function, which contains the target contract and the paymaster address.
 - Must set `tx.gasPrice` to 0 (compatible with Metamask api)
@@ -17,14 +17,14 @@ The gas feature is based on the [ERC-4337 solution](https://eips.ethereum.org/EI
 
 ### Use cases
 
-Each solving some decentralized problem. WIth gasless feature some of dapps could be improved with solutions like:
- - DEX/Lending and rest transaction gas payments with project token (descreasing project inflation);
- - NFT minting and exchange (to lower the entry threshold for the crypto gaming);
+Each solves some decentralized problem. With this gasless feature, some of these dapps can be improved with solutions like:
+ - DEX/Lending and rest transaction gas payments with project token (decreasing project inflation);
+ - NFT minting and exchange (to lower the entry threshold for crypto gaming);
 
 
-### How to use gasless transaction for your dapp
+### How to use gasless transactions for your dapp
 
-Let's say we have the entrypoint contract `ENTRYPOINT_CONTRACT_ADDRESS` and as a game developer, we want to pay the gas fee for some whitelist users, so we wrote a paymaster contract just like [this one](https://github.com/godwokenrises/account-abstraction/blob/gw-gasless/contracts/samples/GaslessDemoPaymaster.sol) as `PAYMASTER_CONTRACT_ADDRESS`.
+Let's say we have the entrypoint contract `ENTRYPOINT_CONTRACT_ADDRESS`, and as a game developer, we want to pay the gas fees for some whitelist users, so we'll write a paymaster contract just like [this one](https://github.com/godwokenrises/account-abstraction/blob/gw-gasless/contracts/samples/GaslessDemoPaymaster.sol) as `PAYMASTER_CONTRACT_ADDRESS`.
 
 dapp frontend using ethers.js
 
@@ -58,7 +58,7 @@ dapp frontend using ethers.js
       const signer = new ethers.Wallet("private key");
       const tx = await signer.sendTransaction(gaslessTx);
       await tx.wait();
-      // 2. or just use ethers contract factory with EntryFactory and call directly it
+      // 2. or just use ethers contract factory with EntryFactory and call it directly
       {
         // Send tx with a valid user.
         const EntryPoint = await ethers.getContractFactory("EntryPoint");
@@ -70,14 +70,14 @@ dapp frontend using ethers.js
 
 ### How to configure a paymaster contract
 
-From previous example we have deployed contract like [this one](https://github.com/godwokenrises/account-abstraction/blob/gw-gasless/contracts/samples/GaslessDemoPaymaster.sol). However this contract should be configurable in order to make it workable through web3 api. In order to do this, please execute the following smart contract methods:
-1. Execute `deposit` [method](https://github.com/godwokenrises/account-abstraction/blob/541f7cac9d83e75d152e7a58bec6d97b51221012/contracts/core/GaslessBasePaymaster.sol#L68) on `paymaster` in order to add balance. This is required as all gasless tx costs will be covered by these balance on `paymaster` contract.
-2. Execute `addStake` [method](https://github.com/godwokenrises/account-abstraction/blob/541f7cac9d83e75d152e7a58bec6d97b51221012/contracts/core/GaslessBasePaymaster.sol#L85) in order to register your `paymaster` on the `entrypoint`. This will add `paymaster` contract allowance to perform as `gasless provider` for you project.
+From the previous example we have deployed a contract like [this one](https://github.com/godwokenrises/account-abstraction/blob/gw-gasless/contracts/samples/GaslessDemoPaymaster.sol). However, this contract should be configurable to work through the web3 API. To do this, please execute the following smart contract methods:
+1. Execute `deposit` [method](https://github.com/godwokenrises/account-abstraction/blob/541f7cac9d83e75d152e7a58bec6d97b51221012/contracts/core/GaslessBasePaymaster.sol#L68) on `paymaster` in order to add a balance. This is required as all gasless tx costs will be covered by the balance on the `paymaster` contract.
+2. Execute `addStake` [method](https://github.com/godwokenrises/account-abstraction/blob/541f7cac9d83e75d152e7a58bec6d97b51221012/contracts/core/GaslessBasePaymaster.sol#L85) in order to register your `paymaster` on the `entrypoint`. This will add `paymaster` contract allowance to perform as a `gasless provider` for your project.
 
 
 ### Project sample
 
-https://gasless-nft-ui.pages.dev/ - first test NFT minting dapp in a gasless way with payment in test tokens
+https://gasless-nft-ui.pages.dev/ - first test the NFT minting dapp in a gasless way with payment in test tokens
 
 Example of codebase: https://github.com/BuildClub/gassless-nft-minter
 
