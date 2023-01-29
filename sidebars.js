@@ -19,7 +19,8 @@ module.exports = {
         "pCKB",
         "depAndWthd",
         "godwokenkicker",
-        "account-faucet"
+        "account-faucet",
+        "gasless-feature"
       ]
     },
 
@@ -72,4 +73,4 @@ module.exports = {
     "reference"
   ]
 }
-  
+
