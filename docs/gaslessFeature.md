@@ -71,9 +71,13 @@ dapp frontend using ethers.js
 ### How to configure a paymaster contract
 
 From the previous example we have deployed a contract like [this one](https://github.com/godwokenrises/account-abstraction/blob/gw-gasless/contracts/samples/GaslessDemoPaymaster.sol). However, this contract should be configurable to work through the web3 API. To do this, please execute the following smart contract methods:
-1. Execute `deposit` [method](https://github.com/godwokenrises/account-abstraction/blob/541f7cac9d83e75d152e7a58bec6d97b51221012/contracts/core/GaslessBasePaymaster.sol#L68) on `paymaster` in order to add a balance. This is required as all gasless tx costs will be covered by the balance on the `paymaster` contract.
-2. Execute `addStake` [method](https://github.com/godwokenrises/account-abstraction/blob/541f7cac9d83e75d152e7a58bec6d97b51221012/contracts/core/GaslessBasePaymaster.sol#L85) in order to register your `paymaster` on the `entrypoint`. This will add `paymaster` contract allowance to perform as a `gasless provider` for your project.
+You can find more detail in the [unit test](https://github.com/godwokenrises/account-abstraction/blob/gw-gasless/test/gasless_paymaster.test.ts#L45). In this test, we deploy a DummyContract as our dapp. Then we can send some gasless trasactions to interface with the DummyContract.
+1. The developer should execute `addStake` [method](https://github.com/godwokenrises/account-abstraction/blob/541f7cac9d83e75d152e7a58bec6d97b51221012/contracts/core/GaslessBasePaymaster.sol#L85) to register your `paymaster` on the `entrypoint`. This will add `paymaster` contract allowance to perform as a `gasless provider` for your project. 
+2. The developer should deposit some balance to the paymaster through entrypoint. You can execute `deposit` [method](https://github.com/godwokenrises/account-abstraction/blob/541f7cac9d83e75d152e7a58bec6d97b51221012/contracts/core/GaslessBasePaymaster.sol#L68) on `paymaster` to add a balance. Or, you can execute `entrypoint.depositTo(address paymaster)` with a balance directly. This is required as all gasless tx costs will be covered by the balance on the `paymaster` contract.
+3. We can put an account to the whitelist by executing [addWhitelistAddress](https://github.com/godwokenrises/account-abstraction/blob/541f7cac9d/contracts/core/GaslessBasePaymaster.sol#L127). So now, only users from the whitelist can send gasless transactions.
+4. Just putting a user in the whitelist is dangerous. We need to make sure the user can only send transactions to our dapp(which is DummyContract in this sample). So we need another `whitelist` of contract addresses. We can execute [addAvailAddr](https://github.com/godwokenrises/account-abstraction/blob/541f7cac9d/contracts/core/GaslessBasePaymaster.sol#L140) to put DummyContract into the whitelist. You can find that our demo paymaster will check the contract address [here](https://github.com/godwokenrises/account-abstraction/blob/541f7cac9d/contracts/samples/GaslessDemoPaymaster.sol#L32).
 
+All setup! Now the user can send gasless transactions to DummyContract.
 
 ### Project sample
 
