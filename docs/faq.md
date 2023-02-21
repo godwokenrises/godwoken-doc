@@ -65,3 +65,11 @@ To utilise this feature, simply send the transaction and obtain forthwith the [`
 Godwoken average block confirmation interval can be viewed at:
 - Avg. Block Time of Godwoken testnet_v1: https://v1.testnet.gwscan.com/
 - Avg. Block Time of Godwoken mainnet_v1: https://v1.gwscan.com/
+
+----
+
+### Why the layer-2 block timestamp is inaccurate
+
+Q: The layer-2 block's timestamp is not always accurate, and it usually differs from the real-world time by a few minutes. Why is it inaccurate?
+
+A: The layer-2 block's timestamp is linked to the [CKB block median timestamp](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0027-block-structure/0027-block-structure.md#timestamp-uint64), which is calculated from the last 37 CKB blocks. While using the layer-1 blockchain time, the layer-2 timestamp can be secured by the layer-1 miners. Additionally, since the layer-1 blockchain time is a median value, it is typically later than the actual real-world time.
