@@ -14,6 +14,7 @@ The gas feature is based on a simpler version of the [ERC-4337 solution](https:/
 - The `tx.to` must be set to the `Entrypoint` contract.
 - `tx.gas` is equals to `op.callGasLimit + op.verificationGasLimit * 3`.
 
+The gasless feature doesn't work with the native token transfer, which means the user still needs to pay the gas fee. And it doesn't allow users to pay the gas fee with ERC20 tokens either. The gasless feature only supports paying the gas fee with native tokens.
 
 ### Use cases
 
@@ -30,7 +31,7 @@ dapp frontend using ethers.js
 
 ```ts
       // define UserOp
-      const userOp: UserOperationStruct = {
+      const userOperation: UserOperationStruct = {
           callContract: realGameContract.address,
           callData: realGameContractCallData,
           callGasLimit: gasToExecuteRealGameContractCallData,
@@ -42,7 +43,7 @@ dapp frontend using ethers.js
       
       // 1. construct and send gasless transaction via native sendTransaction
       const abiCoder = new ethers.utils.AbiCoder();
-      const userOp = abiCoder.encode(["tuple(address callContract, bytes callData, uint256 callGasLimit, uint256 verificationGasLimit, uint256 maxFeePerGas, uint256 maxPriorityFeePerGas, bytes paymasterAndData) UserOperation"], [userOp]);
+      const userOp = abiCoder.encode(["tuple(address callContract, bytes callData, uint256 callGasLimit, uint256 verificationGasLimit, uint256 maxFeePerGas, uint256 maxPriorityFeePerGas, bytes paymasterAndData) UserOperation"], [userOperation]);
       // first 4 bytes of keccak hash of handleOp((address,bytes,uint256,uint256,uint256,uint256,bytes))
       const fnSelector = "fb4350d8";
       // gasless payload = ENTRYPOINT_HANDLE_OP_SELECTOR + abiEncode(UserOperation)
@@ -76,6 +77,7 @@ You can find more detail in the [unit test](https://github.com/godwokenrises/acc
 2. The developer should deposit some balance to the paymaster through entrypoint. You can execute `deposit` [method](https://github.com/godwokenrises/account-abstraction/blob/541f7cac9d83e75d152e7a58bec6d97b51221012/contracts/core/GaslessBasePaymaster.sol#L68) on `paymaster` to add a balance. Or, you can execute `entrypoint.depositTo(address paymaster)` with a balance directly. This is required as all gasless tx costs will be covered by the balance on the `paymaster` contract.
 3. We can put an account to the whitelist by executing [addWhitelistAddress](https://github.com/godwokenrises/account-abstraction/blob/541f7cac9d/contracts/core/GaslessBasePaymaster.sol#L127). So now, only users from the whitelist can send gasless transactions.
 4. Just putting a user in the whitelist is dangerous. We need to make sure the user can only send transactions to our dapp(which is DummyContract in this sample). So we need another `whitelist` of contract addresses. We can execute [addAvailAddr](https://github.com/godwokenrises/account-abstraction/blob/541f7cac9d/contracts/core/GaslessBasePaymaster.sol#L140) to put DummyContract into the whitelist. You can find that our demo paymaster will check the contract address [here](https://github.com/godwokenrises/account-abstraction/blob/541f7cac9d/contracts/samples/GaslessDemoPaymaster.sol#L32).
+5. Attention, please set the same values to `maxFeePerGas` and `maxPriorityFeePerGas` in UserOperation. Otherwise, `block.basefee` which is introduced in [EIP-3198](https://eips.ethereum.org/EIPS/eip-3198) since London hard fork, will be used to calculate the gas price. For now, godwoken doesn't support London hard fork yet, so you will see a weird error if you give them different values.
 
 All setup! Now the user can send gasless transactions to DummyContract.
 
@@ -92,3 +94,10 @@ Paymaster address - [0x2078cf0E3535A48f8e28a36b2fCFcEC429162F60](https://gw-expl
 Entrypoint address - [0x791ec459f57362256f313f5512bdb9f6d7cae308](https://gw-explorer.nervosdao.community/address/0x791ec459f57362256f313f5512bdb9f6d7cae308)
 
 NFT address - [0x9bFAA0A71390061DF1F69D2640808a015653D84b](https://gw-explorer.nervosdao.community/address/0x9bFAA0A71390061DF1F69D2640808a015653D84b)
+
+Here is another demo with less code: [godwoken gasless example](https://github.com/sunchengzhu/godwoken-gasless-example)
+
+### More about paymaster
+
+In this document, we give a demo about how to use a whitelist paymaster. Another great example, and a more practical one, is [TokenPaymaster](https://github.com/godwokenrises/account-abstraction/blob/gw-gasless/contracts/samples/TokenPaymaster.sol). Compare with a whitelist, you can see that it's more convenient to manage users who can send gasless transactions with ERC20 tokens.
+
