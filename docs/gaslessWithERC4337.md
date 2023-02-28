@@ -25,14 +25,14 @@ The transaction fee in EVM-equivalent blockchains is charged based on the gas pr
 - the gas price is determined by how much you are willing to bid the block_producer to pack your transaction ASAP.
 
 This mechanism works like a bidding marketplace for transaction fees. The block_producer sorts the transaction by gas price from high to low, then pack the first transaction from the top down in order to make it a profitable business.
-Normally when the gas price is set to 0, the transaction won't be accepted by block_producer, since it takes the cost for the block producer to execute the transaction and included it into a new block.block_producer
+Normally when the gas price is set to 0, the transaction won't be accepted by block_producer, since it takes the cost for the block producer to execute the transaction and included it into a new block.
 Our gasless feature uses 0 gas price as a unique marker to allow users to submit gasless transactions. It is intuitive from the user’s point of view and more importantly, it only takes little work to change the code in Godwoken mem-pool implementation. 
 With the gasless feature enabled, when Godwoken block_producer sees a transaction with 0 gas price, they will first check if the transaction is a valid gasless transaction, if it is, the block producer will reveal the real gas price (the sponsoring gas price) from this transaction, and sort the transaction in the mem-pool according to this real price, the rest work just becomes the same with normal transactions.
 But How does one transaction with 0 gas price become a valid gasless transaction? This brings us to the second problem:
 
 ## How to charge the application for sponsoring transactions
 
-In order to charge the application that sponsors the gasless transactions, the application developer must pre-deposit some funds and the application must have the ability to automatically check if they are willing to sponsor one specific transaction. If it does, it should then automatically transfer the transaction fee to block block_producer who packs the transaction.
+In order to charge the application that sponsors the gasless transactions, the application developer must pre-deposit some funds and the application must have the ability to automatically check if they are willing to sponsor one specific transaction. If it does, it should then automatically transfer the transaction fee to the block producer who packs the transaction.
 The Galsess feature encodes those logics into 2 EVM smart contracts and uses them to handle the process. They are called Paymaster and Entrypoint.
 
 ### 1. Paymaster
@@ -40,10 +40,10 @@ The Galsess feature encodes those logics into 2 EVM smart contracts and uses the
 This contract is supposed to be written and controlled by application developers. 
 It must have some pre-deposit funds to pay the gas fee for sponsoring gasless transactions. it is also in charge of validating if the transaction meets some specific requirements for sponsoring. 
 For example, the paymaster can encode some mature ideas from traditional industries about how to onboard new users.
-One validating logic can be youtube's one-month free premium trial. paymaster checks the block timestamp to reject sponsoring those users who have passed the expired time. 
-Another example might be a blockchain gaming dApp that decides that every new user will have the first 100 transactions fee-free. when the user sends the 101st transaction, the paymaster will stop sponsoring the gas fee. 
-You can even have an interesting idea to leverage the gasless feature to let users pay the gas fee with non-native tokens. Say, one transaction can be sponsored only if the user owns some NFT or some tokens you launch.
-These ideas can also combine with some basic whitelist mechanisms. For example, when a user reaches some kind of level, their public keys automatically join the paymaster’s whitelist and then unlock the sponsoring premium.
+One validating logic can be Youtube's one-month free premium trial. The paymaster could check the block timestamp to reject sponsoring those users who have passed the expired time. 
+Another example might be a blockchain gaming dApp that decides every new user will have the first 100 transactions fee-free. When the user sends the 101st transaction, the paymaster will stop sponsoring the gas fee. 
+You can even have an interesting idea to leverage the gasless feature to let users pay the gas fee with non-native tokens. Say, one transaction can be sponsored only if the user owns some NFTs or some tokens you issued.
+These ideas can also combine with some basic whitelist mechanisms. For example, when a user reaches a certain level, his/her public key will automatically join into the paymaster’s whitelist. And then the sponsoring premium will be unlocked for him/her.
 The idea here is to make application developers focus on their needs while having the flexibility to set rules for sponsoring to do whatever they want.
 
 ### 2. Entrypoint
@@ -52,13 +52,13 @@ This contract is supposed to be deployed by the Godwoken network and must be own
 
 The entrypoint contract contains 3 parts:
 
-- **managing fund pool**: in order to let paymaster pre-deposit funds, entrypoint also acts as a fund pool. Paymaster transfer tokens to entrypoint, and entrypoint records every paymaster's deposit balance. Entrypoint also has the ability to move the funds to block_producer after confirming that the paymaster is willing to sponsor the gas fee.
-- **validating and executing**: check if the paymaster is willing to sponsor one specific transaction, this involves calling the paymaster contract to get the validating result. if the result is good, the entrypoint is also responsible for actually executing this transaction, the execution is often related to some business logic of the application.
-- **calculating and transferring**: after executing the transaction, the entrypoint will calculate how much gas fee the transaction costs, and take the responsive cost from the paymaster balance(deposit in the entrypoint's fund pool, remember?) to the block producer.
+- **managing fund pool**: In order to let Paymaster pre-deposit funds, Entrypoint also acts as a fund pool. When a paymaster transfer tokens to Entrypoint, Entrypoint records every paymaster's deposit balance. Entrypoint also has the ability to move the funds to block_producer after confirming that the paymaster is willing to sponsor the gas fee.
+- **validating and executing**: Check if the paymaster is willing to sponsor one specific transaction, this involves calling the paymaster contract to get the validating result. If the result is good, Entrypoint is also responsible for actually executing this transaction, the execution is often related to some business logic of the application.
+- **calculating and transferring**: After executing the transaction, Entrypoint will calculate how much gas fee the transaction costs, and take the corresponding cost from the paymaster balance (deposited in Entrypoint fund pool, remember?) to the block producer.
 
 ### Workflow
 
-When a user signs a gasless transaction, the transaction is not only with 0 gas price but also supposed to call the Entrypoint contracts with a call data that specifies what they really want to do. That call data uses a data structure named `UserOperation` and it contains info like the real gas price that the sponsor is paying, the paymaster contract address, the real target contract that the user is calling, etc.
+When a user signs a gasless transaction, the transaction is not only with 0 gas price but also supposed to call Entrypoint contract with a call data explaining what they really want to do. That call data uses a data structure named `UserOperation` and it contains information like the real gas price that the sponsor will pay, the paymaster contract address, the real target contract that the user is calling, etc.
 
 ```solidity
 struct UserOperation {
@@ -73,8 +73,8 @@ struct UserOperation {
 }
 ```
 
-Entrypoint will take this `UserOperation` call data to call the paymaster contract to validate if such a sponsor transaction is legal. If it is, entrypoint will charge the gas fee and execute the transaction. If it is not, the transaction shall revert. 
-More details about how the Godwoken node assumes a transaction is a gasless transaction:
+Entrypoint will take this `UserOperation` call data to call the paymaster contract to validate if such a sponsor transaction is legal. If it is, Entrypoint will charge the gas fee and execute the transaction. If it is not, the transaction should be reverted. 
+More details about how the Godwoken full-node assumes a transaction is a gasless transaction:
 
 1. `tx.gasPrice` must be `0`.
 2. `tx.data` must be a valid `UserOperation`. 
@@ -93,14 +93,14 @@ In a high-level explanation,
 > ERC-4337 = seedless feature + gasless feature
 
 While in Godwoken, we only do the last half of it. We believe it is a better choice for Godwoken to abort the seedless idea in the current phase, due to many reasons:
-- ERC-4337 is still in the protocol design phase, it is not widely accepted by the community. It might take a while before it makes a real influence on crypto. However, we want the users and developers to enjoy the gasless feature today.
+- ERC-4337 is still in the protocol design phase, it is not widely accepted by the community. It might take a while before it makes a real influence in the crypto industry. However, we want the users and developers to enjoy the gasless feature today.
 - Godwoken is focused on infrastructure while ERC-4337 is apparently an application-level business. The way Godwoken chooses to implement the gasless feature is more like an optional API, it doesn’t conflicts with the application developers who might wish to pursue a smart wallet opportunity when ERC-4337 is ready in the future.
 - ERC-4337 is very flexible and brings more complexity thus making it unrealistic to safely use in the production stage right now.
 - There is a gap between smart contract wallets and key-based wallets. Most users today are still using key-based wallets.
 - Since Godwoken is built on the UTXO model of the CKB blockchain, there is a lot of space to explore account abstraction ideas, and it might not happen on the EVM-compatible level.
 
 The seedless vision of ERC-4337 introduces a lot of complex details and involves different ecosystem actors in order to make it work. To implement account abstraction, ERC-4337 makes the user sign `UserOperation` call data and sends them to a separate mem-pool, A special class of actor called bundlers (either block builders, or users that can send transactions to block builders through a bundle marketplace) package up a set of these objects into a transaction making a special calling to `Entrypoint`, and that transaction then gets included in a block.
-Godwoken inherent the `UserOperation` idea from ERC-4337 but exclude the complexity part of account abstraction. The gasless feature allows the user to sign a transaction with 0 gas price to call entrypoint contract with `UserOperation` call data. Since the user is still signing a transaction instead of a `UserOperation` call data, we don't need a separate mem-pool to handle different kinds of requests. Therefore we don't need the bundlers role either. the block_producer is naturally the bundler who packs the gasless transaction into a new block. 
+Godwoken inherent the `UserOperation` idea from ERC-4337 but exclude the complexity part of account abstraction. The gasless feature allows the user to sign a transaction with 0 gas price to call entrypoint contract with `UserOperation` call data. Since the user is still signing a transaction instead of a `UserOperation` call data, we don't need a separate mem-pool to handle different kinds of requests. Therefore we don't need the role of bundlers either. The block_producer is naturally the bundler who packs the gasless transaction into a new block. 
 More clear differences can be found in the details of `UserOperation` structure changes:
 
 ```txt
