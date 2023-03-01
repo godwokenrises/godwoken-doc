@@ -131,4 +131,4 @@ Some other differences:
 
 In this post, we introduced our recent experiments for the Godwoken gasless feature based on simplified ERC-4337 specs. In general, the ERC-4337 is more flexible and ambitious about the seedless and gasless abilities, while the Godwoken gasless feature is focused on a more practical and simpler dedicated solution to improve layer2’s usability while keeping the ecosystem opened and not conflict with smart wallet developers to work on ERC-4337 solutions.
 
-If you want to dive into gasless feture with a demo, please continue with [Gasless Feature](gaslessFeature.mdx).
+If you want to dive into gasless feture with a demo, please continue with [Gasless Feature](gasless-feature).
