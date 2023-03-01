@@ -101,3 +101,4 @@ Here is another demo with less code: [godwoken gasless example](https://github.c
 
 In this document, we give a demo about how to use a whitelist paymaster. Another great example, and a more practical one, is [TokenPaymaster](https://github.com/godwokenrises/account-abstraction/blob/gw-gasless/contracts/samples/TokenPaymaster.sol). Compare with a whitelist, you can see that it's more convenient to manage users who can send gasless transactions with ERC20 tokens.
 
+You may find something more interesting behind the idea of godwoken gasless feature in here: [How Godwoken experiments gasless transaction using simplified ERC-4337 proposal](gaslessWithERC4337.mdx).
