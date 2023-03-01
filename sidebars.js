@@ -20,7 +20,8 @@ module.exports = {
         "depAndWthd",
         "godwokenkicker",
         "account-faucet",
-        "gasless-feature"
+        "gasless-feature",
+        "gasless-with-ERC4337"
       ]
     },
 
