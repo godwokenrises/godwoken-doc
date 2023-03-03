@@ -21,7 +21,8 @@ module.exports = {
         "godwokenkicker",
         "account-faucet",
         "gasless-feature",
-        "gasless-with-ERC4337"
+        "gasless-with-ERC4337",
+        "debug-replay-rpc"
       ]
     },
 
