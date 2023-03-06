@@ -107,20 +107,6 @@ Polyjuice runs EVM on [CKB-VM](https://github.com/nervosnetwork/rfcs/blob/master
 
 ### ETH Compatibility
 
-**1. Zero Address**
-
-Godwoken does not support the concept of [zero address](https://ethereum.org/ru/glossary/#zero-address) (0x0000000000000000000000000000000000000000). This means that Polyjuice cannot support the zero address as well.
-
-  **Result**
-
-   Transactions with the zero address in the `from`/`to` field are not supported.
-
-  **Recommend Workaround**
-
-   To use the zero address as a black hole to burn ethers, you can use the transfer function of the [CKB_ERC20_Proxy](https://github.com/godwokenrises/godwoken-polyjuice/blob/3f1ad5b/solidity/erc20/README.md) contract to send ethers to the zero address.
-
-For more information on the compatibility changes of Godwoken Web3 API, see [APIs](https://github.com/godwokenrises/godwoken-web3/blob/main/docs/apis.md).
-
-**2. Gas Limit** 
+**1. Gas Limit** 
 
 Godwoken applies the [Cycle Limit](https://docs-xi-two.vercel.app/docs/rfcs/0014-vm-cycle-limits/0014-vm-cycle-limits) to limit transaction execution resources in CKB-VM. By setting the `RPC_GAS_LIMIT` to `50000000` to maximise the compatibility with Ethereum toolchain, but the real gas limit that users can utilize relies on this Cycle Limit.
