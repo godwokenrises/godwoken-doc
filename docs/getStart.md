@@ -26,16 +26,11 @@ Here are links to some useful resources for you to build on Godwoken.
 - For instructions on how to deploy a Godwoken local network, visit [Deploy a Local Network with Godwoken-Kicker](deployLocalNetwork.md).
 - To deploy a smart contract to Godwoken layer 2, visit [Deploy a Simple Smart Contract with Hardhat](deployContractHardhat.md) or [Deploy a Simple Ethereum Smart Contract on Polyjuice](evm_training/evmTask2.md).
 - If you want to obtain direct experience and prepare yourself for deploying dapps, check [Layer 2 EVM Training](evm_training/evmIntro.md).
-- Information about tokens deployed on Godwoken Testnet can be found at [Tokens](tokens.md).
+- Information about tokens deployed on Godwoken can be found at [Tokens](tokens.md).
 - In the [Asset Management section](fastWithdrawal.md), you will find more about the cross-layer operations between Nervos CKB layer 1 and Godwoken layer 2.
-- The latest changes to Godwoken can be viewed here [Release Notes](gwchangelog/releaseNote1.6.md).
-- The latest changes to Godwoken Web3 can be seen at [Godwoken Web3 Release Note](web3changelog/web3Change1.7.md)
+- The latest changes to Godwoken can be viewed from [CHANGELOG](https://github.com/godwokenrises/godwoken/blob/develop/CHANGELOG.md).
 
+## Sites
 
-**Sites:**
-
-- Godwoken Official Website: https://godwoken.com/
-- Official Godwoken Docs: https://docs.godwoken.io/
-- Instructions for Launching on Godwoken: https://startwithnervos.com/godwoken
-- Godwoken Service Status Monitor: https://godwokenstatus.statuspage.io
-
+- Godwoken Official Website: https://godwoken.com
+- Godwoken Service Status: https://godwoken.statuspage.io
