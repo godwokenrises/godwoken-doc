@@ -93,5 +93,3 @@ To withdraw assets from Godwoken v0 to Godwoken v1:
 6. After successfully withdrawing assets, check the wallet to see the balance.
 
    <img src={useBaseUrl("img/withdrawBalance.png")}  width="40%"/>
-
-
