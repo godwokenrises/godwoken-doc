@@ -1,6 +1,6 @@
 ---
 id: debug-replay-rpc 
-title: Debug a failed transaction with RPC
+title: Debug a transaction via RPC
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
@@ -12,11 +12,11 @@ When you send an Ethereum transaction to [Godwoken's RPC](https://docs.godwoken.
 
 In this document, we will show you how to debug a failed transaction through `gw_debug_replay_transaction` RPC. You will need:
 
-- A node running Polyjuice and Godwoken with debug RPC module enabled
-- A transaction hash of a failed Ethereum transaction
+- A node running Godwoken with `debug` module enabled
+- The transaction hash of an Ethereum compatible transaction
 - A tool that can send JSON-RPC requests, such as curl or Postman
 
-```
+
 ## Steps
 
 1. Find out **the transaction hash** of the failed Ethereum transaction. You can use an explorer like [gwscan](https://gwscan.com) to search for your transaction by its sender address, receiver address, or just transcation hash.
