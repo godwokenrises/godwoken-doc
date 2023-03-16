@@ -58,8 +58,7 @@ module.exports = {
     {
       "Release Notes": [
         "gwchangelog/v0difv1",
-        "gwchangelog/releaseNote1.6",
-        "web3changelog/web3Change1.7"
+        "gwchangelog/releases",
       ]
     },
 
