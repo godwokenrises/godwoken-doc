@@ -97,9 +97,7 @@ Polyjuice runs EVM on [CKB-VM](https://github.com/nervosnetwork/rfcs/blob/master
 
 - The `transfer value` can not exceed `uint128:MAX`, because the type of [sUDT.amount](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0025-simple-udt/0025-simple-udt.md#sudt-cell) is `uint128`.
 
-- Pre-compiled contract
-
-  - [addition pre-compiled contracts](https://github.com/godwokenrises/godwoken-polyjuice/blob/compatibility-breaking-changes/docs/Addition-Features.md)
+- [Addition pre-compiled contracts](https://github.com/godwokenrises/godwoken/blob/develop/gwos-evm/docs/Addition-Features.md)
 
 ## Godwoken Web3 Compatibility
 
