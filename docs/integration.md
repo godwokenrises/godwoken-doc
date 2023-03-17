@@ -30,7 +30,7 @@ If you want to obtain direct experience and prepare yourself for deploying appli
 Godwoken V1 is still under development and targets 100% EVM compatibility. Having the best compatibility is the objective of designing and building Godwoken:
 
 - The EVM being used in Godwoken must be 100% compatible with the latest forked version of Ethereum.
-- Godwoken must be 100% compatible with Ethereum over the Web3 interfaces by using [Godwoken Web3](https://github.com/godwokenrises/godwoken-web3).
+- Godwoken must be 100% compatible with Ethereum over the Web3 interfaces by using [Godwoken Web3](https://github.com/godwokenrises/godwoken/tree/develop/web3).
 
 Several discrepancies inevitably exist due to the wide architectural and design differences between Godwoken and Ethereum.
 
@@ -38,7 +38,7 @@ Several discrepancies inevitably exist due to the wide architectural and design 
 
 Godwoken targets 100% EVM compatibility and is designed to work with every smart contract that the latest Ethereum hard fork version supports. But, the current version is not yet fully compatible with EVM.
 
-**EVM Revision**
+### EVM Revision
 
 The maximum EVM revision supported is `EVMC_BERLIN`.
 
@@ -58,19 +58,18 @@ Polyjuice only provides [contract accounts](https://ethereum.org/en/glossary/#c
 
 ### sUDT-ERC20 proxy contract
 
-All tokens on Godwoken are represented as Layer-2 sUDT types, regardless of whether they are native CKB or any sUDT types. With the [sUDT-ERC2 Procy Contract](https://github.com/godwokenrises/godwoken-polyjuice/blob/docs/solidity/erc20/README.md), Polyjuice ensures that all layer-2 tokens on Godwoken are ERC20 standard compliant. The contract enables the EVM code to interact with the ERC20 standard interface, making it possible to manipulate sUDT tokens on Godwoken as if they were ERC20 tokens.
+Some tokens on Godwoken are represented as Layer-2 sUDT types, regardless of whether they are native CKB or any sUDT types. With the [sUDT-ERC2 Procy Contract](https://github.com/godwokenrises/godwoken/tree/develop/gwos-evm/solidity/erc20), Polyjuice ensures that all layer-2 tokens on Godwoken are ERC20 standard compliant. The contract enables the EVM code to interact with the ERC20 standard interface, making it possible to manipulate sUDT tokens on Godwoken as if they were ERC20 tokens.
 
-That is to say, it is unnecessary to distinguish between native tokens and ERC20 tokens. All the different tokens must be handled with the same ERC20 interface. All the bridged sUDT tokens you will deal with have the same ERC20 interface.
+That is to say, it is unnecessary to distinguish between native tokens and ERC20 tokens. All the different tokens could be handled with the same ERC20 interface. All the bridged sUDT tokens you will deal with have the same ERC20 interface.
 
 ### Bridged sUDT Token List
 
 - mainnet_v1: https://github.com/godwokenrises/godwoken-info/blob/main/mainnet_v1/bridged-token-list.json
-
- - testnet_v1: https://github.com/godwokenrises/godwoken-info/blob/main/testnet_v1_1/bridged-token-list.json
+- testnet_v1: https://github.com/godwokenrises/godwoken-info/blob/main/testnet_v1_1/bridged-token-list.json
 
 ### Transaction Structure
 
-A Polyjuice transaction is essentially a Godwoken transaction. When Ethereum transactions are sent, they are converted to the Godwoken [RawL2Transaction](https://github.com/godwokenrises/godwoken/blob/v1.5.0/crates/types/schemas/godwoken.mol#L69-L76) type when being sent and are automatically processed by [Godwoken Web3](https://github.com/godwokenrises/godwoken-web3/tree/v1.6.4).
+A Polyjuice transaction is essentially a Godwoken transaction. When Ethereum transactions are sent, they are converted to the Godwoken [RawL2Transaction](https://github.com/godwokenrises/godwoken/blob/v1.5.0/crates/types/schemas/godwoken.mol#L69-L76) type when being sent and are automatically processed by [Godwoken Web3](https://github.com/godwokenrises/godwoken/tree/develop/web3).
 
 ### Behavioral Differences of Some Opcodes
 
@@ -82,8 +81,7 @@ A Polyjuice transaction is essentially a Godwoken transaction. When Ethereum tra
 
 ### Restriction of Memory Usage
 
-Polyjuice runs EVM on [ckb-vm](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0003-ckb-vm/0003-ckb-vm.md#risc-v-runtime-model). EVM has no limit on memory usage, yet EVM has a limit of 1024 on stack depth. But, ckb-vm can currently use a maximum of 4MB of memory, of which 3MB is for heap space and 1MB is for stack space. For more information, refer [here](https://github.com/nervosnetwork/riscv-newlib/blob/00c6ae3c481bc62b4ac016b3e86c508cdf2e68d2/libgloss/riscv/sys_sbrk.c#L38-L56). 
-
+Polyjuice runs EVM on [CKB-VM](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0003-ckb-vm/0003-ckb-vm.md#risc-v-runtime-model). EVM has no limit on memory usage, yet EVM has a limit of 1024 on stack depth. But, CKB-VM can currently use a maximum of 4MB of memory, of which 3MB is for heap space and 1MB is for stack space. For more information, refer [here](https://github.com/nervosnetwork/riscv-newlib/blob/00c6ae3c481bc62b4ac016b3e86c508cdf2e68d2/libgloss/riscv/sys_sbrk.c#L38-L56).
 
 ### Others
 
@@ -99,41 +97,14 @@ Polyjuice runs EVM on [ckb-vm](https://github.com/nervosnetwork/rfcs/blob/master
 
 - The `transfer value` can not exceed `uint128:MAX`, because the type of [sUDT.amount](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0025-simple-udt/0025-simple-udt.md#sudt-cell) is `uint128`.
 
-- Pre-compiled contract
-
-  - `bn256_pairing` is not yet supported because of the high cycle cost (WIP)
-  - [addition pre-compiled contracts](https://github.com/godwokenrises/godwoken-polyjuice/blob/compatibility-breaking-changes/docs/Addition-Features.md)
+- [Addition pre-compiled contracts](https://github.com/godwokenrises/godwoken/blob/develop/gwos-evm/docs/Addition-Features.md)
 
 ## Godwoken Web3 Compatibility
 
-[Godwoken Web3](https://github.com/godwokenrises/godwoken-web3) is a Web3 RPC compatible layer developed on top of Godwoken. Direct transfer of values (pCKB) from EOA to EOA will be supported from this release onwards.
+[Godwoken Web3](https://github.com/godwokenrises/godwoken/tree/develop/web3) is a Web3 RPC compatible layer developed on top of Godwoken.
 
 ### ETH Compatibility
 
-**1. Zero Address**
+**1. Gas Limit** 
 
-Godwoken does not support the concept of [zero address](https://ethereum.org/ru/glossary/#zero-address) (0x0000000000000000000000000000000000000000). This means that Polyjuice cannot support the zero address as well.
-
-  **Result**
-
-   Transactions with the zero address in the `from`/`to` field are not supported.
-
-  **Recommend Workaround**
-
-   To use the zero address as a black hole to burn ethers, you can use the transfer function of the [CKB_ERC20_Proxy](https://github.com/godwokenrises/godwoken-polyjuice/blob/3f1ad5b/solidity/erc20/README.md) contract to send ethers to the zero address.
-
-For more information on the compatibility changes of Godwoken Web3 API, see [APIs](https://github.com/godwokenrises/godwoken-web3/blob/main/docs/apis.md).
-
-**2. Gas Limit** 
-
-Godwoken applies the [Cycle Limit](https://docs-xi-two.vercel.app/docs/rfcs/0014-vm-cycle-limits/0014-vm-cycle-limits) to limit transaction execution resources in CKB-VM. By setting the `RPC_GAS_LIMIT` to `50000000` to maximise the compatibility with Ethereum toolchain, but the real gas limit that users can utilize relies on this Cycle Limit. 
-
-### A Layer 2 Account is Mandatory
-
-It is mandatory to create an account on a Godwoken chain for using Godwoken and Polyjuice. 
-
-There are two ways to create a layer 2 account:
-
-- Deposit to Godwoken at layer 1;
-- Call the Godwoken built-in [meta_contract](https://github.com/godwokenrises/godwoken-scripts/blob/86b299f/c/contracts/meta_contract.c) and create an account at layer 2.
-
+Godwoken applies the [Cycle Limit](https://docs-xi-two.vercel.app/docs/rfcs/0014-vm-cycle-limits/0014-vm-cycle-limits) to limit transaction execution resources in CKB-VM. By setting the `RPC_GAS_LIMIT` to `50000000` to maximise the compatibility with Ethereum toolchain, but the real gas limit that users can utilize relies on this Cycle Limit.
