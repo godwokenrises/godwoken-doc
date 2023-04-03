@@ -26,11 +26,6 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 - [sUDT_ERC20_Proxy contracts](https://github.com/godwokenrises/godwoken-info/blob/main/mainnet_v1/bridged-token-list.json)
 
-- **Layer-2 Godwoken Mainnet pCKB Contract**
-
-  - Address: 0x7538C85caE4E4673253fFd2568c1F1b48A71558a
-  - Symbol: pCKB
-  - Decimals: 18
 
 ## Godwoken Testnet v1
 
@@ -52,11 +47,6 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
   > `ETH Address Registry` layer-2 [contract](https://github.com/godwokenrises/godwoken-scripts/blob/master/c/contracts/eth_addr_reg.c) introduces two-ways mappings between `eth_address` and `gw_script_hash`.
 
-- **Layer-2 Godwoken Testnet pCKB Contract**
-
-  - Address: 0xE05d380839f32bC12Fb690aa6FE26B00Bd982613
-  - Symbol: pCKB
-  - Decimals: 18
 
 ## Godwoken Mainnet v0
 
