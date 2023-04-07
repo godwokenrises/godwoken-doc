@@ -58,7 +58,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 | Chain ID        | 71394                                       |
 | Currency Symbol | pCKB                                        |
 | Block Explorer  | https://v0.gwscan.com/                      |
-| Token Bridge    | https://bridge.godwoken.io/#/v0/withdrawal  |
+| Token Bridge    | https://bridge.godwoken.io/#/v0 |
 | WebSocket       | wss://mainnet.godwoken.io/ws                |
 
 
