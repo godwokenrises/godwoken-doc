@@ -10,7 +10,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 | ITEM            	| Detail                                             	|
 |-----------------	|----------------------------------------------------	|
-| Network Name    	| Godwoken/PolyJuice Mainnet                         	|
+| Network Name    	| Godwoken Mainnet v1                                 |
 | RPC URL         	| https://v1.mainnet.godwoken.io/rpc                 	|
 | Chain ID        	| 71402                                              	|
 | Currency Symbol 	| pCKB                                                |
@@ -31,14 +31,15 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 | ITEM            	| Detail                                             	|
 |-----------------	|----------------------------------------------------	|
-| Network Name     	| Godwoken/PolyJuice Testnet                         	|
-| RPC URL         	| https://v1.testnet.godwoken.io/rpc             	|
+| Network Name     	| Godwoken Testnet v1                                 |
+| RPC URL         	| https://v1.testnet.godwoken.io/rpc                	|
 | Chain ID        	| 71401                                              	|
 | Currency Symbol 	| pCKB                                                |
+| pCKB Faucet       | https://faucet-testnet.godwoken.io                  |
 | Block Explorer  	| https://v1.testnet.gwscan.com/                     	|
 |                 	| https://gw-testnet-explorer.nervosdao.community    	|
 | Token Bridge    	| https://testnet.bridge.godwoken.io                 	|
-| WebSocket       	| wss://v1.testnet.godwoken.io/ws            	|
+| WebSocket       	| wss://v1.testnet.godwoken.io/ws                     |
 | Graph (subgraph)  | https://gw-testnet-graph.nervosdao.community  	    |
 | Graph RPC       	| https://gw-testnet-graph.nervosdao.community/rpc/  	|
 | Graph IPFS      	| https://gw-testnet-graph.nervosdao.community/ipfs/ 	|
@@ -52,12 +53,12 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 |ITEM             |                  Detail                     |
 | --------------- | :------------------------------------------ |
-| NETWORK NAME    | Godwoken/PolyJuice Mainnet                  |
+| NETWORK NAME    | Godwoken Mainnet v0                  |
 | RPC URL         | https://mainnet.godwoken.io/rpc             |
 | Chain ID        | 71394                                       |
-| Currency Symbol | pCKB                                         |
+| Currency Symbol | pCKB                                        |
 | Block Explorer  | https://v0.gwscan.com/                      |
-| Token Bridge    | https://bridge.godwoken.io                  |
+| Token Bridge    | https://bridge.godwoken.io/#/v0/withdrawal  |
 | WebSocket       | wss://mainnet.godwoken.io/ws                |
 
 
@@ -68,13 +69,13 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 | Block Explorer | https://pudge.explorer.nervos.org/ | https://explorer.nervos.org |
 | Faucet         | https://faucet.nervos.org/         |                             |
 
-## CKB Mainnet Mirana
+### CKB Mainnet Mirana
 
 Use the [latest release](https://github.com/nervosnetwork/ckb/releases/latest) and run `ckb init --chain mainnet` to initialize the node.
 
 - Mirana is active since the epoch 5414, see the [migration guide](https://github.com/jordanmack/nervos-ckb2021-hard-fork-migration-guide) to upgrade from Lina.
 
-## **CKB Testnet Pudge**
+### **CKB Testnet Pudge**
 
 After adding the “Godwoken Testnet v1” to your wallet and copied your layer-1 Wallet Address which is connected to Metamask layer-1 address. We want to get some free CKB. Make sure your wallet is set to the “Godwoken Testnet v1”.
 

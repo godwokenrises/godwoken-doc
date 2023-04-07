@@ -78,7 +78,7 @@ When it’s done, you should be able to see your TTKN layer1 balance on the depo
 
 If you want to claim pCKB to your layer2 account, there are two recommended methods.
 
-The first method is if you only need a small amount of pCKB, you can visit [Godwoken Testnet pCKB Faucet](https://faucet.godwoken.com/), and then click the “request 10 pCKB from faucet” button to claim 10 pCKB to your layer2 account, on the way it will ask you to connect to your wallet, you should just follow the instructions and the whole process will complete soon.
+The first method is if you only need a small amount of pCKB, you can visit [Godwoken Testnet pCKB Faucet](https://faucet-testnet.godwoken.io), and then click the “request 10 pCKB from faucet” button to claim 10 pCKB to your layer2 account, on the way it will ask you to connect to your wallet, you should just follow the instructions and the whole process will complete soon.
 
 However, if you want to claim a large amount of pCKB, the second method is more recommended: use [Nervos Faucet](https://faucet.nervos.org/), the official faucet site provided by Nervos. 
 
