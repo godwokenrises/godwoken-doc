@@ -87,13 +87,13 @@ https://gasless-nft-ui.pages.dev/ - first test the NFT minting dapp in a gasless
 
 Example of codebase: https://github.com/BuildClub/gassless-nft-minter
 
-Test project token for payment - [0xced7c0c6DE215c995Cf08D464f6a2132b2FAD37D](https://gw-explorer.nervosdao.community/address/0xced7c0c6DE215c995Cf08D464f6a2132b2FAD37D)
+Test project token for payment - [0xced7c0c6DE215c995Cf08D464f6a2132b2FAD37D](https://v1.testnet.gwscan.com/address/0xced7c0c6DE215c995Cf08D464f6a2132b2FAD37D)
 
-Paymaster address - [0x2078cf0E3535A48f8e28a36b2fCFcEC429162F60](https://gw-explorer.nervosdao.community/address/0x2078cf0E3535A48f8e28a36b2fCFcEC429162F60)
+Paymaster address - [0x2078cf0E3535A48f8e28a36b2fCFcEC429162F60](https://v1.testnet.gwscan.com/address/0x2078cf0E3535A48f8e28a36b2fCFcEC429162F60)
 
-Entrypoint address - [0x791ec459f57362256f313f5512bdb9f6d7cae308](https://gw-explorer.nervosdao.community/address/0x791ec459f57362256f313f5512bdb9f6d7cae308)
+Entrypoint address - [0x791ec459f57362256f313f5512bdb9f6d7cae308](https://v1.testnet.gwscan.com/address/0x791ec459f57362256f313f5512bdb9f6d7cae308)
 
-NFT address - [0x9bFAA0A71390061DF1F69D2640808a015653D84b](https://gw-explorer.nervosdao.community/address/0x9bFAA0A71390061DF1F69D2640808a015653D84b)
+NFT address - [0x9bFAA0A71390061DF1F69D2640808a015653D84b](https://v1.testnet.gwscan.com/address/0x9bFAA0A71390061DF1F69D2640808a015653D84b)
 
 Here is another demo with less code: [godwoken gasless example](https://github.com/sunchengzhu/godwoken-gasless-example)
 
