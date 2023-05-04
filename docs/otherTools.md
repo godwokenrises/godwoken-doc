@@ -5,7 +5,7 @@ title: Other Tools
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## Wallets
-1. [Gnosis Safe](https://safe-v1.nervosdao.community/) - a multi-signature wallet.
+1. [Gnosis Safe](https://safe.global/wallet) - a multi-signature wallet.
 
 ## Code editors
 
