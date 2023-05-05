@@ -16,7 +16,6 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 | Currency Symbol 	| pCKB                                                |
 | Block Explorer  	| https://gwscan.com/                                	|
 |                 	| https://v1.gwscan.com/                             	|
-|                 	| https://gw-mainnet-explorer.nervosdao.community    	|
 | Token Bridge    	| https://bridge.godwoken.io                         	|
 | WebSocket       	| wss://v1.mainnet.godwoken.io/ws                    	|
 
@@ -37,7 +36,6 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 | Currency Symbol 	| pCKB                                                |
 | pCKB Faucet       | https://faucet-testnet.godwoken.io                  |
 | Block Explorer  	| https://v1.testnet.gwscan.com/                     	|
-|                 	| https://gw-testnet-explorer.nervosdao.community    	|
 | Token Bridge    	| https://testnet.bridge.godwoken.io                 	|
 | WebSocket       	| wss://v1.testnet.godwoken.io/ws                     |
 | Graph (subgraph)  | https://gw-testnet-graph.nervosdao.community  	    |

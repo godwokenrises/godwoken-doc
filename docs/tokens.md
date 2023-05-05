@@ -112,7 +112,7 @@ export const TokenList = () => {
               <GwBaseList
                 cacheKey="gw"
                 url="https://raw.githubusercontent.com/godwokenrises/godwoken-info/main/mainnet_v1/bridged-token-list.json"
-                explorerUrl="https://gw-mainnet-explorer.nervosdao.community"
+                explorerUrl="https://gwscan.com"
               />
             </TabItem>
             <TabItem value="eth">
@@ -143,7 +143,7 @@ export const TokenList = () => {
               <GwBaseList
                 cacheKey="gw-testnet"
                 url="https://raw.githubusercontent.com/godwokenrises/godwoken-info/main/testnet_v1_1/bridged-token-list.json"
-                explorerUrl="https://gw-testnet-explorer.nervosdao.community"
+                explorerUrl="https://v1.testnet.gwscan.com/"
               />
             </TabItem>
             <TabItem value="goerli">

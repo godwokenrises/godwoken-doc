@@ -38,7 +38,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 ### Tools
 
 * **Explorer (GwScan)**: https://v1.testnet.gwscan.com
-* **Explorer (Blockscout)**: https://gw-explorer.nervosdao.community
+* **Explorer (Blockscout)**: 	https://gwscan.com
 * **Token Bridge**: https://testnet.bridge.godwoken.io
   It's also a testnet account generator.
 

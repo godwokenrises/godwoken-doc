@@ -16,7 +16,6 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 | Currency Symbol 	| CKB                                                	|
 | Block Explorer  	| https://gwscan.com/                                	|
 |                 	| https://v1.gwscan.com/                             	|
-|                 	| https://gw-mainnet-explorer.nervosdao.community    	|
 | Token Bridge    	| https://bridge.godwoken.io                         	|
 | WebSocket       	| wss://v1.mainnet.godwoken.io/ws                    	|
 
@@ -42,7 +41,6 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 | Chain ID        	| 71401                                              	|
 | Currency Symbol 	| CKB                                                	|
 | Block Explorer  	| https://v1.testnet.gwscan.com/                     	|
-|                 	| https://gw-testnet-explorer.nervosdao.community    	|
 | Token Bridge    	| https://testnet.bridge.godwoken.io                 	|
 | WebSocket       	| wss://godwoken-testnet-v1.ckbapp.dev/ws            	|
 | Graph (subgraph)  | https://gw-testnet-graph.nervosdao.community  	    |
