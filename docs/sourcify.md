@@ -5,7 +5,7 @@ title: sourcify
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 
-### Hardat Environment
+### Hardhat Environment
 After deploying a contract, it is possible to verify it using Sourcify.
 
 *If using a version of Hardhat prior to v2.6.8, the following code must be added to `hardhat-config.js`:*
