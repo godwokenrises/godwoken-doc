@@ -73,3 +73,15 @@ Godwoken average block confirmation interval can be viewed at:
 Q: The layer-2 block's timestamp is not always accurate, and it usually differs from the real-world time by a few minutes. Why is it inaccurate?
 
 A: The layer-2 block's timestamp is linked to the [CKB block median timestamp](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0027-block-structure/0027-block-structure.md#timestamp-uint64), which is calculated from the last 37 CKB blocks. While using the layer-1 blockchain time, the layer-2 timestamp can be secured by the layer-1 miners. Additionally, since the layer-1 blockchain time is a median value, it is typically later than the actual real-world time.
+
+---
+### Are there ever block reorgs on Godwoken network?
+
+Q: Is it possible for Godwoken to experience chain reorganizations (reorgs)?
+
+A: Yes, short-range reorgs are possible on Godwoken.
+
+It's important to note that as an optimistic rollup layer-2 solution on CKB, Godwoken's security is protected by CKB (layer-1). Once a rollup transaction is committed to CKB, most of the time it cannot be rolled back. However, if CKB itself experiences a reorg and some of the previously submitted Godwoken rollup transactions are rejected, then Godwoken may also revert.
+
+To achieve a more deterministic result of a Godwoken transaction, it depends on the layer-1 block's confirmation.
+The secure confirmation numbers of CKB refer to https://docs.nervos.org/docs/essays/tx-confirmation/.
