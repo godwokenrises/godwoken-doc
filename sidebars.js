@@ -66,7 +66,8 @@ module.exports = {
       "Ecosystem Tools": [
         "covalent",
         "oracles",
-        "otherTools"
+        "sourcify",
+        "otherTools",
       ]
     },
 
