@@ -9,14 +9,13 @@ Compiling and deploying a smart contract on Nervos' EVM compatible [Layer 2](str
 ## Task Instructions
 
 In this task, you will 
-<div style="background-color: rgb(246 247 249 / 29%); padding:10px;--tw-shadow: inset 0 0 0 1px rgba(0,0,0,.08);
-    --tw-shadow-colored: inset 0 0 0 1px var; border-radius: 10px">
+<div class="task-wrapper">
 
-- Take a very basic smart contract written in Ethereum's Solidity
-- Compile it to EVM bytecode
+- Take a very basic smart contract written in Ethereum's Solidity.
+- Compile it to EVM bytecode.
 - Deploy it to Godwoken on Layer 2.
-</div>
 
+</div>
 
 The code that we will work with in this step will compile and deploy your smart contract. This uses the original version of Hardhat for Ethereum.
 
@@ -25,12 +24,12 @@ The instructions will provide a basic smart contract you can work with, but you 
 ### Prerequisites
 
 Before you begin this task, you must complete the [previous task](evm_training/evmTask1.md) to create a Godwoken account on the EVM Layer 2 Testnet. You will also need the private key and Testnet address from the previous task in order to proceed. If you have not completed it, please do so now.
-<div style="background-color: rgb(246 247 249 / 29%); padding:10px;--tw-shadow: inset 0 0 0 1px rgba(0,0,0,.08);
-    --tw-shadow-colored: inset 0 0 0 1px var; border-radius: 10px">
+<div class="task-wrapper">
 
 - [Godwoken Account on EVM layer 2 Test](evm_training/evmTask1.md)
 - [Private Key](https://docs.godwoken.io/evm_training/evmTask1#1-go-to-godwoken-bridge)
 - [Testnet address](/evm_training/evmTask1#1-go-to-godwoken-bridge)
+
 </div>
 
 > Note: Never use a private key associated with a real account for any of these tasks. The following steps will show you how to extract your private key from MetaMask. But, you should never do this using a MetaMask installation that you use for real funds since this could potentially leak information that could compromise your account.
