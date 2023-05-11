@@ -11,9 +11,9 @@ Compiling and deploying a smart contract on Nervos' EVM compatible [Layer 2](str
 In this task, you will 
 <div class="task-wrapper">
 
-- Take a very basic smart contract written in Ethereum's Solidity.
+- Take a very basic smart contract written in [Solidity](https://soliditylang.org/).
 - Compile it to EVM bytecode.
-- Deploy it to Godwoken on Layer 2.
+- Deploy it to [Godwoken Testnet](https://v1.testnet.gwscan.com/)
 
 </div>
 
@@ -26,9 +26,9 @@ The instructions will provide a basic smart contract you can work with, but you 
 Before you begin this task, you must complete the [previous task](evm_training/evmTask1.md) to create a Godwoken account on the EVM Layer 2 Testnet. You will also need the private key and Testnet address from the previous task in order to proceed. If you have not completed it, please do so now.
 <div class="task-wrapper">
 
-- [Godwoken Account on EVM layer 2 Test](evm_training/evmTask1.md)
-- [Private Key](https://docs.godwoken.io/evm_training/evmTask1#1-go-to-godwoken-bridge)
-- [Testnet address](/evm_training/evmTask1#1-go-to-godwoken-bridge)
+- [Godwoken Account on EVM layer 2 Test](/evm_training/evmTask1.md)
+- [Private Key](https://ethereum.org/en/developers/docs/accounts/#account-creation)
+- [Testnet address](/evm_training/evmTask1.md#1-go-to-godwoken-bridge)
 
 </div>
 
@@ -99,7 +99,7 @@ contract SimpleStorage {
 
 ### 3. Deploy a Smart Contract
 
-Hardhat will handle the process of compilation and deployment of the smart contract.
+[Hardhat](https://hardhat.org/) will handle the process of compilation and deployment of the smart contract.
 
 ### Deploy.js
 ```Javascript
