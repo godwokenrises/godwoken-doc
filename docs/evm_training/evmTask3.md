@@ -26,12 +26,10 @@ The API (Application Programming Interface) of a smart contract refers to a set 
 
 The contract ABI is the standard way of interacting with contracts in the Ethereum ecosystem, regardless of whether it's the interaction between external clients and contracts or the interaction between contracts themselves.
 
-<div class="task-wrapper">
 
-- The ABI is a description of the contract interface.
-- ABI defines the encoding rules for interacting with contracts.
+>   - The ABI is a description of the contract interface.
+>   - ABI defines the encoding rules for interacting with contracts.
 
-</div>
 
 #### 1.2 ABI interface specification.
 In order to execute a function call on a smart contract, it must be deployed, and you must have the ABI that was generated when the code was originally compiled. "ABI" stands for Application Binary Interface, which contains the information an application requires to interface and call functions on the smart contract requires.

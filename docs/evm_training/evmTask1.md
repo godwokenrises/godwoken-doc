@@ -32,7 +32,7 @@ You have to fund your Layer 1 account. It will be the source of funds for Layer 
 
 <img src={useBaseUrl("img/evmTask1-2.png")}  width="40%"/>
 
-#### 2.2 Fund for this wallet
+#### 2.2 Claim CKB from Testnet Faucet
 
 Now, visit the Layer 1 faucet where you can request Layer 1 testnet funds: [faucet.nervos.org](https://faucet.nervos.org/).
 
@@ -57,21 +57,24 @@ Now type minimum "400" in the "Deposit" field. Then click the "Deposit" button.
 
 #### 3.2 Transcation Signature
 
-You will be asked to sign a message in your wallet. The process will begin after you sign. Your account should be created after few minutes.
+You will be asked to sign a message in your wallet. The process will begin after you sign. Your account should be created in a few minutes.
 
-> #### Transcation dialog
-In the Godwoken interface, you will see the following screen, indicating that the transaction is awaiting confirmation.
-
+:::tip
+#### Transcation dialog
+In the Godwoken Bridge interface, you will see the following screen, indicating that the transaction is awaiting confirmation.
 <div>
     <img alt="sign" src={useBaseUrl("img/evmTask1-6.png")}  width="40%"/>
 </div>
+:::
 
-> #### Metamask dialog
+:::tip
+#### Metamask dialog
 On the right side of your browser, you will see a MetaMask pop-up window as shown below. You will need to sign this transaction.
 
 <div>
     <img alt="pending" src={useBaseUrl("img/evmTask1-7.png")}  width="40%"/>
 </div>
+:::
 
 ### 4. Transcation Record
 
