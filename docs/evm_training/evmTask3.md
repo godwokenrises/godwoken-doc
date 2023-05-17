@@ -21,6 +21,17 @@ This task requires the Code Examples repo ([layer2-evm-documentation](https://gi
 
 ### 1. Prepare the Smart Contract Address and ABI
 
+#### 1.1 What is ABI
+The API (Application Programming Interface) of a smart contract refers to a set of methods, functions, and parameters that define the interaction with the smart contract. It provides a programming interface that allows external applications to communicate and interact with the smart contract.
+
+The contract ABI is the standard way of interacting with contracts in the Ethereum ecosystem, regardless of whether it's the interaction between external clients and contracts or the interaction between contracts themselves.
+
+
+>   - The ABI is a description of the contract interface.
+>   - ABI defines the encoding rules for interacting with contracts.
+
+
+#### 1.2 ABI interface specification.
 In order to execute a function call on a smart contract, it must be deployed, and you must have the ABI that was generated when the code was originally compiled. "ABI" stands for Application Binary Interface, which contains the information an application requires to interface and call functions on the smart contract requires.
 
 In the [previous task](evm_training/evmTask2.md), you compiled and deployed an Ethereum smart contract. You may be able to reuse that smart contract for this task. If it is no longer available, please revisit the [previous task](evm_training/evmTask2.md) and complete it again.&#x20;
@@ -66,7 +77,7 @@ The example smart contract from the previous task is `SimpleStorage.sol`, and th
 The SimpleStorage contract has also been deployed to Testnet at the address below. You can optionally use it for testing purposes.
 
 ```
-0xd4A8b3018f0c79f6BD3375C89a5Db47ca11A1C35
+0xC44B60E1517D56c8BE6C72AAFE0412D7d3c81B14
 ```
 
 ### 2. Prepare and Run the Example Code to Call the Smart Contract
@@ -79,15 +90,17 @@ Next, you need to update the values in `index.js` to match your private keys and
 
 #### Private Key
 
-The first thing you will need to do is update `index.js` with your Ethereum private key. This private key will be used to make the function calls, and it should be the same Ethereum private key that funds were added to in the previous tasks. Make sure you use your **Ethereum** private key for Layer 2, not your Nervos CKB Layer 1 private key. Replace `<YOUR_ETHEREUM_PRIVATE_KEY>` with this value. **Always make sure your private key is prefixed with "0x".**
+The first thing you will need to do is update `index.js` with your Ethereum private key. This private key will be used to make the function calls, and it should be the same Ethereum private key that funds were added to in the previous tasks. 
+> Make sure you use your **Ethereum** private key for Layer 2, not your Nervos CKB Layer 1 private key. Replace `<YOUR_ETHEREUM_PRIVATE_KEY>` with this value. **Always make sure your private key is prefixed with "0x".**
 
+> Make sure in [step1](/evm_training/evmTask1.md), your deposit has finished,  and record could be found in  completed list
 ```js
 const ACCOUNT_PRIVATE_KEY = '<YOUR_ETHEREUM_PRIVATE_KEY>';
 ```
 
 #### ABI
 
-Next, add your contract ABI to the script by replacing `<YOUR_CONTRACT_ABI>` with the ABI value from the JSON file which was generated during compilation.
+Next, add your contract ABI to the script by replacing `<YOUR_CONTRACT_ABI>` with the ABI value from the JSON file which was generated during compilation [How to find json file](/evm_training/evmTask1.md).
 
 > Note: The `CONTRACT_ABI` constant is expecting an array with your ABI items. Make sure this is a data structure, just like it is in `SimpleStorage.json`, and does not get input as a string.
 

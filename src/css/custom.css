@@ -33,3 +33,9 @@
   --tw-shadow-colored: "inset 0 0 0 1px var";
   borderRadius: 10px
 }
+
+.sign-process {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -25,15 +25,20 @@ Connect your MetaMask account to the page by clicking the "Connect" button.
 
 ### 2. Fund an Account with CKBytes on Layer 1
 
+
+#### 2.1 Occupy Layer1 Wallet Address
+
 You have to fund your Layer 1 account. It will be the source of funds for Layer 2 deposit. To accomplish this, click "Copy Address" to the right of "L1 Wallet Address".&#x20;
 
 <img src={useBaseUrl("img/evmTask1-2.png")}  width="40%"/>
+
+#### 2.2 Claim CKB from Testnet Faucet
 
 Now, visit the Layer 1 faucet where you can request Layer 1 testnet funds: [faucet.nervos.org](https://faucet.nervos.org/).
 
 Paste the copied address into the faucet and click "Claim".
 
-<img src={useBaseUrl("img/evmTask1-3.png")}  width="40%"/>
+<img src={useBaseUrl("img/evmTask1-3.png")}  width="50%"/>
 
 Now, wait for your Layer 1 transaction to be completed. You should see your transaction in the list in the middle of the page.
 
@@ -43,23 +48,41 @@ After using Layer 1 faucet, your "L1 Balance" should be equal to "10,000 CKB" or
 
 ### 3. Create Layer 2 Account
 
+#### 3.1 Deposit to L2 account
 Make sure the previous step is complete, and your Layer 1 account is funded.
 
 Now type minimum "400" in the "Deposit" field. Then click the "Deposit" button.
 
 <img src={useBaseUrl("img/evmTask1-5.png")}  width="40%"/>
 
-You will be asked to sign a message in your wallet. The process will begin after you sign. Your account should be created after few minutes.
+#### 3.2 Transcation Signature
 
-<img src={useBaseUrl("img/evmTask1-6.png")}  width="40%"/>
+You will be asked to sign a message in your wallet. The process will begin after you sign. Your account should be created in a few minutes.
 
-<img src={useBaseUrl("img/evmTask1-7.png")}  width="40%"/>
+:::tip
+#### Transcation dialog
+In the Godwoken Bridge interface, you will see the following screen, indicating that the transaction is awaiting confirmation.
+<div>
+    <img alt="sign" src={useBaseUrl("img/evmTask1-6.png")}  width="40%"/>
+</div>
+:::
 
-After you "Sign" the transaction, you should see your deposit in "Pending" transactions.
+:::tip
+#### Metamask dialog
+On the right side of your browser, you will see a MetaMask pop-up window as shown below. You will need to sign this transaction.
+
+<div>
+    <img alt="pending" src={useBaseUrl("img/evmTask1-7.png")}  width="40%"/>
+</div>
+:::
+
+### 4. Transcation Record
+
+After you "Sign" the transaction, you should see your deposit in `Pending` transactions.
 
 <img src={useBaseUrl("img/evmTask1-8.png")}  width="40%"/>
 
-After a few minutes, your deposit should land in "Completed" transactions.
+After a few minutes, your deposit should land in `Completed` transactions.
 
 <img src={useBaseUrl("img/evmTask1-9.png")}  width="40%"/>
 
