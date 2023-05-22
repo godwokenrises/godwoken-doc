@@ -20,7 +20,7 @@ In this training, you'll learn how to:
 
 - [Deploy a Simple Ethereum Smart Contract on Godwoken](/evm_training/evmTask2.md)
 
-- [Invoke a Smart Contract Call to the Deployed Smart Contract](/evm_training/evmTask3.md)
+- [Invoking Deployed Smart Contracts - Interacting with Existing Contracts](/evm_training/evmTask3.md)
 
 - ~~[Use Force Bridge to Deposit Tokens from Ethereum](/evm_training/evmTask4.md)~~
 
