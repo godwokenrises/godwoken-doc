@@ -1,6 +1,6 @@
 ---
 id: evmPrep
-title: Setup Requirements
+title: Installation
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
