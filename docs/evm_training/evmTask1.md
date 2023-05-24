@@ -87,7 +87,3 @@ After a few minutes, your deposit should land in `Completed` transactions.
 <img src={useBaseUrl("img/evmTask1-9.png")}  width="40%"/>
 
 Congratulations! Your account is now created!
-
-### Alternatives
-
-* A JavaScript library that can be integrated into the application to  create an account programmatically: [nervos-godwoken-integration](https://github.com/Roger-Rumblefish/nervos-godwoken-integration) (code examples in readme).
