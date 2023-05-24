@@ -26,19 +26,37 @@ This is a brief introduction to the project structure of a Hardhat boilerplate.
 ```bash
 
 ├─ hardhat-boilerplate
-│  ├─ contract <-- save contract `.sol` file
-│  │  └─ Token.sol <-- test sol file
+│  ├─ contract          <-- save contract `.sol` file
+│  │  └─ Token.sol      <-- test sol file
 │  ├─ script
-│  │  └ deploy.js <-- deploy contract to network
+│  │  └ deploy.js       <-- deploy contract to network
 │  ├─ test
-│  │  └ Token.js <-- Automated tests contract 
-│  └─ front-end <-- dapp Web frontend 
+│  │  └ Token.js        <-- Automated tests contract 
+│  └─ front-end         <-- dapp Web frontend 
 │  │
 │  └─ hardhat.config.js <-- hardhat network settings
 ```
 
+## Test your contract
+Writing automated tests when building smart contracts is of crucial importance, as your user's money is what's at stake. In this example, the test file is already written and located at `./test/Token.js`. To execute the tests, simply run the following command in the command line. If all the checks pass, your contract will have passed the testing successfully. [More details about testing scripts](https://hardhat.org/tutorial/testing-contracts)
+```bash
+npx hardhat test
+
+  Token contract
+    Deployment
+      ✔ Should set the right owner (719ms)
+      ✔ Should assign the total supply of tokens to the owner
+    Transactions
+      ✔ Should transfer tokens between accounts (52ms)
+      ✔ should emit Transfer events
+      ✔ Should fail if sender doesn't have enough tokens
+  5 passing (849ms)
+```
+
+
 ## Start Local Network
-Let's start the local network
+Let's start [Hardhat Network](https://hardhat.org/hardhat-network/docs/overview#hardhat-network) which is designed for local development
+
 ```bash
 npx hardhat node
 ```
@@ -57,24 +75,8 @@ Private Key: 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
 
 ...other content
 ```
-## Test your contract
-Writing automated tests when building smart contracts is of crucial importance, as your user's money is what's at stake.In this example, the test file is already written and located at `./test/Token.js`. To execute the tests, simply run the following command in the command line, If all the checks pass, your contract will have passed the testing successfully. [More details about testing scripts](https://hardhat.org/tutorial/testing-contracts)
 
-```bash
-npx hardhat test
-
-  Token contract
-    Deployment
-      ✔ Should set the right owner (719ms)
-      ✔ Should assign the total supply of tokens to the owner
-    Transactions
-      ✔ Should transfer tokens between accounts (52ms)
-      ✔ should emit Transfer events
-      ✔ Should fail if sender doesn't have enough tokens
-  5 passing (849ms)
-```
-
-## Deloy Smart Contract on the Local Network
+## Deploy Smart Contract on [Hardhat Network](https://hardhat.org/hardhat-network/docs/overview#hardhat-network) designed for local development
 Now that we have set up a local network, let's deploy a contract to the network we just created. The smart contract file `Token.sol` is already written and placed in `/contracts/Token.sol` folder. Here, we will also need a script `deploy.js`, it has been placed in `./script/deploy.js`. 
 
 In the current project, we have already written the code for deploy.js. To deploy the Token smart contract to the local network, you simply need to enter the following command in the command line:
@@ -146,7 +148,7 @@ Total Supply:  1000000
 ```
 
 
-## Deloy Smart Contract on the GodWoken
+## Deloy Smart Contract on the Godwoken
 
 Once you're ready to share your dApp with other people, you may want to deploy it to a live network. This way others can access an instance that's not running locally on your system.
 
@@ -161,7 +163,7 @@ If you want to deploy to a test network, you will need to make some changes in t
 networks: {
     //...your network info
     'godwoken-testnet': {
-        url: `https://godwoken-testnet-v1.ckbapp.dev`,
+        url: `https://v1.testnet.godwoken.io/rpc`,
         accounts: [PRIVATE_KEY]
     }
 }
