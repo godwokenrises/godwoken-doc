@@ -16,17 +16,9 @@ To accomplish these goals, we have put together a set of tasks to guide you thro
 
 In this training, you'll learn how to:
 
-- [Quick start with TestNet](/evm_training/evmTask1.md)
+- [Quick start with Godwoken testnet](/evm_training/evmTask1.md)
 
-- [Deploy a Simple Ethereum Smart Contract on Godwoken](/evm_training/evmTask2.md)
-
-- [Invoking Deployed Smart Contracts - Interacting with Existing Contracts](/evm_training/evmTask3.md)
-
-- ~~[Use Force Bridge to Deposit Tokens from Ethereum](/evm_training/evmTask4.md)~~
-
-- [Migrating an existing contract to Godwoken](/evm_training/evmTask5.md)
-
-- ~~[Withdraw From Layer 2 Back to Layer 1](/evm_training/evmTask6.md)~~
+- [Interact with Smart Contract](/evm_training/evmTask4.md)
 
 :::
 

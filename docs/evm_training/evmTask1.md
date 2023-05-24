@@ -1,6 +1,6 @@
 ---
 id: evmTask1
-title: Quick start with TestNet
+title: Quick start with Godwoken testnet
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 

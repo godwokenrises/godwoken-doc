@@ -35,10 +35,10 @@ module.exports = {
             "evm_training/evmIntro",
             "evm_training/evmPrep",
             "evm_training/evmTask1",
-            "evm_training/evmTask2",
-            "evm_training/evmTask3",
-            // "evm_training/evmTask4",
-            "evm_training/evmTask5",
+            // "evm_training/evmTask2",
+            // "evm_training/evmTask3",
+            "evm_training/evmTask4",
+            // "evm_training/evmTask5",
             // "evm_training/evmTask6"
           ]
         }
