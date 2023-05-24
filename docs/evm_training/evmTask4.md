@@ -42,7 +42,7 @@ Writing automated tests when building smart contracts is of crucial importance, 
 ```bash
 npx hardhat test
 
-  Token contract
+      Token contract
     Deployment
       ✔ Should set the right owner (719ms)
       ✔ Should assign the total supply of tokens to the owner
@@ -148,7 +148,7 @@ Total Supply:  1000000
 ```
 
 
-## Deloy Smart Contract on the Godwoken
+## Deploy Smart Contract on Godwoken Testnet
 
 Once you're ready to share your dApp with other people, you may want to deploy it to a live network. This way others can access an instance that's not running locally on your system.
 
