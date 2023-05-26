@@ -1,6 +1,6 @@
 ---
 id: evmTask1
-title: 1. Create account on the EVM Layer 2 Testnet
+title: Quick start with Godwoken testnet
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
@@ -59,7 +59,7 @@ Now type minimum "400" in the "Deposit" field. Then click the "Deposit" button.
 
 You will be asked to sign a message in your wallet. The process will begin after you sign. Your account should be created in a few minutes.
 
-:::tip
+:::note
 #### Transcation dialog
 In the Godwoken Bridge interface, you will see the following screen, indicating that the transaction is awaiting confirmation.
 <div>
@@ -67,7 +67,7 @@ In the Godwoken Bridge interface, you will see the following screen, indicating 
 </div>
 :::
 
-:::tip
+:::note
 #### Metamask dialog
 On the right side of your browser, you will see a MetaMask pop-up window as shown below. You will need to sign this transaction.
 
@@ -87,7 +87,3 @@ After a few minutes, your deposit should land in `Completed` transactions.
 <img src={useBaseUrl("img/evmTask1-9.png")}  width="40%"/>
 
 Congratulations! Your account is now created!
-
-### Alternatives
-
-* A JavaScript library that can be integrated into the application to  create an account programmatically: [nervos-godwoken-integration](https://github.com/Roger-Rumblefish/nervos-godwoken-integration) (code examples in readme).

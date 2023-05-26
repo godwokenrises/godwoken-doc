@@ -1,6 +1,6 @@
 ---
 id: evmTask2
-title: 2. Deploy a Simple Ethereum Smart Contract on Polyjuice
+title: Deploy a Simple Ethereum Smart Contract on Godwoken
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
@@ -105,7 +105,7 @@ contract SimpleStorage {
 [Hardhat](https://hardhat.org/) will handle the process of compilation and deployment of the smart contract.
 
 ### Deploy.js
-```Javascript
+```javascript
 //~/project/code-examples/2-deploy-contract/scripts/deploy.js
 async function main() {
     const [deployer] = await ethers.getSigners();
@@ -134,7 +134,7 @@ main()
 
 Replace `<YOUR_PK>` below with your Ethereum private key and run the Hardhat command:
 
-```
+```bash
 cd ~/projects/layer2-evm-documentation/code-examples/2-deploy-contract/
 PRIVATE_KEY=<YOUR_PK> npx hardhat run scripts/deploy.js --network godwoken-testnet
 ```
@@ -143,7 +143,7 @@ After running the command, the contract should deploy without any errors. You wi
 
 Example Output:
 
-```
+```bash
 ➜ PRIVATE_KEY=d9066ff9f753a1898709b568119055660a77d9aae4d7a4ad677b8fb3d2a571e5 npx hardhat run scripts/deploy.js --network godwoken-testnet
 
 Deploying contracts with the account: 0xD173313A51f8fc37BcF67569b463abd89d81844f

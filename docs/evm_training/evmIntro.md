@@ -1,10 +1,10 @@
 ---
 id: evmIntro
-title: Nervos' Layer 2 EVM Training
+title: Thinking in Nervos Layer2
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-## Introduction to Nervos' Layer 2 EVM Training
+## Introduction to this tutorial
 
 Welcome to the Nervos' Layer 2 EVM (Ethereum Virtual Machine) Training! Here you will get an introduction to the Nervos ecosystem, learn about the various important concepts, and gain hands-on experience with the platform in preparation for deploying real-world applications.
 
@@ -16,17 +16,9 @@ To accomplish these goals, we have put together a set of tasks to guide you thro
 
 In this training, you'll learn how to:
 
-- [Create an account on the EVM Layer 2 Testnet](/evm_training/evmTask1.md)
+- [Quick start with Godwoken testnet](/evm_training/evmTask1.md)
 
-- [Deploy a Simple Ethereum Smart Contract on Godwoken](/evm_training/evmTask2.md)
-
-- [Issue a Smart Contract Call to the Deployed Smart Contract](/evm_training/evmTask3.md)
-
-- [Use Force Bridge to Deposit Tokens from Ethereum](/evm_training/evmTask4.md)
-
-- [Port an Existing Ethereum dApp to Godwoken](/evm_training/evmTask5.md)
-
-- [Withdraw From Layer 2 Back to Layer 1](/evm_training/evmTask6.md)
+- [Interact with Smart Contract](/evm_training/evmTask4.md)
 
 :::
 

@@ -1,6 +1,6 @@
 ---
 id: evmPrep
-title: Setup Requirements
+title: Installation
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
@@ -22,7 +22,6 @@ The following operating systems are officially supported. Other operating system
 :::note
 
 * Node 16.13+
-* Python
 * Yarn
 * [Ubuntu Linux 20.04](https://ubuntu.com) (Desktop or Server edition)
 * [MacOS](https://www.apple.com/macos/) (Big Sur 11.0+)
@@ -40,10 +39,7 @@ The default version of Node.js included with Ubuntu 20.04 is v10.19.0, and this 
 
 * Build Tools
 * Curl
-* 7zip (optional)
-* Unzip (optional)
 * Git
-* Docker
 
 ## Prerequisite Wallet Software
 

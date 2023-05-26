@@ -1,6 +1,6 @@
 ---
 id: evmTask3
-title: 3. Issue a Smart Contract Call to the Deployed Smart Contract
+title: Invoking Deployed Smart Contracts - Interacting with Existing Contracts
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
