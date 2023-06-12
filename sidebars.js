@@ -1,5 +1,5 @@
 module.exports = {
-  "sidebar2": [
+  sidebar2: [
     "getStart",
     "quickStart",
     "overview",
@@ -22,8 +22,8 @@ module.exports = {
         "account-faucet",
         "gasless-feature",
         "gasless-with-ERC4337",
-        "debug-replay-rpc"
-      ]
+        "debug-replay-rpc",
+      ],
     },
 
     {
@@ -40,9 +40,9 @@ module.exports = {
             "evm_training/evmTask4",
             // "evm_training/evmTask5",
             // "evm_training/evmTask6"
-          ]
-        }
-      ]
+          ],
+        },
+      ],
     },
 
     {
@@ -51,28 +51,25 @@ module.exports = {
         "claimFaucet",
         "fastWithdrawal",
         "sendPCKB",
-        "extractPrivkey"
-      ]
+        "extractPrivkey",
+      ],
     },
 
     {
-      "Release Notes": [
-        "gwchangelog/v0difv1",
-        "gwchangelog/releases",
-      ]
+      "Release Notes": ["gwchangelog/v0difv1", "gwchangelog/releases"],
     },
 
     {
       "Ecosystem Tools": [
+        "thirdweb",
         "covalent",
         "oracles",
         "sourcify",
         "otherTools",
-      ]
+      ],
     },
 
     "faq",
-    "reference"
-  ]
-}
-
+    "reference",
+  ],
+};
