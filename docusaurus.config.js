@@ -37,7 +37,7 @@ module.exports = {
           position: "right",
         },
         {
-          href: "https://github.com/godwokenrises/godwoken",
+          href: "https://github.com/godwokenrises/godwoken-doc",
           label: "GitHub",
           position: "right",
         },
