@@ -8,7 +8,7 @@ To visit online: [Godwoken Docs](https://docs.godwoken.io).
 
 ## Issues
 
-We are working hard to improve the reading experience of the website, if you find anything missed from the site, or anything mistaken, even anything you find it's difficult to read, you're more than welcome to open an issue to let us know.
+If you find anything missed from the site, or anything mistaken, even anything you find it's difficult to read, you're more than welcome to open an issue to let us know.
 
 Create an issue: [New Issue](https://github.com/godwokenrises/godwoken-doc/issues/new).
 

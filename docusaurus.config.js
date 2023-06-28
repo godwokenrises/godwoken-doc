@@ -1,7 +1,11 @@
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
+/**
+ * @type {import('@docusaurus/types').DocusaurusConfig}
+ * 
+ * @see https://docusaurus.io/docs/api/docusaurus-config
+ */
 module.exports = {
   title: "Godwoken Docs",
-  tagline: "Godwoken Docs",
+  tagline: "It's built with various articles about Godwoken, from simple concept explanations and step-by-step tutorials, to deep dives into how Godwoken actually works, all waiting for you to explore.",
   url: "https://docs.godwoken.io",
   baseUrl: "/",
   trailingSlash: false,
@@ -9,18 +13,25 @@ module.exports = {
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "godwokenrises", // Usually your GitHub org/user name.
-  projectName: "godwoken-doc", // Usually your repo name.
-  plugins: ["docusaurus-plugin-matomo"],
+  projectName: "godwoken-doc",       // Usually your repo name.
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        // options: https://github.com/easyops-cn/docusaurus-search-local#theme-options
+        indexBlog: false,
+        docsRouteBasePath: '/',
+        // `hashed` is recommended as long-term-cache of index file is possible.
+        hashed: true,
+      }),
+    ],
+  ],
   themeConfig: {
     colorMode: {
-      defaultMode: "light",
+      defaultMode: "dark",
       disableSwitch: false,
       respectPrefersColorScheme: false,
-    },
-    algolia: {
-      appId: "W0P1A076NN",
-      apiKey: "0180602fbb3e258d02a3c959074d3b04",
-      indexName: "godwoken",
     },
     navbar: {
       hideOnScroll: true,
@@ -36,7 +47,7 @@ module.exports = {
           position: "right",
         },
         {
-          href: "https://github.com/godwokenrises/godwoken",
+          href: "https://github.com/godwokenrises/godwoken-doc",
           label: "GitHub",
           position: "right",
         },
@@ -51,21 +62,15 @@ module.exports = {
       style: "dark",
       copyright: `Copyright © ${new Date().getFullYear()} Godwoken. All Rights Reserved.`,
     },
-    matomo: {
-      matomoUrl: "https://cryptapeblog.matomo.cloud/",
-      siteId: "2",
-      phpLoader: "matomo.php",
-      jsLoader: "matomo.js",
-    },
   },
   presets: [
     [
       "@docusaurus/preset-classic",
       {
-        googleAnalytics: {
-          trackingID: "UA-215912231-1",
-          anonymizeIP: true,
-        },
+        // googleAnalytics: {
+        //   trackingID: "UA-215912231-1",
+        //   anonymizeIP: true,
+        // },
         docs: {
           path: "docs",
           lastVersion: 'current',

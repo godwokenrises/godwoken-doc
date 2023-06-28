@@ -1,6 +1,6 @@
 {
-  "name": "ckb_sdk",
-  "version": "0.0.0",
+  "name": "godwoken-doc",
+  "version": "1.14.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -16,12 +16,12 @@
   "dependencies": {
     "@docusaurus/core": "^2.4.1",
     "@docusaurus/preset-classic": "^2.4.1",
+    "@easyops-cn/docusaurus-search-local": "^0.35.0",
     "@mdx-js/react": "^1.6.22",
     "@svgr/webpack": "^8.0.1",
     "@tanstack/react-query": "^4.29.17",
     "clsx": "^1.2.1",
     "docusaurus-pdf": "^1.2.0",
-    "docusaurus-plugin-matomo": "^0.0.6",
     "file-loader": "^6.2.0",
     "got": "^13.0.0",
     "minimist": "^1.2.8",
