@@ -21,6 +21,7 @@ module.exports = {
       ({
         // options: https://github.com/easyops-cn/docusaurus-search-local#theme-options
         indexBlog: false,
+        docsRouteBasePath: '/',
         // `hashed` is recommended as long-term-cache of index file is possible.
         hashed: true,
       }),
@@ -32,11 +33,6 @@ module.exports = {
       disableSwitch: false,
       respectPrefersColorScheme: false,
     },
-    // algolia: {
-    //   appId: "W0P1A076NN",
-    //   apiKey: "0180602fbb3e258d02a3c959074d3b04",
-    //   indexName: "godwoken",
-    // },
     navbar: {
       hideOnScroll: true,
       title: "Godwoken Docs",
