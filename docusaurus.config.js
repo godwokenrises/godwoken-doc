@@ -10,7 +10,8 @@ module.exports = {
   favicon: "img/favicon.ico",
   organizationName: "godwokenrises", // Usually your GitHub org/user name.
   projectName: "godwoken-doc", // Usually your repo name.
-  plugins: ["docusaurus-plugin-matomo"],
+
+
   themeConfig: {
     colorMode: {
       defaultMode: "light",
@@ -50,12 +51,6 @@ module.exports = {
     footer: {
       style: "dark",
       copyright: `Copyright © ${new Date().getFullYear()} Godwoken. All Rights Reserved.`,
-    },
-    matomo: {
-      matomoUrl: "https://cryptapeblog.matomo.cloud/",
-      siteId: "2",
-      phpLoader: "matomo.php",
-      jsLoader: "matomo.js",
     },
   },
   presets: [
