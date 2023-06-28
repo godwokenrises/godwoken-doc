@@ -63,30 +63,26 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Godwoken. All Rights Reserved.`,
     },
   },
-  presets: [
+  plugins: [
     [
-      "@docusaurus/preset-classic",
+      '@docusaurus/plugin-content-docs',
       {
-        // googleAnalytics: {
-        //   trackingID: "UA-215912231-1",
-        //   anonymizeIP: true,
-        // },
-        docs: {
-          path: "docs",
-          lastVersion: 'current',
-          versions: {
-            current: {
-              label: 'Latest',
-              path: '/'
-            }
-          },
-          sidebarPath: require.resolve("./sidebars.js"),
-          routeBasePath: "/",
+        path: "docs",
+        lastVersion: 'current',
+        versions: {
+          current: {
+            label: 'Latest',
+            path: '/'
+          }
         },
-        theme: {
-          customCss: require.resolve("./src/css/custom.css"),
-        },
+        sidebarPath: require.resolve("./sidebars.js"),
+        routeBasePath: "/",
+      }
+    ], [
+      '@docusaurus/theme-classic',
+      {
+        customCss: require.resolve("./src/css/custom.css"),
       },
     ],
-  ],
+  ]
 };
