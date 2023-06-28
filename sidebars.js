@@ -63,7 +63,6 @@ module.exports = {
       "Ecosystem Tools": [
         "thirdweb",
         "covalent",
-        "oracles",
         "sourcify",
         "otherTools",
       ],
