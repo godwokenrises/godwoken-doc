@@ -21,8 +21,8 @@ To create a new smart contract using thirdweb CLI, follow these steps:
    1. Give your project a name
    2. Choose your preferred framework: Hardhat or Foundry
    3. Name your smart contract
-   4. Choose the type of base contract: Empty, [ERC20](https://portal.thirdweb.com/solidity/base-contracts/erc20base), [ERC721](https://portal.thirdweb.com/solidity/base-contracts/erc721base), or [ERC1155](https://portal.thirdweb.com/solidity/base-contracts/erc1155base)
-   5. Add any desired [extensions](https://portal.thirdweb.com/solidity/extensions)
+   4. Choose the type of base contract: Empty, [ERC20](https://portal.thirdweb.com/solidity/base-contracts/erc20base?utm_source=godwoken&utm_medium=docs&utm_campaign=chain_docs), [ERC721](https://portal.thirdweb.com/solidity/base-contracts/erc721base?utm_source=godwoken&utm_medium=docs&utm_campaign=chain_docs), or [ERC1155](https://portal.thirdweb.com/solidity/base-contracts/erc1155base?utm_source=godwoken&utm_medium=docs&utm_campaign=chain_docs)
+   5. Add any desired [extensions](https://portal.thirdweb.com/solidity/extensions?utm_source=godwoken&utm_medium=docs&utm_campaign=chain_docs)
 3. Once created, navigate to your project’s directory and open in your preferred code editor.
 4. If you open the `contracts` folder, you will find your smart contract; this is your smart contract written in Solidity.
 
@@ -50,7 +50,7 @@ To create a new smart contract using thirdweb CLI, follow these steps:
    - Inheriting the contract by declaring that our contract is an ERC721Base contract
    - Implementing any required methods, such as the constructor.
 
-5. After modifying your contract with your desired custom logic, you may deploy it to Godwoken using [Deploy](https://portal.thirdweb.com/deploy).
+5. After modifying your contract with your desired custom logic, you may deploy it to Godwoken using [Deploy](https://portal.thirdweb.com/deploy?utm_source=godwoken&utm_medium=docs&utm_campaign=chain_docs).
 
 ---
 
@@ -63,7 +63,7 @@ Alternatively, you can deploy a prebuilt contract for NFTs, tokens, or marketpla
 2. Choose the type of contract you want to deploy from the available options: NFTs, tokens, marketplace, and more.
 3. Follow the on-screen prompts to configure and deploy your contract.
 
-> For more information on different contracts available on Explore, check out [thirdweb’s documentation.](https://portal.thirdweb.com/pre-built-contracts)
+> For more information on different contracts available on Explore, check out [thirdweb’s documentation.](https://portal.thirdweb.com/pre-built-contracts?utm_source=godwoken&utm_medium=docs&utm_campaign=chain_docs)
 
 ### Deploy Contract
 
@@ -89,7 +89,7 @@ Deploy allows you to deploy a smart contract to any EVM compatible network witho
 3. Select Godwoken as the network
 4. Manage additional settings on your contract’s dashboard as needed such as uploading NFTs, configuring permissions, and more.
 
-For additional information on Deploy, please reference [thirdweb’s documentation](https://portal.thirdweb.com/deploy).
+For additional information on Deploy, please reference [thirdweb’s documentation](https://portal.thirdweb.com/deploy?utm_source=godwoken&utm_medium=docs&utm_campaign=chain_docs).
 
 ## Build dapps using thirdweb
 
@@ -112,11 +112,11 @@ Thirdweb offers SDKs for a range of programming languages, such as React, React 
 
 ### Interact With a Contract
 
-thirdweb provides several SDKs to allow you to interact with your contract including: [React](https://portal.thirdweb.com/react), [React Native](https://portal.thirdweb.com/react-native), [TypeScript](https://portal.thirdweb.com/typescript), [Python](https://portal.thirdweb.com/python), [Go](https://portal.thirdweb.com/go), and [Unity](https://portal.thirdweb.com/unity).
+thirdweb provides several SDKs to allow you to interact with your contract including: [React](https://portal.thirdweb.com/react?utm_source=godwoken&utm_medium=docs&utm_campaign=chain_docs), [React Native](https://portal.thirdweb.com/react-native?utm_source=godwoken&utm_medium=docs&utm_campaign=chain_docs), [TypeScript](https://portal.thirdweb.com/typescript?utm_source=godwoken&utm_medium=docs&utm_campaign=chain_docs), [Python](https://portal.thirdweb.com/python?utm_source=godwoken&utm_medium=docs&utm_campaign=chain_docs), [Go](https://portal.thirdweb.com/go?utm_source=godwoken&utm_medium=docs&utm_campaign=chain_docs), and [Unity](https://portal.thirdweb.com/unity?utm_source=godwoken&utm_medium=docs&utm_campaign=chain_docs).
 
 This document will show you how to interact with your contract deployed to Godwoken using React
 
-> View the [full React SDK reference](https://portal.thirdweb.com/react) in thirdweb’s documentation.
+> View the [full React SDK reference](https://portal.thirdweb.com/react?utm_source=godwoken&utm_medium=docs&utm_campaign=chain_docs) in thirdweb’s documentation.
 
 To create a new application pre-configured with thirdweb’s SDKs run and choose your preferred configurations:
 
@@ -149,7 +149,7 @@ const App = () => {
 
 #### Get Contract
 
-To connect to your contract, use the SDK’s [`getContract`](https://portal.thirdweb.com/typescript/sdk.thirdwebsdk.getcontract) method.
+To connect to your contract, use the SDK’s [`getContract`](https://portal.thirdweb.com/typescript/sdk.thirdwebsdk.getcontract?utm_source=godwoken&utm_medium=docs&utm_campaign=chain_docs) method.
 
 ```jsx
 import { useContract } from "@thirdweb-dev/react";
@@ -176,7 +176,7 @@ function App() {
   }
   ```
 
-  Full reference: https://portal.thirdweb.com/react/react.usenft
+  Full reference: [https://portal.thirdweb.com/react/react.usenft](https://portal.thirdweb.com/react/react.usenft?utm_source=godwoken&utm_medium=docs&utm_campaign=chain_docs)
 
 - Use the `useContractRead` hook to call any read functions on your contract by passing in the name of the function you want to use.
 
@@ -192,9 +192,9 @@ function App() {
   }
   ```
 
-  Full reference: https://portal.thirdweb.com/react/react.usecontractread
+  Full reference: [https://portal.thirdweb.com/react/react.usecontractread](https://portal.thirdweb.com/react/react.usecontractread?utm_source=godwoken&utm_medium=docs&utm_campaign=chain_docs)
 
-- Use the `useContractWrite` hook to call any writefunctions on your contract by passing in the name of the function you want to use.
+- Use the `useContractWrite` hook to call any write functions on your contract by passing in the name of the function you want to use.
 
   ```jsx
   import {
@@ -225,7 +225,7 @@ function App() {
   }
   ```
 
-  Full reference: https://portal.thirdweb.com/react/react.usecontractwrite
+  Full reference: [https://portal.thirdweb.com/react/react.usecontractwrite](https://portal.thirdweb.com/react/react.usecontractwrite?utm_source=godwoken&utm_medium=docs&utm_campaign=chain_docs)
 
 #### Connect Wallet
 
@@ -275,7 +275,7 @@ function App() {
 }
 ```
 
-Full reference: https://portal.thirdweb.com/react/connecting-wallets
+Full reference: [https://portal.thirdweb.com/react/connecting-wallets](https://portal.thirdweb.com/react/connecting-wallets?utm_source=godwoken&utm_medium=docs&utm_campaign=chain_docs)
 
 ### Deploy Application
 
@@ -289,4 +289,4 @@ By running this command, your application is built for production and stored usi
 
 This URL serves as a permanent hosting location for your application on the web.
 
-If you have any further questions or encounter any issues during the process, please [reach out to thirdweb support.](https://support.thirdweb.com)
+If you have any further questions or encounter any issues during the process, please [reach out to thirdweb support.](https://support.thirdweb.com?utm_source=godwoken&utm_medium=docs&utm_campaign=chain_docs)
