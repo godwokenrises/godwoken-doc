@@ -38,9 +38,6 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 | Block Explorer  	| https://v1.testnet.gwscan.com/                     	|
 | Token Bridge    	| https://testnet.bridge.godwoken.io                 	|
 | WebSocket       	| wss://v1.testnet.godwoken.io/ws                     |
-| Graph (subgraph)  | https://gw-testnet-graph.nervosdao.community  	    |
-| Graph RPC       	| https://gw-testnet-graph.nervosdao.community/rpc/  	|
-| Graph IPFS      	| https://gw-testnet-graph.nervosdao.community/ipfs/ 	|
 
 - **ETH Address Registry ID:** 2
 
