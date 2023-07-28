@@ -4,7 +4,7 @@ title: Godwoken-Kicker
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-[Godwoken-Kicker](https://github.com/RetricSu/godwoken-kicker) is a one-line command that launches a local Godwoken network on Devnet. Developers can deploy Ethereum contracts and migrate Ethereum DApps to this local network quickly.
+[Godwoken-Kicker](https://github.com/godwokenrises/godwoken-kicker) is a one-line command that launches a local Godwoken network on Devnet. Developers can deploy Ethereum contracts and migrate Ethereum DApps to this local network quickly.
 
 ## Godwoken-Kicker Commands
 
@@ -34,24 +34,24 @@ transfer <eth-address> <amount> <fee> <sudt-id>      Transfer sudt token
 
 EXAMPLES:
   * Deploy the local network and print service info
-   
+
     $ ./kicker start
     $ ./kicker info
-    
+
   * Deposit 1000CKB from layer1 to layer2
-  
+
     $ ./kicker deposit 0x618cc3C660cEBFDbA8570CA739b1744AE3E2553a 1000
     $ ./kicker get-balance 0x618cc3C660cEBFDbA8570CA739b1744AE3E2553a
-    
+
   * Redeploy the local network
-  
+
     $ ./kicker -- kill
     $ ./kicker stop
     $ sudo ./kicker clean
     $ ./kicker start
-    
+
   * Execute docker-compose commands
-  
+
     $ ./kicker -- exec ckb ls -l
     $ ./kicker -- top godwoken
     $ ./kicker -- kill godwoken
@@ -117,7 +117,7 @@ Godwoken-Kicker requires the following accounts for a deployment:
 
 CKB genesis blocks pre-issued large amounts of CKBs to these accounts. Private keys of the accounts can be found in the `. /accounts/` directory.
 
-The following commands and associated output demonstrate the information of the accounts. For more details, refer to [CKB chain spec](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/layer1/ckb/specs/dev.toml). 
+The following commands and associated output demonstrate the information of the accounts. For more details, refer to [CKB chain spec](https://github.com/godwokenrises/godwoken-kicker/blob/compatibility-changes/docker/layer1/ckb/specs/dev.toml).
 
 ```bash
 $ cd godwoken-kicker
@@ -154,7 +154,7 @@ One key for everything is possible, but it will lead to confusion and make debug
 
 ### CKB Miner
 
-The CKB miner account is identified by the CKB miner key that can be used to unlock the block [cellbase](https://docs.nervos.org/docs/basics/glossary#cellbase). The public key of the account is configured in [block_assembler](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/layer1/ckb/ckb.toml#L143-L147), which is located in the [ckb.toml](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/layer1/ckb/ckb.toml) file of the CKB base directory.
+The CKB miner account is identified by the CKB miner key that can be used to unlock the block [cellbase](https://docs.nervos.org/docs/basics/glossary#cellbase). The public key of the account is configured in [block_assembler](https://github.com/godwokenrises/godwoken-kicker/blob/compatibility-changes/docker/layer1/ckb/ckb.toml#L143-L147), which is located in the [ckb.toml](https://github.com/godwokenrises/godwoken-kicker/blob/compatibility-changes/docker/layer1/ckb/ckb.toml) file of the CKB base directory.
 
 <details><summary>Click to check details</summary>
 
@@ -321,17 +321,17 @@ The CKB faucet account uses the same key as the CKB miner account. When you exec
 
 The deployer of rollup genesis cells is also known as the Godwoken block producer. This account deploys rollup genesis cells on layer 1. The `gw-tools deploy-genesis` command uses [Omnilock](https://blog.cryptape.com/omnilock-a-universal-lock-that-powers-interoperability-1) to [record the public key](https://github.com/godwokenrises/godwoken/blob/c18807b5cfaa961c230e15e3a381570c324db6f8/crates/tools/src/deploy_genesis.rs#L428-L448) for setting up the rollup genesis cells on layer 1.
 
-The private key of the account can be found [here](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/accounts/godwoken-block-producer.key). 
+The private key of the account can be found [here](https://github.com/godwokenrises/godwoken-kicker/blob/compatibility-changes/accounts/godwoken-block-producer.key).
 
 ### Deployer of Rollup Scripts
 
-This account is used by `gw-tools deploy-scripts` to deploy rollup-related scripts to layer 1. The account will be deactivated later on. 
+This account is used by `gw-tools deploy-scripts` to deploy rollup-related scripts to layer 1. The account will be deactivated later on.
 
-The private key of the account can be found [here](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/accounts/rollup-scripts-deployer.key). 
+The private key of the account can be found [here](https://github.com/godwokenrises/godwoken-kicker/blob/compatibility-changes/accounts/rollup-scripts-deployer.key).
 
 ### Godwoken Block Producer
 
-The private key of the account can be found [here](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/accounts/godwoken-block-producer.key). 
+The private key of the account can be found [here](https://github.com/godwokenrises/godwoken-kicker/blob/compatibility-changes/accounts/godwoken-block-producer.key).
 
 The following configuration provides more information about this account:
 

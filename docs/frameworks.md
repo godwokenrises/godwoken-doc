@@ -21,7 +21,7 @@ Godwoken Kicker is a tool which allows developers to quickly launch an instance 
 
 This is useful to developers who need a quick solution to setup an Ethereum-compatible Nervos environment to test compatibility with existing Solidity dApps.
 
-* [Github](https://github.com/RetricSu/godwoken-kicker)
+* [Github](https://github.com/godwokenrises/godwoken-kicker)
 
 ## Polyjuice
 
