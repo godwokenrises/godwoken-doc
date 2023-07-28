@@ -23,7 +23,7 @@ This page covers the repositories and articles that are currently referenced in 
 |Godwoken Public Network Info |https://github.com/godwokenrises/godwoken-info|
 |Godwoken-Kicker  |https://github.com/godwokenrises/godwoken-kicker|
 |Godwoken On-chain Scripts |https://github.com/godwokenrises/godwoken-scripts|
-|Godwoken Polyjuice |https://github.com/godwokenrises/godwoken-polyjuice|
+|Godwoken Polyjuice |https://github.com/godwokenrises/godwoken/tree/develop/gwos-evm|
 |Godwoken Web3 API 	|https://github.com/godwokenrises/godwoken-web3|
 |Godwoken Ingegration Test	|https://github.com/godwokenrises/godwoken-tests|
 

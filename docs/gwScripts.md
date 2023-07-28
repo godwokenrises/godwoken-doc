@@ -6,7 +6,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 Godwoken scripts are written in *Rust* and *C*. Rust scripts run on the CKB to constrain the Rollup behavior, and C scripts run on Godwoken's nodes to provide layer-2 built-in contracts and programming interfaces.
 
-Rust scripts are built in the `contracts` directory with the `capsule build` command. C scripts are built in the `c` directory with the `cd c && make` command. All data structures use [molecule](https://github.com/nervosnetwork/molecule) format for serialization, which is defined in the [godwoken.mol](https://github.com/godwokenrises/godwoken/blob/develop/crates/types/schemas/godwoken.mol) file. 
+Rust scripts are built in the `contracts` directory with the `capsule build` command. C scripts are built in the `c` directory with the `cd c && make` command. All data structures use [molecule](https://github.com/nervosnetwork/molecule) format for serialization, which is defined in the [godwoken.mol](https://github.com/godwokenrises/godwoken/blob/develop/crates/types/schemas/godwoken.mol) file.
 
 Further details about the Godwoken mechanism can be found at [Life of a godwoken transaction](https://github.com/godwokenrises/godwoken/blob/develop/docs/life_of_a_godwoken_transaction.md) and [Life of a polyjuice transaction](https://github.com/godwokenrises/godwoken/blob/develop/docs/life_of_a_polyjuice_transaction.md).
 
@@ -83,7 +83,7 @@ There are two ways to unlock stake lock:
 
 A layer-1 user can join the Rollup by creating a deposit cell. Godwoken collects deposit cells from the layer-1 blockchain and puts them into the input of the tx which submits to a layer-2 block.
 
-If the deposit is not processed by Godwoken, the sender can unlock a deposit cell after `cancel_timeout`. 
+If the deposit is not processed by Godwoken, the sender can unlock a deposit cell after `cancel_timeout`.
 
   ```js
   table DepositLockArgs {
@@ -163,7 +163,7 @@ If the challenging target is invalid, other nodes can cancel this challenge by e
 
 The C scripts that located in the `c` directory are Godwoken layer-2 scripts. The layer-2 script can be executed on CKB when a challenge occurs, which means that a layer-2 script is also a valid layer-1 script, only it follows the special interface convenience required by Godwoken.
 
-Godwoken accounts consisted of the following fields: `(id: u32, nonce: u32, script: Script)`. The `script` field determines the script that the account used. 
+Godwoken accounts consisted of the following fields: `(id: u32, nonce: u32, script: Script)`. The `script` field determines the script that the account used.
 
 Layer-2 scripts exist in two types: lock and contract. If an account ID appears in `l2tx.from_id`, we will assume that the account's script is a lock, implying that the script follows the lock script interface convenience that can verify signatures(e.g., Ethereum EOA). If an account ID appears in `l2tx.to_id`, we will assume that the account's script is a contract, which means we should execute the tx when it is sent to the account(like an Ethereum contract account).
 
@@ -189,7 +189,7 @@ When a user deposits tokens to create a new account, a corresponding Ethereum ad
 
 The built-in ETH address registry is allocated to id `2`.
 
-### [Polyjuice](https://github.com/godwokenrises/godwoken-polyjuice)
+### [Polyjuice](https://github.com/godwokenrises/godwoken/tree/develop/gwos-evm)
 
 Polyjuice is a backend of Godwoken for state computation. The C scripts are in the `c` directory and are built using the command `make all-via-docker`. All tests run with the command `bash devtools/ci/integration-test.sh`.
 
