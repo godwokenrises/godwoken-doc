@@ -13,7 +13,7 @@ In this tutorial, we will quickly guide you through the process of deploying, ca
 
 The first things you need to do are cloning this repository and installing its dependencies:
 
-```bash 
+```bash
 
 git clone https://github.com/NomicFoundation/hardhat-boilerplate.git
 cd hardhat-boilerplate
@@ -31,8 +31,8 @@ This is a brief introduction to the project structure of a Hardhat boilerplate.
 │  ├─ script
 │  │  └ deploy.js       <-- deploy contract to network
 │  ├─ test
-│  │  └ Token.js        <-- Automated tests contract 
-│  └─ front-end         <-- dapp Web frontend 
+│  │  └ Token.js        <-- Automated tests contract
+│  └─ front-end         <-- dapp Web frontend
 │  │
 │  └─ hardhat.config.js <-- hardhat network settings
 ```
@@ -77,7 +77,7 @@ Private Key: 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
 ```
 
 ## Deploy Smart Contract on [Hardhat Network](https://hardhat.org/hardhat-network/docs/overview#hardhat-network) designed for local development
-Now that we have set up a local network, let's deploy a contract to the network we just created. The smart contract file `Token.sol` is already written and placed in `/contracts/Token.sol` folder. Here, we will also need a script `deploy.js`, it has been placed in `./script/deploy.js`. 
+Now that we have set up a local network, let's deploy a contract to the network we just created. The smart contract file `Token.sol` is already written and placed in `/contracts/Token.sol` folder. Here, we will also need a script `deploy.js`, it has been placed in `./script/deploy.js`.
 
 In the current project, we have already written the code for deploy.js. To deploy the Token smart contract to the local network, you simply need to enter the following command in the command line:
 ```bash

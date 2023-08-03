@@ -21,12 +21,12 @@ import TabItem from '@theme/TabItem';
 
 <p><b>Steps</b></p>
 
-<ol> 
+<ol>
     <li><p>Clone the source of Godwoken-Kicker under the branch <code>master</code>.</p>
 
 
 ```bash
-$ git clone -b master https://github.com/RetricSu/godwoken-kicker
+$ git clone -b master https://github.com/godwokenrises/godwoken-kicker
 ```
 
 </li>
@@ -68,7 +68,7 @@ For developers who have configured Godwoken, in case of reported errors that cau
 
 </li>
 
-More information can be viewed at <a href="https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/docker-compose.yml"><code>docker-compose.yml</code></a>.
+More information can be viewed at <a href="https://github.com/godwokenrises/godwoken-kicker/blob/compatibility-changes/docker/docker-compose.yml"><code>docker-compose.yml</code></a>.
 
 <li><p>Deposit CKB to a layer 2 account for testing.</p>
 
@@ -466,16 +466,16 @@ For more information on the use of the Godwoken-Kicker command line, see [Godwok
 
 <p><b>Steps</b></p>
 
-<ol>  
+<ol>
 <li><p>Clone the source of Godwoken-Kicker under the branch <code>master</code>.</p>
 
 
 ```bash
-$ git clone -b master https://github.com/RetricSu/godwoken-kicker
+$ git clone -b master https://github.com/godwokenrises/godwoken-kicker
 ```
 </li>
 
-<li><p>Define a basic Godwoken service that runs on a pre-built image in <a href="https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docker/docker-compose.yml"><code>docker/docker-compose.yml</code></a>.</p>
+<li><p>Define a basic Godwoken service that runs on a pre-built image in <a href="https://github.com/godwokenrises/godwoken-kicker/blob/compatibility-changes/docker/docker-compose.yml"><code>docker/docker-compose.yml</code></a>.</p>
 
 ```bash
 godwoken:
@@ -526,7 +526,7 @@ MANUAL_BUILD_GODWOKEN=true ./kicker start # Starts all services MANUAL_BUILD_GOD
 
 </li>
 
-For more details on the manual-build mode of Godwoken-Kicker, refer to [manual-build](https://github.com/RetricSu/godwoken-kicker/blob/compatibility-changes/docs/manual-build.md), and [the example of a one-click launch read-only node](https://github.com/godwokenrises/godwoken-info/tree/info/testnet_v1).
+For more details on the manual-build mode of Godwoken-Kicker, refer to [manual-build](https://github.com/godwokenrises/godwoken-kicker/blob/compatibility-changes/docs/manual-build.md), and [the example of a one-click launch read-only node](https://github.com/godwokenrises/godwoken-info/tree/info/testnet_v1).
 
 </ol>
 

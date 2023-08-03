@@ -8,7 +8,7 @@ With the vision to enable interoperability across the blockchain ecosystem throu
 
 <!--[Godwoken](https://github.com/godwokenrises/godwoken) is a layer 2 optimistic rollup solution and an EVM-compatible layer that builds on top of Nervos Layer 1, which is also known as CKB.-->
 
-[Godwoken](https://github.com/godwokenrises/godwoken) comprises two key components: the Godwoken optimistic rollup framework and the Polyjuice EVM-compatible framework. Polyjuice serves as the backend for the Godwoken rollup framework, providing an Ethereum-compatible layer atop Nervos CKB. Polyjuice leverages the account model and the scalability provided by Godwoken, and integrates [evmone](https://github.com/ethereum/evmone) as the EVM engine to run Ethereum smart contracts. For more information about Polyjuice, see [godwoken-polyjuice](https://github.com/godwokenrises/godwoken-polyjuice).
+[Godwoken](https://github.com/godwokenrises/godwoken) comprises two key components: the Godwoken optimistic rollup framework and the Polyjuice EVM-compatible framework. Polyjuice serves as the backend for the Godwoken rollup framework, providing an Ethereum-compatible layer atop Nervos CKB. Polyjuice leverages the account model and the scalability provided by Godwoken, and integrates [evmone](https://github.com/ethereum/evmone) as the EVM engine to run Ethereum smart contracts. For more information about Polyjuice, see [godwoken-polyjuice](https://github.com/godwokenrises/godwoken/tree/develop/gwos-evm).
 
 Both Godwoken and Polyjuice together forge a scalable EVM-compatible solution for Nervos, generally known as **Godwoken**.
 
