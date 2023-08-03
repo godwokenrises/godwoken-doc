@@ -30,18 +30,3 @@ Polyjuice is an Ethereum EVM-compatible execution environment, which allows Soli
 Polyjuice is designed to be used with the Godwoken layer 2 rollup framework. This allows Polyjuice to completely move smart contract execution off of layer 1 to layer 2, providing scalability that goes far beyond what the Ethereum Mainnet is capable of today.
 
 * [Github](https://github.com/godwokenrises/godwoken/tree/develop/gwos-evm)
-
-## PW-SDK
-
-PW-SDK is an interoperability dApp framework created by the [Lay2](https://lay2.tech) development team. PW-SDK consists of two primary components, PW-Core and PW-Lock.
-
-PW-Core is a Typescript based framework to build transactions and interface with common dApp wallets from other blockchains, such as the extremely popular [MetaMask](wallets.md#metamask) wallet. While originally built for the front-end, PW-SDK now also support backend development.
-
-PW-Lock is a generic multi-chain lock script (smart contract) that allows Nervos to support signatures from Bitcoin, Ethereum, EOS, Tron, as well as other blockchains. This allows Nervos to directly support interoperability with other blockchains by allowing their addresses to automatically map to Nervos CKB addresses.
-
-PW-Core and PW-Lock successfully utilize the flexibility of Nervos' underlying platform, giving Nervos a distinct advantage in supporting interoperability. Users from other chains can immediately start interacting with Nervos dApps without installing any new software or changing wallet configurations.
-
-Lay2 are also support the popular [CKB Portal Wallet](https://ckb.pw), a web based wallet for Nervos. This wallet relies on the MetaMask wallet browser extension for private key management.
-
-* [Github](https://github.com/lay2dev/pw-core)
-* [Documentation](https://docs.lay2.dev/pw-sdk/)
