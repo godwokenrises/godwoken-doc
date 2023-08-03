@@ -69,7 +69,7 @@ Alternatively, you can deploy a prebuilt contract for NFTs, tokens, or marketpla
 
 Deploy allows you to deploy a smart contract to any EVM compatible network without configuring RPC URLs, exposing your private keys, writing scripts, and other additional setup such as verifying your contract.
 
-1. To deploy your smart contract using deploy, navigate to the root directory of your project and execute the following command:
+1. To deploy your smart contract, navigate to the root directory of your project and execute the following command:
 
    ```bash
    npx thirdweb deploy
