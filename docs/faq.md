@@ -56,7 +56,7 @@ This constraint is a temporary mechanism and will be removed in a future release
 
 ### Instant Finality: Getting the transaction completed faster
 
-Q: The average block confirmation interval on Godwoken is defined by [block_interval_secs](https://github.com/godwokenrises/godwoken/blob/v1.14.0/crates/config/src/config.rs#L184-L185), defaut to 8s. If I would like to have my transactions completed more quickly, what should I do to make this happen?
+Q: The average block interval of Godwoken is defined by [block_interval_secs](https://github.com/godwokenrises/godwoken/blob/v1.14.0/crates/config/src/config.rs#L184-L185), which is set to 8s by default. If I want to have my transactions completed more quickly, what should I do to make this happen?
 
 A: This can be done with the Godwoken's instant finality feature. Godwoken provides a faster way to confirm transactions. Once a transaction is verified in the mem-pool, the instant transaction receipt will be generated immediately. 
 
