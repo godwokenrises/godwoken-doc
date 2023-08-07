@@ -54,15 +54,15 @@ This constraint is a temporary mechanism and will be removed in a future release
 
 ----
 
-### Getting the transaction completed faster
+### Instant Finality: Getting the transaction completed faster
 
-Q: The average block confirmation interval on Godwoken is 30s or more, yet I would like to have my transactions completed more quickly, what should I do to make this happen?
+Q: The average block interval of Godwoken is defined by [block_interval_secs](https://github.com/godwokenrises/godwoken/blob/v1.14.0/crates/config/src/config.rs#L184-L185), which is set to 8s by default. If I want to have my transactions completed more quickly, what should I do to make this happen?
 
-A: This can be done with the Godwoken instant finality feature. Instant finality is a feature of Godwoken aimed at return to users an Ethereum-like receipt of the transaction, giving users a faster way to verify the status of the transaction before it goes on-chain. 
+A: This can be done with the Godwoken's instant finality feature. Godwoken provides a faster way to confirm transactions. Once a transaction is verified in the mem-pool, the instant transaction receipt will be generated immediately. 
 
-To utilise this feature, simply send the transaction and obtain forthwith the [`eth_getTransactionReceipt`](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_ gettransactionreceipt) transaction receipt will suffice.
+To utilize this feature, please refer to https://github.com/godwokenrises/godwoken/blob/v1.14.0/web3/docs/addtional-feature.md#instant-finality
 
-Godwoken average block confirmation interval can be viewed at:
+Godwoken's average `block interval seconds` can be viewed at:
 - Avg. Block Time of Godwoken testnet_v1: https://v1.testnet.gwscan.com/
 - Avg. Block Time of Godwoken mainnet_v1: https://v1.gwscan.com/
 
