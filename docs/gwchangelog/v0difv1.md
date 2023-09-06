@@ -22,7 +22,7 @@ We recommend developers use layer2 block timestamp as the trusted timestamp to c
 ## Withdrawal Time
 
 - In the v0 network, the withdrawal time is 3 days.
-- In the v1 network, the withdrawal time is adjusted to 8 ~ 12 days, which depends on the network status. This gives more time for layer2 verification and challenge.
+- In the v1 network, the withdrawal time [is adjusted to 7 days](https://github.com/godwokenrises/godwoken/discussions/1087). This gives more time for layer2 verification and challenge.
 
 ## Failed Transactions
 
